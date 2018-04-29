@@ -10,9 +10,6 @@ import shutil
 import glob
 
 if __name__ == '__main__':
-    #shutil.rmtree("/obj/")
-    #shutil.rmtree("/bin/")
-
     call('dotnet restore')
     call('dotnet publish -c Release -r win10-x64')
     call('dotnet publish -c Release -r win10-arm')

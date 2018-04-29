@@ -9,4 +9,4 @@ which is licensed under the Mozilla Public License 2.0.
 A copy of the Mozilla Public License 2.0 is available in the directory of CSMarkDesktop
 in the file "AluminiumCoreLib_License.txt".
 You can download the source code of the AluminiumCoreLib library
-from https://github.com/AluminiumTech/AluminiumCoreLib
+from https://gitlab.com/CSMarkBenchmark/AluminiumCoreLib

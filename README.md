@@ -4,26 +4,26 @@ This application works on Windows, macOS and Linux Distributions.
 
 CSMark CLI screenshots below.
 
-![Image of CSMark CLI running on Windows](https://github.com/CSMarkBenchmark/CSMark/blob/master/assets/CSMarkOnWindows.PNG)
+![Image of CSMark CLI running on Windows](/assets/CSMarkOnWindows.PNG)
 
-![Image of CSMark CLI running on Mac](https://github.com/CSMarkBenchmark/CSMark/blob/master/assets/CSMarkOnMac.png)
+![Image of CSMark CLI running on Mac](/assets/CSMarkOnMac.png)
 
-![Image of CSMark running on Linux](https://github.com/CSMarkBenchmark/CSMark/blob/master/assets/CSMarkOnLinux.png)
+![Image of CSMark running on Linux](/assets/CSMarkOnLinux.png)
 
 ## Installation instructions.
-[Windows Installation Guide](https://github.com/CSMarkBenchmark/CSMark/blob/master/docs/RunningCSMarkOnWindows.md)
+[Windows Installation Guide](/docs/RunningCSMarkOnWindows.md)
 
-[Linux Installation Guide](https://github.com/CSMarkBenchmark/CSMark/blob/master/docs/RunningCSMarkOnLinux.md)
+[Linux Installation Guide](/docs/RunningCSMarkOnLinux.md)
 
-[Mac Installation Guide](https://github.com/CSMarkBenchmark/CSMark/blob/master/docs/RunningCSMarkOnMac.md)
+[Mac Installation Guide](/docs/RunningCSMarkOnMac.md)
 
 ## Contributing
-For details on Contributing or Building the Source Code check out the [Contribution Guide](https://github.com/CSMarkBenchmark/CSMark/blob/master/CONTRIBUTING.md) .
+For details on Contributing or Building the Source Code check out the [Contribution Guide](/CONTRIBUTING.md) .
 
 ## What makes up CSMark
 The CSMark Project is made up of 2 primary repositories.
 
-[CSMarkLib](https://www.github.com/CSMarkBenchmark/CSMarkLib/) is one of the main ones and is used to keep the development of the benchmarks seperated from the implementation of them for a specific platform. E.g. CSMarkLib can be updated independantly of the CSMark App.
+[CSMarkLib](https://www.gitlab.com/CSMarkBenchmark/CSMarkLib/) is one of the main ones and is used to keep the development of the benchmarks seperated from the implementation of them for a specific platform. E.g. CSMarkLib can be updated independantly of the CSMark App.
 
 The CSMark repository is the other main repo for this project and is used to help develop CSMark and ties everything together.
 
@@ -46,12 +46,12 @@ __List Of Supported Platforms__
 * openSUSE 42.3 or newer
 * LinuxMint 18 or newer
 
-[See OS Support Document for more details](https://github.com/CSMarkBenchmark/CSMark/blob/master/docs/OS_Support.md)
+[See OS Support Document for more details](/docs/OS_Support.md)
 
 ## Installation Guides
-* [Running CSMark On Windows](https://github.com/CSMarkBenchmark/CSMark/blob/master/docs/RunningCSMarkOnWindows.md)
-* [Running CSMark On Linux](https://github.com/CSMarkBenchmark/CSMark/blob/master/docs/RunningCSMarkOnLinux.md)
-* [Running CSMark On Mac](https://github.com/CSMarkBenchmark/CSMark/blob/master/docs/RunningCSMarkOnMac.md)
+* [Running CSMark On Windows](/docs/RunningCSMarkOnWindows.md)
+* [Running CSMark On Linux](/docs/RunningCSMarkOnLinux.md)
+* [Running CSMark On Mac](/docs/RunningCSMarkOnMac.md)
 
 ## Notes
 * Results from CSMark versions which are of a different major or minor version, in the format of [Major].[Minor].[Build].[Revision] , than another version should not be compared unless explicitly stated otherwise.  
@@ -62,7 +62,7 @@ __Question:__ Why is CSMark a CLI program?
 __Answer:__ To allow it to run on Windows, Mac and Linux. .NET Core currently doesn't contain a cross-platform GUI component however if one does come in the future, an attempt to migrate to a GUI based program may be made.
 
 __Question:__ Where can I hang out with the CSMark community?
-__Answer:__ There's the [CSMark Forum](https://forum.csmarkbenchmark.com).
+__Answer:__ There's the [CSMark Discord](https://discord.gg/M3DMgcY).
 
 __Question:__ Can I (or an organization I work for) review CSMark?
 __Answer:__ Of course! I'd like to get in contact with you prior to you or your company publishing your review. You can email or Discord Direct Message a maintainer. I will try to respond and if I'm busy, another maintainer or contributor could respond.
@@ -71,4 +71,4 @@ __Question:__ Can I make videos or content around CSMark?
 __Answer:__ Of course! Anybody can make videos and/or content around CSMark. I don't sponsor videos but I will be happy to answer questions for you if you send me an email or Discord DM to me.
 
 __Question:__ Is the version of CSMark I'm using supported?
-__Answer:__ You can check the status of CSMark support at the [CSMark Support Documentation](https://github.com/CSMarkBenchmark/CSMark/blob/master/Support.md).
+__Answer:__ You can check the status of CSMark support at the [CSMark Support Documentation](/Support.md).

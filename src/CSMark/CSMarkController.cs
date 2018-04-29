@@ -154,17 +154,10 @@ namespace CSMark{
                 b.SetAutoMaxIterations();
                 b.StartBenchmarkTests();
 
-       //     Result r = b.SaveResult(true, true);
+            HashMap<string, Benchmark> hash = b.ReturnBenchmarkObjects();
+
+            Result r = new ResultSaver().SaveResult(true, hash);
             b.PrintResultsToConsole(true, true, r);
-
-            return r;
-        }
-        public static Result benchmarkSingle(BenchmarkController b){
-            b.SetAutoMaxIterations();
-            b.StartSingleBenchmarkTests();
-
-     //       Result r = b.SaveResult(true, false);
-            b.PrintResultsToConsole(true, false, r);
 
             return r;
         }
