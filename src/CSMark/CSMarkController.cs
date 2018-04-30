@@ -144,19 +144,15 @@ namespace CSMark{
             Information.ConsoleWriteLineUsingOSColor("AluminiumTech");
             Information.ConsoleWriteLineUsingOSColor("------------------------------------------------------------");
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("Community Contributions: ");
-            Information.ConsoleWriteLineUsingOSColor("RaidMax (https://github.com/RaidMax)");
-            Information.ConsoleWriteLineUsingOSColor("------------------------------------------------------------");
             Console.WriteLine("               ");
         }
         
         public static Result benchmark(BenchmarkController b){
-                b.SetAutoMaxIterations();
                 b.StartBenchmarkTests();
-
+                  
             HashMap<string, Benchmark> hash = b.ReturnBenchmarkObjects();
-
             Result r = new ResultSaver().SaveResult(true, hash);
+            b.VerifyBenchmarkIntegrity(r, true);
             b.PrintResultsToConsole(true, true, r);
 
             return r;

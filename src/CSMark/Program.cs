@@ -15,13 +15,13 @@ namespace CSMark {
     class Program {
 
         static void Main(string[] args){
-            string stable_branch_URL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/stable.xml";
-            string dev_branch_URL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/dev.xml";
+            string stable_branch_URL = "https://gitlab.com/CSMarkBenchmark/CSMarkDesktop/raw/master/channels/stable.xml";
+            string dev_branch_URL = "https://gitlab.com/CSMarkBenchmark/CSMarkDesktop/raw/master/channels/dev.xml";
             bool isStable = true;
 
             Platform platform = new Platform();
             string CSMarkVersion = platform.ReturnVersionString() + "_";
-            BenchmarkController bench = new BenchmarkController();
+            BenchmarkController bench;
             StressTestController stress = new StressTestController();
 
             //Show license information
@@ -76,7 +76,8 @@ namespace CSMark {
             string installedVersion = auto.getInstalledVersionString();
             string latestVersion = auto.getLatestVersionString();
 
-            if (!installedVersion.Equals(latestVersion))
+            //Protect against when we have no internet access.
+            if (!installedVersion.Equals(latestVersion) && latestVersion != "0.0.0.0")
             {
                 Console.WriteLine("A new version of CSMarkDesktop is available.");
                 Console.WriteLine("                                            ");
@@ -86,14 +87,11 @@ namespace CSMark {
                 Console.WriteLine("Changelog URL: " + changelogURL);
                 Console.WriteLine("Download URL: " + downloadURL);
             }
-            else
-            {
+            else{
                 Console.WriteLine("Great news! CSMark is up to date.");
             }
 
             Console.WriteLine("                                                             ");
-
-
             CSMarkController cc = new CSMarkController();
 
             //Setup Rollbar Error Detection.
@@ -131,7 +129,7 @@ namespace CSMark {
      //       string timeNotice = "Estimated Time Required: ";
             string stressThread = "";
             bool singleThreadedStress = false;
-            string privacy = "By using CSMarkDesktop, you agree to our Privacy Policy located at https://github.com/CSMarkBenchmark/CSMarkDesktop/blob/master/PrivacyPolicy.md";
+            string privacy = "By using CSMarkDesktop, you agree to our Privacy Policy located at https://gitlab.com/CSMarkBenchmark/CSMarkDesktop/blob/master/PrivacyPolicy.md";
 
             string exitConfirmation = "";
             string newCommand = "";
@@ -153,7 +151,7 @@ namespace CSMark {
                 Information.ConsoleWriteUsingOSColor("To run the stress test utility, please enter ");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("2");
-                Information.ConsoleWriteLineUsingOSColor("Please give feedback, or report bugs at our GitHub Issues page at https://www.github.com/csmarkbenchmark/csmarkdesktop/issues .");
+                Information.ConsoleWriteLineUsingOSColor("Please give feedback, or report bugs at our GitLab Issues page at https://www.gitlab.com/csmarkbenchmark/csmarkdesktop/issues .");
                 Information.ConsoleWriteLineUsingOSColor("To find out what processes may be harming your CSMark score, please enter the 'process' command.");
                 Console.ForegroundColor = ConsoleColor.Gray;
 
@@ -208,11 +206,11 @@ namespace CSMark {
                 }
 
                 else if (newCommand.Contains(calcCommand)){
+                    bench = new BenchmarkController();
                     Information.ConsoleWriteLineUsingOSColor("Please enter the amount of calculations you'd like to be performed in millions:");
                     amount = Console.ReadLine();
 
-                    try
-                    {
+                    try{
                         bench.SetMaxIterations(double.Parse(amount) * 1000 * 1000);
                     }
                     catch (Exception ex)
@@ -232,15 +230,17 @@ namespace CSMark {
 
                     if (!newCommand.Contains(calcCommand))
                     {
-                        bench.SetAutoMaxIterations();
+                    //do nothing
                     }
 
                     if (newCommand.Contains(benchCommand))
                     {
                         //Information.consoleWriteLineUsingOSColor(timeNotice + " " + bench.getEstimateTimeToFinish(true, true) + ".");
 
-                       Result x = CSMarkController.benchmark(new BenchmarkController());
-                        CSMarkController.verify(new BenchmarkController(), x);
+                        BenchmarkController b1 = new BenchmarkController();
+
+                        Result x = CSMarkController.benchmark(b1);
+                        CSMarkController.verify(b1, x);
                         CSMarkController.Save(x, responseYorN, platform.ReturnVersionString());
                     }
                 }
