@@ -42,8 +42,8 @@ This document outlines OS versions supported in different CSMark versions.
 |---|---|---|---|----|
 | Windows 10 Build 10240 | 0.2.0 | 0.13.4 | August 20th 2017 | Moved to .NET Core 2.0 |
 | Windows 10 Build 10586 | 0.2.0 | 0.13.4 | August 20th 2017 | Moved to .NET Core 2.0 |
-| Windows 10 Build 14393 | 0.2.0 | 0.28.0 | April 12th 2017 | Build 14393 EOL. |
-| Windows 7 SP1 | 0.2.0 | 0.20.0 | October 2nd 2017 | Poor compatability and many issues with running.|
+| Windows 10 Build 14393 | 0.2.0 | 0.28.0 | April 12th 2018 | Build 14393 EOL. |
+| Windows 7 SP1 | 0.2.0 | 0.20.0 | October 2nd 2017 | Poor compatability and many issues when running.|
 | Windows 8.1 | 0.11.0 | 0.21.0 | October 6th 2017 | Discontinued support ahead of end of Mainstream support from Microsoft. |
 
 ### Linux Distros
