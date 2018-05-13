@@ -14,7 +14,6 @@ using System.Runtime.InteropServices;
 
 namespace CSMark{
      class CSMarkController{
-        StressTestController s = new StressTestController();
 
         public CSMarkController(){
             //Setup Rollbar Error Detection.
@@ -28,17 +27,8 @@ namespace CSMark{
             }
         }
 
-        public static void ListCommands(){
-            Information.ConsoleWriteLineUsingOSColor("List of commands:");
-            Information.ConsoleWriteLineUsingOSColor("0");
-            Information.ConsoleWriteLineUsingOSColor("1");
-            Information.ConsoleWriteLineUsingOSColor("2");
-            Information.ConsoleWriteLineUsingOSColor("clear");
-            Information.ConsoleWriteLineUsingOSColor("about");
-            Information.ConsoleWriteLineUsingOSColor("exit");
-            Console.WriteLine("                                   ");
-        }
-        public static void ListCredits(){
+        public static void GetVersions()
+        {
             Platform platform = new Platform();
             Console.WriteLine("                                     ");
             Console.WriteLine("                                     ");
@@ -112,39 +102,6 @@ namespace CSMark{
             }
             #endregion
 
-            Console.WriteLine("                                   ");
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("CSMark Version: ");
-            Information.ConsoleWriteLineUsingOSColor(platform.ReturnVersionString());
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("Runtime ID: ");
-            Information.ConsoleWriteLineUsingOSColor(platform.ReturnDotNetCoreRID());
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("CSMarkLib Version: ");
-            Information.ConsoleWriteLineUsingOSColor(csmark_assemblyVersion);
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("AluminiumCoreLib Version: ");
-            Information.ConsoleWriteLineUsingOSColor(alcorlib_assemblyVersion);
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("Rollbar Version: ");
-            Information.ConsoleWriteLineUsingOSColor(rollbar_assemblyVersion);
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("OS ID: ");
-            Information.ConsoleWriteLineUsingOSColor(RuntimeInformation.OSDescription);
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.Write("Architecture ID: ");
-            Information.ConsoleWriteLineUsingOSColor(platform.ReturnOSArchitecture());
-            Console.WriteLine("                                   ");
-            Console.WriteLine("                                   ");
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("Credits:");
-            Information.ConsoleWriteLineUsingOSColor("------------------------------------------------------------");
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("Developer: ");
-            Information.ConsoleWriteLineUsingOSColor("AluminiumTech");
-            Information.ConsoleWriteLineUsingOSColor("------------------------------------------------------------");
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine("               ");
         }
         
         public static Result benchmark(BenchmarkController b){
@@ -156,30 +113,6 @@ namespace CSMark{
             b.PrintResultsToConsole(true, true, r);
 
             return r;
-        }
-        public void untimedStress(bool terminate){
-            if (terminate){
-                s.StopStressTest();
-            }
-            else{
-                s.StartMultiStressTest();
-            }
-        }
-        public static void timedStressMilliseconds(double milliseconds){
-            var s = new StressTestController();
-            s.StartStressTestMilliSeconds(milliseconds, false);
-        }
-        public static void timedStressSeconds(double seconds){
-            var s = new StressTestController();
-            s.startStressTestSeconds(seconds, false);
-        }
-        public static void timedStressMinutes(double minutes){
-            var s = new StressTestController();
-            s.startStressTestMinutes(minutes, false);
-        }
-        public static void timedStressHours(double hours){
-            var s = new StressTestController();
-            s.startStressTestHours(hours, false);
         }
 
         public static void verify(BenchmarkController b, Result r){
