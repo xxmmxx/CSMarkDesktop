@@ -1,7 +1,0 @@
-﻿{
-  "appname" : "CSMarkDesktop Benchmark Worker",
-  "shutdownnotice": "Don't turn off your PC.",
-  "rollbarsetupfail": "We were unable to setup Rollbar Error Reporting.",
-  "privacyagreement": "By using CSMarkDesktop, you agree to our Privacy Policy located at ",
-  "privacyURL": "https://github.com/CSMarkBenchmark/CSMarkDesktop/blob/master/PrivacyPolicy.md",
-}
