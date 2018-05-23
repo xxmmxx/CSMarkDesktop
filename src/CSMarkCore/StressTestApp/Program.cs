@@ -18,7 +18,7 @@ namespace CSMarkDesktopStressTestApp{
         }
         static void Main(string[] args){
             Platform platform = new Platform();
-            Console.Title = "CSMarkDesktop StressTest App v" + platform.ReturnVersionString() + " Community Edition";
+            Console.Title = "CSMarkCore StressTest App v" + platform.ReturnVersionString() + " Community Edition";
 
            Command command = Command.StressTest;
             DateTime startTime = DateTime.Now;
@@ -43,7 +43,7 @@ namespace CSMarkDesktopStressTestApp{
             }
 
             string CSMarkVersion = platform.ReturnVersionString() + "_";
-            BenchmarkController bench = new BenchmarkController();   
+            BenchmarkController bench = new BenchmarkController();
 
             //Show license information
             platform.ShowLicenseInConsole("LicenseMessage.txt", 3000);
@@ -64,7 +64,7 @@ namespace CSMarkDesktopStressTestApp{
             platform.WarnProcessCount(200);
 
             Console.WriteLine("                                                                        ");
-            Console.WriteLine("By using CSMarkDesktop, you agree to our Privacy Policy located at");
+            Console.WriteLine("By using CSMarkCore, you agree to our Privacy Policy located at");
             Console.WriteLine(" https://github.com/CSMarkBenchmark/CSMarkDesktop/blob/master/PrivacyPolicy.md");
             Console.WriteLine("                                                                        ");
             Console.WriteLine(shutdownNotice);
