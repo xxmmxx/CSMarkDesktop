@@ -19,12 +19,12 @@ This document outlines OS versions supported in different CSMark versions.
 | Ubuntu 14.04 LTS | 0.27.0 | January 7th 2018 | CSMark Pre-release |  |
 | Ubuntu 16.04 LTS | 0.2.0 | April 12th 2017 | CSMark Pre-release |   |
 | Ubuntu 17.10 | 0.22.0 | October 29th 2017 | CSMark Pre-release | July 2018 |
+| Ubuntu 18.04 LTS | 0.29.0 | - | CSMark Pre-release | |
 | Debian 8.7 (+) | 0.14.0 | August 20th 2017 | CSMark Pre-release |   |
 | Debian 9 | 0.14.0 | August 20th 2017 | CSMark Pre-release |   |
-| Fedora 26 | 0.14.0 | August 20th 2017 | CSMark Pre-release | June 2018 |
 | Fedora 27 | 0.28.0 | February 12th 2018 | CSMark Pre-release |   |
 | openSUSE 42.3 | 0.28.0 | February 12th 2018 | CSMark Pre-release |   |
-| Suse Linux Enterprise 12 SP2 + | 0.14.0 | August 20th 2017 | CSMark Pre-release |   |
+| SUSE Linux Enterprise 12 SP2 + | 0.14.0 | August 20th 2017 | CSMark Pre-release |   |
 | CentOS 7/RHEL 7/ Oracle Linux 7 | 0.7.0 | June 3rd 2017 | CSMark Pre-release |   |
 
 ### Mac Versions

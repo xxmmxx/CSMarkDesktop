@@ -1,14 +1,26 @@
 # CSMarkDesktop
-CSMark is a CPU benchmark using the cross-platform C# .NET Core .
-This application works on Windows, macOS and Linux Distributions.
+CSMark is a CPU benchmark written in C# .NET .
 
-CSMark CLI screenshots below.
+The CSMarkCore CLI applications works on Windows, macOS and Linux Distributions.
 
-![Image of CSMark CLI running on Windows](/assets/CSMarkOnWindows.PNG)
+The CSMarkWPF Application works on Windows only.
 
-![Image of CSMark CLI running on Mac](/assets/CSMarkOnMac.png)
+## CSMarkCore
+CSMarkCore is the original .NET Core CLI application with major improvements to usability and simplicity.
 
-![Image of CSMark running on Linux](/assets/CSMarkOnLinux.png)
+It's still a Work In Progress.
+
+This was originally called CSMarkDesktop but was renamed to help avoid confusion.
+
+The Benchmarking and Stress Testing capabilities were separated into 2 different executables sharing similar names.
+The overall name for the project is CSMarkCore.
+
+## CSMarkWPF
+CSMarkWPF is the new WPF GUI version of CSMarkDesktop which works on Windows.
+We don't support Windows 7 or Windows 8/8.1 but you're welcome to try it anyway.
+
+## Where is the CSMarkDesktop Cross-platform GUI version?
+It is still in the works. CSMarkWPF was introduced to provide a GUI experience to Windows users in a timely fashion whilst the cross-platform GUI version is underway.
 
 ## Installation instructions.
 [Windows Installation Guide](/docs/RunningCSMarkOnWindows.md)
