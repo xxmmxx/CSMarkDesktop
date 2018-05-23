@@ -12,6 +12,8 @@ namespace BenchmarkApp{
         {
             Platform platform = new Platform();
             Console.Title = "CSMarkDesktop BenchmarkApp v" + platform.ReturnVersionString() + " Community Edition";
+
+
         }
     }
 }
