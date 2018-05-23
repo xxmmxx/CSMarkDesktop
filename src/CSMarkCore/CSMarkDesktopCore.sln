@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StressTestApp", "StressTestApp\StressTestApp.csproj", "{6FB026ED-7ADD-491B-BC98-27C916439491}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchmarkApp", "BenchmarkApp\BenchmarkApp.csproj", "{9C6A5F0B-8641-4411-98FB-9CC8D1D989EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchmarkApp", "BenchmarkApp\BenchmarkApp.csproj", "{9C6A5F0B-8641-4411-98FB-9CC8D1D989EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
