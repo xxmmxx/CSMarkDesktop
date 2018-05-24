@@ -1,4 +1,8 @@
-﻿<Window x:Name="main" x:Class="CSMarkReduxWPF.MainWindow"
+﻿<!-- Copyright 2017-2018 AluminiumTech
+   This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.-->
+    <Window x:Name="main" x:Class="CSMarkReduxWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -30,7 +34,7 @@
             <ComboBoxItem Content="Unlimited" HorizontalAlignment="Left" Width="211"/>
         </ComboBox>
         <TextBlock x:Name="stressDurationLabel" HorizontalAlignment="Left" Margin="393,426,0,0" TextWrapping="Wrap" Text="Stress Test Duration" VerticalAlignment="Top" FontSize="16" Foreground="White"/>
-        <TextBlock HorizontalAlignment="Left" Margin="329,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="30" Width="419" Foreground="White" FontSize="14"><Run Text="CSMark is an open source CPU Benchmark written in C#"/><Run Text=" ."/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="53,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="953" Foreground="White" FontSize="14"><Run Text="CSMark is an open source CPU Benchmark written in C#"/><Run Text=" and is licensed under the MPL 2.0"/><Run Text=" . "/><Run Text=" You can view the license in the License.txt file in th"/><Run Text="e app "/><Run Text="folder."/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="96,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="910" Foreground="White" FontSize="14"><Run Text="Warning: Overclocking your CPU may damage it. Do so at your own risk"/><Run Text=". "/><Run Text=" For more information, visit your CPU manufacturer's website."/><LineBreak/><Run Text="Ensure "/><Run Text="that your CPU has adequate cooling before starting the Stress Test"/><Run Text=" or running a benchmark."/></TextBlock>
         <Label Content="0:00:00" HorizontalAlignment="Left" Margin="30,529,0,0" VerticalAlignment="Top" x:Name="stressTimer" Foreground="White"/>
         <Label x:Name="versionLabel" Content="v0.0.0.0" HorizontalAlignment="Left" Margin="927,529,0,0" VerticalAlignment="Top" Foreground="White" Width="79" FontSize="16"/>
