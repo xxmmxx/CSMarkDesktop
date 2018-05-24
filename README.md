@@ -42,21 +42,24 @@ The CSMark repository is the other main repo for this project and is used to hel
 ## Requirements for running the Benchmarks
 The .NET Core Runtime is included in CSMark Releases. There is no need to download the Runtime seperately unless explicitly specified.
 
-__List Of Supported Platforms__
-* Windows 10 (ARM, ARM64, X64) (10.0.15063 or newer required) or Windows Server 2016
+__List Of Supported Platforms for CSMarkCore__
+* Windows 10 (ARM, ARM64, X64) (10.0.15063 or newer) or Windows Server 2016
 * macOS 10.12 "Sierra"
 * macOS 10.13 "High Sierra"
 * Ubuntu 14.04 LTS
 * Ubuntu 16.04 LTS
-* Ubuntu 17.10
+* Ubuntu 18.04 LTS
 * Debian 8.7 or newer
 * Debian 9 or newer
 * CentOS 7 or newer
 * RedHat Linux Enterprise 7 or newer
 * SUSE Linux Enterprise 12 SP2 +
-* Fedora 26 or newer
+* Fedora 27 or newer
 * openSUSE 42.3 or newer
 * LinuxMint 18 or newer
+
+__List Of Supported Platforms for CSMarkWPF__
+* Windows 10 (X86, X64) (10.0.15063 or newer) or Windows Server 2016
 
 [See OS Support Document for more details](/docs/OS_Support.md)
 
