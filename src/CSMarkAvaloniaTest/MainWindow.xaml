@@ -1,0 +1,17 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Title="CSMarkDesktop Redux" Height="600" Width="1024" MinWidth="1024" MinHeight="600">
+  <Grid>
+    <Grid.Background>
+      <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#000000" Offset="0"/>
+        <GradientStop Color="#FFF14D0F" Offset="1"/>
+      </LinearGradientBrush>
+    </Grid.Background>
+
+    <TextBlock Margin="273,27,242,459" FontSize="48" Foreground="White" Text="CSMark Desktop Redux"/>
+
+      <TextBlock HorizontalAlignment="Left" Margin="53,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="953" Foreground="White" FontSize="14" Text="CSMark is an open source CPU Benchmark written in C# and is licensed under the MPL 2.0 ."/>
+        <TextBlock HorizontalAlignment="Left" Margin="53,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="953" Foreground="White" FontSize="14" Text="You can view the license in the License.txt file in the app folder."/>
+  </Grid>
+</Window>

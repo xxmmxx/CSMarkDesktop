@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSMarkCoreStressTestApp", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSMarkCoreBenchmarkApp", "..\CSMarkCore\BenchmarkApp\CSMarkCoreBenchmarkApp.csproj", "{F6670C36-82FD-41B4-A527-14F4DD5A980A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSMarkAvaloniaTest", "..\CSMarkAvaloniaTest\CSMarkAvaloniaTest.csproj", "{8EB7FFFE-1A4A-455C-8639-EF131EC49125}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F6670C36-82FD-41B4-A527-14F4DD5A980A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6670C36-82FD-41B4-A527-14F4DD5A980A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6670C36-82FD-41B4-A527-14F4DD5A980A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EB7FFFE-1A4A-455C-8639-EF131EC49125}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EB7FFFE-1A4A-455C-8639-EF131EC49125}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EB7FFFE-1A4A-455C-8639-EF131EC49125}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EB7FFFE-1A4A-455C-8639-EF131EC49125}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
