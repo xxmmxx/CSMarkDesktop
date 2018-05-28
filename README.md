@@ -44,13 +44,9 @@ The .NET Core Runtime is included in CSMark Releases. There is no need to downlo
 
 __List Of Supported Platforms for CSMarkCore__
 * Windows 10 (ARM, ARM64, X64) (10.0.15063 or newer) or Windows Server 2016
-* macOS 10.12 "Sierra"
-* macOS 10.13 "High Sierra"
-* Ubuntu 14.04 LTS
-* Ubuntu 16.04 LTS
-* Ubuntu 18.04 LTS
-* Debian 8.7 or newer
-* Debian 9 or newer
+* macOS 10.12 "Sierra" and macOS 10.13 "High Sierra"
+* Ubuntu 14.04 LTS, Ubuntu 16.04 LTS, Ubuntu 18.04 LTS
+* Debian 8.7 or newer (8.7+ and 9.0+)
 * CentOS 7 or newer
 * RedHat Linux Enterprise 7 or newer
 * SUSE Linux Enterprise 12 SP2 +
@@ -60,6 +56,8 @@ __List Of Supported Platforms for CSMarkCore__
 
 __List Of Supported Platforms for CSMarkWPF__
 * Windows 10 (X86, X64) (10.0.15063 or newer) or Windows Server 2016
+
+Note: Windows 7 may technically work for stress testing (not for benchmarking) but is not officially supported.
 
 [See OS Support Document for more details](/docs/OS_Support.md)
 
