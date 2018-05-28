@@ -3,7 +3,7 @@
 ## CSMark 1.0 Overall Roadmap
 
 ### Name
-CSMark 1.0 or CSMark [Model Year]
+CSMark 1.0
 
 ### Targeted Release Date/Time Frame
 2018 or 2019.
@@ -21,7 +21,7 @@ The problem arises for casual users or non-power users who may not be comfortabl
 ## CSMark 2.0 Overall Roadmap
 
 ### Name
-CSMark 2.0 or CSMark [Model Year]
+CSMark 2.0
 
 ### Targeted Release Date/Time Frame
 2019 or 2020
