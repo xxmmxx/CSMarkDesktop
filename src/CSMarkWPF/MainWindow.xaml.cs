@@ -62,7 +62,11 @@ namespace CSMarkReduxWPF{
 
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            DetectBenchmarkEligibility();           
+            DetectBenchmarkEligibility();
+
+            //Check for updates automatically on startup.
+            AutoUpdater.ShowSkipButton = false;
+            AutoUpdater.Start(betaURL);
         }
 
         private void LoadBackground() {
