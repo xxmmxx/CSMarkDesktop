@@ -20,7 +20,7 @@ namespace CSMarkDesktopStressTestApp{
             Platform platform = new Platform();
             Console.Title = "CSMarkCore StressTest App v" + platform.ReturnVersionString() + " Community Edition";
 
-           Command command = Command.StressTest;
+            Command command = Command.StressTest;
             DateTime startTime = DateTime.Now;
             DateTime stopTime = DateTime.Now;
             StressTestController stc = new StressTestController();
