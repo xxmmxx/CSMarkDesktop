@@ -5,19 +5,16 @@
   */
 using AluminiumCoreLib.Utilities;
 using CSMarkLib;
+using CSMarkLib.Results;
+using Rollbar;
 using System;
+using System.IO;
 
 namespace BenchmarkApp{
     class Program{
         enum Command{
             MultiBenchSaveResult,
-            MultiBenchSaveResultJson,
-            MultiBenchSaveResultTxt,
-            MultiBenchDoNotSaveResult,
-            SingleBenchSaveResult,
-            SingleBenchSaveResultJson,
-            SingleBenchSaveResultTxt,
-            SingleBenchDoNotSaveResult,
+            SingleBenchSaveResult
         }
         static void Main(string[] args){
             Platform platform = new Platform();
@@ -26,27 +23,86 @@ namespace BenchmarkApp{
             Command command = Command.MultiBenchSaveResult;
             DateTime startTime = DateTime.Now;
             DateTime stopTime = DateTime.Now;
-            BenchmarkController bench = new BenchmarkController();
 
             //Accept command line arguments
-            if (args.Length == 0)
-            {
+            if (args.Length == 0){
                 //If the user doesn't specify the command, just start the stress test.
                 command = Command.MultiBenchSaveResult;
             }
-            // If the user has given 1 arguments they should correspond to 1) Start Time.
-            else if (args.Length == 1)
-            {
-                command = Command.StressTest_AndStartTime;
-                startTime = Convert.ToDateTime(args[0]);
+            // If the user has given 1 arguments it should correspond to 1) Single or Multi
+            else if (args.Length == 1 && args[0].ToString().Contains("single")){
+                command = Command.SingleBenchSaveResult;         
             }
-            //If the user has given 2 arguments they should correspond to 1) Start Time and 2) End Time.
-            else if (args.Length == 2)
-            {
-                command = Command.StressTest_AndStartAndEndTime;
-                startTime = Convert.ToDateTime(args[0]);
-                stopTime = Convert.ToDateTime(args[1]);
+            // If the user has given 1 arguments it should correspond to 1) Single or Multi
+            else if (args.Length == 1 && args[0].ToString().Contains("multi")){
+                command = Command.MultiBenchSaveResult;
             }
+            //If the user has given 2 arguments they should correspond to 1) Single or Multi and 2) Start Time.
+            else if (args.Length == 2){
+
+                if (args[0].ToString().Contains("multi")){
+                    command = Command.MultiBenchSaveResult;
+                }
+                else{
+                    command = Command.SingleBenchSaveResult;
+                }
+
+                
+                startTime = Convert.ToDateTime(args[1]);
+            }
+
+
+            //Start the Benchmark Application.
+            string CSMarkVersion = platform.ReturnVersionString() + "_";
+            BenchmarkController bench = new BenchmarkController();
+            //Show license information
+            platform.ShowLicenseInConsole("LicenseMessage.txt", 3000);
+
+            //Setup Rollbar Error Detection.
+            //You will need to create your own file in this directory called "Rollbar.txt" with a Rollbar API key to use Rollbar error reporting.
+            try
+            {
+                string postServerItemAccessToken = File.ReadAllText("Rollbar.txt");
+                RollbarLocator.RollbarInstance.Configure(new RollbarConfig(postServerItemAccessToken) { Environment = "production" });
+            }
+            catch
+            {
+                Console.WriteLine("We were unable to setup Rollbar Error Reporting.");
+            }
+
+            string shutdownNotice = "Don't turn off your PC.";
+            //Warn the user if the process count is quite high.
+            platform.WarnProcessCount(200);
+
+            Console.WriteLine("                                                                        ");
+            Console.WriteLine("By using CSMarkCore, you agree to our Privacy Policy located at");
+            Console.WriteLine(" https://github.com/CSMarkBenchmark/CSMarkDesktop/blob/master/PrivacyPolicy.md");
+            Console.WriteLine("                                                                        ");
+            Console.WriteLine(shutdownNotice);
+            Console.WriteLine("                                                                        ");
+
+            Console.WriteLine("Detecting CLI Arguments...");
+            Console.WriteLine("Starting Benchmarks...");
+
+            if(command == Command.SingleBenchSaveResult){
+            //    bench.DoWarmup(true);
+                bench.StartSingleBenchmarkTests();
+                var y = bench.ReturnBenchmarkObjects();
+                Result x = new ResultSaver().SaveResult(false, y);
+                bench.PrintResultsToConsole(true, false, x);
+                new ResultSaver().SaveToTextFile(CSMarkVersion, x);
+            }
+            else if (command == Command.MultiBenchSaveResult){
+             //   bench.DoWarmup(true);
+                bench.StartBenchmarkTests();
+                var y = bench.ReturnBenchmarkObjects();
+                Result x = new ResultSaver().SaveResult(true, y);
+                bench.PrintResultsToConsole(true, true, x);
+                new ResultSaver().SaveToTextFile(CSMarkVersion, x);
+            }
+
+            Console.WriteLine("To exit this application, press ENTER.");
+            Console.ReadLine();
         }
     }
 }

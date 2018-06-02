@@ -43,8 +43,6 @@ namespace CSMarkDesktopStressTestApp{
             }
 
             string CSMarkVersion = platform.ReturnVersionString() + "_";
-            BenchmarkController bench = new BenchmarkController();
-
             //Show license information
             platform.ShowLicenseInConsole("LicenseMessage.txt", 3000);
 
@@ -59,7 +57,6 @@ namespace CSMarkDesktopStressTestApp{
             }
 
             string shutdownNotice = "Don't turn off your PC.";
-
             //Warn the user if the process count is quite high.
             platform.WarnProcessCount(200);
 
