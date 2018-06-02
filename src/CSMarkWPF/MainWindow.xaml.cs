@@ -15,13 +15,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 using AluminiumCoreLib.Utilities;
 using AutoUpdaterDotNET;
 using CSMarkLib;
 using CSMarkReduxWPF.Properties;
 using System.Diagnostics;
+using System.Globalization;
+using System.Threading;
+using System.IO;
 
 namespace CSMarkReduxWPF{
 
@@ -42,17 +44,33 @@ namespace CSMarkReduxWPF{
         LinearGradientBrush orangeGradient = new LinearGradientBrush(Color.FromRgb(0, 0, 0), Color.FromRgb(249, 67, 12),45.0);
 
         StressTestController stc;
-
         DispatcherTimer t;
         DateTime start;
 
         private bool runningStress = false;
 
-        protected string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
-        protected string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
+         protected string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
+         protected string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
 
         public MainWindow(){
             InitializeComponent();
+
+            //Check for updates automatically on startup.
+            //AutoUpdater.Start(betaURL);
+
+            Assembly assembly = Assembly.GetEntryAssembly();
+            Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
+            AutoUpdater.LetUserSelectRemindLater = false;
+            AutoUpdater.ReportErrors = true;
+            AutoUpdater.ShowSkipButton = false;
+            AutoUpdater.ShowRemindLaterButton = false;
+            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(2) };
+            timer.Tick += delegate
+            {
+                AutoUpdater.Start(betaURL);
+            };
+            timer.Start();
+
             LoadBackground();
             stc = new StressTestController();
             ApplyStressBtnColors();         
@@ -62,11 +80,7 @@ namespace CSMarkReduxWPF{
 
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            DetectBenchmarkEligibility();
-
-            //Check for updates automatically on startup.
-            AutoUpdater.ShowSkipButton = false;
-            AutoUpdater.Start(betaURL);
+            DetectBenchmarkEligibility();           
         }
 
         private void LoadBackground() {
@@ -133,18 +147,43 @@ namespace CSMarkReduxWPF{
             }
         }
 
+        private bool benchmarkCLICheck(){
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string coreBenchmarkDirectory = Path.DirectorySeparatorChar + "Win10-x64" + Path.DirectorySeparatorChar;
+            currentDirectory = Path.Combine(currentDirectory, coreBenchmarkDirectory);
+
+            return Directory.Exists(currentDirectory);
+        }
+        private void executeCLIApp(){
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string coreBenchmarkDirectory = Path.DirectorySeparatorChar + "Win10-x64" + Path.DirectorySeparatorChar + "publish" + Path.DirectorySeparatorChar + "CSMarkCoreBenchmarkApp";
+            try{
+                currentDirectory = Path.Combine(currentDirectory, coreBenchmarkDirectory);
+
+                Platform platform = new Platform();
+                platform.RunProcess(currentDirectory);
+            }
+            catch(Exception ex){
+                MessageBox.Show(ex.ToString(), "Exception Occured");
+            }
+
+            MessageBox.Show("After the benchmark is completed, the result text file will be saved in the CSMarkCoreBenchmarkApp folder.", "Result Saving Reminder");
+        }
+
         private void t_Tick(object sender, EventArgs e){
             stressTimer.Content = Convert.ToString(DateTime.Now - start);
         }
         private void benchBtn_Click(object sender, RoutedEventArgs e){
-            
+            if (benchmarkCLICheck()){
+                executeCLIApp();
+            }
+            MessageBox.Show("We were unable to start the CSMarkCoreBenchmarkApp. Please ensure you have a valid CSMarkCoreBenchmarkApp folder in the current app directory before trying again.", "Failed to Start CSMarkCoreBenchmarkApp");
         }
         private void stressBtn_Click(object sender, RoutedEventArgs e){            
             HandleStressTest();
             ApplyStressBtnColors();
         }
         private void checkBetaUpdateBtn_Click(object sender, RoutedEventArgs e){
-                AutoUpdater.ShowSkipButton = false;
                 AutoUpdater.Start(betaURL);
         }
     }
