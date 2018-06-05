@@ -100,7 +100,7 @@ namespace CSMarkReduxWPF{
                 gridColour.Background = lightBlueGray;
             }
             else{
-                gridColour.Background = orangeGradient;
+                gridColour.Background = dark;
             }
         }
 
@@ -148,18 +148,12 @@ namespace CSMarkReduxWPF{
         }
 
         private bool benchmarkCLICheck(){
-            string currentDirectory = Directory.GetCurrentDirectory();
-            string coreBenchmarkDirectory = Path.DirectorySeparatorChar + "Win10-x64" + Path.DirectorySeparatorChar;
-            currentDirectory = Path.Combine(currentDirectory, coreBenchmarkDirectory);
-
-            return Directory.Exists(currentDirectory);
+            string coreBenchmarkDirectory = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "Win10-x64" + Path.DirectorySeparatorChar;
+            return Directory.Exists(coreBenchmarkDirectory);
         }
         private void executeCLIApp(){
-            string currentDirectory = Directory.GetCurrentDirectory();
-            string coreBenchmarkDirectory = Path.DirectorySeparatorChar + "Win10-x64" + Path.DirectorySeparatorChar + "publish" + Path.DirectorySeparatorChar + "CSMarkCoreBenchmarkApp";
+            string currentDirectory = Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "Win10-x64" + Path.DirectorySeparatorChar + "publish" + Path.DirectorySeparatorChar + "CSMarkCoreBenchmarkApp";
             try{
-                currentDirectory = Path.Combine(currentDirectory, coreBenchmarkDirectory);
-
                 Platform platform = new Platform();
                 platform.RunProcess(currentDirectory);
             }
@@ -177,7 +171,10 @@ namespace CSMarkReduxWPF{
             if (benchmarkCLICheck()){
                 executeCLIApp();
             }
-            MessageBox.Show("We were unable to start the CSMarkCoreBenchmarkApp. Please ensure you have a valid CSMarkCoreBenchmarkApp folder in the current app directory before trying again.", "Failed to Start CSMarkCoreBenchmarkApp");
+            else
+            {
+                MessageBox.Show("We were unable to start the CSMarkCoreBenchmarkApp. Please ensure you have a valid CSMarkCoreBenchmarkApp folder in the current app directory before trying again.", "Failed to Start CSMarkCoreBenchmarkApp");
+            }
         }
         private void stressBtn_Click(object sender, RoutedEventArgs e){            
             HandleStressTest();
