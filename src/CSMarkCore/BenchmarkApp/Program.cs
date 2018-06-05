@@ -10,7 +10,7 @@ using Rollbar;
 using System;
 using System.IO;
 
-namespace BenchmarkApp{
+namespace CSMarkCoreBenchmarkApp{
     class Program{
         enum Command{
             MultiBenchSaveResult,
@@ -72,7 +72,7 @@ namespace BenchmarkApp{
 
             string shutdownNotice = "Don't turn off your PC.";
             //Warn the user if the process count is quite high.
-            platform.WarnProcessCount(200);
+            platform.WarnProcessCount(200, "Warning: High Process Count Detected. This may affect your benchmarking scores.");
 
             Console.WriteLine("                                                                        ");
             Console.WriteLine("By using CSMarkCore, you agree to our Privacy Policy located at");

@@ -9,7 +9,7 @@ using Rollbar;
 using System;
 using System.IO;
 
-namespace CSMarkDesktopStressTestApp{
+namespace CSMarkCoreStressTestApp{
     class Program{
         enum Command{
             StressTest,
@@ -58,7 +58,7 @@ namespace CSMarkDesktopStressTestApp{
 
             string shutdownNotice = "Don't turn off your PC.";
             //Warn the user if the process count is quite high.
-            platform.WarnProcessCount(200);
+            platform.WarnProcessCount(200, "Warning: High Process Count Detected.");
 
             Console.WriteLine("                                                                        ");
             Console.WriteLine("By using CSMarkCore, you agree to our Privacy Policy located at");
@@ -82,7 +82,7 @@ namespace CSMarkDesktopStressTestApp{
                 //Start the stress test at the start time.
                 stc.StartMultiStressTest(startTime);
                 //Stop the stress test at the stop time.
-                stc.stopStressTest(stopTime);
+                stc.StopStressTest(stopTime);
             }
 
             Console.WriteLine("To exit this application, press ENTER.");

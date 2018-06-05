@@ -88,6 +88,9 @@
     <Reference Include="CSMarkLib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CSMarkLib.2.0.0-preview3\lib\netstandard2.0\CSMarkLib.dll</HintPath>
     </Reference>
+    <Reference Include="CSMarkLib.UpdatingServices, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CSMarkLib.UpdatingServices.1.1.0-beta\lib\netstandard2.0\CSMarkLib.UpdatingServices.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -175,6 +178,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="AluminiumCoreLib_License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LicenseMessage.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
