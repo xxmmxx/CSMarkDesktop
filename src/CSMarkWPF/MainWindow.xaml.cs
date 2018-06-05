@@ -41,6 +41,8 @@ namespace CSMarkReduxWPF{
         SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
         SolidColorBrush lightBlueGray = new SolidColorBrush(Color.FromRgb(144, 158, 175));
 
+        CSMarkLib.UpdatingServices.AutoUpdater ac = new CSMarkLib.UpdatingServices.AutoUpdater();
+
         LinearGradientBrush orangeGradient = new LinearGradientBrush(Color.FromRgb(0, 0, 0), Color.FromRgb(249, 67, 12),45.0);
 
         StressTestController stc;
@@ -55,28 +57,16 @@ namespace CSMarkReduxWPF{
         public MainWindow(){
             InitializeComponent();
 
-            //Check for updates automatically on startup.
-            //AutoUpdater.Start(betaURL);
-
             Assembly assembly = Assembly.GetEntryAssembly();
             Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
             AutoUpdater.LetUserSelectRemindLater = false;
             AutoUpdater.ReportErrors = true;
             AutoUpdater.ShowSkipButton = false;
-            AutoUpdater.ShowRemindLaterButton = false;
-            DispatcherTimer timer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(2) };
-            timer.Tick += delegate
-            {
-                AutoUpdater.Start(betaURL);
-            };
-            timer.Start();
+            AutoUpdater.ShowRemindLaterButton = false;   
 
             LoadBackground();
             stc = new StressTestController();
             ApplyStressBtnColors();         
-
-            //Disable Benchmark Button since it currently does nothing.
-            benchBtn.IsEnabled = false;
 
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -102,6 +92,23 @@ namespace CSMarkReduxWPF{
             else{
                 gridColour.Background = dark;
             }
+        }
+
+        private bool checkForUpdates(){
+            Stopwatch sw = new Stopwatch();
+            ac.checkForUpdate(betaURL);            
+            sw.Start();
+            while(sw.ElapsedMilliseconds < 3000 && ac.isCheckForUpdateCompleted()){
+            }
+
+            var installed = ac.getInstalledVersion();
+            var latest = ac.getLatestVersion();
+
+            return !Equals(installed, latest);
+        }
+
+        private void downloadUpdates(){
+                AutoUpdater.Start(betaURL);
         }
 
         private void DetectBenchmarkEligibility(){
@@ -181,7 +188,12 @@ namespace CSMarkReduxWPF{
             ApplyStressBtnColors();
         }
         private void checkBetaUpdateBtn_Click(object sender, RoutedEventArgs e){
-                AutoUpdater.Start(betaURL);
+           var check = checkForUpdates();
+
+            if (check){
+                downloadUpdates();
+            }
+            // If updates aren't available, don't bother trying to use AutoUpdater.
         }
     }
 }
