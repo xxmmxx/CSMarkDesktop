@@ -28,7 +28,7 @@ using System.IO;
 namespace CSMarkReduxWPF{
 
     /// </summ    /// <summary>
-    /// Interaction logic for MainWindow.xamlary>
+    /// Interaction logic for MainWindow.xaml>
     public partial class MainWindow : Window{
         SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
         SolidColorBrush myRedBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
@@ -46,13 +46,13 @@ namespace CSMarkReduxWPF{
         LinearGradientBrush orangeGradient = new LinearGradientBrush(Color.FromRgb(0, 0, 0), Color.FromRgb(249, 67, 12),45.0);
 
         StressTestController stc;
-        DispatcherTimer t;
         DateTime start;
+        DispatcherTimer t;
 
         private bool runningStress = false;
 
-         protected string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
-         protected string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
+        protected string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
+        protected string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
 
         public MainWindow(){
             InitializeComponent();
