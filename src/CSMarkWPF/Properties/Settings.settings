@@ -3,7 +3,22 @@
   <Profiles />
   <Settings>
     <Setting Name="background" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">dark</Value>
+    </Setting>
+    <Setting Name="exitButtonShouldQuitApp" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="patreonURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://patreon.com/CSMark</Value>
+    </Setting>
+    <Setting Name="githubURL" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://github.com/CSMarkBenchmark/CSMarkDesktop/</Value>
+    </Setting>
+    <Setting Name="UseBetaUpdateChannel" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="CheckForUpdatesOnStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

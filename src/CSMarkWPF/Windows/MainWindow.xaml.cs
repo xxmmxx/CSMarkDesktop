@@ -19,40 +19,38 @@ using System.Windows.Threading;
 using AluminiumCoreLib.Utilities;
 using AutoUpdaterDotNET;
 using CSMarkLib;
-using CSMarkReduxWPF.Properties;
 using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
 using System.IO;
 
-namespace CSMarkReduxWPF{
+namespace CSMarkDesktop{
 
     /// </summ    /// <summary>
     /// Interaction logic for MainWindow.xaml>
     public partial class MainWindow : Window{
-        SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
-        SolidColorBrush myRedBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
-        SolidColorBrush myPurpleBrush = new SolidColorBrush(Color.FromRgb(179, 66, 244));
-        SolidColorBrush myPinkBrush = new SolidColorBrush(Color.FromRgb(244, 66, 241));
+        private SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
+        private SolidColorBrush myRedBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
+        private SolidColorBrush myPurpleBrush = new SolidColorBrush(Color.FromRgb(179, 66, 244));
+        private SolidColorBrush myPinkBrush = new SolidColorBrush(Color.FromRgb(244, 66, 241));
 
-        SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
-        SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
-        SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
-        SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
-        SolidColorBrush lightBlueGray = new SolidColorBrush(Color.FromRgb(144, 158, 175));
+        private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
+        private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
+        private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
+        private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
+        private SolidColorBrush lightBlueGray = new SolidColorBrush(Color.FromRgb(144, 158, 175));
 
-        CSMarkLib.UpdatingServices.AutoUpdater ac = new CSMarkLib.UpdatingServices.AutoUpdater();
+        private CSMarkLib.UpdatingServices.AutoUpdater ac = new CSMarkLib.UpdatingServices.AutoUpdater();
 
-        LinearGradientBrush orangeGradient = new LinearGradientBrush(Color.FromRgb(0, 0, 0), Color.FromRgb(249, 67, 12),45.0);
-        Platform platform;
-        StressTestController stc;
-        DateTime start;
-        DispatcherTimer t;
+        private Platform platform;
+        private StressTestController stc;
+        private DateTime start;
+        private DispatcherTimer t;
 
         private bool runningStress = false;
 
-        protected string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
-        protected string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
+        private string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
+        private string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
 
         public MainWindow(){
             InitializeComponent();
@@ -75,19 +73,19 @@ namespace CSMarkReduxWPF{
         }
 
         private void LoadBackground() {
-            if (Settings.Default.background.Equals("reallydark")) {
+            if (Properties.Settings.Default.background.Equals("reallydark")) {
                 gridColour.Background = reallyDark;
             }
-            else if (Settings.Default.background.Equals("dark")) {
+            else if (Properties.Settings.Default.background.Equals("dark")) {
                 gridColour.Background = dark;
             }
-            else if (Settings.Default.background.Equals("bluedark")) {
+            else if (CSMarkDesktop.Properties.Settings.Default.background.Equals("bluedark")) {
                 gridColour.Background = blueDark;
             }
-            else if (Settings.Default.background.Equals("bluegray")) {
+            else if (Properties.Settings.Default.background.Equals("bluegray")) {
                 gridColour.Background = blueGray;
             }
-            else if (Settings.Default.background.Equals("lightbluegray")){
+            else if (Properties.Settings.Default.background.Equals("lightbluegray")){
                 gridColour.Background = lightBlueGray;
             }
             else{
@@ -175,12 +173,12 @@ namespace CSMarkReduxWPF{
         private void t_Tick(object sender, EventArgs e){
             stressTimer.Content = Convert.ToString(DateTime.Now - start);
         }
+        #region Handle Button Clicks
         private void benchBtn_Click(object sender, RoutedEventArgs e){
             if (benchmarkCLICheck()){
                 executeCLIApp();
             }
-            else
-            {
+            else{
                 MessageBox.Show("We were unable to start the CSMarkCoreBenchmarkApp. Please ensure you have a valid CSMarkCoreBenchmarkApp folder in the current app directory before trying again.", "Failed to Start CSMarkCoreBenchmarkApp");
             }
         }
@@ -198,6 +196,35 @@ namespace CSMarkReduxWPF{
         }
         private void patronLeftButtonDown(object sender, MouseButtonEventArgs e){
             platform.OpenURLInBrowser("https://www.patreon.com/csmark");
+        }
+        private void supportInfoBtn_Click(object sender, RoutedEventArgs e){
+
+        }
+        private void menuExitBtn_Click(object sender, RoutedEventArgs e){
+                //Close the app if the menu button 
+                Application.Current.Shutdown();
+        }
+        private void menuSettingsBtn_Click(object sender, RoutedEventArgs e){
+
+        }
+        private void menuAboutBtn_Click(object sender, RoutedEventArgs e){
+        //    Window window = new About();
+         //   window.Show();
+        }
+        #endregion
+
+        private void main_Closing(object sender, System.ComponentModel.CancelEventArgs e){
+            //By default, exit the app if the user hits the X button.
+            if (Properties.Settings.Default.exitButtonShouldQuitApp)
+            {
+                //Close the app if the menu button 
+                Application.Current.Shutdown();
+            }
+            //Else minimize the app.
+            else
+            {
+                Application.Current.MainWindow.WindowState = WindowState.Minimized;
+            }
         }
     }
 }
