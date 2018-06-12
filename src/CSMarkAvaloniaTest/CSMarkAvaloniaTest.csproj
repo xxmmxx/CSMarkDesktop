@@ -2,6 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFrameworks>netcoreapp2.0;net461</TargetFrameworks>
+    <ApplicationIcon>CSMark NextGen Logo 256x.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="**\*.xaml.cs">

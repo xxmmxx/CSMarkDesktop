@@ -1,9 +1,12 @@
+<!-- Copyright 2017-2018 AluminiumTech
+   This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.-->
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
          Title="CSMarkDesktop Redux" Height="600" Width="1024" MinWidth="1024" MinHeight="600">
   <Grid Name="grid">
     <Grid.Background>
-      <SolidColorBrush></SolidColorBrush>
     </Grid.Background>
     <TextBlock Margin="273,27,242,459" FontSize="48" Foreground="White" Text="CSMark Desktop Redux"/>
 

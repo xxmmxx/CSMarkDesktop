@@ -44,7 +44,7 @@ namespace CSMarkReduxWPF{
         CSMarkLib.UpdatingServices.AutoUpdater ac = new CSMarkLib.UpdatingServices.AutoUpdater();
 
         LinearGradientBrush orangeGradient = new LinearGradientBrush(Color.FromRgb(0, 0, 0), Color.FromRgb(249, 67, 12),45.0);
-
+        Platform platform;
         StressTestController stc;
         DateTime start;
         DispatcherTimer t;
@@ -66,7 +66,8 @@ namespace CSMarkReduxWPF{
 
             LoadBackground();
             stc = new StressTestController();
-            ApplyStressBtnColors();         
+            ApplyStressBtnColors();
+            platform = new Platform();
 
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -194,6 +195,9 @@ namespace CSMarkReduxWPF{
                 downloadUpdates();
             }
             // If updates aren't available, don't bother trying to use AutoUpdater.
+        }
+        private void patronLeftButtonDown(object sender, MouseButtonEventArgs e){
+            platform.OpenURLInBrowser("https://www.patreon.com/csmark");
         }
     }
 }

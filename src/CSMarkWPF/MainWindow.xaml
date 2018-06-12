@@ -11,16 +11,18 @@
         mc:Ignorable="d"
         Title="CSMarkDesktop Redux" Height="600" Width="1024" WindowStartupLocation="CenterScreen" MinWidth="1024" MinHeight="600" ResizeMode="CanMinimize">
     <Grid x:Name="gridColour">
-        <TextBlock Margin="273,27,242,459" FontSize="48" Foreground="White"><Run Text="CSMark"/><Run Text="Desktop Red"/><Run Text="u"/><Run Text="x"/></TextBlock>
+        <TextBlock Margin="273,27,242,459" FontSize="48" Foreground="White"><Run Text="CSMark"/><Run Text="Desktop Redux"/></TextBlock>
 
         <Button Margin="429,222,400,304" FontSize="16" x:Name="benchBtn" Click="benchBtn_Click">Start Benchmark</Button>
         <Button Margin="429,295,400,231" FontSize="16" x:Name="stressBtn" Click="stressBtn_Click" Background="White">Start Stress Test</Button>
-        <TextBlock HorizontalAlignment="Left" Margin="363,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Width="367" Foreground="White" Height="48"><Run Text="Pre-release Alpha . Copyright"/><Run Text=" (c)"/><Run Text=" AluminiumTech"/><Run Text=" 2018"/><LineBreak/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="363,491,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Width="367" Foreground="White" Height="48"><Run Text="Pre-release Alpha . Copyright"/><Run Text=" (c)"/><Run Text=" AluminiumTech"/><Run Text=" 2018"/><LineBreak/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="53,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="953" Foreground="White" FontSize="14"><Run Text="CSMark is an open source CPU Benchmark written in C#"/><Run Text=" and is licensed under the MPL 2.0"/><Run Text=" . "/><Run Text=" You can view the license in the License.txt file in th"/><Run Text="e app "/><Run Text="folder."/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="96,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="910" Foreground="White" FontSize="14"><Run Text="Warning: Overclocking your CPU may damage it. Do so at your own risk"/><Run Text=". "/><Run Text=" For more information, visit your CPU manufacturer's website."/><LineBreak/><Run Text="Ensure "/><Run Text="that your CPU has adequate cooling before starting the Stress Test"/><Run Text=" or running a benchmark."/></TextBlock>
-        <Label Content="0:00:00" HorizontalAlignment="Left" Margin="30,529,0,0" VerticalAlignment="Top" x:Name="stressTimer" Foreground="White"/>
+        <Label Content="0:00:00" HorizontalAlignment="Left" FontSize="14"  Margin="491,388,0,0" VerticalAlignment="Top" x:Name="stressTimer" Foreground="White"/>
         <Label x:Name="versionLabel" Content="v0.0.0.0" HorizontalAlignment="Left" Margin="927,529,0,0" VerticalAlignment="Top" Foreground="White" Width="79" FontSize="16"/>
-        <Button x:Name="checkBetaUpdateBtn" Click="checkBetaUpdateBtn_Click" Content="Check for Beta Updates" HorizontalAlignment="Left" Margin="768,490,0,0" VerticalAlignment="Top" Width="140" Height="37"/>
+        <Button x:Name="checkBetaUpdateBtn" Click="checkBetaUpdateBtn_Click" Content="Check for Beta Updates" HorizontalAlignment="Left" Margin="34,491,0,0" VerticalAlignment="Top" Width="140" Height="37"/>
         <Label x:Name="eligible" Content="Label" HorizontalAlignment="Left" Margin="646,233,0,0" VerticalAlignment="Top" Width="262" Foreground="White"/>
+        <Image x:Name="patronImage" Source="patron_button.PNG" HorizontalAlignment="Left" Margin="840,491,0,0" VerticalAlignment="Top" Width="139" Height="37" MouseLeftButtonDown="patronLeftButtonDown">
+        </Image>
     </Grid>
 </Window>
