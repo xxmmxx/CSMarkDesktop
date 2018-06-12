@@ -70,6 +70,9 @@ Note: Windows 7 may technically work for stress testing (not for benchmarking) b
 * Results from CSMark versions which are of a different major or minor version, in the format of [Major].[Minor].[Build].[Revision] , than another version should not be compared unless explicitly stated otherwise.  
 * When comparing CPUs, the same exact version of the benchmark should be used across testing platforms.
 
+## Supporting this Project
+[![Support CSMark through Patreon](https://github.com/CSMarkBenchmark/CSMarkDesktop/blob/master/assets/patron_button.png)](https://www.patreon.com/csmark)
+
 ## FAQ
 __Question:__ Why is CSMark a CLI program?
 __Answer:__ To allow it to run on Windows, Mac and Linux. .NET Core currently doesn't contain a cross-platform GUI component however if one does come in the future, an attempt to migrate to a GUI based program may be made.
@@ -81,7 +84,7 @@ __Question:__ Can I (or an organization I work for) review CSMark?
 __Answer:__ Of course! I'd like to get in contact with you prior to you or your company publishing your review. You can email or Discord Direct Message a maintainer. I will try to respond and if I'm busy, another maintainer or contributor could respond.
 
 __Question:__ Can I make videos or content around CSMark?
-__Answer:__ Of course! Anybody can make videos and/or content around CSMark. I don't sponsor videos but I will be happy to answer questions for you if you send me an email or Discord DM to me.
+__Answer:__ Of course! Anybody can make videos and/or content around CSMark. I don't currently sponsor videos but I will be happy to answer questions for you if you send me an email or Discord DM to me.
 
 __Question:__ Is the version of CSMark I'm using supported?
 __Answer:__ You can check the status of CSMark support at the [CSMark Support Documentation](/Support.md).
