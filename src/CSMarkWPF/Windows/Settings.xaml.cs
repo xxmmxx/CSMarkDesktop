@@ -22,8 +22,7 @@ namespace CSMarkDesktop.Windows{
     /// <summary>
     /// Interaction logic for Settings.xaml
     /// </summary>
-    public partial class Settings : Window
-    {
+    public partial class Settings : Window{
         private SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
         private SolidColorBrush myRedBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
         private SolidColorBrush myPurpleBrush = new SolidColorBrush(Color.FromRgb(179, 66, 244));

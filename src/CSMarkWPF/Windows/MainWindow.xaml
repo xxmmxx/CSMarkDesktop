@@ -16,7 +16,9 @@
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
                     <MenuItem Header="_Settings" Name="menuSettingsBtn" Click="menuSettingsBtn_Click"/>
-                 <!--   <MenuItem Header="_Save"/> -->
+                    <!--   <MenuItem Header="_Stress Testing"/> -->
+                    <!--   <MenuItem Header="_Benchmarking"/> -->
+                    <!--   <MenuItem Header="_Save"/> -->
                     <MenuItem Header="_Exit" Name="menuExitBtn" Click="menuExitBtn_Click"/>
                 </MenuItem>
                 <MenuItem Header="_About" Name="menuAboutBtn" Click="menuAboutBtn_Click">

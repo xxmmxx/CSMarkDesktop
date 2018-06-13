@@ -1,0 +1,18 @@
+﻿<!-- Copyright 2017-2018 AluminiumTech
+   This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.-->
+    <Window x:Class="CSMarkDesktop.Windows.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSMarkDesktop.Windows"
+        mc:Ignorable="d"
+        Title="CSMark SplashScreen" Height="395.097" Width="702.394" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF385723">
+        <Image Source="CSmark1024x.PNG" Margin="10,32,403,76"></Image>
+        <TextBlock HorizontalAlignment="Left" Margin="319,138,0,0" TextWrapping="Wrap" FontSize="64" Text="CSMark" VerticalAlignment="Top" Height="90" Width="231" Foreground="White"/>
+        <Label HorizontalAlignment="Left" Height="42" Margin="21,343,0,0" FontSize="26" Content="The Performance Enthusiast's Benchmark" VerticalAlignment="Top" Width="681" Background="#FF385723" Foreground="White"/>
+    </Grid>
+</Window>

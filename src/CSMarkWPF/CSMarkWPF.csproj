@@ -117,6 +117,9 @@
     <Compile Include="Windows\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\SplashScreen.xaml.cs">
+      <DependentUpon>SplashScreen.xaml</DependentUpon>
+    </Compile>
     <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -130,6 +133,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\Settings.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\SplashScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -195,6 +201,8 @@
   <ItemGroup>
     <Resource Include="Windows\patron_button.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Windows\CSMark1024x.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

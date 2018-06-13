@@ -27,7 +27,7 @@ using CSMarkDesktop.Windows;
 
 namespace CSMarkDesktop{
 
-    /// </summ    /// <summary>
+    /// <summary>
     /// Interaction logic for MainWindow.xaml>
     public partial class MainWindow : Window{
         private SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
@@ -53,9 +53,22 @@ namespace CSMarkDesktop{
         private string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
         private string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
 
+        //Supported Versions of Windows
+        private Version win10v1607 = new Version(10, 0, 14393, 0);
+        private Version win10v1703 = new Version(10, 0, 15063, 0);
+        private Version win10v1709 = new Version(10, 0, 16299, 0);
+        private Version win10v1803 = new Version(10, 0, 17134, 0);
+        //We don't support these versions of Windows.
+        private Version win7_0 = new Version(6,1, 7600,0);
+        private Version win7_1 = new Version(6,1, 7601,0);
+        private Version win8_0 = new Version(6,2,9200, 0);
+        private Version win8_1 = new Version(6,3,9200 ,0);
+        private Version win8_1_update = new Version(6, 3, 9600, 0);
+        private Version win10v1507 = new Version(10, 0, 10240, 0);
+        private Version win10v1511 = new Version(10, 0, 10586, 0);
+
         public MainWindow(){
             InitializeComponent();
-
             Assembly assembly = Assembly.GetEntryAssembly();
             Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
             AutoUpdater.LetUserSelectRemindLater = false;
@@ -70,7 +83,11 @@ namespace CSMarkDesktop{
 
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            DetectBenchmarkEligibility();           
+            DetectBenchmarkEligibility();
+
+            if (Properties.Settings.Default.HideBecomeAPatronButton){
+                patronImage.Visibility = Visibility.Hidden;
+            }
         }
 
         private void LoadBackground() {
@@ -108,14 +125,19 @@ namespace CSMarkDesktop{
         }
 
         private void downloadUpdates(){
+            if (Properties.Settings.Default.UseBetaUpdateChannel){
                 AutoUpdater.Start(betaURL);
+            }
+            else{
+                AutoUpdater.Start(stableURL);
+            }
         }
 
         private void DetectBenchmarkEligibility(){
             Platform platform = new Platform();
            var os = platform.ReturnPlatform();
 
-            if (os.Equals("Windows 10")){
+            if (os.Equals("Windows 10") && ((Environment.OSVersion.Version == win10v1607) || (Environment.OSVersion.Version == win10v1703) || (Environment.OSVersion.Version == win10v1709) || (Environment.OSVersion.Version == win10v1803))){
                 benchBtn.Content = "Start Benchmark";
                 benchBtn.IsEnabled = true;
                 eligible.Content = "This device is eligible to run the Benchmark."; 
@@ -137,7 +159,6 @@ namespace CSMarkDesktop{
                 stressBtn.Content = "Stop Stress Test";
             }
         }
-
         private void HandleStressTest(){
             if (runningStress == true){
                 runningStress = false;
@@ -210,6 +231,7 @@ namespace CSMarkDesktop{
             settings.ShowDialog();
         }
         private void menuAboutBtn_Click(object sender, RoutedEventArgs e){
+
         }
         #endregion
 
