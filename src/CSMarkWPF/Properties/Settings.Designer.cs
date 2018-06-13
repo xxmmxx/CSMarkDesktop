@@ -94,5 +94,17 @@ namespace CSMarkDesktop.Properties {
                 this["CheckForUpdatesOnStartup"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool HideBecomeAPatronButton {
+            get {
+                return ((bool)(this["HideBecomeAPatronButton"]));
+            }
+            set {
+                this["HideBecomeAPatronButton"] = value;
+            }
+        }
     }
 }

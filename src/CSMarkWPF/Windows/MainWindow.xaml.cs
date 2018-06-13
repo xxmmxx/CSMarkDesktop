@@ -23,6 +23,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Threading;
 using System.IO;
+using CSMarkDesktop.Windows;
 
 namespace CSMarkDesktop{
 
@@ -186,7 +187,7 @@ namespace CSMarkDesktop{
             HandleStressTest();
             ApplyStressBtnColors();
         }
-        private void checkBetaUpdateBtn_Click(object sender, RoutedEventArgs e){
+        private void checkUpdateBtn_Click(object sender, RoutedEventArgs e){
            var check = checkForUpdates();
 
             if (check){
@@ -205,11 +206,10 @@ namespace CSMarkDesktop{
                 Application.Current.Shutdown();
         }
         private void menuSettingsBtn_Click(object sender, RoutedEventArgs e){
-
+            Window settings = new Settings();
+            settings.ShowDialog();
         }
         private void menuAboutBtn_Click(object sender, RoutedEventArgs e){
-        //    Window window = new About();
-         //   window.Show();
         }
         #endregion
 
@@ -221,8 +221,7 @@ namespace CSMarkDesktop{
                 Application.Current.Shutdown();
             }
             //Else minimize the app.
-            else
-            {
+            else{
                 Application.Current.MainWindow.WindowState = WindowState.Minimized;
             }
         }

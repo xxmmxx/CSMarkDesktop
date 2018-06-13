@@ -1,0 +1,18 @@
+﻿<Window x:Class="CSMarkDesktop.Windows.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSMarkDesktop.Windows"
+        mc:Ignorable="d"
+        Title="CSMarkDesktop Settings" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid Name="gridColour">
+        <TextBlock Text="CSMarkDesktop Settings" Name="WindowTitle" FontSize="24" Margin="239,10,239,366"></TextBlock>
+        <CheckBox Name="enableCheckBetaUpdateBtn" Checked="enableCheckBetaUpdateBtn_Checked" Content="Enable checking for Beta Updates" FontSize="16" HorizontalAlignment="Left" Margin="172,87,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="enableCheckUpdateOnStartupBtn" Checked="enableCheckUpdateOnStartupBtn_Checked"  Content="Check For Updates on Startup" FontSize="16" HorizontalAlignment="Left" Margin="172,127,0,0" VerticalAlignment="Top"/>
+        <CheckBox Name="enableMinimizeOnQuiteBtn" Checked="enableMinimizeOnQuiteBtn_Checked"  Content="Minimize app instead of Quitting it when closing the main window" FontSize="16" HorizontalAlignment="Left" Margin="172,163,0,0" VerticalAlignment="Top"/>
+        <Button Name="applySettingsBtn" FontSize="18" Click="applySettingsBtn_Click" Content="Save Settings" Margin="172,366,425,13"></Button>
+        <Button Name="closeBtn" Click="closeBtn_Click" FontSize="18" Content="Close" Margin="471,366,166,14"/>
+        <CheckBox Name="enableHideBecomePatronBtn" Checked="enableHideBecomePatronBtn_Checked"  Content="Hide the &quot;Become a Patron&quot; Button" FontSize="16" HorizontalAlignment="Left" Margin="172,197,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

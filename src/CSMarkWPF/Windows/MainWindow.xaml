@@ -37,7 +37,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="96,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="910" Foreground="White" FontSize="14"><Run Text="Warning: Overclocking your CPU may damage it. Do so at your own risk"/><Run Text=". "/><Run Text=" For more information, visit your CPU manufacturer's website."/><LineBreak/><Run Text="Ensure "/><Run Text="that your CPU has adequate cooling before starting the Stress Test"/><Run Text=" or running a benchmark."/></TextBlock>
         <Label Content="0:00:00" HorizontalAlignment="Left" FontSize="14"  Margin="491,388,0,0" VerticalAlignment="Top" x:Name="stressTimer" Foreground="White"/>
         <Label x:Name="versionLabel" Content="v0.0.0.0" HorizontalAlignment="Left" Margin="927,529,0,0" VerticalAlignment="Top" Foreground="White" Width="79" FontSize="16"/>
-        <Button x:Name="checkBetaUpdateBtn" Click="checkBetaUpdateBtn_Click" Content="Check for Beta Updates" HorizontalAlignment="Left" Margin="34,491,0,0" VerticalAlignment="Top" Width="140" Height="37"/>
+        <Button x:Name="checkUpdateBtn" Click="checkUpdateBtn_Click" Content="Check for Updates" HorizontalAlignment="Left" Margin="34,491,0,0" VerticalAlignment="Top" Width="140" Height="37"/>
         <Label x:Name="eligible" Content="Label" HorizontalAlignment="Left" Margin="646,233,0,0" VerticalAlignment="Top" Width="262" Foreground="White"/>
         <Image x:Name="patronImage" Source="patron_button.PNG" HorizontalAlignment="Left" Margin="840,491,0,0" VerticalAlignment="Top" Width="139" Height="37" MouseLeftButtonDown="patronLeftButtonDown"/>
 
