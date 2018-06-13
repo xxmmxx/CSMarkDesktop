@@ -230,15 +230,14 @@ namespace CSMarkDesktop{
             Window settings = new Settings();
             settings.ShowDialog();
         }
-        private void menuAboutBtn_Click(object sender, RoutedEventArgs e){
+        private void menuAboutAppBtn_Click(object sender, RoutedEventArgs e){
 
         }
-        #endregion
+        
 
         private void main_Closing(object sender, System.ComponentModel.CancelEventArgs e){
             //By default, exit the app if the user hits the X button.
-            if (Properties.Settings.Default.exitButtonShouldQuitApp)
-            {
+            if (Properties.Settings.Default.exitButtonShouldQuitApp){
                 //Close the app if the menu button 
                 Application.Current.Shutdown();
             }
@@ -247,5 +246,14 @@ namespace CSMarkDesktop{
                 Application.Current.MainWindow.WindowState = WindowState.Minimized;
             }
         }
+        private void menuAboutPCBtn_Click(object sender, RoutedEventArgs e){
+            Window window = new AboutPC();
+            window.ShowDialog();
+        }
+        private void menuRestartAppBtn_Click(object sender, RoutedEventArgs e){
+            Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+        }
+        #endregion
     }
 }

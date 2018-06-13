@@ -1,0 +1,24 @@
+﻿<!-- Copyright 2017-2018 AluminiumTech
+   This Source Code Form is subject to the terms of the Mozilla Public
+  License, v. 2.0. If a copy of the MPL was not distributed with this
+  file, You can obtain one at http://mozilla.org/MPL/2.0/.-->
+    <Window x:Class="CSMarkDesktop.Windows.AboutPC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSMarkDesktop.Windows"
+        mc:Ignorable="d"
+        Title="CSMarkDesktop - About this PC" Height="400" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid Name="gridColour">
+        <Label Name="title" Content="About this PC" FontSize="26" Margin="213,0,214,326"/>
+        <Label Name="cpuLabel" Content="Processor: " Margin="213,48,214,295"/>
+        <Label Name="coreCountLabel" Content="Core Count: " Margin="213,89,214,247"/>
+        <Label Name="threadCountLabel" Content="Thread Count: " Margin="213,127,214,211"/>
+        <Label Name="l2CacheLabel" Content="L2 Cache: " Margin="213,163,214,172"/>
+        <Label Name="l3CacheLabel" Content="L3 Cache: " Margin="213,196,214,147"/>
+        <Label Name="ramLabel" Content="RAM: " Margin="213,230,214,110"/>
+        <Label Name="osLabel" Content="OS: " Margin="213,276,173,69"/>
+        <Label Name="osVersionLabel" Content="OS Version: " Margin="213,305,173,40"/>
+    </Grid>
+</Window>

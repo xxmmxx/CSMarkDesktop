@@ -20,11 +20,12 @@
                     <!--   <MenuItem Header="_Benchmarking"/> -->
                     <!--   <MenuItem Header="_Save"/> -->
                     <MenuItem Header="_Exit" Name="menuExitBtn" Click="menuExitBtn_Click"/>
-                </MenuItem>
-                <MenuItem Header="_About" Name="menuAboutBtn" Click="menuAboutBtn_Click">
+                    <MenuItem Header="_Restart App" Name="menuRestartAppBtn" Click="menuRestartAppBtn_Click"/>
                 </MenuItem>
                 <MenuItem Header="_Help">
                     <MenuItem Header="_View Support Information" Name="supportInfoBtn" Click="supportInfoBtn_Click"/>
+                    <MenuItem Header="_About This PC" Name="menuAboutPCBtn" Click="menuAboutPCBtn_Click"/>
+                    <MenuItem Header="_About CSMark App" Name="menuAboutAppBtn" Click="menuAboutAppBtn_Click"/>
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
