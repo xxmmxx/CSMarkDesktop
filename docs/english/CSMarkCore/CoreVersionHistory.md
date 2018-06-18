@@ -10,75 +10,75 @@ This document contains the entire version history of CSMark Desktop.
 | 0.29.0 Preview 1 | April 4th 2018 | | 2.0.0 Preview 1 | Beta 1.3.0 |
 
 ### 0.28 - February 2018 Update
-| Version | Desktop Availability | Changelog | CSMarkLib Version | CSMarkLib.UpdatingServices Version | AluminiumCoreLib Version |
-|---------|----------|------------|-----------|----------------|----------------|
-| 0.28.1 | March 15th 2018 | | 1.5.0 | - | Beta 1.3.0 |
-| 0.28.0 | February 12th 2018 | | 1.5.0 | Beta 1.1.0 | Beta 1.2.0 |
+| Version | Desktop Availability | CSMarkLib Version | CSMarkLib.UpdatingServices Version | AluminiumCoreLib Version |
+|---------|----------|------------|-----------|----------------|
+| 0.28.1 | March 15th 2018 | 1.5.0 | - | Beta 1.3.0 |
+| 0.28.0 | February 12th 2018 | 1.5.0 | Beta 1.1.0 | Beta 1.2.0 |
 
 ### 0.27 - January 2018 Update Part 2.
-| Version | Desktop Availability | Changelog | CSMarkLib Version | CSMarkLib.UpdatingServices Version | AluminiumCoreLib Version |
-|---------|----------|------------|-----------|----------------|----------------|
-| 0.27.2 | January 17th 2018 |  | 1.4.1 | Beta 1.1.0 | Beta 1.1.0 |
-| 0.27.1 | January 10th 2018 | | 1.4.1 | Beta 1.1.0 | Beta 1.1.0 |
-| 0.27.0 | January 7th 2018 | | 1.4.1 | Beta 1.1.0 | Beta 1.1.0 |
+| Version | Desktop Availability | CSMarkLib Version | CSMarkLib.UpdatingServices Version | AluminiumCoreLib Version |
+|---------|----------|------------|-----------|----------------|
+| 0.27.2 | January 17th 2018 | 1.4.1 | Beta 1.1.0 | Beta 1.1.0 |
+| 0.27.1 | January 10th 2018 | 1.4.1 | Beta 1.1.0 | Beta 1.1.0 |
+| 0.27.0 | January 7th 2018 | 1.4.1 | Beta 1.1.0 | Beta 1.1.0 |
 
 ### 0.26 - January 2018 Update Part 1.
 
-| Version | Desktop Availability | Changelog | CSMarkLib Version | CSMarkLib.UpdatingServices Version | AluminiumCoreLib Version |
-|---------|----------|------------|-----------|----------------|----------------|
-| 0.26.0 | December 26th 2017 | | 1.3.1 | Beta 1.1.0 | Beta 1.0.0 |
+| Version | Desktop Availability | CSMarkLib Version | CSMarkLib.UpdatingServices Version | AluminiumCoreLib Version |
+|---------|----------|------------|-----------|----------------|
+| 0.26.0 | December 26th 2017 | 1.3.1 | Beta 1.1.0 | Beta 1.0.0 |
 
 ### 0.25 - December 2017 Update.
 
-| Version | Desktop Availability | Changelog | CSMarkLib Version used | Support Status |
-|---------|----------------------|-----------|----------------|----------------|
-| 0.25.0 | December 7th 2017 |  | 1.2.0 | CSMark 0 Support Policy|
+| Version | Desktop Availability | CSMarkLib Version used | Support Status |
+|---------|----------------------|-----------|----------------|
+| 0.25.0 | December 7th 2017 | 1.2.0 | CSMark 0 Support Policy|
 
 ### 0.24 - November 2017 Update Part 2.
 
-| Version | Desktop Availability | Changelog | CSMarkLib Version used | Support Status |
-|---------|----------------------|-----------|----------------|----------------|
-| 0.24.1 | November 30th 2017 | | 1.1.2 | CSMark 0 Support Policy|
-| 0.24.0 | November 25th 2017 | | 1.1.2 | CSMark 0 Support Policy|
+| Version | Desktop Availability | CSMarkLib Version used | Support Status |
+|---------|----------------------|-----------|----------------|
+| 0.24.1 | November 30th 2017 | 1.1.2 | CSMark 0 Support Policy|
+| 0.24.0 | November 25th 2017 | 1.1.2 | CSMark 0 Support Policy|
 
 ### 0.23 - November 2017 Update Part 1.
 
-| Version | Availability | Changelog | CSMarkLib Version used | Support Status |
-|---------|----------------------|------------------|-----------|----------------|
-| 0.23.0 | November 12th 2017 | | 1.0.2 | CSMark 0 Support Policy|
+| Version | Availability | CSMarkLib Version used | Support Status |
+|---------|----------------------|------------------|-----------|
+| 0.23.0 | November 12th 2017 | 1.0.2 | CSMark 0 Support Policy|
 
 ### 0.22 - October 2017 Update Part 2.
 
-| Version | Availability | Changelog | CSMarkLib version used | Support Status |
-|---------|----------------------|--------------------|------------------|-----------|
-| 0.22.3 | November 3rd 2017 | | 1.0.2 | CSMark 0 Support Policy|
-| 0.22.2 | November 2nd 2017 | | 1.0.1 | CSMark 0 Support Policy|
-| 0.22.1 | October 28th 2017 | | 1.0.1  | CSMark 0 Support Policy|
-| 0.22.0 | October 28th 2017 | | 1.0.1 | CSMark 0 Support Policy|
+| Version | Availability | CSMarkLib version used | Support Status |
+|---------|----------------------|--------------------|------------------|
+| 0.22.3 | November 3rd 2017 | 1.0.2 | CSMark 0 Support Policy|
+| 0.22.2 | November 2nd 2017 | 1.0.1 | CSMark 0 Support Policy|
+| 0.22.1 | October 28th 2017 | 1.0.1  | CSMark 0 Support Policy|
+| 0.22.0 | October 28th 2017 | 1.0.1 | CSMark 0 Support Policy|
 
 ### 0.21 - October 2017 Update Part 1.
 
-| Version | Availability | Changelog | CSMarkLib version used | Support Status |
-|---------|----------------------|--------------------|------------------|-----------|
-| 0.21.0 | October 6th 2017 |  | 0.23.0 | CSMark 0 Support Policy|
+| Version | Availability | Changelog |  Support Status |
+|---------|----------------------|--------------------|------------------|
+| 0.21.0 | October 6th 2017 | 0.23.0 | CSMark 0 Support Policy|
 
 ### 0.20
 
-| Version | Availability | Changelog | CSMarkLib version used | Support Status |
-|---------|----------------------|--------------------|------------------|-----------|
-| 0.20.0 | September 30th 2017 | | 0.23.0 |CSMark 0 Support Policy |
+| Version | Availability | Changelog | Support Status |
+|---------|----------------------|--------------------|------------------|
+| 0.20.0 | September 30th 2017 | 0.23.0 |CSMark 0 Support Policy |
 
 ### 0.19
 
-| Version | Availability | Changelog | CSMarkLib version used | Support Status |
-|---------|----------------------|--------------------|------------------|----------------|
-| 0.19.0 | September 27th 2017 | | 0.22.0 | CSMark 0 Support Policy |
+| Version | Availability | Changelog | Support Status |
+|---------|----------------------|--------------------|------------------|
+| 0.19.0 | September 27th 2017 | 0.22.0 | CSMark 0 Support Policy |
 
 ### 0.18
 
-| Version | Availability | Changelog | CSMarkLib version used | Support Status |
-|---------|----------------------|--------------------|-----------|----------------|
-| 0.18.0 | September 22nd 2017 |  | 0.21.0 | CSMark 0 Support Policy|
+| Version | Availability | CSMarkLib version used | Support Status |
+|---------|----------------------|--------------------|-----------|
+| 0.18.0 | September 22nd 2017 | 0.21.0 | CSMark 0 Support Policy|
 
 ### 0.17
 

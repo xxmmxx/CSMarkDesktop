@@ -7,7 +7,15 @@ This document contains a list of upcoming releases of CSMark Desktop.
 * Fixed checking for update.
 
 ### 0.29.3
+ **Highlight Features**
 
+### 0.29.4
+ **Highlight Features**
+
+
+### 0.30.0
+ **Highlight Features**
+ * Cross-platform Avalonia based GUI program
 
 ### Future versions
 * [WPF only] - Icon in task tray
