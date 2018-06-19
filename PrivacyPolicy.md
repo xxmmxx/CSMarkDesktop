@@ -1,7 +1,9 @@
 ## CSMarkDesktop Privacy Policy
 
 Version: v1806.0
+
 Last Edited: June 19th 2018
+
 Effective Date: June 20th 2018
 
 This privacy policy governs how the Author and Contributors ("developers", "we", "us") of this Software Application collect, use, maintain, and disclose information collected from its users (individually, a "you") of CSMarkDesktop, CSMark Updating Services, and the CSMarkLib Library (collectively "services").
