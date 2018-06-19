@@ -219,9 +219,6 @@ namespace CSMarkDesktop{
         private void patronLeftButtonDown(object sender, MouseButtonEventArgs e){
             platform.OpenURLInBrowser("https://www.patreon.com/csmark");
         }
-        private void supportInfoBtn_Click(object sender, RoutedEventArgs e){
-
-        }
         private void menuExitBtn_Click(object sender, RoutedEventArgs e){
                 //Close the app if the menu button 
                 Application.Current.Shutdown();
@@ -233,8 +230,6 @@ namespace CSMarkDesktop{
         private void menuAboutAppBtn_Click(object sender, RoutedEventArgs e){
 
         }
-        
-
         private void main_Closing(object sender, System.ComponentModel.CancelEventArgs e){
             //By default, exit the app if the user hits the X button.
             if (Properties.Settings.Default.exitButtonShouldQuitApp){
@@ -253,6 +248,27 @@ namespace CSMarkDesktop{
         private void menuRestartAppBtn_Click(object sender, RoutedEventArgs e){
             Process.Start(Application.ResourceAssembly.Location);
             Application.Current.Shutdown();
+        }
+        private void submitBugReportBtn_Click(object sender, RoutedEventArgs e){
+            platform.OpenURLInBrowser("https://github.com/CSMarkBenchmark/CSMarkDesktop/issues/new?template=bug_report.md");
+        }
+        private void submitFeatureRequestBtn_Click(object sender, RoutedEventArgs e){
+            platform.OpenURLInBrowser("https://github.com/CSMarkBenchmark/CSMarkDesktop/issues/new?template=feature_request.md");
+        }
+        private void donateCSMarkMenuBtn_Click(object sender, RoutedEventArgs e){
+            platform.OpenURLInBrowser("https://www.patreon.com/CSMark/");
+        }
+        private void joinDiscordMenuBtn_Click(object sender, RoutedEventArgs e){
+            platform.OpenURLInBrowser("https://discord.gg/mUHAqUr");
+        } 
+        private void getSourceCodeMenuBtn_Click(object sender, RoutedEventArgs e){
+            platform.OpenURLInBrowser("https://github.com/CSMarkBenchmark/CSMarkDesktop/");
+        }
+        private void viewPrivacyPolicyBtn_Click(object sender, RoutedEventArgs e){
+            platform.OpenURLInBrowser("https://github.com/CSMarkBenchmark/CSMarkDesktop/blob/master/PrivacyPolicy.md");
+        } 
+        private void viewSourceCodeLicenseBtn_Click(object sender, RoutedEventArgs e){
+            platform.OpenURLInBrowser("https://github.com/CSMarkBenchmark/CSMarkDesktop/blob/master/LICENSE");
         }
         #endregion
     }
