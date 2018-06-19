@@ -225,6 +225,7 @@
     <Reference Include="System.Linq.Queryable, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Linq.Queryable.dll</HintPath>
     </Reference>
+    <Reference Include="System.Management" />
     <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Net.Http.dll</HintPath>
     </Reference>
@@ -404,6 +405,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Settings.cs" />
     <Compile Include="Windows\AboutPC.xaml.cs">
       <DependentUpon>AboutPC.xaml</DependentUpon>
     </Compile>

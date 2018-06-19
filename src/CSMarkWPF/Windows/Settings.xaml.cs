@@ -34,6 +34,9 @@ namespace CSMarkDesktop.Windows{
         private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
         private SolidColorBrush lightBlueGray = new SolidColorBrush(Color.FromRgb(144, 158, 175));
 
+        private SolidColorBrush modernCSmarkGreen = new SolidColorBrush(Color.FromRgb(133, 186, 106));
+        private SolidColorBrush modernDarkCSMarkGreen = new SolidColorBrush(Color.FromRgb(31, 139, 76));
+
         public Settings(){
             InitializeComponent();
             LoadBackground();
@@ -43,10 +46,11 @@ namespace CSMarkDesktop.Windows{
         private void LoadSettings(){
             enableCheckBetaUpdateBtn.IsChecked = Properties.Settings.Default.UseBetaUpdateChannel;
             enableCheckUpdateOnStartupBtn.IsChecked = Properties.Settings.Default.CheckForUpdatesOnStartup;
-            enableMinimizeOnQuiteBtn.IsChecked = Properties.Settings.Default.exitButtonShouldQuitApp;
+            enableMinimizeOnQuitBtn.IsChecked = Properties.Settings.Default.exitButtonShouldQuitApp;
             enableHideBecomePatronBtn.IsChecked = Properties.Settings.Default.HideBecomeAPatronButton;
         }
         private void ApplySettings(){
+            Properties.Settings.Default.Save();
             Properties.Settings.Default.Save();
         }
         private void LoadBackground(){
@@ -76,7 +80,7 @@ namespace CSMarkDesktop.Windows{
 
             enableCheckBetaUpdateBtn.Background = gridColour.Background;
             enableCheckUpdateOnStartupBtn.Background = gridColour.Background;
-            enableMinimizeOnQuiteBtn.Background = gridColour.Background;
+            enableMinimizeOnQuitBtn.Background = gridColour.Background;
             enableHideBecomePatronBtn.Background = gridColour.Background;
             WindowTitle.Background = gridColour.Background;
             applySettingsBtn.Background = gridColour.Background;
@@ -93,7 +97,7 @@ namespace CSMarkDesktop.Windows{
 
             enableCheckBetaUpdateBtn.Foreground = fore;
             enableCheckUpdateOnStartupBtn.Foreground = fore;
-            enableMinimizeOnQuiteBtn.Foreground = fore;
+            enableMinimizeOnQuitBtn.Foreground = fore;
             enableHideBecomePatronBtn.Foreground = fore;
             WindowTitle.Foreground = fore;
             applySettingsBtn.Foreground = fore;
@@ -105,8 +109,8 @@ namespace CSMarkDesktop.Windows{
         private void enableCheckUpdateOnStartupBtn_Checked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.CheckForUpdatesOnStartup = (bool)enableCheckUpdateOnStartupBtn.IsChecked;
         }
-        private void enableMinimizeOnQuiteBtn_Checked(object sender, RoutedEventArgs e){
-            Properties.Settings.Default.exitButtonShouldQuitApp = (bool)enableMinimizeOnQuiteBtn.IsChecked;
+        private void enableMinimizeOnQuitBtn_Checked(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.exitButtonShouldQuitApp = (bool)enableMinimizeOnQuitBtn.IsChecked;
         }
         private void closeBtn_Click(object sender, RoutedEventArgs e){
             Close();
@@ -118,6 +122,30 @@ namespace CSMarkDesktop.Windows{
             Properties.Settings.Default.HideBecomeAPatronButton = (bool)enableHideBecomePatronBtn.IsChecked;
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e){
+            
+        }
+        private void enableHideBecomePatronBtn_Unchecked(object sender, RoutedEventArgs e){         
+            //We need to confirm that this change is what the user really wants.
+            MessageBoxResult mbr = MessageBox.Show("Are you sure you want to hide the `Become a Patron` button? Patrons help support CSMark's development so that users like you can enjoy it.", "Confirm Hide Patron Button", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            if (mbr == MessageBoxResult.Yes){
+                Properties.Settings.Default.HideBecomeAPatronButton = (bool)enableHideBecomePatronBtn.IsChecked;
+            }
+            else if (mbr == MessageBoxResult.No){
+                //do nothing.
+            }
+        }
+
+        private void enableMinimizeOnQuitBtn_Unchecked(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.exitButtonShouldQuitApp = (bool)enableMinimizeOnQuitBtn.IsChecked;
+        }
+
+        private void enableCheckUpdateOnStartupBtn_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.CheckForUpdatesOnStartup = (bool)enableCheckUpdateOnStartupBtn.IsChecked;
+        }
+
+        private void enableCheckBetaUpdateBtn_Unchecked(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.UseBetaUpdateChannel = (bool)enableCheckBetaUpdateBtn.IsChecked;
             
         }
     }
