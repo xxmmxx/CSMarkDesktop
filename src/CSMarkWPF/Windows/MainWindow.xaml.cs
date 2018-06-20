@@ -85,6 +85,11 @@ namespace CSMarkDesktop{
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
             DetectBenchmarkEligibility();
 
+            if (!benchmarkCLICheck()){
+                benchBtn.IsEnabled = false;
+                eligible.Content = "Download the CSMarkCoreBenchmarkApp zip file and extract it in the CSMarkDesktop app folder to run the benchmark";
+            }
+
             if (Properties.Settings.Default.HideBecomeAPatronButton){
                 patronImage.Visibility = Visibility.Hidden;
             }
