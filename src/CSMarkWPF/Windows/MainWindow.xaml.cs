@@ -168,7 +168,7 @@ namespace CSMarkDesktop{
             else{
                 runningStress = true;
                 stc.StartMultiStressTest();
-                t = new DispatcherTimer(new TimeSpan(0, 0, 0, 0, 50), DispatcherPriority.Background,
+                t = new DispatcherTimer(new TimeSpan(0, 0, 0, 0, 1), DispatcherPriority.Background,
                t_Tick, Dispatcher.CurrentDispatcher); t.IsEnabled = true;
                 start = DateTime.Now;
                 stressTimer.Content = "";
