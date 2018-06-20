@@ -142,7 +142,7 @@ namespace CSMarkDesktop{
                 benchBtn.IsEnabled = true;
                 eligible.Content = "This device is eligible to run the Benchmark."; 
             }
-            else if (os.Equals("Windows 7") && os.Equals("Windows 8") && os.Equals("Windows 8.1")){
+            else if (os.Equals("Windows 7") || os.Equals("Windows 8") || os.Equals("Windows 8.1")){
                 benchBtn.Content = "Unable to run Benchmark";
                 benchBtn.IsEnabled = false;
                 eligible.Content = "Upgrade to Windows 10 to run the benchmark.";
