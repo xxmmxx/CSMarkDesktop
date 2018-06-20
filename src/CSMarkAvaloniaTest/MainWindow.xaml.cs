@@ -3,6 +3,7 @@
   License, v. 2.0. If a copy of the MPL was not distributed with this
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
   */
+using AluminiumCoreLib.Utilities;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
@@ -35,6 +36,10 @@ namespace CSMarkAvaloniaTest
         protected string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
         protected string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
 
+        Platform platform;
+
+        // platform.OpenURLInBrowser("https://www.patreon.com/csmark");
+
         public MainWindow()
         {
             InitializeComponent();
@@ -43,9 +48,10 @@ namespace CSMarkAvaloniaTest
 
             stc = new StressTestController();
             ApplyStressBtnColors();
+            platform = new Platform();
 
             //Show the version number
-        //    versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            //    versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
 #if DEBUG
             this.AttachDevTools();
