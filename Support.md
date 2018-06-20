@@ -26,4 +26,4 @@ These are:
 
 | Release Status | Release Version  |  Release Date | Mainstream Support Start | Mainstream Support End |
 |---------------|----------|--------------|-----------------|------------------|
-| Preview | CSMark 0.29.0 | May 24th 2018 | May 24th 2018 | Tentatively October 2018 |
+| Preview | CSMark 0.29 | May 24th 2018 | May 24th 2018 | Tentatively October 2018 |
