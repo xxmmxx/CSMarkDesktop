@@ -22,23 +22,22 @@
                     <MenuItem Header="_Exit" Name="menuExitBtn" Click="menuExitBtn_Click"/>
                     <MenuItem Header="_Restart App" Name="menuRestartAppBtn" Click="menuRestartAppBtn_Click"/>
                 </MenuItem>
-                
+
                 <MenuItem Header="_Help">
-                        <MenuItem Header="_Submit a Bug Report" Name="submitBugReportBtn"  Click="submitBugReportBtn_Click"/>
-                        <MenuItem Header="_Submit a Feature Request" Name="submitFeatureRequestBtn"  Click="submitFeatureRequestBtn_Click"/>
+                    <MenuItem Header="Submit a Bug Report" Name="submitBugReportBtn"  Click="submitBugReportBtn_Click"/>
+                    <MenuItem Header="Submit a Feature Request" Name="submitFeatureRequestBtn"  Click="submitFeatureRequestBtn_Click"/>
                     <MenuItem Header="_About">
-                        <MenuItem Header="_About This PC" Name="menuAboutPCBtn" Click="menuAboutPCBtn_Click"/>
-                        <MenuItem Header="_About CSMark App" Name="menuAboutAppBtn" Click="menuAboutAppBtn_Click"/>
+                        <MenuItem Header="About This PC" Name="menuAboutPCBtn" Click="menuAboutPCBtn_Click"/>
+                        <MenuItem Header="About CSMark App" Name="menuAboutAppBtn" Click="menuAboutAppBtn_Click"/>
                     </MenuItem>
                     <MenuItem Header="_Support">
                         <MenuItem Header="_Join the CSMark Discord" Name="joinDiscordMenuBtn" Click="joinDiscordMenuBtn_Click"/>
                         <MenuItem Header="_Get the Source Code" Name="getSourceCodeMenuBtn" Click="getSourceCodeMenuBtn_Click"/>
                         <MenuItem Header="_Donate" Name="donateCSMarkMenuBtn" Click="donateCSMarkMenuBtn_Click"/>
-                        <MenuItem Header="_Policies">
-                            <MenuItem Header="View Privacy Policy" Name="viewPrivacyPolicyBtn" Click="viewPrivacyPolicyBtn_Click"/>
-                            <MenuItem Header="View our Source Code License" Name="viewSourceCodeLicenseBtn" Click="viewSourceCodeLicenseBtn_Click"/>
-                        </MenuItem>
                     </MenuItem>
+                    <MenuItem Header="View Privacy Policy" Name="viewPrivacyPolicyBtn" Click="viewPrivacyPolicyBtn_Click"/>
+                    <MenuItem Header="View License" Name="viewSourceCodeLicenseBtn" Click="viewSourceCodeLicenseBtn_Click"/>
+                    <MenuItem Header="Check For Updates" Name="checkUpdatesMenuBtn" Click="checkUpdatesMenuBtn_Click"/>
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
@@ -55,7 +54,7 @@
         <Label x:Name="versionLabel" Content="v0.0.0.0" HorizontalAlignment="Left" Margin="927,529,0,0" VerticalAlignment="Top" Foreground="White" Width="79" FontSize="16"/>
         <Button x:Name="checkUpdateBtn" Click="checkUpdateBtn_Click" Content="Check for Updates" HorizontalAlignment="Left" Margin="34,491,0,0" VerticalAlignment="Top" Width="140" Height="37"/>
         <Label x:Name="eligible" Content="Label" HorizontalAlignment="Left" Margin="646,233,0,0" VerticalAlignment="Top" Width="262" Foreground="White"/>
-        <Image x:Name="patronImage" Source="patron_button.PNG" HorizontalAlignment="Left" Margin="840,491,0,0" VerticalAlignment="Top" Width="139" Height="37" MouseLeftButtonDown="patronLeftButtonDown"/>
+        <Image x:Name="patronImage" Source="patron_button.PNG" HorizontalAlignment="Left" Margin="840,491,0,0" VerticalAlignment="Top" Width="140" Height="33" MouseLeftButtonDown="patronLeftButtonDown"/>
 
     </Grid>
 </Window>

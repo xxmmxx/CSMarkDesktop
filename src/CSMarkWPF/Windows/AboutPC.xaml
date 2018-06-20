@@ -22,13 +22,14 @@
         <Label Name="threadCountLabel" Content="Thread Count: " FontSize="18" Margin="438,10,144,314" Grid.Row="1"/>
         <Label Name="l2CacheLabel" Content="L2 Cache: " FontSize="18" Margin="99,62,514,258" Grid.Row="1"/>
         <Label Name="l3CacheLabel" Content="L3 Cache: " FontSize="18" Margin="438,62,126,258" Grid.Row="1"/>
-        <Label Name="ramLabel" Content="RAM: " FontSize="18" Margin="99,149,255,168" Grid.Row="1"/>
-        <Label Name="osLabel" Content="OS: " FontSize="18" Margin="99,191,144,128" Grid.Row="1"/>
-        <Label Name="osVersionLabel" Content="OS Version: " FontSize="18" Margin="99,236,122,79" Grid.Row="1"/>
+        <Label Name="ramLabel" Content="RAM: " FontSize="18" Margin="99,149,417,168" Grid.Row="1"/>
+        <Label Name="osLabel" Content="OS: " FontSize="18" Margin="99,197,144,124" Grid.Row="1"/>
+        <Label Name="osVersionLabel" Content="OS Version: " FontSize="18" Margin="98,250,123,74" Grid.Row="1"/>
         <Label Name="socketLabel" Content="Socket: " FontSize="18" Margin="99,106,441,215" Grid.Row="1"/>
         <Label Name="hwVirtualizationLabel" Content="Hardware Virtualization Enabled:" FontSize="18" Margin="438,106,19,215" Grid.Row="1"/>
         <Label Name="manufacturerLabel" Content="Processor Manufacturer:" FontSize="18" Margin="99,67,289,94"/>
         <Label Name="revisionLabel" Content="Processor Revision:" FontSize="18" Margin="438,160,123,0"/>
-        <Label Name="gpuLabel" Content="Graphics Card:" FontSize="18" Margin="98,285,123,30" Grid.Row="1"/>
+        <Label Name="gpuLabel" Content="Graphics Card:" FontSize="18" Margin="98,300,123,20" Grid.Row="1"/>
+        <Label Name="ramSpeedLabel" Content="RAM Speed: " FontSize="18" Margin="438,150,78,168" Grid.Row="1"/>
     </Grid>
 </Window>

@@ -13,10 +13,11 @@
     <Grid Name="gridColour">
         <TextBlock Text="CSMarkDesktop Settings" Name="WindowTitle" FontSize="24" Margin="239,10,239,366"></TextBlock>
         <CheckBox Name="enableCheckBetaUpdateBtn" Checked="enableCheckBetaUpdateBtn_Checked" Content="Enable checking for Beta Updates" FontSize="16" HorizontalAlignment="Left" Margin="172,87,0,0" VerticalAlignment="Top" Unchecked="enableCheckBetaUpdateBtn_Unchecked"/>
-        <CheckBox Name="enableCheckUpdateOnStartupBtn" Checked="enableCheckUpdateOnStartupBtn_Checked"  Content="Check For Updates on Startup" FontSize="16" HorizontalAlignment="Left" Margin="172,127,0,0" VerticalAlignment="Top" Unchecked="enableCheckUpdateOnStartupBtn_Unchecked"/>
+        <CheckBox Name="enableCheckUpdateOnStartupBtn" Checked="enableCheckUpdateOnStartupBtn_Checked"  Content="Check For Updates on Startup (Recommended)" FontSize="16" HorizontalAlignment="Left" Margin="172,127,0,0" VerticalAlignment="Top" Unchecked="enableCheckUpdateOnStartupBtn_Unchecked" Width="402"/>
         <CheckBox Name="enableMinimizeOnQuitBtn" Checked="enableMinimizeOnQuitBtn_Checked"  Content="Minimize app instead of Quitting it when closing the main window" FontSize="16" HorizontalAlignment="Left" Margin="172,163,0,0" VerticalAlignment="Top" Unchecked="enableMinimizeOnQuitBtn_Unchecked"/>
         <Button Name="applySettingsBtn" FontSize="18" Click="applySettingsBtn_Click" Content="Save Settings" Margin="172,366,425,13"></Button>
         <Button Name="closeBtn" Click="closeBtn_Click" FontSize="18" Content="Close" Margin="471,366,166,14"/>
-        <CheckBox Name="enableHideBecomePatronBtn" Checked="enableHideBecomePatronBtn_Checked"  Content="Hide the &quot;Become a Patron&quot; Button" FontSize="16" HorizontalAlignment="Left" Margin="172,197,0,0" VerticalAlignment="Top" Unchecked="enableHideBecomePatronBtn_Unchecked"/>
+        <CheckBox Name="enableHideBecomePatronBtn" Checked="enableHideBecomePatronBtn_Checked"  Content="Hide the &quot;Become a Patron&quot; Button (Not Recommended)" FontSize="16" HorizontalAlignment="Left" Margin="172,197,0,0" VerticalAlignment="Top" Unchecked="enableHideBecomePatronBtn_Unchecked" Width="434" Height="26"/>
+        <Label Content="Restart CSMark to Apply changes." Name="changeLabel" Margin="277,305,249,77" FontSize="16"></Label>
     </Grid>
 </Window>

@@ -228,7 +228,8 @@ namespace CSMarkDesktop{
             settings.ShowDialog();
         }
         private void menuAboutAppBtn_Click(object sender, RoutedEventArgs e){
-
+            Window window = new AboutApp();
+            window.ShowDialog();
         }
         private void main_Closing(object sender, System.ComponentModel.CancelEventArgs e){
             //By default, exit the app if the user hits the X button.
@@ -269,6 +270,13 @@ namespace CSMarkDesktop{
         } 
         private void viewSourceCodeLicenseBtn_Click(object sender, RoutedEventArgs e){
             platform.OpenURLInBrowser("https://github.com/CSMarkBenchmark/CSMarkDesktop/blob/master/LICENSE");
+        }
+        private void checkUpdatesMenuBtn_Click(object sender, RoutedEventArgs e){
+            var check = checkForUpdates();
+
+            if (check){
+                downloadUpdates();
+            }
         }
         #endregion
     }

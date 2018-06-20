@@ -89,6 +89,7 @@ namespace CSMarkDesktop.Windows
             manufacturerLabel.Foreground = Foreground;
             revisionLabel.Foreground = Foreground;
             gpuLabel.Foreground = Foreground;
+            ramSpeedLabel.Foreground = Foreground;
         }
 
         public void LoadSpecs(){
@@ -102,7 +103,14 @@ namespace CSMarkDesktop.Windows
             coreCountLabel.Content = "Core Count: " + cpu.CoreCountInt.ToString();
             threadCountLabel.Content = "Thread Count: " + cpu.ThreadCountInt.ToString();
             cpuLabel.Content = "Processor: " + cpu.CPU;
-            l2CacheLabel.Content = "L2 Cache: " + cpu.L2CacheSizeKB.ToString() + "KB";
+
+            if((cpu.L2CacheSizeKB / 1000) < 1){
+                l2CacheLabel.Content = "L2 Cache: " + cpu.L2CacheSizeKB.ToString() + "KB";
+            }
+            else if((cpu.L2CacheSizeKB / 1000) >= 1){
+                l2CacheLabel.Content = "L2 Cache: " + (cpu.L2CacheSizeKB / 1000).ToString() + "MB";
+            }
+            
             l3CacheLabel.Content = "L3 Cache: " + cpu.L3CacheSizeMB.ToString() + "MB";
             socketLabel.Content = "Socket: " + cpu.Socket;
             hwVirtualizationLabel.Content = "Hardware Virtualization Enabled: " + cpu.Virtualization; 
@@ -111,6 +119,7 @@ namespace CSMarkDesktop.Windows
             osLabel.Content = "OS: " + os.ProductName + " " + osAdvanced.Bitness;
             manufacturerLabel.Content = "Processor Manufacturer: " + cpu.Manufacturer;
             revisionLabel.Content = "Processor Revision: " + cpu.Revision;
+            ramSpeedLabel.Content = "RAM Speed: " + (mem.MemorySpeedMHz * 2) + "MHz";
 
             try{
                 string GPU = "";

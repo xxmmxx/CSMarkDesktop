@@ -85,6 +85,7 @@ namespace CSMarkDesktop.Windows{
             WindowTitle.Background = gridColour.Background;
             applySettingsBtn.Background = gridColour.Background;
             closeBtn.Background = gridColour.Background;
+            changeLabel.Background = gridColour.Background;
 
             SolidColorBrush fore;
 
@@ -102,6 +103,7 @@ namespace CSMarkDesktop.Windows{
             WindowTitle.Foreground = fore;
             applySettingsBtn.Foreground = fore;
             closeBtn.Foreground = fore;
+            changeLabel.Foreground = fore;
         }
         private void enableCheckBetaUpdateBtn_Checked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.UseBetaUpdateChannel = (bool)enableCheckBetaUpdateBtn.IsChecked;
@@ -119,31 +121,20 @@ namespace CSMarkDesktop.Windows{
             ApplySettings();
         }
         private void enableHideBecomePatronBtn_Checked(object sender, RoutedEventArgs e){
-            Properties.Settings.Default.HideBecomeAPatronButton = (bool)enableHideBecomePatronBtn.IsChecked;
+                Properties.Settings.Default.HideBecomeAPatronButton = (bool)enableHideBecomePatronBtn.IsChecked;      
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e){
             
         }
-        private void enableHideBecomePatronBtn_Unchecked(object sender, RoutedEventArgs e){         
-            //We need to confirm that this change is what the user really wants.
-            MessageBoxResult mbr = MessageBox.Show("Are you sure you want to hide the `Become a Patron` button? Patrons help support CSMark's development so that users like you can enjoy it.", "Confirm Hide Patron Button", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
-            if (mbr == MessageBoxResult.Yes){
-                Properties.Settings.Default.HideBecomeAPatronButton = (bool)enableHideBecomePatronBtn.IsChecked;
-            }
-            else if (mbr == MessageBoxResult.No){
-                //do nothing.
-            }
+        private void enableHideBecomePatronBtn_Unchecked(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.HideBecomeAPatronButton = (bool)enableHideBecomePatronBtn.IsChecked;
         }
-
         private void enableMinimizeOnQuitBtn_Unchecked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.exitButtonShouldQuitApp = (bool)enableMinimizeOnQuitBtn.IsChecked;
         }
-
-        private void enableCheckUpdateOnStartupBtn_Unchecked(object sender, RoutedEventArgs e)
-        {
+        private void enableCheckUpdateOnStartupBtn_Unchecked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.CheckForUpdatesOnStartup = (bool)enableCheckUpdateOnStartupBtn.IsChecked;
         }
-
         private void enableCheckBetaUpdateBtn_Unchecked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.UseBetaUpdateChannel = (bool)enableCheckBetaUpdateBtn.IsChecked;
             

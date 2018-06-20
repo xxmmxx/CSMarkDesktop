@@ -72,11 +72,12 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AluminiumCoreLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -406,6 +407,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Settings.cs" />
+    <Compile Include="Windows\AboutApp.xaml.cs">
+      <DependentUpon>AboutApp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AboutPC.xaml.cs">
       <DependentUpon>AboutPC.xaml</DependentUpon>
     </Compile>
@@ -415,6 +419,9 @@
     <Compile Include="Windows\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
+    <Page Include="Windows\AboutApp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AboutPC.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

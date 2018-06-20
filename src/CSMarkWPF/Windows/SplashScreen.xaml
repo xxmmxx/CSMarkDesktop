@@ -10,9 +10,9 @@
         xmlns:local="clr-namespace:CSMarkDesktop.Windows"
         mc:Ignorable="d"
         Title="CSMark SplashScreen" Height="395.097" Width="702.394" AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
-    <Grid Background="#1f8b4c">
+    <Grid Background="#385723">
         <Image Source="CSmark1024x.PNG" Margin="10,32,403,76"></Image>
         <TextBlock HorizontalAlignment="Left" Margin="319,138,0,0" TextWrapping="Wrap" FontSize="64" Text="CSMark" VerticalAlignment="Top" Height="90" Width="231" Foreground="White"/>
-        <Label HorizontalAlignment="Left" Height="42" Margin="21,343,0,0" FontSize="26" Content="The Performance Enthusiast's Benchmark" VerticalAlignment="Top" Width="681" Background="#1f8b4c" Foreground="White"/>
+        <Label HorizontalAlignment="Left" Height="42" Margin="21,343,0,0" FontSize="26" Content="The Performance Enthusiast's Benchmark" VerticalAlignment="Top" Width="681" Background="#385723" Foreground="White"/>
     </Grid>
 </Window>
