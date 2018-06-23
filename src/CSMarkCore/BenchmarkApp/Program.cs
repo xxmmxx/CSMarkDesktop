@@ -12,43 +12,77 @@ using System.IO;
 
 namespace CSMarkCoreBenchmarkApp{
     class Program{
-        enum Command{
+        enum BenchCommand{
             MultiBenchSaveResult,
             SingleBenchSaveResult
         }
+        enum ResultFileType{
+            NoResult,
+            Text,
+            Xml,
+            Json
+        }
+
         static void Main(string[] args){
             Platform platform = new Platform();
             Console.Title = "CSMarkCore BenchmarkApp v" + platform.ReturnVersionString() + " Community Edition";
 
-            Command command = Command.MultiBenchSaveResult;
+            BenchCommand command = BenchCommand.MultiBenchSaveResult;
+            ResultFileType rft = ResultFileType.Text;
             DateTime startTime = DateTime.Now;
             DateTime stopTime = DateTime.Now;
 
             //Accept command line arguments
             if (args.Length == 0){
                 //If the user doesn't specify the command, just start the stress test.
-                command = Command.MultiBenchSaveResult;
+                command = BenchCommand.MultiBenchSaveResult;
+                rft = ResultFileType.Text;
             }
             // If the user has given 1 arguments it should correspond to 1) Single or Multi
             else if (args.Length == 1 && args[0].ToString().Contains("single")){
-                command = Command.SingleBenchSaveResult;         
+                command = BenchCommand.SingleBenchSaveResult;
+                rft = ResultFileType.Text;
             }
             // If the user has given 1 arguments it should correspond to 1) Single or Multi
             else if (args.Length == 1 && args[0].ToString().Contains("multi")){
-                command = Command.MultiBenchSaveResult;
+                command = BenchCommand.MultiBenchSaveResult;
+                rft = ResultFileType.Text;
             }
             //If the user has given 2 arguments they should correspond to 1) Single or Multi and 2) Start Time.
             else if (args.Length == 2){
 
                 if (args[0].ToString().Contains("multi")){
-                    command = Command.MultiBenchSaveResult;
+                    command = BenchCommand.MultiBenchSaveResult;
                 }
                 else{
-                    command = Command.SingleBenchSaveResult;
+                    command = BenchCommand.SingleBenchSaveResult;
                 }
 
-                
-                startTime = Convert.ToDateTime(args[1]);
+                if (args[1].ToString().Contains("xml")){
+                    rft = ResultFileType.Xml;
+                }
+                else if (args[1].ToString().Contains("text")) {
+                    rft = ResultFileType.Text;
+                }
+                else if (args[1].ToString().Contains("json"))
+                {
+                    rft = ResultFileType.Json;
+                }
+            }
+            //If the user has given 2 arguments they should correspond to 1) Single or Multi and 3) Start Time.
+            else if (args.Length == 3)
+            {
+
+                if (args[0].ToString().Contains("multi"))
+                {
+                    command = BenchCommand.MultiBenchSaveResult;
+                }
+                else
+                {
+                    command = BenchCommand.SingleBenchSaveResult;
+                }
+
+               startTime = Convert.ToDateTime(args[2]);
             }
 
 
@@ -84,7 +118,7 @@ namespace CSMarkCoreBenchmarkApp{
             Console.WriteLine("Detecting CLI Arguments...");
             Console.WriteLine("Starting Benchmarks...");
 
-            if(command == Command.SingleBenchSaveResult){
+            if(command == BenchCommand.SingleBenchSaveResult){
             //    bench.DoWarmup(true);
                 bench.StartSingleBenchmarkTests();
                 var y = bench.ReturnBenchmarkObjects();
@@ -92,7 +126,7 @@ namespace CSMarkCoreBenchmarkApp{
                 bench.PrintResultsToConsole(true, false, x);
                 new ResultSaver().SaveToTextFile(CSMarkVersion, x);
             }
-            else if (command == Command.MultiBenchSaveResult){
+            else if (command == BenchCommand.MultiBenchSaveResult){
              //   bench.DoWarmup(true);
                 bench.StartBenchmarkTests();
                 var y = bench.ReturnBenchmarkObjects();
