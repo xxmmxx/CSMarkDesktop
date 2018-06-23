@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="background" Type="System.String" Scope="User">
-      <Value Profile="(Default)">dark</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="exitButtonShouldQuitApp" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>

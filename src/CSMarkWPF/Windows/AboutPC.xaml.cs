@@ -30,11 +30,13 @@ namespace CSMarkDesktop.Windows
         private SolidColorBrush myPurpleBrush = new SolidColorBrush(Color.FromRgb(179, 66, 244));
         private SolidColorBrush myPinkBrush = new SolidColorBrush(Color.FromRgb(244, 66, 241));
 
+        private SolidColorBrush black = new SolidColorBrush(Color.FromRgb(0, 0, 0));
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
         private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
         private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
         private SolidColorBrush lightBlueGray = new SolidColorBrush(Color.FromRgb(144, 158, 175));
+        private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
         private AluminiumCoreLib.Hardware.Processor cpu = new AluminiumCoreLib.Hardware.Processor();
         private AluminiumCoreLib.Hardware.OperatingSystem os = new AluminiumCoreLib.Hardware.OperatingSystem();
@@ -56,7 +58,7 @@ namespace CSMarkDesktop.Windows
             {
                 gridColour.Background = dark;
             }
-            else if (CSMarkDesktop.Properties.Settings.Default.background.Equals("bluedark"))
+            else if (Properties.Settings.Default.background.Equals("bluedark"))
             {
                 gridColour.Background = blueDark;
             }
@@ -67,6 +69,14 @@ namespace CSMarkDesktop.Windows
             else if (Properties.Settings.Default.background.Equals("lightbluegray"))
             {
                 gridColour.Background = lightBlueGray;
+            }
+            else if (Properties.Settings.Default.background.Equals("blurple"))
+            {
+                gridColour.Background = blurple;
+            }
+            else if (Properties.Settings.Default.background.Equals("justblack"))
+            {
+                gridColour.Background = black;
             }
             else
             {

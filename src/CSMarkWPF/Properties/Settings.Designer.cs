@@ -25,7 +25,7 @@ namespace CSMarkDesktop.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("dark")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string background {
             get {
                 return ((string)(this["background"]));

@@ -28,19 +28,21 @@ namespace CSMarkDesktop.Windows{
         private SolidColorBrush myPurpleBrush = new SolidColorBrush(Color.FromRgb(179, 66, 244));
         private SolidColorBrush myPinkBrush = new SolidColorBrush(Color.FromRgb(244, 66, 241));
 
+        private SolidColorBrush black = new SolidColorBrush(Color.FromRgb(0,0,0));
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
         private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
-        private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
+        private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(80, 148, 237));
         private SolidColorBrush lightBlueGray = new SolidColorBrush(Color.FromRgb(144, 158, 175));
+        private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
-        private SolidColorBrush modernCSmarkGreen = new SolidColorBrush(Color.FromRgb(133, 186, 106));
         private SolidColorBrush modernDarkCSMarkGreen = new SolidColorBrush(Color.FromRgb(31, 139, 76));
 
         public Settings(){
             InitializeComponent();
             LoadBackground();
             LoadSettings();
+            changeLabel.Visibility = Visibility.Hidden;
         }
 
         private void LoadSettings(){
@@ -74,7 +76,16 @@ namespace CSMarkDesktop.Windows{
             {
                 gridColour.Background = lightBlueGray;
             }
-            else{
+            else if (Properties.Settings.Default.background.Equals("blurple"))
+            {
+                gridColour.Background = blurple;
+            }
+            else if (Properties.Settings.Default.background.Equals("justblack"))
+            {
+                gridColour.Background = black;
+            }
+            else
+            {
                 gridColour.Background = dark;
             }
 
@@ -86,6 +97,7 @@ namespace CSMarkDesktop.Windows{
             applySettingsBtn.Background = gridColour.Background;
             closeBtn.Background = gridColour.Background;
             changeLabel.Background = gridColour.Background;
+            themeLabel.Background = gridColour.Background;
 
             SolidColorBrush fore;
 
@@ -104,6 +116,7 @@ namespace CSMarkDesktop.Windows{
             applySettingsBtn.Foreground = fore;
             closeBtn.Foreground = fore;
             changeLabel.Foreground = fore;
+            themeLabel.Foreground = fore;
         }
         private void enableCheckBetaUpdateBtn_Checked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.UseBetaUpdateChannel = (bool)enableCheckBetaUpdateBtn.IsChecked;
@@ -123,8 +136,7 @@ namespace CSMarkDesktop.Windows{
         private void enableHideBecomePatronBtn_Checked(object sender, RoutedEventArgs e){
                 Properties.Settings.Default.HideBecomeAPatronButton = (bool)enableHideBecomePatronBtn.IsChecked;      
         }
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e){
-            
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e){            
         }
         private void enableHideBecomePatronBtn_Unchecked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.HideBecomeAPatronButton = (bool)enableHideBecomePatronBtn.IsChecked;
@@ -136,8 +148,43 @@ namespace CSMarkDesktop.Windows{
             Properties.Settings.Default.CheckForUpdatesOnStartup = (bool)enableCheckUpdateOnStartupBtn.IsChecked;
         }
         private void enableCheckBetaUpdateBtn_Unchecked(object sender, RoutedEventArgs e){
-            Properties.Settings.Default.UseBetaUpdateChannel = (bool)enableCheckBetaUpdateBtn.IsChecked;
-            
+            Properties.Settings.Default.UseBetaUpdateChannel = (bool)enableCheckBetaUpdateBtn.IsChecked;      
+        }
+
+        private void lightBlueGrayBtn_Click(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.background = "lightbluegray";
+            Properties.Settings.Default.Save();
+            LoadBackground();
+        }
+        private void blueGrayBtn_Click(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.background = "bluegray";
+            Properties.Settings.Default.Save();
+            LoadBackground();
+        }
+       private void blueDarkBtn_Click(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.background = "bluedark";
+            Properties.Settings.Default.Save();
+            LoadBackground();
+        }
+        private void darkBtn_Click(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.background = "dark";
+            Properties.Settings.Default.Save();
+            LoadBackground();
+        }
+        private void reallyDarkBtn_Click(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.background = "reallydark";
+            Properties.Settings.Default.Save();
+            LoadBackground();
+        }
+        private void blurpleBtn_Click(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.background = "blurple";
+            Properties.Settings.Default.Save();
+            LoadBackground();
+        }
+        private void justBlackBtn_Click(object sender, RoutedEventArgs e){
+            Properties.Settings.Default.background = "justblack";
+            Properties.Settings.Default.Save();
+            LoadBackground();
         }
     }
 }

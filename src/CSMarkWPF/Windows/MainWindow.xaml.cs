@@ -35,11 +35,13 @@ namespace CSMarkDesktop{
         private SolidColorBrush myPurpleBrush = new SolidColorBrush(Color.FromRgb(179, 66, 244));
         private SolidColorBrush myPinkBrush = new SolidColorBrush(Color.FromRgb(244, 66, 241));
 
+        private SolidColorBrush black = new SolidColorBrush(Color.FromRgb(0, 0, 0));
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
         private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
         private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
         private SolidColorBrush lightBlueGray = new SolidColorBrush(Color.FromRgb(144, 158, 175));
+        private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
         private CSMarkLib.UpdatingServices.AutoUpdater ac = new CSMarkLib.UpdatingServices.AutoUpdater();
 
@@ -111,7 +113,16 @@ namespace CSMarkDesktop{
             else if (Properties.Settings.Default.background.Equals("lightbluegray")){
                 gridColour.Background = lightBlueGray;
             }
-            else{
+            else if (Properties.Settings.Default.background.Equals("blurple"))
+            {
+                gridColour.Background = blurple;
+            }
+            else if (Properties.Settings.Default.background.Equals("justblack"))
+            {
+                gridColour.Background = black;
+            }
+            else
+            {
                 gridColour.Background = dark;
             }
         }
@@ -284,5 +295,11 @@ namespace CSMarkDesktop{
             }
         }
         #endregion
+        private void main_GotFocus(object sender, RoutedEventArgs e){
+            LoadBackground();
+        }
+        private void main_MouseEnter(object sender, MouseEventArgs e){
+            LoadBackground();
+        }
     }
 }
