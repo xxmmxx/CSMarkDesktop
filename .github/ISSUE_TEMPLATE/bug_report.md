@@ -25,7 +25,10 @@ If applicable, add screenshots to help explain your problem.
  - OS Version: [e.g. 10.0.17134.112]
  - App Version: [e.g. 0.29.3.108]
  - App Edition: [e.g. CSMarkCore] or [e.g. CSMarkDesktop]
- - CPU Name and Model Information: [e.g AMD RyzenTM ThreadRipperTM 1950X 16 Cores and 32 Threads 3.4GHz]
+ - CPU Name and Model Information: [e.g AMD RyzenTM ThreadRipperTM 1950X]
+ - CPU Core Count and Thread Count: [e.g. 16 Cores and 32 Threads]
+ - Nominal CPU Base Clock Speed: [e.g. 3.4GHz]
+ - Current CPU Clock Speed: [e.g. 4.0GHz OC]
  - RAM Information: [e.g. 64GB DDR4-2667 (4x 16GB)]
  - GPU Information: [e.g. AMD RadeonTM RX Vega 64 with 8GB Graphics Memory]
 
