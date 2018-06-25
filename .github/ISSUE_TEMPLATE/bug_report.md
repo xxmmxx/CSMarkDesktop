@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Create a report to help us improve CSMark
 
 ---
 
@@ -21,15 +21,13 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+ - OS: [e.g. Windows 10 Pro 64 Bit]
+ - OS Version: [e.g. 10.0.17134.112]
+ - App Version: [e.g. 0.29.3.108]
+ - App Edition: [e.g. CSMarkCore] or [e.g. CSMarkDesktop]
+ - CPU Name and Model Information: [e.g AMD RyzenTM ThreadRipperTM 1950X 16 Cores and 32 Threads 3.4GHz]
+ - RAM Information: [e.g. 64GB DDR4-2667 (4x 16GB)]
+ - GPU Information: [e.g. AMD RadeonTM RX Vega 64 with 8GB Graphics Memory]
 
 **Additional context**
 Add any other context about the problem here.
