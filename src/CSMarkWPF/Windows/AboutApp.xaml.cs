@@ -32,7 +32,6 @@ namespace CSMarkDesktop.Windows{
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
         private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
         private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
-        private SolidColorBrush lightBlueGray = new SolidColorBrush(Color.FromRgb(144, 158, 175));
         private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
         public AboutApp(){
@@ -57,10 +56,6 @@ namespace CSMarkDesktop.Windows{
             else if (Properties.Settings.Default.background.Equals("bluegray"))
             {
                 gridColour.Background = blueGray;
-            }
-            else if (Properties.Settings.Default.background.Equals("lightbluegray"))
-            {
-                gridColour.Background = lightBlueGray;
             }
             else if (Properties.Settings.Default.background.Equals("blurple")){
                 gridColour.Background = blurple;

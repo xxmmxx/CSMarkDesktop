@@ -20,12 +20,11 @@
         <CheckBox Name="enableHideBecomePatronBtn" Checked="enableHideBecomePatronBtn_Checked"  Content="Hide the &quot;Become a Patron&quot; Button (Not Recommended)" FontSize="16" HorizontalAlignment="Left" Margin="172,174,0,0" VerticalAlignment="Top" Unchecked="enableHideBecomePatronBtn_Unchecked" Width="434" Height="26"/>
         <Label Name="themeLabel" Content="Themes" FontSize="18" Margin="111,216,566,162"></Label>
         <Label Content="Restart CSMark to Apply changes." Name="changeLabel" Margin="263,318,263,58" FontSize="16"></Label>
-        <Button Name="lightBlueGrayBtn" Content="Blue Gray" Foreground="White" Background="#909eaf" HorizontalAlignment="Left" Margin="111,262,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="lightBlueGrayBtn_Click"/>
-        <Button Name="blueGrayBtn" Content="Blue" Foreground="White" Background="#5094ed" HorizontalAlignment="Left" Margin="218,262,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blueGrayBtn_Click"/>
-        <Button Name="blueDarkBtn" Content="Dark Blue" Foreground="White" Background="#2b4c77" HorizontalAlignment="Left" Margin="325,262,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blueDarkBtn_Click"/>
-        <Button Name="darkBtn" Content="Dark" Foreground="White" Background="#2c2f33" HorizontalAlignment="Left" Margin="432,262,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="darkBtn_Click"/>
-        <Button Name="reallyDarkBtn" Content="Really Dark" Foreground="White" Background="#23272a" HorizontalAlignment="Left" Margin="539,262,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="reallyDarkBtn_Click"/>
-        <Button Name="justBlackBtn" Content="Just Black" Foreground="White" Background="Black" HorizontalAlignment="Left" Margin="646,262,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="justBlackBtn_Click"/>
-        <Button Name="blurpleBtn" Content="Blurple" Foreground="White" Background="#7289DA" HorizontalAlignment="Left" Margin="646,299,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blurpleBtn_Click"/>
+        <Button Name="blueGrayBtn" Content="Blue" Foreground="White" Background="#5094ed" HorizontalAlignment="Left" Margin="121,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blueGrayBtn_Click"/>
+        <Button Name="blueDarkBtn" Content="Dark Blue" Foreground="White" Background="#2b4c77" HorizontalAlignment="Left" Margin="228,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blueDarkBtn_Click"/>
+        <Button Name="darkBtn" Content="Dark" Foreground="White" Background="#2c2f33" HorizontalAlignment="Left" Margin="335,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="darkBtn_Click"/>
+        <Button Name="reallyDarkBtn" Content="Really Dark" Foreground="White" Background="#23272a" HorizontalAlignment="Left" Margin="442,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="reallyDarkBtn_Click"/>
+        <Button Name="justBlackBtn" Content="Just Black" Foreground="White" Background="Black" HorizontalAlignment="Left" Margin="549,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="justBlackBtn_Click"/>
+        <Button Name="blurpleBtn" Content="Blurple" Foreground="White" Background="#7289DA" HorizontalAlignment="Left" Margin="656,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blurpleBtn_Click"/>
     </Grid>
 </Window>
