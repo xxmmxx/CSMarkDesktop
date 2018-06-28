@@ -7,8 +7,6 @@ The CSMarkWPF Application works on Windows only.
 ## CSMarkCore
 CSMarkCore is the original .NET Core CLI application with major improvements to usability and simplicity.
 
-It's still a Work In Progress.
-
 This was originally called CSMarkDesktop but was renamed to help avoid confusion.
 
 The Benchmarking and Stress Testing capabilities were separated into 2 different executables sharing similar names.

@@ -16,19 +16,19 @@ namespace CSMarkCoreBenchmarkApp{
             MultiBenchSaveResult,
             SingleBenchSaveResult
         }
-        enum ResultFileType{
+     /*   enum ResultFileType{
             NoResult,
             Text,
             Xml,
             Json
         }
-
+        */
         static void Main(string[] args){
             Platform platform = new Platform();
             Console.Title = "CSMarkCore BenchmarkApp v" + platform.ReturnVersionString() + " Community Edition";
 
             BenchCommand command = BenchCommand.MultiBenchSaveResult;
-            ResultFileType rft = ResultFileType.Text;
+    //        ResultFileType rft = ResultFileType.Text;
             DateTime startTime = DateTime.Now;
             DateTime stopTime = DateTime.Now;
 
@@ -36,17 +36,17 @@ namespace CSMarkCoreBenchmarkApp{
             if (args.Length == 0){
                 //If the user doesn't specify the command, just start the stress test.
                 command = BenchCommand.MultiBenchSaveResult;
-                rft = ResultFileType.Text;
+         //       rft = ResultFileType.Text;
             }
             // If the user has given 1 arguments it should correspond to 1) Single or Multi
             else if (args.Length == 1 && args[0].ToString().Contains("single")){
                 command = BenchCommand.SingleBenchSaveResult;
-                rft = ResultFileType.Text;
+        //        rft = ResultFileType.Text;
             }
             // If the user has given 1 arguments it should correspond to 1) Single or Multi
             else if (args.Length == 1 && args[0].ToString().Contains("multi")){
                 command = BenchCommand.MultiBenchSaveResult;
-                rft = ResultFileType.Text;
+          //      rft = ResultFileType.Text;
             }
             //If the user has given 2 arguments they should correspond to 1) Single or Multi and 2) Start Time.
             else if (args.Length == 2){
@@ -58,7 +58,7 @@ namespace CSMarkCoreBenchmarkApp{
                     command = BenchCommand.SingleBenchSaveResult;
                 }
 
-                if (args[1].ToString().Contains("xml")){
+         /*       if (args[1].ToString().Contains("xml")){
                     rft = ResultFileType.Xml;
                 }
                 else if (args[1].ToString().Contains("text")) {
@@ -68,6 +68,7 @@ namespace CSMarkCoreBenchmarkApp{
                 {
                     rft = ResultFileType.Json;
                 }
+                */
             }
             //If the user has given 2 arguments they should correspond to 1) Single or Multi and 3) Start Time.
             else if (args.Length == 3)

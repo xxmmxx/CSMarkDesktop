@@ -25,7 +25,6 @@ namespace CSMarkAvaloniaTest
         SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
         SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
         SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
-        SolidColorBrush lightBlueGray = new SolidColorBrush(Color.FromRgb(144, 158, 175));
 
         StressTestController stc;
         DateTime start;

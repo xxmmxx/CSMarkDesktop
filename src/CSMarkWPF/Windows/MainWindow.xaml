@@ -15,24 +15,24 @@
         <DockPanel>
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_Settings" Name="menuSettingsBtn" Click="menuSettingsBtn_Click"/>
+                    <MenuItem Header="Settings" Name="menuSettingsBtn" Click="menuSettingsBtn_Click"/>
                     <!--   <MenuItem Header="_Stress Testing"/> -->
                     <!--   <MenuItem Header="_Benchmarking"/> -->
                     <!--   <MenuItem Header="_Save"/> -->
-                    <MenuItem Header="_Exit" Name="menuExitBtn" Click="menuExitBtn_Click"/>
-                    <MenuItem Header="_Restart App" Name="menuRestartAppBtn" Click="menuRestartAppBtn_Click"/>
+                    <MenuItem Header="Exit" Name="menuExitBtn" Click="menuExitBtn_Click"/>
+                    <MenuItem Header="Restart App" Name="menuRestartAppBtn" Click="menuRestartAppBtn_Click"/>
                 </MenuItem>
 
                 <MenuItem Header="_Help">
                     <MenuItem Header="Submit a Bug Report" Name="submitBugReportBtn"  Click="submitBugReportBtn_Click"/>
                     <MenuItem Header="Submit a Feature Request" Name="submitFeatureRequestBtn"  Click="submitFeatureRequestBtn_Click"/>
-                    <MenuItem Header="_About">
+                    <MenuItem Header="About">
                         <MenuItem Header="About This PC" Name="menuAboutPCBtn" Click="menuAboutPCBtn_Click"/>
                         <MenuItem Header="About CSMark App" Name="menuAboutAppBtn" Click="menuAboutAppBtn_Click"/>
                     </MenuItem>
-                    <MenuItem Header="_Support">
-                        <MenuItem Header="_Join the CSMark Discord" Name="joinDiscordMenuBtn" Click="joinDiscordMenuBtn_Click"/>
-                        <MenuItem Header="_Get the Source Code" Name="getSourceCodeMenuBtn" Click="getSourceCodeMenuBtn_Click"/>
+                    <MenuItem Header="Support">
+                        <MenuItem Header="Join the CSMark Discord" Name="joinDiscordMenuBtn" Click="joinDiscordMenuBtn_Click"/>
+                        <MenuItem Header="Get the Source Code" Name="getSourceCodeMenuBtn" Click="getSourceCodeMenuBtn_Click"/>
                         <MenuItem Header="Become a CSMark patron" Name="donateCSMarkMenuBtn" Click="donateCSMarkMenuBtn_Click"/>
                     </MenuItem>
                     <MenuItem Header="View Privacy Policy" Name="viewPrivacyPolicyBtn" Click="viewPrivacyPolicyBtn_Click"/>

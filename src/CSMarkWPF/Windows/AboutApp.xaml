@@ -10,6 +10,6 @@
         <Label Name="title" Content="About CSMarkDesktop" FontSize="26" Margin="261,0,248,366"/>
         <Label FontSize="14" Name="infoLabel" Content="CSMark is an open source CPU benchmarking app written in C#.  It also has a built in CPU stress testing tool.&#xA;&#xA;CSMark's development is supported through monthly donations made by users just like you." Margin="53,71,53,265"></Label>
         <Image x:Name="patronImage" Source="patron_button.png" HorizontalAlignment="Left" Margin="583,349,0,0" VerticalAlignment="Top" Width="182" Height="43" MouseLeftButtonDown="patronImage_MouseLeftButtonDown"/>
-
+        <Label Name="versionLabel" Content="CSMarkDesktop " FontSize="18" Margin="261,196,248,170"/>
     </Grid>
 </Window>
