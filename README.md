@@ -85,3 +85,7 @@ __Answer:__ Of course! Anybody can make videos and/or content around CSMark. I d
 
 __Question:__ Is the version of CSMark I'm using supported?
 __Answer:__ You can check the status of CSMark support at the [CSMark Support Documentation](/Support.md).
+
+## Notes
+* Qualcomm Snapdragon is a trademark of Qualcomm Inc. 
+* All Trademarks and Copyrights belong to their respective owners.
