@@ -76,6 +76,7 @@ namespace CSMarkDesktop.Windows{
             Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
             title.Foreground = Foreground;
             infoLabel.Foreground = Foreground;
+            versionLabel.Foreground = Foreground;
 
         }
 

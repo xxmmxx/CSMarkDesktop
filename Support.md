@@ -13,8 +13,9 @@ Users should install the latest service pack/patch within a major version to rem
 There are 2 Categories of Release Support.
 
 These are:
-* Current Branch
-* Long Term Support
+* Short Term Support - Stability improvements and Bug Fixes Up To 6 months after release.
+* Current Branch - Stability improvements, Bug Fixes, Optimizations and general improvements Up To  months after release
+* Long Term Support - Stability improvements, Bug Fixes, Optimizations and general improvements Up To 24 months after release
 
 ### Mainstream Support and Extended Support
 * Mainstream Support is defined as updates which can include new features, bug fixes, and improvements.
@@ -24,6 +25,6 @@ These are:
 
 ### Supported Versions
 
-| Release Status | Release Version  |  Release Date | Mainstream Support Start | Mainstream Support End |
-|---------------|----------|--------------|-----------------|------------------|
-| Preview | CSMark 0.29 | May 24th 2018 | May 24th 2018 | Tentatively October 2018 |
+| Support Category | Release Status | Release Version | Release Date | Mainstream Support Start | Mainstream Support End |
+|---------------|---------------|----------|--------------|-----------------|------------------|
+| Short Term Support | Preview | CSMark 0.29 | May 24th 2018 | May 24th 2018 | August 24th 2018 |

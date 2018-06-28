@@ -1,16 +1,18 @@
 ## Upcoming Versions
 This document contains a list of upcoming releases of CSMark Desktop.
 
-### 0.29.3
- **Highlight Features**
-* [Core only] Add support for saving the result as a XML file or JSON file
-
 ### 0.29.4
  **Highlight Features**
+* [Core only] Add support for saving the result as a XML file or JSON file
 
 ### 0.30.0
  **Highlight Features**
  * Cross-platform Avalonia based GUI program
+ * [Avalonia App] Add support for saving the result as a XML file or JSON file
+
+### 0.31.0
+ **Highlight Features**
+* Initial Release on Windows Store
 
 ### Future versions
 * [WPF only] - Icon in task tray

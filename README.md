@@ -13,10 +13,20 @@ The Benchmarking and Stress Testing capabilities were separated into 2 different
 The overall name for the project is CSMarkCore.
 
 ## CSMarkWPF
-CSMarkWPF is the new WPF GUI version of CSMarkDesktop which works on Windows.
+CSMarkWPF is the new GUI version of CSMarkDesktop which works on Windows.
 
 ## Where is the CSMarkDesktop Cross-platform GUI version?
 It is still in the works. CSMarkWPF was introduced to provide a GUI experience to Windows users in a timely fashion whilst the cross-platform GUI version is underway.
+
+### Which version should I download?
+| Processor Type | OS | CSMark Edition You Should Download | CSMark Package You Should Download |
+|---------|----------|-----------|----------------|
+| Any x86-64 CPU | Windows 10 | CSMarkDesktop or CSMarkCore | CSMarkWPF or Win10-x64 |
+| Any 32 Bit ARM CPU E.g. Qualcomm(R) SnapdragonTM 400 | Windows 10 | CSMarkCore | Win10-arm |
+| Any ARM64 CPU E.g. Qualcomm(R) SnapdragonTM 835 Mobile Computing Platform | Windows 10 | CSMarkCore | Win10-arm |
+| Any x86-64 CPU | macOS | CSMarkCore | osx-x64 |
+| Any x86-64 CPU | Linux | CSMarkCore | linux-x64 |
+| Any 32 Bit ARM CPU | Linux | CSMarkCore | linux-arm |
 
 ## Contributing
 For details on Contributing or Building the Source Code check out the [Contribution Guide](/CONTRIBUTING.md) .
