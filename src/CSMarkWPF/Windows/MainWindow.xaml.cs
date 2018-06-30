@@ -80,9 +80,7 @@ namespace CSMarkDesktop{
         public MainWindow(){
             InitializeComponent();
             Assembly assembly = Assembly.GetEntryAssembly();
-            Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
 
-            // 
             if(DIST_PLAT.Equals(DistributionPlatform.SteamStore) || DIST_PLAT.Equals(DistributionPlatform.WinStore)){
                 checkUpdatesMenuBtn.IsEnabled = false;
                 checkUpdatesMenuBtn.Visibility = Visibility.Collapsed;                
@@ -90,6 +88,7 @@ namespace CSMarkDesktop{
                 menuRestartAppBtn.Visibility = Visibility.Collapsed;
             }
             else{
+                Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
                 AutoUpdater.LetUserSelectRemindLater = false;
                 AutoUpdater.ReportErrors = true;
                 AutoUpdater.ShowSkipButton = false;
@@ -103,12 +102,13 @@ namespace CSMarkDesktop{
 
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
-            DetectBenchmarkEligibility();
 
             if (!benchmarkCLICheck()){
                 benchBtn.IsEnabled = false;
                 eligible.Content = "Download the CSMarkCoreBenchmarkApp zip file and extract it in the CSMarkDesktop app folder to run the benchmark";
             }
+
+            DetectBenchmarkEligibility();
 
             if (Properties.Settings.Default.HideBecomeAPatronButton){
                 patronImage.Visibility = Visibility.Hidden;
@@ -170,7 +170,8 @@ namespace CSMarkDesktop{
 
             if (os.Equals("Windows 10") && ((Environment.OSVersion.Version == win10v1607) || (Environment.OSVersion.Version == win10v1703) || (Environment.OSVersion.Version == win10v1709) || (Environment.OSVersion.Version == win10v1803))){
                 benchBtn.Content = "Start Benchmark";
-                benchBtn.Visibility = Visibility.Hidden;
+                benchBtn.IsEnabled = true;
+                eligible.Visibility = Visibility.Hidden;
             }
             else if (os.Equals("Windows 7") || os.Equals("Windows 8") || os.Equals("Windows 8.1")){
                 benchBtn.Content = "Unable to run Benchmark";
