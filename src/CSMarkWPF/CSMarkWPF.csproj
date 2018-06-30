@@ -496,7 +496,7 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="AluminiumCoreLib_License.txt">
+    <Resource Include="ThirdPartyLicenses\AluminiumCoreLib_License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
@@ -511,6 +511,21 @@
   <ItemGroup>
     <Resource Include="Windows\CSMark1024x.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="ThirdPartyLicenses\NewtonsoftJSON_License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ThirdPartyLicenses\CSMarkLib_License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ThirdPartyLicenses\AutoUpdater.NET_License.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ThirdPartyLicenses\Steamworks.NET_License.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
