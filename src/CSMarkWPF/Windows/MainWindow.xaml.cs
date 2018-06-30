@@ -24,6 +24,7 @@ using System.Globalization;
 using System.Threading;
 using System.IO;
 using CSMarkDesktop.Windows;
+using CSMarkLib.Results;
 
 namespace CSMarkDesktop{
 
@@ -68,14 +69,32 @@ namespace CSMarkDesktop{
         private Version win10v1507 = new Version(10, 0, 10240, 0);
         private Version win10v1511 = new Version(10, 0, 10586, 0);
 
+        private enum DistributionPlatform{
+            SteamStore,
+            WinStore,
+            GitRepository
+        }
+
+        DistributionPlatform DIST_PLAT = DistributionPlatform.SteamStore;
+
         public MainWindow(){
             InitializeComponent();
             Assembly assembly = Assembly.GetEntryAssembly();
             Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
-            AutoUpdater.LetUserSelectRemindLater = false;
-            AutoUpdater.ReportErrors = true;
-            AutoUpdater.ShowSkipButton = false;
-            AutoUpdater.ShowRemindLaterButton = false;   
+
+            // 
+            if(DIST_PLAT.Equals(DistributionPlatform.SteamStore) || DIST_PLAT.Equals(DistributionPlatform.WinStore)){
+                checkUpdatesMenuBtn.IsEnabled = false;
+                checkUpdatesMenuBtn.Visibility = Visibility.Collapsed;                
+                menuRestartAppBtn.IsEnabled = false;
+                menuRestartAppBtn.Visibility = Visibility.Collapsed;
+            }
+            else{
+                AutoUpdater.LetUserSelectRemindLater = false;
+                AutoUpdater.ReportErrors = true;
+                AutoUpdater.ShowSkipButton = false;
+                AutoUpdater.ShowRemindLaterButton = false;
+            }
 
             LoadBackground();
             stc = new StressTestController();
@@ -151,8 +170,7 @@ namespace CSMarkDesktop{
 
             if (os.Equals("Windows 10") && ((Environment.OSVersion.Version == win10v1607) || (Environment.OSVersion.Version == win10v1703) || (Environment.OSVersion.Version == win10v1709) || (Environment.OSVersion.Version == win10v1803))){
                 benchBtn.Content = "Start Benchmark";
-                benchBtn.IsEnabled = true;
-                eligible.Content = "This device is eligible to run the Benchmark."; 
+                benchBtn.Visibility = Visibility.Hidden;
             }
             else if (os.Equals("Windows 7") || os.Equals("Windows 8") || os.Equals("Windows 8.1")){
                 benchBtn.Content = "Unable to run Benchmark";
