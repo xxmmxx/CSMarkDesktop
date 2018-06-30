@@ -125,7 +125,7 @@ namespace CSMarkCoreBenchmarkApp{
                 var y = bench.ReturnBenchmarkObjects();
                 Result x = new ResultSaver().SaveResult(false, y);
                 bench.PrintResultsToConsole(true, false, x);
-                new ResultSaver().SaveToTextFile(CSMarkVersion, x);
+               // new ResultSaver().SaveToTextFile("", CSMarkVersion, x);
             }
             else if (command == BenchCommand.MultiBenchSaveResult){
              //   bench.DoWarmup(true);
@@ -133,7 +133,7 @@ namespace CSMarkCoreBenchmarkApp{
                 var y = bench.ReturnBenchmarkObjects();
                 Result x = new ResultSaver().SaveResult(true, y);
                 bench.PrintResultsToConsole(true, true, x);
-                new ResultSaver().SaveToTextFile(CSMarkVersion, x);
+             //   new ResultSaver().SaveToTextFile(CSMarkVersion, x);
             }
 
             Console.WriteLine("To exit this application, press ENTER.");

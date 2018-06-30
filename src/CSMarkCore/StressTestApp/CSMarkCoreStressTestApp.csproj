@@ -30,6 +30,18 @@
     <None Update="Rollbar.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="ThirdPartyLicenses\AluminiumCoreLib_License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ThirdPartyLicenses\CSMarkLib_License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ThirdPartyLicenses\NewtonsoftJSON_License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="ThirdPartyLicenses\Rollbar.NET_License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
