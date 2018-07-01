@@ -49,32 +49,25 @@ namespace CSMarkDesktop.Windows
         }
 
         public void LoadBackground(){
-            if (Properties.Settings.Default.background.Equals("reallydark"))
-            {
+            if (Properties.Settings.Default.background.Equals("reallydark")){
                 gridColour.Background = reallyDark;
             }
-            else if (Properties.Settings.Default.background.Equals("dark"))
-            {
+            else if (Properties.Settings.Default.background.Equals("dark")){
                 gridColour.Background = dark;
             }
-            else if (Properties.Settings.Default.background.Equals("bluedark"))
-            {
+            else if (Properties.Settings.Default.background.Equals("bluedark")){
                 gridColour.Background = blueDark;
             }
-            else if (Properties.Settings.Default.background.Equals("bluegray"))
-            {
+            else if (Properties.Settings.Default.background.Equals("bluegray")){
                 gridColour.Background = blueGray;
             }
-            else if (Properties.Settings.Default.background.Equals("blurple"))
-            {
+            else if (Properties.Settings.Default.background.Equals("blurple")){
                 gridColour.Background = blurple;
             }
-            else if (Properties.Settings.Default.background.Equals("justblack"))
-            {
+            else if (Properties.Settings.Default.background.Equals("justblack")){
                 gridColour.Background = black;
             }
-            else
-            {
+            else{
                 gridColour.Background = dark;
             }
 
@@ -92,7 +85,6 @@ namespace CSMarkDesktop.Windows
             socketLabel.Foreground = Foreground;
             hwVirtualizationLabel.Foreground = Foreground;
             manufacturerLabel.Foreground = Foreground;
-            revisionLabel.Foreground = Foreground;
             gpuLabel.Foreground = Foreground;
             ramSpeedLabel.Foreground = Foreground;
         }
@@ -123,17 +115,32 @@ namespace CSMarkDesktop.Windows
             osVersionLabel.Content = "OS Version: " + Environment.OSVersion.Version + " (v" + os.Release + ")";
             osLabel.Content = "OS: " + os.ProductName + " " + osAdvanced.Bitness;
             manufacturerLabel.Content = "Processor Manufacturer: " + cpu.Manufacturer;
-            revisionLabel.Content = "Processor Revision: " + cpu.Revision;
-            ramSpeedLabel.Content = "RAM Speed: " + (mem.MemorySpeedMHz * 2) + "MHz";
 
             try{
                 string GPU = "";
+                UInt32 vram = 0;
 
                 ManagementObjectSearcher mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM " + "Win32_VideoController");
                 foreach (ManagementObject mj in mos.Get()){
                     GPU = Convert.ToString(mj["Name"]);
-                }
 
+                    try{
+                        vram = Convert.ToUInt32(mj["AdapterRAM"]);
+                        //Convert from Bytes to KB
+                        vram = vram / 1024;
+                        //Convert from KB to MB
+                        vram = vram / 1000;
+                        //Convert from MB to GB
+                        vram = vram / 1000;
+
+                        if (vram <= 4){
+                            gpuLabel.Content += " with " + vram + " of Graphics Memory";
+                        }
+                    }
+                    catch{
+                        vram = 0;
+                    }
+                }      
                 gpuLabel.Content = "Graphics Processor: ";
 
                 if (GPU.Contains("Radeon") || GPU.Contains("FirePro")){

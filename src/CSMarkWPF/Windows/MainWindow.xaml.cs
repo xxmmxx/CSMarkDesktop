@@ -116,30 +116,124 @@ namespace CSMarkDesktop{
         }
 
         private void LoadBackground() {
+            SolidColorBrush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+
             if (Properties.Settings.Default.background.Equals("reallydark")) {
                 gridColour.Background = reallyDark;
             }
             else if (Properties.Settings.Default.background.Equals("dark")) {
                 gridColour.Background = dark;
             }
-            else if (CSMarkDesktop.Properties.Settings.Default.background.Equals("bluedark")) {
+            else if (Properties.Settings.Default.background.Equals("bluedark")) {
                 gridColour.Background = blueDark;
             }
             else if (Properties.Settings.Default.background.Equals("bluegray")) {
                 gridColour.Background = blueGray;
             }
-            else if (Properties.Settings.Default.background.Equals("blurple"))
-            {
+            else if (Properties.Settings.Default.background.Equals("blurple")){
                 gridColour.Background = blurple;
             }
-            else if (Properties.Settings.Default.background.Equals("justblack"))
-            {
+            else if (Properties.Settings.Default.background.Equals("justblack")){
                 gridColour.Background = black;
             }
-            else
-            {
+            else{
                 gridColour.Background = dark;
             }
+
+            var background = gridColour.Background;
+            var thickness = new Thickness(0);
+
+            dockPanel.Background = background;  
+
+            menuBar.Background = background;
+            menuBar.Foreground = foreground;
+            menuBar.BorderThickness = thickness;
+            menuBar.BorderBrush = background;
+
+            helpMenu.Background = background;
+            helpMenu.Foreground = foreground;
+            helpMenu.BorderThickness = thickness;
+            helpMenu.BorderBrush = background;
+
+            fileMenu.Background = background;
+            fileMenu.Foreground = foreground;
+            fileMenu.BorderThickness = thickness;
+            fileMenu.BorderBrush = background;
+
+            aboutMenu.Background = background;
+            aboutMenu.Foreground = foreground;
+            aboutMenu.BorderThickness = thickness;
+            aboutMenu.BorderBrush = background;
+
+            supportMenu.Background = background;
+            supportMenu.Foreground = foreground;
+            supportMenu.BorderThickness = thickness;
+            supportMenu.BorderBrush = background;
+
+            menuSettingsBtn.Foreground = foreground;
+            menuSettingsBtn.Background = background;
+            menuSettingsBtn.BorderThickness = thickness;
+            menuSettingsBtn.BorderBrush = background;
+
+            menuAboutAppBtn.Background = background;
+            menuAboutAppBtn.Foreground = foreground;
+            menuAboutAppBtn.BorderThickness = thickness;
+            menuAboutAppBtn.BorderBrush = background;
+
+            menuAboutPCBtn.Background = background;
+            menuAboutPCBtn.Foreground = foreground;
+            menuAboutPCBtn.BorderThickness = thickness;
+            menuAboutPCBtn.BorderBrush = background;
+
+            menuExitBtn.Foreground = foreground;
+            menuExitBtn.Background = background;
+            menuExitBtn.BorderThickness = thickness;
+            menuExitBtn.BorderBrush = background;
+
+            menuRestartAppBtn.Background = background;
+            menuRestartAppBtn.Foreground = foreground;
+            menuRestartAppBtn.BorderThickness = thickness;
+            menuRestartAppBtn.BorderBrush = background;
+
+            submitBugReportBtn.Background = background;
+            submitBugReportBtn.Foreground = foreground;
+            submitBugReportBtn.BorderThickness = thickness;
+            submitBugReportBtn.BorderBrush = background;
+
+            submitFeatureRequestBtn.Background = background;
+            submitFeatureRequestBtn.Foreground = foreground;
+            submitFeatureRequestBtn.BorderThickness = thickness;
+            submitFeatureRequestBtn.BorderBrush = background;
+
+            joinDiscordMenuBtn.Background = background;
+            joinDiscordMenuBtn.Foreground = foreground;
+            joinDiscordMenuBtn.BorderThickness = thickness;
+            joinDiscordMenuBtn.BorderBrush = background;
+
+            getSourceCodeMenuBtn.Background = background;
+            getSourceCodeMenuBtn.Foreground = foreground;
+            getSourceCodeMenuBtn.BorderThickness = thickness;
+            getSourceCodeMenuBtn.BorderBrush = background;
+
+            donateCSMarkMenuBtn.Background = background;
+            donateCSMarkMenuBtn.Foreground = foreground;
+            donateCSMarkMenuBtn.BorderThickness = thickness;
+            donateCSMarkMenuBtn.BorderBrush = background;
+
+            viewPrivacyPolicyBtn.Background = background;
+            viewPrivacyPolicyBtn.Foreground = foreground;
+            viewPrivacyPolicyBtn.BorderThickness = thickness;
+            viewPrivacyPolicyBtn.BorderBrush = background;
+
+            viewSourceCodeLicenseBtn.Background = background;
+            viewSourceCodeLicenseBtn.Foreground = foreground;
+            viewSourceCodeLicenseBtn.BorderThickness = thickness;
+            viewSourceCodeLicenseBtn.BorderBrush = background;
+
+            checkUpdatesMenuBtn.Background = background;
+            checkUpdatesMenuBtn.Foreground = foreground;
+            checkUpdatesMenuBtn.BorderThickness = thickness;
+            checkUpdatesMenuBtn.BorderBrush = background;
         }
 
         private bool checkForUpdates(){

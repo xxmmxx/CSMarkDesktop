@@ -10,27 +10,25 @@
         xmlns:local="clr-namespace:CSMarkDesktop"
         mc:Ignorable="d"
         Title="CSMarkDesktop" Height="600" Width="1024" WindowStartupLocation="CenterScreen" MinWidth="1024" MinHeight="600" ResizeMode="CanMinimize" Closing="main_Closing" Background="White" GotFocus="main_GotFocus" MouseEnter="main_MouseEnter">
-    <Grid x:Name="gridColour">
-
-        <DockPanel>
-            <Menu DockPanel.Dock="Top">
-                <MenuItem Header="_File">
+    <Grid x:Name="gridColour" ShowGridLines="False">
+        <DockPanel Name="dockPanel">
+            <Menu Name="menuBar" DockPanel.Dock="Top">
+                <MenuItem Header="_File" Name="fileMenu">
                     <MenuItem Header="Settings" Name="menuSettingsBtn" Click="menuSettingsBtn_Click"/>
-                    <!--   <MenuItem Header="_Stress Testing"/> -->
-                    <!--   <MenuItem Header="_Benchmarking"/> -->
-                    <!--   <MenuItem Header="_Save"/> -->
+                    <!--   <MenuItem Header="Stress Testing"/> -->
+                    <!--   <MenuItem Header="Benchmarking"/> -->
+                    <!--   <MenuItem Header="Save"/> -->
                     <MenuItem Header="Exit" Name="menuExitBtn" Click="menuExitBtn_Click"/>
                     <MenuItem Header="Restart App" Name="menuRestartAppBtn" Click="menuRestartAppBtn_Click"/>
                 </MenuItem>
-
-                <MenuItem Header="_Help">
+                <MenuItem Header="_Help" Name="helpMenu">
                     <MenuItem Header="Submit a Bug Report" Name="submitBugReportBtn"  Click="submitBugReportBtn_Click"/>
                     <MenuItem Header="Submit a Feature Request" Name="submitFeatureRequestBtn"  Click="submitFeatureRequestBtn_Click"/>
-                    <MenuItem Header="About">
+                    <MenuItem Header="About" Name="aboutMenu">
                         <MenuItem Header="About This PC" Name="menuAboutPCBtn" Click="menuAboutPCBtn_Click"/>
                         <MenuItem Header="About CSMark App" Name="menuAboutAppBtn" Click="menuAboutAppBtn_Click"/>
                     </MenuItem>
-                    <MenuItem Header="Support">
+                    <MenuItem Header="Support" Name="supportMenu">
                         <MenuItem Header="Join the CSMark Discord" Name="joinDiscordMenuBtn" Click="joinDiscordMenuBtn_Click"/>
                         <MenuItem Header="Get the Source Code" Name="getSourceCodeMenuBtn" Click="getSourceCodeMenuBtn_Click"/>
                         <MenuItem Header="Become a CSMark patron" Name="donateCSMarkMenuBtn" Click="donateCSMarkMenuBtn_Click"/>
@@ -40,7 +38,7 @@
                     <MenuItem Header="Check For Updates" Name="checkUpdatesMenuBtn" Click="checkUpdatesMenuBtn_Click"/>
                 </MenuItem>
             </Menu>
-            <StackPanel></StackPanel>
+         
         </DockPanel>
 
         <TextBlock Margin="319,26,288,460" FontSize="48" Foreground="White"><Run Text="CSMarkDesktop"/></TextBlock>
@@ -50,10 +48,10 @@
         <TextBlock HorizontalAlignment="Left" Margin="363,491,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="367" Foreground="White" Height="48"><Run Text="Pre-release . Copyright"/><Run Text=" (c)"/><Run Text=" AluminiumTech"/><Run Text=" 2018"/><LineBreak/><Run Text="All copyrights belong to their respective copyright owners."/><LineBreak/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="53,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="953" Foreground="White" FontSize="12"><Run Text="CSMark is an open source CPU Benchmark written in C#"/><Run Text=" and is licensed under the MPL 2.0"/><Run Text=" . "/><Run Text=" You can view the license in the License.txt file in th"/><Run Text="e app "/><Run Text="folder."/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="96,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="910" Foreground="White" FontSize="12"><Run Text="Warning: Overclocking your CPU may damage it. Do so at your own risk"/><Run Text=". "/><Run Text=" For more information, visit your CPU manufacturer's website."/><LineBreak/><Run Text="Ensure "/><Run Text="that your CPU has adequate cooling before starting the Stress Test"/><Run Text=" or running a benchmark."/></TextBlock>
-        <Label Content="0:00:00" HorizontalAlignment="Left" FontSize="14"  Margin="499,412,0,0" VerticalAlignment="Top" x:Name="stressTimer" Foreground="White"/>
-        <Label x:Name="versionLabel" Content="v0.0.0.0" HorizontalAlignment="Left" Margin="927,529,0,0" VerticalAlignment="Top" Foreground="White" Width="79" FontSize="16"/>
-        <Label x:Name="eligible" Content="Label" HorizontalAlignment="Left" Margin="203,239,0,0" VerticalAlignment="Top" Width="644" Foreground="White"/>
-        <Image x:Name="patronImage" Source="patron_button.PNG" HorizontalAlignment="Left" Margin="840,491,0,0" VerticalAlignment="Top" Width="140" Height="33" MouseLeftButtonDown="patronLeftButtonDown"/>
+        <Label Content="0:00:00" HorizontalAlignment="Left" FontSize="14"  Margin="499,412,0,0" VerticalAlignment="Top" Name="stressTimer" Foreground="White"/>
+        <Label Name="versionLabel" Content="v0.0.0.0" HorizontalAlignment="Left" Margin="927,529,0,0" VerticalAlignment="Top" Foreground="White" Width="79" FontSize="16"/>
+        <Label Name="eligible" Content="Label" HorizontalAlignment="Left" Margin="203,239,0,0" VerticalAlignment="Top" Width="644" Foreground="White"/>
+        <Image Name="patronImage" Source="patron_button.PNG" HorizontalAlignment="Left" Margin="840,491,0,0" VerticalAlignment="Top" Width="140" Height="33" MouseLeftButtonDown="patronLeftButtonDown"/>
 
     </Grid>
 </Window>

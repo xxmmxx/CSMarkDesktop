@@ -55,63 +55,50 @@ namespace CSMarkDesktop.Windows{
             Properties.Settings.Default.Save();
         }
         private void LoadBackground(){
-            if (Properties.Settings.Default.background.Equals("reallydark"))
-            {
+            if (Properties.Settings.Default.background.Equals("reallydark")){
                 gridColour.Background = reallyDark;
             }
-            else if (Properties.Settings.Default.background.Equals("dark"))
-            {
+            else if (Properties.Settings.Default.background.Equals("dark")){
                 gridColour.Background = dark;
             }
-            else if (Properties.Settings.Default.background.Equals("bluedark"))
-            {
+            else if (Properties.Settings.Default.background.Equals("bluedark")){
                 gridColour.Background = blueDark;
             }
-            else if (Properties.Settings.Default.background.Equals("bluegray"))
-            {
+            else if (Properties.Settings.Default.background.Equals("bluegray")){
                 gridColour.Background = blueGray;
             }
-            else if (Properties.Settings.Default.background.Equals("blurple"))
-            {
+            else if (Properties.Settings.Default.background.Equals("blurple")){
                 gridColour.Background = blurple;
             }
-            else if (Properties.Settings.Default.background.Equals("justblack"))
-            {
+            else if (Properties.Settings.Default.background.Equals("justblack")){
                 gridColour.Background = black;
             }
-            else
-            {
+            else{
                 gridColour.Background = dark;
             }
 
-            enableCheckBetaUpdateBtn.Background = gridColour.Background;
-            enableCheckUpdateOnStartupBtn.Background = gridColour.Background;
-            enableMinimizeOnQuitBtn.Background = gridColour.Background;
-            enableHideBecomePatronBtn.Background = gridColour.Background;
-            WindowTitle.Background = gridColour.Background;
-            applySettingsBtn.Background = gridColour.Background;
-            closeBtn.Background = gridColour.Background;
-            changeLabel.Background = gridColour.Background;
-            themeLabel.Background = gridColour.Background;
+            var background = gridColour.Background;
+            var foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
 
-            SolidColorBrush fore;
+            enableCheckBetaUpdateBtn.Background = background;
+            enableCheckUpdateOnStartupBtn.Background = background;
+            enableMinimizeOnQuitBtn.Background = background;
+            enableHideBecomePatronBtn.Background = background;
+            WindowTitle.Background = background;
+            applySettingsBtn.Background = background;
+            closeBtn.Background = background;
+            changeLabel.Background = background;
+            themeLabel.Background = background;
 
-            if (gridColour.Background != blueGray){
-                fore = new SolidColorBrush(Color.FromRgb(255,255,255));
-            }
-            else{
-                fore = new SolidColorBrush(Color.FromRgb(44, 47, 51));              
-            }
-
-            enableCheckBetaUpdateBtn.Foreground = fore;
-            enableCheckUpdateOnStartupBtn.Foreground = fore;
-            enableMinimizeOnQuitBtn.Foreground = fore;
-            enableHideBecomePatronBtn.Foreground = fore;
-            WindowTitle.Foreground = fore;
-            applySettingsBtn.Foreground = fore;
-            closeBtn.Foreground = fore;
-            changeLabel.Foreground = fore;
-            themeLabel.Foreground = fore;
+            enableCheckBetaUpdateBtn.Foreground = foreground;
+            enableCheckUpdateOnStartupBtn.Foreground = foreground;
+            enableMinimizeOnQuitBtn.Foreground = foreground;
+            enableHideBecomePatronBtn.Foreground = foreground;
+            WindowTitle.Foreground = foreground;
+            applySettingsBtn.Foreground = foreground;
+            closeBtn.Foreground = foreground;
+            changeLabel.Foreground = foreground;
+            themeLabel.Foreground = foreground;
         }
         private void enableCheckBetaUpdateBtn_Checked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.UseBetaUpdateChannel = (bool)enableCheckBetaUpdateBtn.IsChecked;
