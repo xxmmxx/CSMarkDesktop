@@ -39,9 +39,8 @@ namespace CSMarkDesktop.Windows
         }
         private void dispatcher_Tick(object sender, EventArgs e){
             dispatcher.Stop();
-            Hide(); 
-            MainWindow main = new MainWindow();
-            main.ShowDialog(); 
+            this.Hide();
+            var x = new MainWindow().ShowDialog();
         }
     }
 }

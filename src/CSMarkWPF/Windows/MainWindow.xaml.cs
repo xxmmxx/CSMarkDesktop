@@ -25,6 +25,7 @@ using System.Threading;
 using System.IO;
 using CSMarkDesktop.Windows;
 using CSMarkLib.Results;
+using CSMarkDesktop.Windows.LauncherUI;
 
 namespace CSMarkDesktop{
 
@@ -69,18 +70,22 @@ namespace CSMarkDesktop{
         private Version win10v1507 = new Version(10, 0, 10240, 0);
         private Version win10v1511 = new Version(10, 0, 10586, 0);
 
+        private Brush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+        private Brush background;
         public enum DistributionPlatform{
             SteamStore,
             WinStore,
             GitRepository
         }
 
+        private string AppVersion;
+        
         DistributionPlatform distribution = DistributionPlatform.GitRepository;
 
         public MainWindow(){
             InitializeComponent();
             Assembly assembly = Assembly.GetEntryAssembly();
-
+           
             if(distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
                 checkUpdatesMenuBtn.IsEnabled = false;
                 checkUpdatesMenuBtn.Visibility = Visibility.Collapsed;                
@@ -103,6 +108,7 @@ namespace CSMarkDesktop{
 
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            AppVersion = versionLabel.Content.ToString();
 
             if (!benchmarkCLICheck() && (!distribution.Equals(DistributionPlatform.SteamStore) && !distribution.Equals(DistributionPlatform.WinStore))){
                 benchBtn.IsEnabled = false;
@@ -114,12 +120,9 @@ namespace CSMarkDesktop{
             if (Properties.Settings.Default.HideBecomeAPatronButton == true){
                 patronImage.Visibility = Visibility.Collapsed;
             }
-
         }
 
-        private void LoadBackground() {
-            SolidColorBrush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
-
+        private void LoadBackground(){
             if (Properties.Settings.Default.background.Equals("reallydark")) {
                 gridColour.Background = reallyDark;
             }
@@ -142,7 +145,7 @@ namespace CSMarkDesktop{
                 gridColour.Background = dark;
             }
 
-            var background = gridColour.Background;
+            background = gridColour.Background;
             var thickness = new Thickness(0);
 
             dockPanel.Background = background;  
@@ -324,12 +327,14 @@ namespace CSMarkDesktop{
         }
         #region Handle Button Clicks
         private void benchBtn_Click(object sender, RoutedEventArgs e){
-            if (benchmarkCLICheck()){
-                executeCLIApp();
-            }
-            else{
-                MessageBox.Show("We were unable to start the CSMarkCoreBenchmarkApp. Please ensure you have a valid CSMarkCoreBenchmarkApp folder in the current app directory before trying again.", "Failed to Start CSMarkCoreBenchmarkApp");
-            }
+            benchBtn.Content = "Starting Benchmark...";
+            benchBtn.IsEnabled = false;
+            eligible.Content = "Starting Benchmark.... During this benchmark, your system may become unresponsive for a short peroid of time.";
+            eligible.Visibility = Visibility.Visible;
+            new LaunchBenchmark(AppVersion, background, foreground);
+            benchBtn.Content = "Start Benchmark";
+            benchBtn.IsEnabled = true;
+            eligible.Content = "";
         }
         private void stressBtn_Click(object sender, RoutedEventArgs e){            
             HandleStressTest();

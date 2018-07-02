@@ -409,11 +409,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Properties\Results.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Results.settings</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AboutApp.xaml.cs">
       <DependentUpon>AboutApp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AboutPC.xaml.cs">
       <DependentUpon>AboutPC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LauncherUI\BenchResults.xaml.cs">
+      <DependentUpon>BenchResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LauncherUI\LaunchBenchmark.xaml.cs">
+      <DependentUpon>LaunchBenchmark.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -425,6 +436,12 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\AboutPC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LauncherUI\BenchResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LauncherUI\LaunchBenchmark.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\MainWindow.xaml">
@@ -467,6 +484,10 @@
     <None Include="CSMarkDesktopReduxWPF_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\Results.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Results.Designer.cs</LastGenOutput>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
