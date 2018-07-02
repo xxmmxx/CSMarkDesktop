@@ -17,6 +17,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static CSMarkDesktop.MainWindow;
 
 namespace CSMarkDesktop.Windows{
     /// <summary>
@@ -37,11 +38,22 @@ namespace CSMarkDesktop.Windows{
 
         private SolidColorBrush modernDarkCSMarkGreen = new SolidColorBrush(Color.FromRgb(31, 139, 76));
 
-        public Settings(){
+        public Settings(DistributionPlatform distribution){
             InitializeComponent();
             LoadBackground();
             LoadSettings();
             changeLabel.Visibility = Visibility.Hidden;
+
+            if (distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
+                enableHideBecomePatronBtn.Visibility = Visibility.Collapsed;
+                Properties.Settings.Default.HideBecomeAPatronButton = true;
+                enableCheckBetaUpdateBtn.Visibility = Visibility.Collapsed;
+                Properties.Settings.Default.exitButtonShouldQuitApp = true;
+                Properties.Settings.Default.CheckForUpdatesOnStartup = false;
+                Properties.Settings.Default.UseBetaUpdateChannel = false;
+                enableCheckUpdateOnStartupBtn.Visibility = Visibility.Collapsed;
+                enableMinimizeOnQuitBtn.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void LoadSettings(){

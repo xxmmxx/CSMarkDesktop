@@ -86,7 +86,6 @@ namespace CSMarkDesktop.Windows
             hwVirtualizationLabel.Foreground = Foreground;
             manufacturerLabel.Foreground = Foreground;
             gpuLabel.Foreground = Foreground;
-            ramSpeedLabel.Foreground = Foreground;
         }
 
         public void LoadSpecs(){

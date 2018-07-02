@@ -69,23 +69,24 @@ namespace CSMarkDesktop{
         private Version win10v1507 = new Version(10, 0, 10240, 0);
         private Version win10v1511 = new Version(10, 0, 10586, 0);
 
-        private enum DistributionPlatform{
+        public enum DistributionPlatform{
             SteamStore,
             WinStore,
             GitRepository
         }
 
-        DistributionPlatform DIST_PLAT = DistributionPlatform.SteamStore;
+        DistributionPlatform distribution = DistributionPlatform.SteamStore;
 
         public MainWindow(){
             InitializeComponent();
             Assembly assembly = Assembly.GetEntryAssembly();
 
-            if(DIST_PLAT.Equals(DistributionPlatform.SteamStore) || DIST_PLAT.Equals(DistributionPlatform.WinStore)){
+            if(distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
                 checkUpdatesMenuBtn.IsEnabled = false;
                 checkUpdatesMenuBtn.Visibility = Visibility.Collapsed;                
                 menuRestartAppBtn.IsEnabled = false;
                 menuRestartAppBtn.Visibility = Visibility.Collapsed;
+                patronImage.Visibility = Visibility.Collapsed;
             }
             else{
                 Thread.CurrentThread.CurrentCulture = Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture("en");
@@ -103,7 +104,7 @@ namespace CSMarkDesktop{
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
-            if (!benchmarkCLICheck()){
+            if (!benchmarkCLICheck() && (!distribution.Equals(DistributionPlatform.SteamStore) && !distribution.Equals(DistributionPlatform.WinStore))){
                 benchBtn.IsEnabled = false;
                 eligible.Content = "Download the CSMarkCoreBenchmarkApp zip file and extract it in the CSMarkDesktop app folder to run the benchmark";
             }
@@ -341,11 +342,11 @@ namespace CSMarkDesktop{
                 Application.Current.Shutdown();
         }
         private void menuSettingsBtn_Click(object sender, RoutedEventArgs e){
-            Window settings = new Settings();
+            Window settings = new Settings(distribution);
             settings.ShowDialog();
         }
         private void menuAboutAppBtn_Click(object sender, RoutedEventArgs e){
-            Window window = new AboutApp();
+            Window window = new AboutApp(distribution);
             window.ShowDialog();
         }
         private void main_Closing(object sender, System.ComponentModel.CancelEventArgs e){

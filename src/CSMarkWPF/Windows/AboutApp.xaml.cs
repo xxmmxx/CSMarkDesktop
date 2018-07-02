@@ -3,6 +3,7 @@
   License, v. 2.0. If a copy of the MPL was not distributed with this
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
   */
+using AluminiumCoreLib.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static CSMarkDesktop.MainWindow;
 
 namespace CSMarkDesktop.Windows{
     /// <summary>
@@ -35,41 +37,42 @@ namespace CSMarkDesktop.Windows{
         private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
         private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
-        public AboutApp(){
+        private Platform platform;
+    
+        public AboutApp(DistributionPlatform distribution){
             InitializeComponent();
             LoadBackground();
 
             //Show the version number
             versionLabel.Content += "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+            platform = new Platform();
+
+            if(distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
+                patronImage.Visibility = Visibility.Collapsed;
+            }
         }
 
-        public void LoadBackground()
-        {
-            if (Properties.Settings.Default.background.Equals("reallydark"))
-            {
+        public void LoadBackground(){
+            if (Properties.Settings.Default.background.Equals("reallydark")){
                 gridColour.Background = reallyDark;
             }
-            else if (Properties.Settings.Default.background.Equals("dark"))
-            {
+            else if (Properties.Settings.Default.background.Equals("dark")){
                 gridColour.Background = dark;
             }
-            else if (CSMarkDesktop.Properties.Settings.Default.background.Equals("bluedark"))
-            {
+            else if (CSMarkDesktop.Properties.Settings.Default.background.Equals("bluedark")){
                 gridColour.Background = blueDark;
             }
-            else if (Properties.Settings.Default.background.Equals("bluegray"))
-            {
-                gridColour.Background = blueGray;
+            else if (Properties.Settings.Default.background.Equals("bluegray")) {
+                            gridColour.Background = blueGray;
             }
             else if (Properties.Settings.Default.background.Equals("blurple")){
                 gridColour.Background = blurple;
             }
-            else if (Properties.Settings.Default.background.Equals("justblack"))
-            {
+            else if (Properties.Settings.Default.background.Equals("justblack")){
                 gridColour.Background = black;
             }
-            else
-            {
+            else{
                 gridColour.Background = dark;
             }
 
@@ -77,12 +80,9 @@ namespace CSMarkDesktop.Windows{
             title.Foreground = Foreground;
             infoLabel.Foreground = Foreground;
             versionLabel.Foreground = Foreground;
-
         }
-
-        private void patronImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-
+        private void patronImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e){
+            platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
         }
     }
 }
