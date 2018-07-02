@@ -40,7 +40,7 @@ namespace CSMarkDesktop{
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
         private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
-        private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(73, 121, 183));
+        private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(80, 148, 237));
         private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
         private CSMarkLib.UpdatingServices.AutoUpdater ac = new CSMarkLib.UpdatingServices.AutoUpdater();
@@ -75,7 +75,7 @@ namespace CSMarkDesktop{
             GitRepository
         }
 
-        DistributionPlatform distribution = DistributionPlatform.SteamStore;
+        DistributionPlatform distribution = DistributionPlatform.GitRepository;
 
         public MainWindow(){
             InitializeComponent();
@@ -111,9 +111,10 @@ namespace CSMarkDesktop{
 
             DetectBenchmarkEligibility();
 
-            if (Properties.Settings.Default.HideBecomeAPatronButton){
-                patronImage.Visibility = Visibility.Hidden;
+            if (Properties.Settings.Default.HideBecomeAPatronButton == true){
+                patronImage.Visibility = Visibility.Collapsed;
             }
+
         }
 
         private void LoadBackground() {
@@ -399,9 +400,25 @@ namespace CSMarkDesktop{
         #endregion
         private void main_GotFocus(object sender, RoutedEventArgs e){
             LoadBackground();
+            if (Properties.Settings.Default.HideBecomeAPatronButton == true)
+            {
+                patronImage.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                patronImage.Visibility = Visibility.Visible;
+            }
         }
         private void main_MouseEnter(object sender, MouseEventArgs e){
             LoadBackground();
+            if (Properties.Settings.Default.HideBecomeAPatronButton == true)
+            {
+                patronImage.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                patronImage.Visibility = Visibility.Visible;
+            }
         }
     }
 }
