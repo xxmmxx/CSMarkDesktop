@@ -106,5 +106,17 @@ namespace CSMarkDesktop.Properties {
                 this["HideBecomeAPatronButton"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://discord.gg/mUHAqUr")]
+        public string discordURL {
+            get {
+                return ((string)(this["discordURL"]));
+            }
+            set {
+                this["discordURL"] = value;
+            }
+        }
     }
 }

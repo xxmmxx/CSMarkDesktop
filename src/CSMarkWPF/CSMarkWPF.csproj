@@ -423,9 +423,6 @@
     <Compile Include="Windows\LauncherUI\BenchResults.xaml.cs">
       <DependentUpon>BenchResults.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\LauncherUI\LaunchBenchmark.xaml.cs">
-      <DependentUpon>LaunchBenchmark.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -439,9 +436,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\LauncherUI\BenchResults.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\LauncherUI\LaunchBenchmark.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\MainWindow.xaml">

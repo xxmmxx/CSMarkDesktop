@@ -31,16 +31,14 @@ namespace CSMarkDesktop.Windows
         public SplashScreen(){
             InitializeComponent();
             dispatcher = new DispatcherTimer();
-
             dispatcher.Tick += new EventHandler(dispatcher_Tick);
-
             dispatcher.Interval = new TimeSpan(0,0,0,seconds);
             dispatcher.Start();
         }
         private void dispatcher_Tick(object sender, EventArgs e){
             dispatcher.Stop();
             this.Hide();
-            var x = new MainWindow().ShowDialog();
+            new MainWindow().ShowDialog();
         }
     }
 }
