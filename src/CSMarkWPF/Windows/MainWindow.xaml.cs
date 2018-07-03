@@ -46,6 +46,7 @@ namespace CSMarkDesktop{
 
         private Platform platform;
         private StressTestController stc;
+        private BenchmarkController benchController;
         private DateTime start;
         private DispatcherTimer t;
         private bool runningStress = false;
@@ -57,7 +58,9 @@ namespace CSMarkDesktop{
         private Version win10v1703 = new Version(10, 0, 15063, 0);
         private Version win10v1709 = new Version(10, 0, 16299, 0);
         private Version win10v1803 = new Version(10, 0, 17134, 0);
-        
+
+        AluminiumCoreLib.Hardware.Processor cpu = new AluminiumCoreLib.Hardware.Processor();
+
         public enum DistributionPlatform{
             SteamStore,
             WinStore,
@@ -69,6 +72,7 @@ namespace CSMarkDesktop{
 
         public MainWindow(){
             InitializeComponent();
+            benchController = new BenchmarkController();
             Assembly assembly = Assembly.GetEntryAssembly();
            
             if(distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
@@ -105,30 +109,25 @@ namespace CSMarkDesktop{
         Brush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
 
             if (Properties.Settings.Default.background.Equals("reallydark")) {
-                gridColour.Background = reallyDark;
                 Background = reallyDark;
             }
             if (Properties.Settings.Default.background.Equals("dark")) {
-                gridColour.Background = dark;
                 Background = dark;
             }
             if (Properties.Settings.Default.background.Equals("bluedark")) {
-                gridColour.Background = blueDark;
                 Background = blueDark;
             }
             if (Properties.Settings.Default.background.Equals("bluegray")) {
-                gridColour.Background = blueGray;
                 Background = blueGray;
             }
             if (Properties.Settings.Default.background.Equals("blurple")){
-                gridColour.Background = blurple;
                 Background = blurple;
             }
             if (Properties.Settings.Default.background.Equals("justblack")){
-                gridColour.Background = black;
                 Background = black;
             }
-       
+
+            gridColour.Background = Background;
             dockPanel.Background = Background;  
 
             menuBar.Background = Background;
@@ -268,22 +267,18 @@ namespace CSMarkDesktop{
             benchmarkWorkTask.Start();
 
             benchmarkWorkTask.Wait();
- 
-            benchBtn.Content = "Start Benchmark";
-            benchBtn.IsEnabled = true;
-            eligible.Content = "";
         }
 
         private void BenchmarkWork(){
-            //Run processor detection in a new task and by the time the benchmark has run, the processor should have been detected.
-            AluminiumCoreLib.Hardware.Processor cpu = new AluminiumCoreLib.Hardware.Processor();
+            //Run processor detection in a new task and by the time the benchmark has run, the processor should have been detected.         
             cpu.GetProcessorInformationAsTask();
 
-            var benchController = new BenchmarkController();
-            var task = new Task(() => benchController.StartBenchmarkTests());
-            task.Start();
-
-            task.Wait((60 * 5) * 1000);
+            var task1 = new Task(() => benchController.StartSingleBenchmarkTests());
+            var task2 = new Task(() => benchController.StartMultiBenchmarkTests());
+            task1.Start();
+            task1.Wait((60 * 5) * 1000);
+            task2.Start();
+            task2.Wait((30 * 5) * 1000);
 
             HashMap<BenchmarkType, Benchmark> hash = benchController.ReturnBenchmarkObjects();
             var resultSaver = new ResultSaver();
@@ -296,7 +291,7 @@ namespace CSMarkDesktop{
             Properties.Results.Default.Save();
         }
         private void ShowBenchmarkResults(){
-            BenchResults bench = new BenchResults(Background, Foreground);
+            BenchResults bench = new BenchResults();
             bench.ShowDialog();
         }
 
@@ -307,6 +302,10 @@ namespace CSMarkDesktop{
         private void benchBtn_Click(object sender, RoutedEventArgs e){
             StartBenchmark();
             ShowBenchmarkResults();
+            benchBtn.Content = "Start Benchmark";
+            benchBtn.IsEnabled = true;
+            eligible.Content = "";
+            eligible.Visibility = Visibility.Visible;
         }
         private void stressBtn_Click(object sender, RoutedEventArgs e){            
             HandleStressTest();
@@ -328,15 +327,7 @@ namespace CSMarkDesktop{
             window.ShowDialog();
         }
         private void main_Closing(object sender, System.ComponentModel.CancelEventArgs e){
-            //By default, exit the app if the user hits the X button.
-            if (Properties.Settings.Default.exitButtonShouldQuitApp){
-                //Close the app if the menu button 
                 Application.Current.Shutdown();
-            }
-            //Else minimize the app.
-            else{
-                Application.Current.MainWindow.WindowState = WindowState.Minimized;
-            }
         }
         private void menuAboutPCBtn_Click(object sender, RoutedEventArgs e){
             Window window = new AboutPC();

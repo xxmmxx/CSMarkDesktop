@@ -42,24 +42,20 @@ namespace CSMarkDesktop.Windows{
             InitializeComponent();
             LoadBackground();
             LoadSettings();
-            changeLabel.Visibility = Visibility.Hidden;
 
             if (distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
                 enableHideBecomePatronBtn.Visibility = Visibility.Collapsed;
                 Properties.Settings.Default.HideBecomeAPatronButton = true;
                 enableCheckBetaUpdateBtn.Visibility = Visibility.Collapsed;
-                Properties.Settings.Default.exitButtonShouldQuitApp = true;
                 Properties.Settings.Default.CheckForUpdatesOnStartup = false;
                 Properties.Settings.Default.UseBetaUpdateChannel = false;
                 enableCheckUpdateOnStartupBtn.Visibility = Visibility.Collapsed;
-                enableMinimizeOnQuitBtn.Visibility = Visibility.Collapsed;
             }
         }
 
         private void LoadSettings(){
             enableCheckBetaUpdateBtn.IsChecked = Properties.Settings.Default.UseBetaUpdateChannel;
             enableCheckUpdateOnStartupBtn.IsChecked = Properties.Settings.Default.CheckForUpdatesOnStartup;
-            enableMinimizeOnQuitBtn.IsChecked = Properties.Settings.Default.exitButtonShouldQuitApp;
             enableHideBecomePatronBtn.IsChecked = Properties.Settings.Default.HideBecomeAPatronButton;
         }
         private void ApplySettings(){
@@ -94,22 +90,18 @@ namespace CSMarkDesktop.Windows{
 
             enableCheckBetaUpdateBtn.Background = background;
             enableCheckUpdateOnStartupBtn.Background = background;
-            enableMinimizeOnQuitBtn.Background = background;
             enableHideBecomePatronBtn.Background = background;
             WindowTitle.Background = background;
             applySettingsBtn.Background = background;
             closeBtn.Background = background;
-            changeLabel.Background = background;
             themeLabel.Background = background;
 
             enableCheckBetaUpdateBtn.Foreground = foreground;
             enableCheckUpdateOnStartupBtn.Foreground = foreground;
-            enableMinimizeOnQuitBtn.Foreground = foreground;
             enableHideBecomePatronBtn.Foreground = foreground;
             WindowTitle.Foreground = foreground;
             applySettingsBtn.Foreground = foreground;
             closeBtn.Foreground = foreground;
-            changeLabel.Foreground = foreground;
             themeLabel.Foreground = foreground;
         }
         private void enableCheckBetaUpdateBtn_Checked(object sender, RoutedEventArgs e){
@@ -117,9 +109,6 @@ namespace CSMarkDesktop.Windows{
         }
         private void enableCheckUpdateOnStartupBtn_Checked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.CheckForUpdatesOnStartup = (bool)enableCheckUpdateOnStartupBtn.IsChecked;
-        }
-        private void enableMinimizeOnQuitBtn_Checked(object sender, RoutedEventArgs e){
-            Properties.Settings.Default.exitButtonShouldQuitApp = (bool)enableMinimizeOnQuitBtn.IsChecked;
         }
         private void closeBtn_Click(object sender, RoutedEventArgs e){
             Close();
@@ -134,9 +123,6 @@ namespace CSMarkDesktop.Windows{
         }
         private void enableHideBecomePatronBtn_Unchecked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.HideBecomeAPatronButton = (bool)enableHideBecomePatronBtn.IsChecked;
-        }
-        private void enableMinimizeOnQuitBtn_Unchecked(object sender, RoutedEventArgs e){
-            Properties.Settings.Default.exitButtonShouldQuitApp = (bool)enableMinimizeOnQuitBtn.IsChecked;
         }
         private void enableCheckUpdateOnStartupBtn_Unchecked(object sender, RoutedEventArgs e){
             Properties.Settings.Default.CheckForUpdatesOnStartup = (bool)enableCheckUpdateOnStartupBtn.IsChecked;

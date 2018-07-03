@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CSMarkDesktop.Windows.LauncherUI"
         mc:Ignorable="d"
         Title="CSMarkDesktop Benchmark Results" Height="657.888" Width="1528.45" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
-    <Grid Name="gridColor" Height="629" VerticalAlignment="Top" Margin="0,0,4,0">
+    <Grid Name="gridColor" Height="629" VerticalAlignment="Top" Margin="0,0,-6,0">
         <Label Name="singleOverall" Content="Single Threaded Score: " FontSize="26" Margin="165,19,737,552"/>
         <Label Name="singleOverallInfo" Content="" FontSize="48" Margin="21,82,842,449"/>
         <Label Name="multiOverall" Content="Multi Threaded Score: " FontSize="26" Margin="820,19,279,552"/>

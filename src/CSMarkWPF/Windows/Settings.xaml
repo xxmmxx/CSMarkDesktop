@@ -9,22 +9,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSMarkDesktop.Windows"
         mc:Ignorable="d"
-        Title="CSMarkDesktop Settings" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing" ResizeMode="CanMinimize">
+        Title="CSMarkDesktop Settings" Height="349" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing" ResizeMode="CanMinimize">
     <Grid Name="gridColour">
-        <TextBlock Text="CSMarkDesktop Settings" Name="WindowTitle" FontSize="24" Margin="239,10,239,366"></TextBlock>
+        <TextBlock Text="CSMarkDesktop Settings" Name="WindowTitle" FontSize="24" Margin="239,10,239,261"></TextBlock>
         <CheckBox Name="enableCheckBetaUpdateBtn" Checked="enableCheckBetaUpdateBtn_Checked" Content="Enable checking for Beta Updates" FontSize="16" HorizontalAlignment="Left" Margin="172,64,0,0" VerticalAlignment="Top" Unchecked="enableCheckBetaUpdateBtn_Unchecked"/>
         <CheckBox Name="enableCheckUpdateOnStartupBtn" Checked="enableCheckUpdateOnStartupBtn_Checked"  Content="Check For Updates on Startup (Recommended)" FontSize="16" HorizontalAlignment="Left" Margin="172,104,0,0" VerticalAlignment="Top" Unchecked="enableCheckUpdateOnStartupBtn_Unchecked" Width="402"/>
-        <CheckBox Name="enableMinimizeOnQuitBtn" Checked="enableMinimizeOnQuitBtn_Checked"  Content="Minimize app instead of Quitting it when closing the main window" FontSize="16" HorizontalAlignment="Left" Margin="172,140,0,0" VerticalAlignment="Top" Unchecked="enableMinimizeOnQuitBtn_Unchecked"/>
-        <Button Name="applySettingsBtn" FontSize="18" Click="applySettingsBtn_Click" Content="Save Settings" Margin="172,366,425,13"></Button>
-        <Button Name="closeBtn" Click="closeBtn_Click" FontSize="18" Content="Close" Margin="471,366,166,14"/>
-        <CheckBox Name="enableHideBecomePatronBtn" Checked="enableHideBecomePatronBtn_Checked"  Content="Hide the &quot;Become a Patron&quot; Button (Not Recommended)" FontSize="16" HorizontalAlignment="Left" Margin="172,174,0,0" VerticalAlignment="Top" Unchecked="enableHideBecomePatronBtn_Unchecked" Width="434" Height="26"/>
-        <Label Name="themeLabel" Content="Themes" FontSize="18" Margin="111,216,566,162"></Label>
-        <Label Content="Restart CSMark to Apply changes." Name="changeLabel" Margin="263,318,263,58" FontSize="16"></Label>
-        <Button Name="blueGrayBtn" Content="Blue" Foreground="White" Background="#5094ed" HorizontalAlignment="Left" Margin="121,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blueGrayBtn_Click"/>
-        <Button Name="blueDarkBtn" Content="Dark Blue" Foreground="White" Background="#2b4c77" HorizontalAlignment="Left" Margin="228,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blueDarkBtn_Click"/>
-        <Button Name="darkBtn" Content="Dark" Foreground="White" Background="#2c2f33" HorizontalAlignment="Left" Margin="335,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="darkBtn_Click"/>
-        <Button Name="reallyDarkBtn" Content="Really Dark" Foreground="White" Background="#23272a" HorizontalAlignment="Left" Margin="442,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="reallyDarkBtn_Click"/>
-        <Button Name="justBlackBtn" Content="Just Black" Foreground="White" Background="Black" HorizontalAlignment="Left" Margin="549,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="justBlackBtn_Click"/>
-        <Button Name="blurpleBtn" Content="Blurple" Foreground="White" Background="#7289DA" HorizontalAlignment="Left" Margin="656,266,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blurpleBtn_Click"/>
+        <Button Name="applySettingsBtn" FontSize="18" Click="applySettingsBtn_Click" Content="Save Settings" Margin="222,255,375,23"></Button>
+        <Button Name="closeBtn" Click="closeBtn_Click" FontSize="18" Content="Close" Margin="449,255,188,23"/>
+        <CheckBox Name="enableHideBecomePatronBtn" Checked="enableHideBecomePatronBtn_Checked"  Content="Hide the &quot;Become a Patron&quot; Button (Not Recommended)" FontSize="16" HorizontalAlignment="Left" Margin="172,144,0,0" VerticalAlignment="Top" Unchecked="enableHideBecomePatronBtn_Unchecked" Width="434" Height="26"/>
+        <Label Name="themeLabel" Content="User Interface Themes" FontSize="18" Margin="93,175,505,103" RenderTransformOrigin="0.462,-0.674"></Label>
+        <Button Name="blueGrayBtn" Content="Blue" Foreground="White" Background="#5094ed" HorizontalAlignment="Left" Margin="93,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="blueGrayBtn_Click"/>
+        <Button Name="blueDarkBtn" Content="Dark Blue" Foreground="White" Background="#2b4c77" HorizontalAlignment="Left" Margin="200,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="blueDarkBtn_Click"/>
+        <Button Name="darkBtn" Content="Dark" Foreground="White" Background="#2c2f33" HorizontalAlignment="Left" Margin="307,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="darkBtn_Click"/>
+        <Button Name="reallyDarkBtn" Content="Really Dark" Foreground="White" Background="#23272a" HorizontalAlignment="Left" Margin="414,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="reallyDarkBtn_Click"/>
+        <Button Name="justBlackBtn" Content="Just Black" Foreground="White" Background="Black" HorizontalAlignment="Left" Margin="521,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="justBlackBtn_Click"/>
+        <Button Name="blurpleBtn" Content="Blurple" Foreground="White" Background="#7289DA" HorizontalAlignment="Left" Margin="628,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="blurpleBtn_Click"/>
     </Grid>
 </Window>

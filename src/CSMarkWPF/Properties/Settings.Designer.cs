@@ -37,18 +37,6 @@ namespace CSMarkDesktop.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool exitButtonShouldQuitApp {
-            get {
-                return ((bool)(this["exitButtonShouldQuitApp"]));
-            }
-            set {
-                this["exitButtonShouldQuitApp"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("https://patreon.com/CSMark")]
         public string patreonURL {
             get {

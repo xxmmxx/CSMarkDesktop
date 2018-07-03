@@ -22,8 +22,6 @@ namespace CSMarkDesktop.Windows.LauncherUI{
     /// Interaction logic for BenchResults.xaml
     /// </summary>
     public partial class BenchResults : Window{
-        Brush background;
-        Brush foreground;
 
         private SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
 
@@ -34,28 +32,52 @@ namespace CSMarkDesktop.Windows.LauncherUI{
         private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(80, 148, 237));
         private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
-        public BenchResults(Brush background, Brush foreground){
+        public BenchResults(){
             InitializeComponent();
+            Brush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
 
-            this.foreground = foreground;
-            this.background = background;
-            //Load the background colors
-            gridColor.Background = background;
+                if (Properties.Settings.Default.background.Equals("reallydark"))
+                {
+                    Background = reallyDark;
+                }
+                if (Properties.Settings.Default.background.Equals("dark"))
+                {
+                    Background = dark;
+                }
+                if (Properties.Settings.Default.background.Equals("bluedark"))
+                {
+                    Background = blueDark;
+                }
+                if (Properties.Settings.Default.background.Equals("bluegray"))
+                {
+                    Background = blueGray;
+                }
+                if (Properties.Settings.Default.background.Equals("blurple"))
+                {
+                    Background = blurple;
+                }
+                if (Properties.Settings.Default.background.Equals("justblack"))
+                {
+                    Background = black;
+                }
+
+                //Load the Background colors
+            gridColor.Background = Background;
             processor.Content += Properties.Results.Default.Processor;
 
-            singleOverall.Background = background;
-            multiOverall.Background = background;
+            singleOverall.Background = Background;
+            multiOverall.Background = Background;
             singleOverall.Foreground = foreground;
             multiOverall.Foreground = foreground;
 
-            pythagorasSingle.Background = background;
-            pythagorasMulti.Background = background;
-            geometricSumNSingle.Background = background;
-            geometricSumNMulti.Background = background;
-            compoundInterestSingle.Background = background;
-            compoundInterestMulti.Background = background;
-            changeReturnSingle.Background = background;
-            changeReturnMulti.Background = background;
+            pythagorasSingle.Background = Background;
+            pythagorasMulti.Background = Background;
+            geometricSumNSingle.Background = Background;
+            geometricSumNMulti.Background = Background;
+            compoundInterestSingle.Background = Background;
+            compoundInterestMulti.Background = Background;
+            changeReturnSingle.Background = Background;
+            changeReturnMulti.Background = Background;
 
             pythagorasSingle.Foreground = foreground;
             pythagorasMulti.Foreground = foreground;
@@ -66,8 +88,8 @@ namespace CSMarkDesktop.Windows.LauncherUI{
             changeReturnSingle.Foreground = foreground;
             changeReturnMulti.Foreground = foreground;
 
-            singleOverallInfo.Background = background;
-            multiOverallInfo.Background = background;
+            singleOverallInfo.Background = Background;
+            multiOverallInfo.Background = Background;
 
             Brush colorBrush;
 
@@ -91,16 +113,16 @@ namespace CSMarkDesktop.Windows.LauncherUI{
             multiOverallInfo.Foreground = colorBrush;
 
             processor.Foreground = foreground;
-            processor.Background = background;
-            processorCoreCount.Background = background;
+            processor.Background = Background;
+            processorCoreCount.Background = Background;
             processorCoreCount.Foreground = foreground;
-            processorThreadCount.Background = background;
+            processorThreadCount.Background = Background;
             processorThreadCount.Foreground = foreground;
 
-            scoreBreakdown.Background = background;
+            scoreBreakdown.Background = Background;
             scoreBreakdown.Foreground = foreground;
 
-            benchRunTime.Background = background;
+            benchRunTime.Background = Background;
             benchRunTime.Foreground = foreground;
 
             var result = Properties.Results.Default.BenchmarkResult;
@@ -115,8 +137,7 @@ namespace CSMarkDesktop.Windows.LauncherUI{
             processorCoreCount.Content += Properties.Results.Default.CPUCoreCount;
             processorThreadCount.Content += Properties.Results.Default.CPUThreadCount;
             singleOverallInfo.Content = result.GetOverallSingle().ToString() + " CSMark Points";
-            multiOverallInfo.Content = result.GetOverallMulti().ToString() + " CSMark Points";
-           
+            multiOverallInfo.Content = result.GetOverallMulti().ToString() + " CSMark Points";           
         }
     }
 }
