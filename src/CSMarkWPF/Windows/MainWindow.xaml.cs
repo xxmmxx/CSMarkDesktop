@@ -95,6 +95,8 @@ namespace CSMarkDesktop{
             stc = new StressTestController();
             ApplyStressBtnColors();
             platform = new Platform();
+            //Run processor detection in a new task before we need the information.       
+            cpu.GetProcessorInformationAsTask();
 
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -265,14 +267,10 @@ namespace CSMarkDesktop{
 
             var benchmarkWorkTask = new Task(() => BenchmarkWork());
             benchmarkWorkTask.Start();
-
             benchmarkWorkTask.Wait();
         }
 
         private void BenchmarkWork(){
-            //Run processor detection in a new task and by the time the benchmark has run, the processor should have been detected.         
-            cpu.GetProcessorInformationAsTask();
-
             var task1 = new Task(() => benchController.StartSingleBenchmarkTests());
             var task2 = new Task(() => benchController.StartMultiBenchmarkTests());
             task1.Start();
