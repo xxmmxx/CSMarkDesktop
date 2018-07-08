@@ -47,10 +47,7 @@ namespace CSMarkDesktop.Windows{
             versionLabel.Content += "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
             platform = new Platform();
-
-            if(distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
-                patronImage.Visibility = Visibility.Collapsed;
-            }
+            patronImage.Visibility = Visibility.Collapsed;
         }
 
         public void LoadBackground(){

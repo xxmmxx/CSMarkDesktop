@@ -16,19 +16,18 @@ namespace CSMarkCoreBenchmarkApp{
             MultiBenchSaveResult,
             SingleBenchSaveResult
         }
-     /*   enum ResultFileType{
+        enum ResultFileType{
             NoResult,
             Text,
             Xml,
             Json
         }
-        */
+        
         static void Main(string[] args){
             Platform platform = new Platform();
             Console.Title = "CSMarkCore BenchmarkApp v" + platform.ReturnVersionString() + " Community Edition";
-
             BenchCommand command = BenchCommand.MultiBenchSaveResult;
-    //        ResultFileType rft = ResultFileType.Text;
+            ResultFileType rft = ResultFileType.Text;
             DateTime startTime = DateTime.Now;
             DateTime stopTime = DateTime.Now;
 
@@ -36,17 +35,17 @@ namespace CSMarkCoreBenchmarkApp{
             if (args.Length == 0){
                 //If the user doesn't specify the command, just start the stress test.
                 command = BenchCommand.MultiBenchSaveResult;
-         //       rft = ResultFileType.Text;
+                rft = ResultFileType.Text;
             }
             // If the user has given 1 arguments it should correspond to 1) Single or Multi
             else if (args.Length == 1 && args[0].ToString().Contains("single")){
                 command = BenchCommand.SingleBenchSaveResult;
-        //        rft = ResultFileType.Text;
+                rft = ResultFileType.Text;
             }
             // If the user has given 1 arguments it should correspond to 1) Single or Multi
             else if (args.Length == 1 && args[0].ToString().Contains("multi")){
                 command = BenchCommand.MultiBenchSaveResult;
-          //      rft = ResultFileType.Text;
+                rft = ResultFileType.Text;
             }
             //If the user has given 2 arguments they should correspond to 1) Single or Multi and 2) Start Time.
             else if (args.Length == 2){
@@ -58,7 +57,7 @@ namespace CSMarkCoreBenchmarkApp{
                     command = BenchCommand.SingleBenchSaveResult;
                 }
 
-         /*       if (args[1].ToString().Contains("xml")){
+                if (args[1].ToString().Contains("xml")){
                     rft = ResultFileType.Xml;
                 }
                 else if (args[1].ToString().Contains("text")) {
@@ -68,24 +67,33 @@ namespace CSMarkCoreBenchmarkApp{
                 {
                     rft = ResultFileType.Json;
                 }
-                */
+                
             }
             //If the user has given 2 arguments they should correspond to 1) Single or Multi and 3) Start Time.
-            else if (args.Length == 3)
-            {
+            else if (args.Length == 3){
 
-                if (args[0].ToString().Contains("multi"))
-                {
+                if (args[0].ToString().Contains("multi")){
                     command = BenchCommand.MultiBenchSaveResult;
                 }
-                else
-                {
+                else{
                     command = BenchCommand.SingleBenchSaveResult;
                 }
 
-               startTime = Convert.ToDateTime(args[2]);
-            }
+                if (args[1].ToString().Contains("xml"))
+                {
+                    rft = ResultFileType.Xml;
+                }
+                else if (args[1].ToString().Contains("text"))
+                {
+                    rft = ResultFileType.Text;
+                }
+                else if (args[1].ToString().Contains("json"))
+                {
+                    rft = ResultFileType.Json;
+                }
 
+                startTime = Convert.ToDateTime(args[2]);
+            }
 
             //Start the Benchmark Application.
             string CSMarkVersion = platform.ReturnVersionString() + "_";
@@ -119,13 +127,28 @@ namespace CSMarkCoreBenchmarkApp{
             Console.WriteLine("Detecting CLI Arguments...");
             Console.WriteLine("Starting Benchmarks...");
 
-            if(command == BenchCommand.SingleBenchSaveResult){
+            ResultSaver rs = new ResultSaver();
+            string dir = Environment.CurrentDirectory + Path.DirectorySeparatorChar + "Results";
+
+            if (command == BenchCommand.SingleBenchSaveResult){
             //    bench.DoWarmup(true);
                 bench.StartSingleBenchmarkTests();
                 var y = bench.ReturnBenchmarkObjects();
                 Result x = new ResultSaver().SaveResult(false, y);
                 bench.PrintResultsToConsole(true, false, x);
-               // new ResultSaver().SaveToTextFile("", CSMarkVersion, x);
+
+                if (rft.Equals(ResultFileType.NoResult)){
+                    //Do nothing
+                }
+                else if (rft.Equals(ResultFileType.Text)){
+                    rs.SaveToTextFile(dir, platform.ReturnVersionString(), x);
+                }
+                else if (rft.Equals(ResultFileType.Json)){
+                    rs.SaveToJSONFile(dir, platform.ReturnVersionString(), x);
+                }
+                else if (rft.Equals(ResultFileType.Xml)){
+                    rs.SaveToXMLFile(dir, platform.ReturnVersionString(), x);
+                }
             }
             else if (command == BenchCommand.MultiBenchSaveResult){
              //   bench.DoWarmup(true);
@@ -133,7 +156,19 @@ namespace CSMarkCoreBenchmarkApp{
                 var y = bench.ReturnBenchmarkObjects();
                 Result x = new ResultSaver().SaveResult(true, y);
                 bench.PrintResultsToConsole(true, true, x);
-             //   new ResultSaver().SaveToTextFile(CSMarkVersion, x);
+
+                if (rft.Equals(ResultFileType.NoResult)){
+                    //Do nothing
+                }
+                else if (rft.Equals(ResultFileType.Text)){
+                    rs.SaveToTextFile(dir, platform.ReturnVersionString(), x);
+                }
+                else if (rft.Equals(ResultFileType.Json)){
+                    rs.SaveToJSONFile(dir, platform.ReturnVersionString(), x);
+                }
+                else if (rft.Equals(ResultFileType.Xml)){
+                    rs.SaveToXMLFile(dir, platform.ReturnVersionString(), x);
+                }
             }
 
             Console.WriteLine("To exit this application, press ENTER.");
