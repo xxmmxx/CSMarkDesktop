@@ -15,6 +15,7 @@ This document contains a list of upcoming releases of CSMark Desktop.
 ### 0.32.0
  **Highlight Features**
 * Initial Release on Windows Store
+* Initial Release on Steam Store
 
 ### Future versions
 * [WPF only] - Icon in task tray

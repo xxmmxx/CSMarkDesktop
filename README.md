@@ -12,8 +12,8 @@ This was originally called CSMarkDesktop but was renamed to help avoid confusion
 The Benchmarking and Stress Testing capabilities were separated into 2 different executables sharing similar names.
 The overall name for the project is CSMarkCore.
 
-## CSMarkWPF
-CSMarkWPF is the new GUI version of CSMarkDesktop which works on Windows.
+## CSMarkDesktop
+CSMarkDesktop is the new GUI version of CSMark which works on Windows.
 
 ## Where is the CSMarkDesktop Cross-platform GUI version?
 It is still in the works. CSMarkWPF was introduced to provide a GUI experience to Windows users in a timely fashion whilst the cross-platform GUI version is underway.
