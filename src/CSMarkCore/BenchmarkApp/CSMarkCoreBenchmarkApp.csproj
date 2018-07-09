@@ -12,6 +12,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <Optimize>true</Optimize>
+    <DefineConstants>TRACE;DEBUG;NETCOREAPP;NETCOREAPP2_1;DEBUG;NETCOREAPP;NETCOREAPP2_1</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -47,9 +48,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="" />
-  </Target>
-
 </Project>

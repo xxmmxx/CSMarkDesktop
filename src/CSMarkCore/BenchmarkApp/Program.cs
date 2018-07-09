@@ -49,7 +49,6 @@ namespace CSMarkCoreBenchmarkApp{
             }
             //If the user has given 2 arguments they should correspond to 1) Single or Multi and 2) Start Time.
             else if (args.Length == 2){
-
                 if (args[0].ToString().Contains("multi")){
                     command = BenchCommand.MultiBenchSaveResult;
                 }
