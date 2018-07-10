@@ -91,8 +91,8 @@
     <Reference Include="AutoUpdater.NET, Version=1.4.10.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>packages\Autoupdater.NET.Official.1.4.10\lib\net462\AutoUpdater.NET.dll</HintPath>
     </Reference>
-    <Reference Include="CSMarkLib, Version=2.0.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\CSMarkLib.2.0.0-preview4\lib\netstandard2.0\CSMarkLib.dll</HintPath>
+    <Reference Include="CSMarkLib, Version=2.0.0.5, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CSMarkLib.2.0.0-preview5\lib\netstandard2.0\CSMarkLib.dll</HintPath>
     </Reference>
     <Reference Include="CSMarkLib.UpdatingServices, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CSMarkLib.UpdatingServices.1.1.0-beta\lib\netstandard2.0\CSMarkLib.UpdatingServices.dll</HintPath>
@@ -540,7 +540,9 @@
     <Resource Include="ThirdPartyLicenses\AutoUpdater.NET_License.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="ThirdPartyLicenses\Steamworks.NET_License.txt" />
+    <Resource Include="ThirdPartyLicenses\AluminiumCoreLib.Hardware_License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

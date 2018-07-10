@@ -15,9 +15,9 @@
 
   <ItemGroup>
     <PackageReference Include="AluminiumCoreLib" Version="2.0.0-alpha1" />
-    <PackageReference Include="CSMarkLib" Version="2.0.0-preview4" />
+    <PackageReference Include="CSMarkLib" Version="2.0.0-preview5" />
     <PackageReference Include="CSMarkLib.UpdatingServices" Version="1.1.0-beta" />
-    <PackageReference Include="Rollbar" Version="1.5.1" />
+    <PackageReference Include="Rollbar" Version="1.5.3" />
   </ItemGroup>
 
   <ItemGroup>

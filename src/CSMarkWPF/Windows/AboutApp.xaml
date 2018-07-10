@@ -7,9 +7,24 @@
         mc:Ignorable="d"
         Title="About CSMarkDesktop" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid Name="gridColour">
-        <Label Name="title" Content="About CSMarkDesktop" FontSize="26" Margin="261,0,248,366"/>
-        <Label FontSize="14" Name="infoLabel" Content="CSMark is an open source CPU benchmarking app written in C#.  It also has a built in CPU stress testing tool.&#xA;&#xA;CSMark's development is supported through monthly donations made by users just like you." Margin="53,71,53,265"></Label>
-        <Image x:Name="patronImage" Source="patron_button.png" HorizontalAlignment="Left" Margin="583,349,0,0" VerticalAlignment="Top" Width="182" Height="43" MouseLeftButtonDown="patronImage_MouseLeftButtonDown"/>
-        <Label Name="versionLabel" Content="CSMarkDesktop " FontSize="18" Margin="261,196,248,170"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="387*"/>
+            <RowDefinition Height="34*"/>
+        </Grid.RowDefinitions>
+        <Label Name="title" Content="About CSMarkDesktop" FontSize="26" Margin="261,0,248,328"/>
+        <Label FontSize="14" Name="infoLabel" Content="CSMark is an open source CPU benchmarking app written in C#.  It also has a built in CPU stress testing tool.&#xA;&#xA;CSMark's development is supported through monthly donations made by users just like you." Margin="53,71,53,239"></Label>
+        <Label Name="versionLabel" Content="CSMarkDesktop " FontSize="18" Margin="272,153,140,183"/>
+        <TextBlock FontSize="14" x:Name="thirdpartylicensenotice" TextWrapping="WrapWithOverflow" Margin="142,222,140,0"><Run Text="CSMarkDesktop makes use of the following Open Source Software: "/><InlineUIContainer>
+                <TextBlock><Run Text="* AluminiumCoreLib                                    - Licensed under the MPL 2.0 license."/></TextBlock>
+            </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                <TextBlock><Run Text="* AluminiumCoreLib.Hardware                   - Licensed under the MPL 2.0 license."/></TextBlock>
+            </InlineUIContainer><Run Text=" "/><InlineUIContainer>
+                <TextBlock><Run Text="* CSMarkLib                                                - Licensed under the MPL 2.0 license."/></TextBlock>
+            </InlineUIContainer><Run Text=" "/><Run Text=" "/><InlineUIContainer>
+                <TextBlock><Run Text="* NewtonsoftJSON                                      - Licensed under the MIT license."/></TextBlock>
+            </InlineUIContainer><InlineUIContainer>
+                <TextBlock><Run Text="* AutoUpdater.NET                                     - Licensed under the MIT license."/></TextBlock>
+            </InlineUIContainer></TextBlock>
+
     </Grid>
 </Window>

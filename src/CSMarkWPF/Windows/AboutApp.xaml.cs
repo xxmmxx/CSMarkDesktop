@@ -25,11 +25,6 @@ namespace CSMarkDesktop.Windows{
     /// Interaction logic for AboutApp.xaml
     /// </summary>
     public partial class AboutApp : Window{
-        private SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
-        private SolidColorBrush myRedBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
-        private SolidColorBrush myPurpleBrush = new SolidColorBrush(Color.FromRgb(179, 66, 244));
-        private SolidColorBrush myPinkBrush = new SolidColorBrush(Color.FromRgb(244, 66, 241));
-
         private SolidColorBrush black = new SolidColorBrush(Color.FromRgb(0, 0, 0));
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
@@ -45,8 +40,11 @@ namespace CSMarkDesktop.Windows{
             //Show the version number
             versionLabel.Content += "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
+            if (distribution == DistributionPlatform.WinStore){
+                versionLabel.Content += " Windows Store Version";
+            }
+
             platform = new Platform();
-            patronImage.Visibility = Visibility.Collapsed;
         }
 
         public void LoadBackground(){
@@ -69,10 +67,13 @@ namespace CSMarkDesktop.Windows{
                 gridColour.Background = dark;
             }
 
+            Background = gridColour.Background;
             Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
             title.Foreground = Foreground;
             infoLabel.Foreground = Foreground;
             versionLabel.Foreground = Foreground;
+            thirdpartylicensenotice.Background = Background;
+            thirdpartylicensenotice.Foreground = Foreground;
         }
         private void patronImage_MouseLeftButtonDown(object sender, MouseButtonEventArgs e){
             platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
