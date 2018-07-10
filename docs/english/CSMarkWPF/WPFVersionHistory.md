@@ -1,6 +1,13 @@
 ## Version History
 This document contains the version history of CSMarkWPF
 
+
+### 0.30
+| Version | Desktop Availability | Changelog | CSMarkLib Version | AluminiumCoreLib Version |
+|---------|----------|-----------|----------------|----------------|
+| 0.30.0 | July 10th 2018 | https://github.com/CSMarkBenchmark/CSMarkDesktop/releases/tag/0.30.0 | 2.0.0 Preview 5 | 2.0.0 Alpha 1 |
+
+
 ### 0.29
 | Version | Desktop Availability | Changelog | CSMarkLib Version | AluminiumCoreLib Version |
 |---------|----------|-----------|----------------|----------------|
