@@ -27,4 +27,5 @@ These are:
 
 | Support Category | Release Status | Release Version | Release Date | Mainstream Support Start | Mainstream Support End |
 |---------------|---------------|----------|--------------|-----------------|------------------|
-| Short Term Support | Preview | CSMark 0.29 | May 24th 2018 | May 24th 2018 | August 24th 2018 |
+| Short Term Support | Preview | CSMark 0.29 | May 24th 2018 | May 24th 2018 | July 24th 2018 |
+| Short Term Support | Preview | CSMark 0.30 | July 10th 2018 | July 10th 2018 | August 10th 2018 |
