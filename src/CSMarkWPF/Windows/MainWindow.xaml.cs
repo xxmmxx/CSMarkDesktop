@@ -39,7 +39,6 @@ namespace CSMarkDesktop{
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
         private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
-        private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(80, 148, 237));
         private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
         private CSMarkLib.UpdatingServices.AutoUpdater ac = new CSMarkLib.UpdatingServices.AutoUpdater();
@@ -112,8 +111,8 @@ namespace CSMarkDesktop{
             }
         }
 
-        private void LoadBackground(){
-        Brush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+        private void LoadBackground() {
+            Brush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
 
             if (Properties.Settings.Default.background.Equals("reallydark")) {
                 Background = reallyDark;
@@ -124,14 +123,16 @@ namespace CSMarkDesktop{
             if (Properties.Settings.Default.background.Equals("bluedark")) {
                 Background = blueDark;
             }
-            if (Properties.Settings.Default.background.Equals("bluegray")) {
-                Background = blueGray;
-            }
-            if (Properties.Settings.Default.background.Equals("blurple")){
+            if (Properties.Settings.Default.background.Equals("blurple")) {
                 Background = blurple;
             }
-            if (Properties.Settings.Default.background.Equals("justblack")){
+            if (Properties.Settings.Default.background.Equals("justblack")) {
                 Background = black;
+            }
+
+            if(Properties.Settings.Default.background.Equals("bluegray")){
+                Background = dark;
+                Properties.Settings.Default.background = "dark";
             }
 
             gridColour.Background = Background;
@@ -268,23 +269,20 @@ namespace CSMarkDesktop{
             benchmarkWorkTask.Start();
             benchmarkWorkTask.Wait();       
             
-            try
-            {
+            try{
                 benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.IsEnabled = true; }));
                 benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.Content = "Start Benchmark"; }));
                 benchBtn.Dispatcher.Invoke(new Action(() => { eligible.Content = ""; }));
                 benchBtn.Dispatcher.Invoke(new Action(() => { new BenchResults().ShowDialog(); }));
             }
-            catch(Exception ex)
-            {
+            catch(Exception ex){
                 MessageBox.Show(ex.ToString());
-            }
-            
+            }         
         }
 
         private async void BenchmarkWork(){
             var warmupTask = Task.Factory.StartNew(() => benchController.DoWarmup(true));
-            warmupTask.Wait((60 * 5) * 1000);
+            warmupTask.Wait((30) * 1000);
             var task1 = Task.Factory.StartNew(() => benchController.StartSingleBenchmarkTests());
             task1.Wait((60 * 5) * 1000);
             var task2 = Task.Factory.StartNew(() => benchController.StartMultiBenchmarkTests()); 

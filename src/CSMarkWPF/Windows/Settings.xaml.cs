@@ -26,14 +26,11 @@ namespace CSMarkDesktop.Windows{
     public partial class Settings : Window{
         private SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
         private SolidColorBrush myRedBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
-        private SolidColorBrush myPurpleBrush = new SolidColorBrush(Color.FromRgb(179, 66, 244));
-        private SolidColorBrush myPinkBrush = new SolidColorBrush(Color.FromRgb(244, 66, 241));
 
         private SolidColorBrush black = new SolidColorBrush(Color.FromRgb(0,0,0));
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
         private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
-        private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(80, 148, 237));
         private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
         private SolidColorBrush modernDarkCSMarkGreen = new SolidColorBrush(Color.FromRgb(31, 139, 76));
@@ -71,9 +68,6 @@ namespace CSMarkDesktop.Windows{
             }
             else if (Properties.Settings.Default.background.Equals("bluedark")){
                 gridColour.Background = blueDark;
-            }
-            else if (Properties.Settings.Default.background.Equals("bluegray")){
-                gridColour.Background = blueGray;
             }
             else if (Properties.Settings.Default.background.Equals("blurple")){
                 gridColour.Background = blurple;
@@ -133,11 +127,6 @@ namespace CSMarkDesktop.Windows{
 
         private void lightBlueGrayBtn_Click(object sender, RoutedEventArgs e){
             Properties.Settings.Default.background = "lightbluegray";
-            Properties.Settings.Default.Save();
-            LoadBackground();
-        }
-        private void blueGrayBtn_Click(object sender, RoutedEventArgs e){
-            Properties.Settings.Default.background = "bluegray";
             Properties.Settings.Default.Save();
             LoadBackground();
         }

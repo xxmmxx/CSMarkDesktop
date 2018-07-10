@@ -18,11 +18,10 @@
         <Button Name="closeBtn" Click="closeBtn_Click" FontSize="18" Content="Close" Margin="449,255,188,23"/>
         <CheckBox Name="enableHideBecomePatronBtn" Checked="enableHideBecomePatronBtn_Checked"  Content="Hide the &quot;Become a Patron&quot; Button (Not Recommended)" FontSize="16" HorizontalAlignment="Left" Margin="172,144,0,0" VerticalAlignment="Top" Unchecked="enableHideBecomePatronBtn_Unchecked" Width="434" Height="26"/>
         <Label Name="themeLabel" Content="User Interface Themes" FontSize="18" Margin="93,175,505,103" RenderTransformOrigin="0.462,-0.674"></Label>
-        <Button Name="blueGrayBtn" Content="Blue" Foreground="White" Background="#5094ed" HorizontalAlignment="Left" Margin="93,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="blueGrayBtn_Click"/>
-        <Button Name="blueDarkBtn" Content="Dark Blue" Foreground="White" Background="#2b4c77" HorizontalAlignment="Left" Margin="200,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="blueDarkBtn_Click"/>
-        <Button Name="darkBtn" Content="Dark" Foreground="White" Background="#2c2f33" HorizontalAlignment="Left" Margin="307,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="darkBtn_Click"/>
-        <Button Name="reallyDarkBtn" Content="Really Dark" Foreground="White" Background="#23272a" HorizontalAlignment="Left" Margin="414,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="reallyDarkBtn_Click"/>
-        <Button Name="justBlackBtn" Content="Just Black" Foreground="White" Background="Black" HorizontalAlignment="Left" Margin="521,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="justBlackBtn_Click"/>
-        <Button Name="blurpleBtn" Content="Blurple" Foreground="White" Background="#7289DA" HorizontalAlignment="Left" Margin="628,217,0,-9" VerticalAlignment="Top" Width="102" Height="28" Click="blurpleBtn_Click"/>
+        <Button Name="blueDarkBtn" Content="Dark Blue" Foreground="White" Background="#2b4c77" HorizontalAlignment="Left" Margin="154,213,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blueDarkBtn_Click"/>
+        <Button Name="darkBtn" Content="Dark" Foreground="White" Background="#2c2f33" HorizontalAlignment="Left" Margin="261,213,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="darkBtn_Click"/>
+        <Button Name="reallyDarkBtn" Content="Really Dark" Foreground="White" Background="#23272a" HorizontalAlignment="Left" Margin="368,213,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="reallyDarkBtn_Click"/>
+        <Button Name="justBlackBtn" Content="Just Black" Foreground="White" Background="Black" HorizontalAlignment="Left" Margin="475,213,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="justBlackBtn_Click"/>
+        <Button Name="blurpleBtn" Content="Blurple" Foreground="White" Background="#7289DA" HorizontalAlignment="Left" Margin="582,213,0,0" VerticalAlignment="Top" Width="102" Height="28" Click="blurpleBtn_Click"/>
     </Grid>
 </Window>

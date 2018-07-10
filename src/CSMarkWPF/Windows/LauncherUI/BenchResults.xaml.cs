@@ -29,7 +29,6 @@ namespace CSMarkDesktop.Windows.LauncherUI{
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
         private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
-        private SolidColorBrush blueGray = new SolidColorBrush(Color.FromRgb(80, 148, 237));
         private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
         public BenchResults(){
@@ -47,10 +46,6 @@ namespace CSMarkDesktop.Windows.LauncherUI{
                 if (Properties.Settings.Default.background.Equals("bluedark"))
                 {
                     Background = blueDark;
-                }
-                if (Properties.Settings.Default.background.Equals("bluegray"))
-                {
-                    Background = blueGray;
                 }
                 if (Properties.Settings.Default.background.Equals("blurple"))
                 {
@@ -96,11 +91,8 @@ namespace CSMarkDesktop.Windows.LauncherUI{
             if (Background.Equals(blurple)){
                 colorBrush = blueDark;
             }
-            else if (Background.Equals(blueGray)){
-                colorBrush = blueDark;
-            }
             else if (Background.Equals(blueDark)){
-                colorBrush = blueGray;
+                colorBrush = new SolidColorBrush(Color.FromRgb(255, 255, 255));
             }
             else if (Background.Equals(dark) || Background.Equals(reallyDark) || Background.Equals(black)){
                 colorBrush = myGreenBrush;
