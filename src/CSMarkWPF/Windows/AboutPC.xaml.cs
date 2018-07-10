@@ -27,14 +27,10 @@ namespace CSMarkDesktop.Windows
     public partial class AboutPC : Window{
         private SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
         private SolidColorBrush myRedBrush = new SolidColorBrush(Color.FromRgb(255, 0, 0));
-        private SolidColorBrush myPurpleBrush = new SolidColorBrush(Color.FromRgb(179, 66, 244));
-        private SolidColorBrush myPinkBrush = new SolidColorBrush(Color.FromRgb(244, 66, 241));
 
         private SolidColorBrush black = new SolidColorBrush(Color.FromRgb(0, 0, 0));
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
-        private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
-        private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
         private AluminiumCoreLib.Hardware.Processor cpu = new AluminiumCoreLib.Hardware.Processor();
         private AluminiumCoreLib.Hardware.OperatingSystem os = new AluminiumCoreLib.Hardware.OperatingSystem();
@@ -53,12 +49,6 @@ namespace CSMarkDesktop.Windows
             }
             else if (Properties.Settings.Default.background.Equals("dark")){
                 gridColour.Background = dark;
-            }
-            else if (Properties.Settings.Default.background.Equals("bluedark")){
-                gridColour.Background = blueDark;
-            }
-            else if (Properties.Settings.Default.background.Equals("blurple")){
-                gridColour.Background = blurple;
             }
             else if (Properties.Settings.Default.background.Equals("justblack")){
                 gridColour.Background = black;

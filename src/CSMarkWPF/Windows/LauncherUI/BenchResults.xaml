@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSMarkDesktop.Windows.LauncherUI"
         mc:Ignorable="d"
-        Title="CSMarkDesktop Benchmark Results" Height="657.888" Width="1494.45" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
-    <Grid Name="gridColor" Height="629" VerticalAlignment="Top" Margin="0,0,4,0">
+        Title="CSMarkDesktop Benchmark Results" Height="657.888" Width="1452.45" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+    <Grid Name="gridColor" Height="629" VerticalAlignment="Top" HorizontalAlignment="Left" Width="1442">
         <Label Name="singleOverall" Content="Single Threaded Score: " FontSize="26" Margin="165,19,737,552"/>
         <Label Name="singleOverallInfo" Content="" FontSize="48" Margin="21,82,842,449"/>
         <Label Name="multiOverall" Content="Multi Threaded Score: " FontSize="26" Margin="820,19,279,552"/>
         <Label Name="multiOverallInfo" Content="" FontSize="48" Margin="707,82,67,449"/>
         <Label Name="processor" Content="Processor: " FontSize="24" Margin="21,185,777,395"/>
-        <Label Name="processorCoreCount" Content="Core Count: " FontSize="24" Margin="764,185,482,395"/>
+        <Label Name="processorCoreCount" Content="Core Count: " FontSize="24" Margin="764,185,466,395"/>
         <Label Name="scoreBreakdown" Content="Individual Score Breakdown" FontSize="32" Margin="442,314,597,260"/>
         <Label Name="benchRunTime" Content="Benchmark RunTime: CSMARKLIB .NET FRAMEWORK" FontSize="26" Margin="10,234,390,351"/>
         <Label Name="pythagorasSingle" Content="Pythagoras Single Threaded: " FontSize="28" Margin="10,374,777,200"/>
@@ -23,6 +23,6 @@
         <Label Name="geometricSumNMulti" Content="GeometricSumN Multi Threaded: " FontSize="28" Margin="751,429,10,145"/>
         <Label Name="changeReturnMulti" Content="ChangeReturnUS Multi Threaded: " FontSize="28" Margin="751,481,10,93"/>
         <Label Name="compoundInterestMulti" Content="Compound Interest Multi Threaded: " FontSize="28" Margin="751,541,10,33"/>
-        <Label x:Name="processorThreadCount" Content="Thread Count: " FontSize="24" Margin="1100,185,146,395"/>
+        <Label x:Name="processorThreadCount" Content="Thread Count: " FontSize="24" Margin="1100,185,130,395"/>
     </Grid>
 </Window>

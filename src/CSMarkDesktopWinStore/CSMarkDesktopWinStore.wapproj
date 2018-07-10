@@ -38,8 +38,9 @@
     <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageCertificateKeyFile>CSMarkDesktopWinStore_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>CSMarkDesktopWinStore_StoreKey.pfx</PackageCertificateKeyFile>
     <EntryPointProjectUniqueName>..\CSMarkWPF\CSMarkWPF.csproj</EntryPointProjectUniqueName>
+    <PackageCertificateThumbprint>AB65250723AFB1B2C0295CD25F3F9CA514BE6522</PackageCertificateThumbprint>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -48,12 +49,14 @@
     <None Include="CSMarkDesktopWinStore_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="CSMarkDesktopWinStore_StoreKey.pfx" />
     <Content Include="Images\LockScreenLogo.scale-200.png" />
     <Content Include="Images\Square150x150Logo.scale-200.png" />
     <Content Include="Images\Square44x44Logo.scale-200.png" />
     <Content Include="Images\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Images\StoreLogo.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CSMarkWPF\CSMarkWPF.csproj" />

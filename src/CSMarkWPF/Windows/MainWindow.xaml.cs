@@ -38,8 +38,6 @@ namespace CSMarkDesktop{
         private SolidColorBrush black = new SolidColorBrush(Color.FromRgb(0, 0, 0));
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
-        private SolidColorBrush blueDark = new SolidColorBrush(Color.FromRgb(43, 76, 119));
-        private SolidColorBrush blurple = new SolidColorBrush(Color.FromRgb(114, 137, 218));
 
         private CSMarkLib.UpdatingServices.AutoUpdater ac = new CSMarkLib.UpdatingServices.AutoUpdater();
 
@@ -63,7 +61,7 @@ namespace CSMarkDesktop{
             SteamStore,
             WinStore,
             GitRepository
-        }
+        }        
 
         private string AppVersion;
         DistributionPlatform distribution;
@@ -126,19 +124,8 @@ namespace CSMarkDesktop{
             if (Properties.Settings.Default.background.Equals("dark")) {
                 Background = dark;
             }
-            if (Properties.Settings.Default.background.Equals("bluedark")) {
-                Background = blueDark;
-            }
-            if (Properties.Settings.Default.background.Equals("blurple")) {
-                Background = blurple;
-            }
             if (Properties.Settings.Default.background.Equals("justblack")) {
                 Background = black;
-            }
-
-            if(Properties.Settings.Default.background.Equals("bluegray")){
-                Background = dark;
-                Properties.Settings.Default.background = "dark";
             }
 
             gridColour.Background = Background;
@@ -330,8 +317,24 @@ namespace CSMarkDesktop{
             HandleStressTest();
             ApplyStressBtnColors();
         }
+
+        private void OpenURLWin10(string URL){
+            try{
+                Process.Start(URL);
+            }
+            catch{
+                platform.OpenURLInBrowser(URL);
+            }
+        }
+
         private void patronLeftButtonDown(object sender, MouseButtonEventArgs e){
-            platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
+
+            try{
+                platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
+            }
+            catch{         
+                OpenURLWin10(Properties.Settings.Default.patreonURL);
+            }           
         }
         private void menuExitBtn_Click(object sender, RoutedEventArgs e){
                 Application.Current.Shutdown();
@@ -356,25 +359,73 @@ namespace CSMarkDesktop{
             Process.Start(Application.ResourceAssembly.Location); 
         }
         private void submitBugReportBtn_Click(object sender, RoutedEventArgs e){
-            platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/issues/new?template=bug_report.md");
+            try
+            {
+                OpenURLWin10(Properties.Settings.Default.githubURL + "/issues/new?template=bug_report.md");
+            }
+            catch{
+                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/issues/new?template=bug_report.md");
+            }
         }
         private void submitFeatureRequestBtn_Click(object sender, RoutedEventArgs e){
-            platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/issues/new?template=feature_request.md");
+            try
+            {
+                OpenURLWin10(Properties.Settings.Default.githubURL + "/issues/new?template=feature_request.md");
+            }
+            catch
+            {
+                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/issues/new?template=feature_request.md");
+            }
         }
         private void donateCSMarkMenuBtn_Click(object sender, RoutedEventArgs e){
-            platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
+            try
+            {
+                OpenURLWin10(Properties.Settings.Default.patreonURL);
+            }
+            catch
+            {
+                platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
+            }
         }
         private void joinDiscordMenuBtn_Click(object sender, RoutedEventArgs e){
-            platform.OpenURLInBrowser(Properties.Settings.Default.discordURL);
+            try
+            {
+                OpenURLWin10(Properties.Settings.Default.discordURL);
+            }
+            catch
+            {
+                platform.OpenURLInBrowser(Properties.Settings.Default.discordURL);
+            }
         } 
         private void getSourceCodeMenuBtn_Click(object sender, RoutedEventArgs e){
-            platform.OpenURLInBrowser(Properties.Settings.Default.githubURL);
+            try
+            {
+                OpenURLWin10(Properties.Settings.Default.githubURL);
+            }
+            catch
+            {
+                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL);
+            }
         }
         private void viewPrivacyPolicyBtn_Click(object sender, RoutedEventArgs e){
-            platform.OpenURLInBrowser(Properties.Settings.Default.githubURL  + "/blob/master/PrivacyPolicy.md");
+            try
+            {
+                OpenURLWin10(Properties.Settings.Default.githubURL + "/blob/master/PrivacyPolicy.md");
+            }
+            catch
+            {
+                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/blob/master/PrivacyPolicy.md");
+            }
         } 
         private void viewSourceCodeLicenseBtn_Click(object sender, RoutedEventArgs e){
-            platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/blob/master/LICENSE");
+            try
+            {
+                OpenURLWin10(Properties.Settings.Default.githubURL + "/blob/master/LICENSE");
+            }
+            catch
+            {
+                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/blob/master/LICENSE");
+            }
         }
         private void checkUpdatesMenuBtn_Click(object sender, RoutedEventArgs e){
             var check = CheckForUpdates();
