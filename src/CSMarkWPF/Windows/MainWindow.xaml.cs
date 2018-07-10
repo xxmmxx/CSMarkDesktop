@@ -54,7 +54,6 @@ namespace CSMarkDesktop{
         private string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
         private string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
         //Supported Versions of Windows
-        private Version win10v1607 = new Version(10, 0, 14393, 0);
         private Version win10v1703 = new Version(10, 0, 15063, 0);
         private Version win10v1709 = new Version(10, 0, 16299, 0);
         private Version win10v1803 = new Version(10, 0, 17134, 0);
@@ -97,6 +96,12 @@ namespace CSMarkDesktop{
             platform = new Platform();
             //Run processor detection in a new task before we need the information.       
             cpu.GetProcessorInformationAsTask();
+            Thread.Sleep(500);
+            Properties.Results.Default.Processor = cpu.CPU;
+            Properties.Results.Default.CPUCoreCount = cpu.CoreCount;
+            Properties.Results.Default.CPUThreadCount = cpu.ThreadCount;
+            Properties.Results.Default.CPUClockSpeed = cpu.ClockspeedInt.ToString() + " MHz";
+            Properties.Results.Default.Save();
 
             //Show the version number
             versionLabel.Content = "v" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -241,8 +246,7 @@ namespace CSMarkDesktop{
             if (runningStress == true){
                 runningStress = false;
                 var stopStressTest = new Task(() => stc.StopStressTest());
-                stopStressTest.Start();
-                
+                stopStressTest.Start();               
                 t.Stop();
             }
             else{
@@ -260,50 +264,53 @@ namespace CSMarkDesktop{
         }
         #endregion
         private void StartBenchmark(){
-            benchBtn.Content = "Starting Benchmark...";
-            benchBtn.IsEnabled = false;
-            eligible.Content = "Starting Benchmark.... Your system may become unresponsive for a short peroid of time.";
-            eligible.Visibility = Visibility.Visible;
-
             var benchmarkWorkTask = new Task(() => BenchmarkWork());
+            
             benchmarkWorkTask.Start();
             benchmarkWorkTask.Wait();
+            BenchResults br = new BenchResults();           
+            benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.IsEnabled = true; }));
+            benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.Content = "Start Benchmark"; }));
+            benchBtn.Dispatcher.Invoke(new Action(() => { eligible.Content = ""; }));
+            try
+            {
+                benchBtn.Dispatcher.Invoke(new Action(() => { br.ShowDialog(); }));
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
 
-        private void BenchmarkWork(){
-            var task1 = new Task(() => benchController.StartSingleBenchmarkTests());
-            var task2 = new Task(() => benchController.StartMultiBenchmarkTests());
-            task1.Start();
+        private async void BenchmarkWork(){
+            var warmupTask = Task.Factory.StartNew(() => benchController.DoWarmup(true));
+            warmupTask.Wait((60 * 5) * 1000);
+            var task1 = Task.Factory.StartNew(() => benchController.StartSingleBenchmarkTests());
             task1.Wait((60 * 5) * 1000);
-            task2.Start();
-            task2.Wait((30 * 5) * 1000);
+            var task2 = Task.Factory.StartNew(() => benchController.StartMultiBenchmarkTests()); 
+            task2.Wait((60 * 5) * 1000);
 
             HashMap<BenchmarkType, Benchmark> hash = benchController.ReturnBenchmarkObjects();
             var resultSaver = new ResultSaver();
             var result = resultSaver.SaveResult(true, hash);
             Properties.Results.Default.BenchmarkResult = result;
-            Properties.Results.Default.Processor = cpu.CPU;
-            Properties.Results.Default.CPUCoreCount = cpu.CoreCount;
-            Properties.Results.Default.CPUThreadCount = cpu.ThreadCount;
-            Properties.Results.Default.CPUClockSpeed = cpu.ClockspeedInt.ToString() + " MHz";
             Properties.Results.Default.Save();
-        }
-        private void ShowBenchmarkResults(){
-            BenchResults bench = new BenchResults();
-            bench.ShowDialog();
         }
 
         private void t_Tick(object sender, EventArgs e){
-            stressTimer.Content = Convert.ToString(DateTime.Now - start);
+            if (runningStress){
+                stressTimer.Content = Convert.ToString(DateTime.Now - start);
+            }
         }
         #region Handle Button Clicks
         private void benchBtn_Click(object sender, RoutedEventArgs e){
-            StartBenchmark();
-            ShowBenchmarkResults();
-            benchBtn.Content = "Start Benchmark";
-            benchBtn.IsEnabled = true;
-            eligible.Content = "";
+            benchBtn.Content = "Starting Benchmark...";
+            benchBtn.IsEnabled = false;
+            eligible.Content = "Starting Benchmark.... Your system may become unresponsive for a short peroid of time.";
             eligible.Visibility = Visibility.Visible;
+            var task = new Task(() => StartBenchmark());
+            task.Start();          
         }
         private void stressBtn_Click(object sender, RoutedEventArgs e){            
             HandleStressTest();
@@ -313,7 +320,6 @@ namespace CSMarkDesktop{
             platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
         }
         private void menuExitBtn_Click(object sender, RoutedEventArgs e){
-                //Close the app if the exit menu button is clicked
                 Application.Current.Shutdown();
         }
         private void menuSettingsBtn_Click(object sender, RoutedEventArgs e){
