@@ -65,14 +65,15 @@ namespace CSMarkDesktop{
             GitRepository
         }
 
-        private string AppVersion;   
-        DistributionPlatform distribution = DistributionPlatform.GitRepository;
+        private string AppVersion;
+        DistributionPlatform distribution;
 
         public MainWindow(){
             InitializeComponent();
             benchController = new BenchmarkController();
             Assembly assembly = Assembly.GetEntryAssembly();
-           
+            //Detect where the app came from.
+            DetectStore();
             if(distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
                 checkUpdatesMenuBtn.IsEnabled = false;
                 checkUpdatesMenuBtn.Visibility = Visibility.Collapsed;                
@@ -86,6 +87,7 @@ namespace CSMarkDesktop{
                 AutoUpdater.ReportErrors = true;
                 AutoUpdater.ShowSkipButton = false;
                 AutoUpdater.ShowRemindLaterButton = false;
+                AutoUpdater.ApplicationExitEvent += AutoUpdater_ApplicationExitEvent;
             }
 
             eligible.Content = "";
@@ -109,6 +111,10 @@ namespace CSMarkDesktop{
             if (Properties.Settings.Default.HideBecomeAPatronButton == true){
                 patronImage.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void AutoUpdater_ApplicationExitEvent(){
+            Application.Current.Shutdown();
         }
 
         private void LoadBackground() {
@@ -209,6 +215,17 @@ namespace CSMarkDesktop{
             checkUpdatesMenuBtn.Background = Background;
             checkUpdatesMenuBtn.Foreground = foreground;
             checkUpdatesMenuBtn.BorderBrush = Background;
+        }
+        private void DetectStore(){
+            string currentDirectory = Environment.CurrentDirectory;
+
+            if (currentDirectory.Contains("16188AluminiumTech.CSMark_20gejd9zdp9ny")){
+                distribution = DistributionPlatform.WinStore;
+                Title += " Windows Store Version";
+            }
+            else{
+                distribution = DistributionPlatform.GitRepository;
+            }
         }
         #region Updating Handling
         private bool CheckForUpdates(){
