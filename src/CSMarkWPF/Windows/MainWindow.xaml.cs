@@ -264,17 +264,16 @@ namespace CSMarkDesktop{
         }
         #endregion
         private void StartBenchmark(){
-            var benchmarkWorkTask = new Task(() => BenchmarkWork());
-            
+            var benchmarkWorkTask = new Task(() => BenchmarkWork());         
             benchmarkWorkTask.Start();
-            benchmarkWorkTask.Wait();
-            BenchResults br = new BenchResults();           
-            benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.IsEnabled = true; }));
-            benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.Content = "Start Benchmark"; }));
-            benchBtn.Dispatcher.Invoke(new Action(() => { eligible.Content = ""; }));
+            benchmarkWorkTask.Wait();       
+            
             try
             {
-                benchBtn.Dispatcher.Invoke(new Action(() => { br.ShowDialog(); }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.IsEnabled = true; }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.Content = "Start Benchmark"; }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { eligible.Content = ""; }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { new BenchResults().ShowDialog(); }));
             }
             catch(Exception ex)
             {
