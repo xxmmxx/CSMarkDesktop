@@ -38,19 +38,18 @@
                     <MenuItem Header="Check For Updates" Name="checkUpdatesMenuBtn" Click="checkUpdatesMenuBtn_Click"/>
                 </MenuItem>
             </Menu>
-         
+
         </DockPanel>
 
-        <TextBlock Margin="319,26,288,477" FontSize="48" Foreground="White"><Run Text="CSMarkDesktop"/></TextBlock>
+        <TextBlock Margin="336,26,332,471" FontSize="48" Foreground="White"><Run Text="CSMarkDesktop"/></TextBlock>
 
-        <Button Margin="429,286,400,240" FontSize="16" x:Name="benchBtn" Click="benchBtn_Click">Start Benchmark</Button>
-        <Button Margin="429,346,400,180" FontSize="16" x:Name="stressBtn" Click="stressBtn_Click" Background="White">Start Stress Test</Button>
-        <TextBlock HorizontalAlignment="Left" Margin="363,491,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="367" Foreground="White" Height="48"><Run Text="Pre-release . Copyright"/><Run Text=" (c)"/><Run Text=" AluminiumTech"/><Run Text=" 2018"/><LineBreak/><Run Text="All copyrights belong to their respective copyright owners."/><LineBreak/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="222,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="490" Foreground="White" FontSize="12"><Run Text="CSMark is an open source CPU Benchmark written in C#"/><Run Text=" and is licensed under the MPL 2.0 ."/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="121,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="711" Foreground="White" FontSize="12"><Run Text="Warning: Overclocking your CPU may damage it. Do so at your own risk."/><Run Text=" For more information, visit your CPU manufacturer's website."/><LineBreak/><Run Text="Ensure that your CPU has adequate cooling before starting the Stress Test or running a benchmark."/><LineBreak/></TextBlock>
-        <Label Content="0:00:00" HorizontalAlignment="Left" FontSize="14"  Margin="499,412,0,0" VerticalAlignment="Top" Name="stressTimer" Foreground="White"/>
+        <Button Margin="416,187,414,339" FontSize="16" x:Name="benchBtn" Click="benchBtn_Click">Start Benchmark</Button>
+        <Button Margin="416,247,414,279" FontSize="16" x:Name="stressBtn" Click="stressBtn_Click" Background="White">Start Stress Test</Button>
+        <TextBlock HorizontalAlignment="Left" Margin="354,511,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="367" Foreground="White" Height="48"><Run Text="Pre-release . Copyright"/><Run Text=" (c)"/><Run Text=" AluminiumTech"/><Run Text=" 2018"/><LineBreak/><Run Text="All copyrights belong to their respective copyright owners."/><LineBreak/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="96,422,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="852" Foreground="White" FontSize="14"><Run Text="Warning: Overclocking your CPU may damage it"/><Run Text=" or void your warranty"/><Run Text=". Do so at your own risk."/><Run Text=" For more information, visit your CPU manufacturer's website."/><LineBreak/></TextBlock>
+        <Label Content="0:00:00" HorizontalAlignment="Left" FontSize="14"  Margin="486,313,0,0" VerticalAlignment="Top" Name="stressTimer" Foreground="White"/>
         <Label Name="versionLabel" Content="v0.0.0.0" HorizontalAlignment="Left" Margin="927,529,0,0" VerticalAlignment="Top" Foreground="White" Width="79" FontSize="16"/>
-        <Label Name="eligible" Content="Label" HorizontalAlignment="Left" Margin="234,233,0,0" VerticalAlignment="Top" Width="561" Foreground="White"/>
+        <Label FontSize="14" Name="eligible" Content="Label" HorizontalAlignment="Left" Margin="156,137,0,0" VerticalAlignment="Top" Width="688" Foreground="White"/>
         <Image Name="patronImage" Source="patron_button.PNG" HorizontalAlignment="Left" Margin="840,491,0,0" VerticalAlignment="Top" Width="140" Height="33" MouseLeftButtonDown="patronLeftButtonDown"/>
 
     </Grid>

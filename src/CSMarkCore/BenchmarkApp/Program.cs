@@ -150,7 +150,6 @@ namespace CSMarkCoreBenchmarkApp{
                 }
             }
             else if (command == BenchCommand.MultiBenchSaveResult){
-             //   bench.DoWarmup(true);
                 bench.StartBenchmarkTests();
                 var y = bench.ReturnBenchmarkObjects();
                 Result x = new ResultSaver().SaveResult(true, y);

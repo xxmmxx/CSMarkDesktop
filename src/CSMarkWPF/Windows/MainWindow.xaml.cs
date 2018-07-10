@@ -298,7 +298,7 @@ namespace CSMarkDesktop{
         }
 
         private async void BenchmarkWork(){
-            var warmupTask = Task.Factory.StartNew(() => benchController.DoWarmup(true));
+            var warmupTask = Task.Factory.StartNew(() => benchController.DoWarmup());
             warmupTask.Wait((30) * 1000);
             var task1 = Task.Factory.StartNew(() => benchController.StartSingleBenchmarkTests());
             task1.Wait((60 * 5) * 1000);
@@ -321,7 +321,7 @@ namespace CSMarkDesktop{
         private void benchBtn_Click(object sender, RoutedEventArgs e){
             benchBtn.Content = "Starting Benchmark...";
             benchBtn.IsEnabled = false;
-            eligible.Content = "Starting Benchmark.... Your system may become unresponsive for a short peroid of time.";
+            eligible.Content = "Starting Benchmark.... This may take a while. You may want to do something else whilst waiting.";
             eligible.Visibility = Visibility.Visible;
             var task = new Task(() => StartBenchmark());
             task.Start();          
