@@ -3,7 +3,6 @@ This document contains a list of upcoming releases of CSMark Desktop.
 
 ### 0.31
  **Highlight Features**
- * Initial Release on Windows Store
  * Reliability improvements
  * Stability improvements
 
