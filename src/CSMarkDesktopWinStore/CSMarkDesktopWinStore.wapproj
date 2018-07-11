@@ -41,6 +41,29 @@
     <PackageCertificateKeyFile>CSMarkDesktopWinStore_StoreKey.pfx</PackageCertificateKeyFile>
     <EntryPointProjectUniqueName>..\CSMarkWPF\CSMarkWPF.csproj</EntryPointProjectUniqueName>
     <PackageCertificateThumbprint>AB65250723AFB1B2C0295CD25F3F9CA514BE6522</PackageCertificateThumbprint>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AppxBundle>Always</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <AppxBundle>Always</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
+    <AppxBundle>Always</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <AppxBundle>Always</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AppxBundle>Always</AppxBundle>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <AppxBundle>Always</AppxBundle>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -49,12 +72,25 @@
     <None Include="CSMarkDesktopWinStore_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Square150x150Logo.scale-100.png" />
+    <Content Include="Square150x150Logo.scale-200.png" />
+    <Content Include="Square150x150Logo.scale-400.png" />
+    <Content Include="Square310x310Logo.scale-100.png" />
+    <Content Include="Square310x310Logo.scale-200.png" />
+    <Content Include="Square44x44Logo.scale-100.png" />
+    <Content Include="Square44x44Logo.scale-200.png" />
+    <Content Include="Square44x44Logo.scale-400.png" />
+    <Content Include="Square71x71Logo.scale-100.png" />
+    <Content Include="Square71x71Logo.scale-200.png" />
+    <Content Include="Square71x71Logo.scale-400.png" />
+    <Content Include="StoreLogo.scale-100.png" />
+    <Content Include="StoreLogo.scale-200.png" />
+    <Content Include="StoreLogo.scale-400.png" />
+    <Content Include="Wide310x150Logo.scale-200.png" />
     <None Include="CSMarkDesktopWinStore_StoreKey.pfx" />
-    <Content Include="Images\LockScreenLogo.scale-200.png" />
     <Content Include="Images\Square150x150Logo.scale-200.png" />
     <Content Include="Images\Square44x44Logo.scale-200.png" />
     <Content Include="Images\Square44x44Logo.targetsize-24_altform-unplated.png" />
-    <Content Include="Images\StoreLogo.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>

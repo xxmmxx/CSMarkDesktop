@@ -70,8 +70,15 @@ namespace CSMarkDesktop{
             InitializeComponent();
             benchController = new BenchmarkController();
             Assembly assembly = Assembly.GetEntryAssembly();
+
             //Detect where the app came from.
             DetectStore();
+            distribution = DistributionPlatform.WinStore;
+
+            if ((Environment.OSVersion.Version != win10v1703) && (Environment.OSVersion.Version != win10v1709) && (Environment.OSVersion.Version != win10v1803)){
+                    throw new Exception("Your OS is not supported. Please update your OS to use CSMark!");
+            }
+            
             if(distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
                 checkUpdatesMenuBtn.IsEnabled = false;
                 checkUpdatesMenuBtn.Visibility = Visibility.Collapsed;                
@@ -240,21 +247,23 @@ namespace CSMarkDesktop{
         private void ApplyStressBtnColors(){
             if (runningStress == false){
                 stressBtn.Background = myGreenBrush;
-                stressBtn.Content = "Start Stress Test";       
+                stressBtn.Content = "Start Stress Test";              
             }
             else{
                 stressBtn.Background = myRedBrush;
-                stressBtn.Content = "Stop Stress Test";
+                stressBtn.Content = "Stop Stress Test";             
             }
         }
         private void HandleStressTest(){
             if (runningStress == true){
                 runningStress = false;
+                benchBtn.IsEnabled = true;
                 var stopStressTest = new Task(() => stc.StopStressTest());
                 stopStressTest.Start();               
                 t.Stop();
             }
             else{
+                benchBtn.IsEnabled = false;
                 runningStress = true;
                 //Start the Stress Test as a new Task to ensure good UI performance.
                 var startStressTest = new Task(() => stc.StartMultiStressTest());
@@ -277,6 +286,7 @@ namespace CSMarkDesktop{
                 benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.IsEnabled = true; }));
                 benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.Content = "Start Benchmark"; }));
                 benchBtn.Dispatcher.Invoke(new Action(() => { eligible.Content = ""; }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { stressBtn.IsEnabled = true; }));
                 benchBtn.Dispatcher.Invoke(new Action(() => { new BenchResults().ShowDialog(); }));
             }
             catch(Exception ex){
@@ -306,9 +316,10 @@ namespace CSMarkDesktop{
         }
         #region Handle Button Clicks
         private void benchBtn_Click(object sender, RoutedEventArgs e){
+            stressBtn.IsEnabled = false;
             benchBtn.Content = "Starting Benchmark...";
             benchBtn.IsEnabled = false;
-            eligible.Content = "Starting Benchmark.... This may take a while. You may want to do something else whilst waiting.";
+            eligible.Content = "Starting Benchmark.... This may take a while. You may want to get a drink or some food whilst waiting.";
             eligible.Visibility = Visibility.Visible;
             var task = new Task(() => StartBenchmark());
             task.Start();          
@@ -435,6 +446,9 @@ namespace CSMarkDesktop{
             }
         }
         private void main_GotFocus(object sender, RoutedEventArgs e){
+            LoadBackground();
+        }
+        private void main_MouseEnter(object sender, MouseEventArgs e){
             LoadBackground();
         }
         #endregion

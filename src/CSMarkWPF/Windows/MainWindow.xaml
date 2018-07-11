@@ -9,7 +9,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSMarkDesktop"
         mc:Ignorable="d"
-        Title="CSMarkDesktop" Height="600" Width="1024" WindowStartupLocation="CenterScreen" MinWidth="1024" MinHeight="600" ResizeMode="CanMinimize" Closing="main_Closing" GotFocus="main_GotFocus" Background="White">
+        Title="CSMarkDesktop" Height="600" Width="1024" WindowStartupLocation="CenterScreen" MinWidth="1024" MinHeight="600" ResizeMode="CanMinimize" Closing="main_Closing" GotFocus="main_GotFocus" MouseEnter="main_MouseEnter" Background="White">
     <Grid x:Name="gridColour" ShowGridLines="False">
         <DockPanel Name="dockPanel">
             <Menu Name="menuBar" DockPanel.Dock="Top">
