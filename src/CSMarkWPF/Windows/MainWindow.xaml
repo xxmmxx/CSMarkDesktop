@@ -38,11 +38,9 @@
                     <MenuItem Header="Check For Updates" Name="checkUpdatesMenuBtn" Click="checkUpdatesMenuBtn_Click"/>
                 </MenuItem>
             </Menu>
-
         </DockPanel>
 
         <TextBlock Margin="336,26,332,471" FontSize="48" Foreground="#385723"><Run Text="CSMarkDesktop"/></TextBlock>
-
         <Button Margin="374,187,414,324" FontSize="16" x:Name="benchBtn" Click="benchBtn_Click">Start Benchmark</Button>
         <Button Margin="374,267,414,245" FontSize="16" x:Name="stressBtn" Click="stressBtn_Click" Background="White">Start Stress Test</Button>
         <TextBlock HorizontalAlignment="Left" Margin="354,511,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Width="367" Foreground="White" Height="48"><Run Text="Pre-release . Copyright"/><Run Text=" (c)"/><Run Text=" AluminiumTech"/><Run Text=" 2018"/><LineBreak/><Run Text="All copyrights belong to their respective copyright owners."/><LineBreak/></TextBlock>
