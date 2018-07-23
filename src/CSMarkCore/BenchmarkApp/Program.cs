@@ -134,7 +134,7 @@ namespace CSMarkCoreBenchmarkApp{
                 bench.StartSingleBenchmarkTests();
                 var y = bench.ReturnBenchmarkObjects();
                 Result x = new ResultSaver().SaveResult(false, y);
-                bench.PrintResultsToConsole(true, false, x);
+                bench.PrintResultsToConsole(true, x);
 
                 if (rft.Equals(ResultFileType.NoResult)){
                     //Do nothing
@@ -153,7 +153,7 @@ namespace CSMarkCoreBenchmarkApp{
                 bench.StartBenchmarkTests();
                 var y = bench.ReturnBenchmarkObjects();
                 Result x = new ResultSaver().SaveResult(true, y);
-                bench.PrintResultsToConsole(true, true, x);
+                bench.PrintResultsToConsole(true, x);
 
                 if (rft.Equals(ResultFileType.NoResult)){
                     //Do nothing
