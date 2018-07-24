@@ -65,8 +65,7 @@ namespace CSMarkCoreBenchmarkApp{
                 else if (args[1].ToString().Contains("json"))
                 {
                     rft = ResultFileType.Json;
-                }
-                
+                }                
             }
             //If the user has given 2 arguments they should correspond to 1) Single or Multi and 3) Start Time.
             else if (args.Length == 3){
@@ -102,13 +101,11 @@ namespace CSMarkCoreBenchmarkApp{
 
             //Setup Rollbar Error Detection.
             //You will need to create your own file in this directory called "Rollbar.txt" with a Rollbar API key to use Rollbar error reporting.
-            try
-            {
+            try{
                 string postServerItemAccessToken = File.ReadAllText("Rollbar.txt");
                 RollbarLocator.RollbarInstance.Configure(new RollbarConfig(postServerItemAccessToken) { Environment = "production" });
             }
-            catch
-            {
+            catch{
                 Console.WriteLine("We were unable to setup Rollbar Error Reporting.");
             }
 
@@ -134,7 +131,8 @@ namespace CSMarkCoreBenchmarkApp{
                 bench.StartSingleBenchmarkTests();
                 var y = bench.ReturnBenchmarkObjects();
                 Result x = new ResultSaver().SaveResult(false, y);
-                bench.PrintResultsToConsole(true, x);
+                bench.PrintResultsToConsole(false, x);
+                bench.VerifyBenchmarkIntegrity(x, false);
 
                 if (rft.Equals(ResultFileType.NoResult)){
                     //Do nothing
@@ -154,6 +152,7 @@ namespace CSMarkCoreBenchmarkApp{
                 var y = bench.ReturnBenchmarkObjects();
                 Result x = new ResultSaver().SaveResult(true, y);
                 bench.PrintResultsToConsole(true, x);
+                bench.VerifyBenchmarkIntegrity(x, true);
 
                 if (rft.Equals(ResultFileType.NoResult)){
                     //Do nothing
