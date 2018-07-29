@@ -70,10 +70,8 @@ namespace CSMarkDesktop{
             InitializeComponent();
             benchController = new BenchmarkController();
             Assembly assembly = Assembly.GetEntryAssembly();
-
             //Detect where the app came from.
             DetectStore();
-            distribution = DistributionPlatform.WinStore;
 
             if ((Environment.OSVersion.Version != win10v1703) && (Environment.OSVersion.Version != win10v1709) && (Environment.OSVersion.Version != win10v1803)){
                     throw new Exception("Your OS is not supported. Please update your OS to use CSMark!");
@@ -82,8 +80,6 @@ namespace CSMarkDesktop{
             if(distribution.Equals(DistributionPlatform.SteamStore) || distribution.Equals(DistributionPlatform.WinStore)){
                 checkUpdatesMenuBtn.IsEnabled = false;
                 checkUpdatesMenuBtn.Visibility = Visibility.Collapsed;                
-                menuRestartAppBtn.IsEnabled = false;
-                menuRestartAppBtn.Visibility = Visibility.Collapsed;
                 patronImage.Visibility = Visibility.Collapsed;
             }
             else{
@@ -95,14 +91,13 @@ namespace CSMarkDesktop{
                 AutoUpdater.ApplicationExitEvent += AutoUpdater_ApplicationExitEvent;
             }
 
-            eligible.Content = "";
-            LoadBackground();
+            eligible.Content = "";           
             stc = new StressTestController();
             ApplyStressBtnColors();
             platform = new Platform();
             //Run processor detection in a new task before we need the information.       
             cpu.GetProcessorInformationAsTask();
-            Thread.Sleep(500);
+            Thread.Sleep(300);
             Properties.Results.Default.Processor = cpu.CPU;
             Properties.Results.Default.CPUCoreCount = cpu.CoreCount;
             Properties.Results.Default.CPUThreadCount = cpu.ThreadCount;
@@ -116,6 +111,8 @@ namespace CSMarkDesktop{
             if (Properties.Settings.Default.HideBecomeAPatronButton == true){
                 patronImage.Visibility = Visibility.Collapsed;
             }
+
+            LoadBackground();
         }
 
         private void AutoUpdater_ApplicationExitEvent(){
@@ -123,7 +120,7 @@ namespace CSMarkDesktop{
         }
 
         private void LoadBackground() {
-            Brush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
+            Brush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));         
 
             if (Properties.Settings.Default.background.Equals("reallydark")) {
                 Background = reallyDark;
@@ -135,80 +132,13 @@ namespace CSMarkDesktop{
                 Background = black;
             }
 
+            if (!Properties.Settings.Default.background.Equals("dark") && !Properties.Settings.Default.background.Equals("justblack") && !Properties.Settings.Default.background.Equals("reallydark"))
+            {
+                Properties.Settings.Default.background = "dark";
+                Properties.Settings.Default.Save();
+            }
+
             gridColour.Background = Background;
-            dockPanel.Background = Background;  
-
-            menuBar.Background = Background;
-            menuBar.Foreground = foreground;
-            menuBar.BorderBrush = Background;
-
-            helpMenu.Background = Background;
-            helpMenu.Foreground = foreground;
-            helpMenu.BorderBrush = Background;
-
-            fileMenu.Background = Background;
-            fileMenu.Foreground = foreground;
-            fileMenu.BorderBrush = Background;
-
-            aboutMenu.Background = Background;
-            aboutMenu.Foreground = foreground;
-            aboutMenu.BorderBrush = Background;
-
-            supportMenu.Background = Background;
-            supportMenu.Foreground = foreground;
-            supportMenu.BorderBrush = Background;
-
-            menuSettingsBtn.Foreground = foreground;
-            menuSettingsBtn.Background = Background;
-            menuSettingsBtn.BorderBrush = Background;
-
-            menuAboutAppBtn.Background = Background;
-            menuAboutAppBtn.Foreground = foreground;
-            menuAboutAppBtn.BorderBrush = Background;
-
-            menuAboutPCBtn.Background = Background;
-            menuAboutPCBtn.Foreground = foreground;
-            menuAboutPCBtn.BorderBrush = Background;
-
-            menuExitBtn.Foreground = foreground;
-            menuExitBtn.Background = Background;
-            menuExitBtn.BorderBrush = Background;
-
-            menuRestartAppBtn.Background = Background;
-            menuRestartAppBtn.Foreground = foreground;
-            menuRestartAppBtn.BorderBrush = Background;
-
-            submitBugReportBtn.Background = Background;
-            submitBugReportBtn.Foreground = foreground;
-            submitBugReportBtn.BorderBrush = Background;
-
-            submitFeatureRequestBtn.Background = Background;
-            submitFeatureRequestBtn.Foreground = foreground;
-            submitFeatureRequestBtn.BorderBrush = Background;
-
-            joinDiscordMenuBtn.Background = Background;
-            joinDiscordMenuBtn.Foreground = foreground;
-            joinDiscordMenuBtn.BorderBrush = Background;
-
-            getSourceCodeMenuBtn.Background = Background;
-            getSourceCodeMenuBtn.Foreground = foreground;
-            getSourceCodeMenuBtn.BorderBrush = Background;
-
-            donateCSMarkMenuBtn.Background = Background;
-            donateCSMarkMenuBtn.Foreground = foreground;
-            donateCSMarkMenuBtn.BorderBrush = Background;
-
-            viewPrivacyPolicyBtn.Background = Background;
-            viewPrivacyPolicyBtn.Foreground = foreground;
-            viewPrivacyPolicyBtn.BorderBrush = Background;
-
-            viewSourceCodeLicenseBtn.Background = Background;
-            viewSourceCodeLicenseBtn.Foreground = foreground;
-            viewSourceCodeLicenseBtn.BorderBrush = Background;
-
-            checkUpdatesMenuBtn.Background = Background;
-            checkUpdatesMenuBtn.Foreground = foreground;
-            checkUpdatesMenuBtn.BorderBrush = Background;
         }
         private void DetectStore(){
             string currentDirectory = Environment.CurrentDirectory;
@@ -364,10 +294,6 @@ namespace CSMarkDesktop{
         private void menuAboutPCBtn_Click(object sender, RoutedEventArgs e){
             Window window = new AboutPC();
             window.ShowDialog();
-        }
-        private void menuRestartAppBtn_Click(object sender, RoutedEventArgs e){
-            Application.Current.Shutdown();
-            Process.Start(Application.ResourceAssembly.Location); 
         }
         private void submitBugReportBtn_Click(object sender, RoutedEventArgs e){
             try

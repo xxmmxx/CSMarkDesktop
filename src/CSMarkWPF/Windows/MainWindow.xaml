@@ -9,37 +9,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSMarkDesktop"
         mc:Ignorable="d"
-        Title="CSMarkDesktop" Height="600" Width="1024" WindowStartupLocation="CenterScreen" MinWidth="1024" MinHeight="600" ResizeMode="CanMinimize" Closing="main_Closing" GotFocus="main_GotFocus" MouseEnter="main_MouseEnter" Background="White">
-    <Grid x:Name="gridColour" ShowGridLines="False">
-        <DockPanel Name="dockPanel">
-            <Menu Name="menuBar" DockPanel.Dock="Top">
+        Title="CSMarkDesktop" Height="600" Width="1024" WindowStartupLocation="CenterScreen" MinWidth="1024" MinHeight="600" ResizeMode="CanMinimize" Closing="main_Closing" GotFocus="main_GotFocus" MouseEnter="main_MouseEnter">
+    <Grid x:Name="gridColour">
+        <DockPanel Name="dockPanel" VerticalAlignment="Top" Height="20">
+            <Menu Name="menuBar">
                 <MenuItem Header="_File" Name="fileMenu">
                     <MenuItem Header="Settings" Name="menuSettingsBtn" Click="menuSettingsBtn_Click"/>
                     <!--   <MenuItem Header="Stress Testing"/> -->
                     <!--   <MenuItem Header="Benchmarking"/> -->
                     <!--   <MenuItem Header="Save"/> -->
                     <MenuItem Header="Exit" Name="menuExitBtn" Click="menuExitBtn_Click"/>
-                    <MenuItem Header="Restart App" Name="menuRestartAppBtn" Click="menuRestartAppBtn_Click"/>
                 </MenuItem>
-                <MenuItem Header="_Help" Name="helpMenu">
-                    <MenuItem Header="Submit a Bug Report" Name="submitBugReportBtn"  Click="submitBugReportBtn_Click"/>
-                    <MenuItem Header="Submit a Feature Request" Name="submitFeatureRequestBtn"  Click="submitFeatureRequestBtn_Click"/>
-                    <MenuItem Header="About" Name="aboutMenu">
-                        <MenuItem Header="About This PC" Name="menuAboutPCBtn" Click="menuAboutPCBtn_Click"/>
-                        <MenuItem Header="About CSMark App" Name="menuAboutAppBtn" Click="menuAboutAppBtn_Click"/>
-                    </MenuItem>
-                    <MenuItem Header="Support" Name="supportMenu">
-                        <MenuItem Header="Join the CSMark Discord" Name="joinDiscordMenuBtn" Click="joinDiscordMenuBtn_Click"/>
-                        <MenuItem Header="Get the Source Code" Name="getSourceCodeMenuBtn" Click="getSourceCodeMenuBtn_Click"/>
-                        <MenuItem Header="Become a CSMark patron" Name="donateCSMarkMenuBtn" Click="donateCSMarkMenuBtn_Click"/>
-                    </MenuItem>
+                <MenuItem Header="About" Name="aboutMenu">
+                    <MenuItem Header="About This PC" Name="menuAboutPCBtn" Click="menuAboutPCBtn_Click"/>
+                    <MenuItem Header="About CSMark App" Name="menuAboutAppBtn" Click="menuAboutAppBtn_Click"/>
                     <MenuItem Header="View Privacy Policy" Name="viewPrivacyPolicyBtn" Click="viewPrivacyPolicyBtn_Click"/>
                     <MenuItem Header="View License" Name="viewSourceCodeLicenseBtn" Click="viewSourceCodeLicenseBtn_Click"/>
                     <MenuItem Header="Check For Updates" Name="checkUpdatesMenuBtn" Click="checkUpdatesMenuBtn_Click"/>
                 </MenuItem>
+                <MenuItem Header="_Help" Name="helpMenu">
+                    <MenuItem Header="Submit a Bug Report" Name="submitBugReportBtn"  Click="submitBugReportBtn_Click"/>
+                    <MenuItem Header="Submit a Feature Request" Name="submitFeatureRequestBtn"  Click="submitFeatureRequestBtn_Click"/>
+                    <MenuItem Header="Join the CSMark Discord" Name="joinDiscordMenuBtn" Click="joinDiscordMenuBtn_Click"/>
+                    <MenuItem Header="Get the Source Code" Name="getSourceCodeMenuBtn" Click="getSourceCodeMenuBtn_Click"/>
+                    <MenuItem Header="Become a CSMark patron" Name="donateCSMarkMenuBtn" Click="donateCSMarkMenuBtn_Click"/>
+                </MenuItem>
             </Menu>
         </DockPanel>
-
+    
         <TextBlock Margin="336,26,332,471" FontSize="48" Foreground="#385723"><Run Text="CSMarkDesktop"/></TextBlock>
         <Button Margin="374,187,414,324" FontSize="16" x:Name="benchBtn" Click="benchBtn_Click">Start Benchmark</Button>
         <Button Margin="374,267,414,245" FontSize="16" x:Name="stressBtn" Click="stressBtn_Click" Background="White">Start Stress Test</Button>
