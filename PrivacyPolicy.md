@@ -1,25 +1,23 @@
 ## CSMarkDesktop Privacy Policy
 
-Version: v1807.0
+Version: v1807.1
 
-Last Edited: July 2nd 2018
+Last Edited: July 25th 2018
 
-Effective Date: July 3rd 2018
+Effective Date: July 25th 2018
 
-This privacy policy governs how the Author and Contributors ("developers", "we", "us") of this Software Application collect, use, maintain, and disclose information collected from its users (individually, a "you") of CSMarkDesktop, CSMark Updating Services, and the CSMarkLib Library (collectively "services").
+This privacy policy governs how the Author and Contributors ("developers", "we", "us") of this Software Application collect, use, maintain, and disclose information collected from its users (individually, a "you") of CSMarkDesktop, CSMark Updating Services, the CSMarkLib Library, and any library or framework that CSMark may rely on (collectively "services").
 
-This privacy policy affects all products and services offered by developers.
+This privacy policy affects all products and services offered by us.
 
 ## Personally Identifiable information
-We may collect personally identifiable information that you provide us with should you choose to open a Support Ticket or if you choose to signup to our mailing list (if we create one in the future), signup to any future CSMark Account , marketing emails or to notify you of possible security issues. 
+We may collect personally identifiable information that you provide us with should you choose to: open a Support Ticket, financially support us on Patreon, opt-in to marketing emails or in case we need to notify you of possible security issues. 
 
-We may also collect personally identifiable information to fulfil our obligations to our Patrons such as sending Thank You Emails or providing other rewards.
+We may also collect personally identifiable information to fulfil our obligations to our Patrons such as sending Thank You Emails, providing other rewards, and to verify your eligbility of features or rewards in our services.
 
-This information may include your email address and name.
+This information may include your email address, your name, how much money you have donated to us (if you have done so), and what reward tier you receive.
 
-We do not collect and will never ask you for your date of birth, your device's serial number, your device's IMEI number for LTE devices or any passwords relating to any non CSMark Product or service.
-
-We may collect passwords relating to our services if you create an account for our services but our agents, employees, representatives, and other staff will never ask you to give them your password.
+We do not collect and will never ask you for your date of birth, your billing address, your debit/credit card number, your device's serial number, your device's IMEI number for LTE devices, and any passwords relating to any of our services.
 
 If we receive any personally identifiable information that we have not asked you for, we will try to delete it from our systems and inform you within a reasonable time frame.
 
