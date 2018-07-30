@@ -1,12 +1,12 @@
 ## Upcoming Versions
 This document contains a list of upcoming releases of CSMark Desktop.
 
-### 0.31
+### 0.32
  **Highlight Features**
  * Reliability improvements
  * Stability improvements
 
-### 0.32
+### Future 0.3x.x release
  **Highlight Features**
  * Cross-platform Avalonia based GUI program
  * [Avalonia App] Add support for saving the result as a XML file or JSON file

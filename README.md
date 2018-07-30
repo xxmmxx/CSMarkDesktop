@@ -71,14 +71,14 @@ __List Of Supported Platforms for CSMarkWPF__
 [![Support CSMark through Patreon](https://github.com/CSMarkBenchmark/CSMarkDesktop/blob/master/assets/patron_button.png)](https://www.patreon.com/csmark)
 
 ## FAQ
-__Question:__ Why is CSMark a CLI program?
+__Question:__ Why is CSMarkCore a CLI program?
 __Answer:__ To allow it to run on Windows, Mac and Linux. .NET Core currently doesn't contain a cross-platform GUI component however if one does come in the future, an attempt to migrate to a GUI based program may be made.
 
 __Question:__ Where can I hang out with the CSMark community?
 __Answer:__ There's the [CSMark Discord](https://discord.gg/M3DMgcY).
 
 __Question:__ Can I (or an organization I work for) review CSMark?
-__Answer:__ Of course! I'd like to get in contact with you prior to you or your company publishing your review. You can email or Discord Direct Message a maintainer. I will try to respond and if I'm busy, another maintainer or contributor could respond.
+__Answer:__ Of course! I'd like to get in contact with you prior to you or your company publishing your review. You can email me or Discord Direct Message a maintainer. I will try to respond and if I'm busy, another maintainer or contributor could respond.
 
 __Question:__ Can I make videos or content around CSMark?
 __Answer:__ Of course! Anybody can make videos and/or content around CSMark. I don't currently sponsor videos but I will be happy to answer questions for you if you send me an email or Discord DM to me.
