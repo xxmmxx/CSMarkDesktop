@@ -97,12 +97,12 @@ namespace CSMarkCoreBenchmarkApp{
             string CSMarkVersion = platform.ReturnVersionString() + "_";
             BenchmarkController bench = new BenchmarkController();
             //Show license information
-            platform.ShowLicenseInConsole("LicenseMessage.txt", 3000);
+            platform.ShowLicenseInConsole(Environment.CurrentDirectory + Path.DirectorySeparatorChar + "LicenseMessage.txt", 3000);
 
             //Setup Rollbar Error Detection.
             //You will need to create your own file in this directory called "Rollbar.txt" with a Rollbar API key to use Rollbar error reporting.
             try{
-                string postServerItemAccessToken = File.ReadAllText("Rollbar.txt");
+                string postServerItemAccessToken = File.ReadAllText(Environment.CurrentDirectory + Path.DirectorySeparatorChar +  "Rollbar.txt");
                 RollbarLocator.RollbarInstance.Configure(new RollbarConfig(postServerItemAccessToken) { Environment = "production" });
             }
             catch{

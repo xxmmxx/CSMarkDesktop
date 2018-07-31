@@ -5,6 +5,7 @@ This document contains the entire version history of CSMark Desktop.
 
 | Version | Desktop Availability | Changelog | CSMarkLib Version | AluminiumCoreLib Version |
 |---------|----------|-----------|----------------|----------------|
+| 0.31.1 | July 31st 2018 | https://github.com/CSMarkBenchmark/CSMarkDesktop/releases/tag/0.31.1 | 2.0.0 Preview 7 | 2.0.0 Alpha 1 |
 | 0.31.0 | July 31st 2018 | https://github.com/CSMarkBenchmark/CSMarkDesktop/releases/tag/0.31.0 | 2.0.0 Preview 7 | 2.0.0 Alpha 1 |
 
 

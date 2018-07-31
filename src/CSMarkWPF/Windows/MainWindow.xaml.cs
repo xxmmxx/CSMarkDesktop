@@ -68,10 +68,12 @@ namespace CSMarkDesktop{
 
         public MainWindow(){
             InitializeComponent();
+           
             benchController = new BenchmarkController();
             Assembly assembly = Assembly.GetEntryAssembly();
             //Detect where the app came from.
             DetectStore();
+            distribution = DistributionPlatform.WinStore;
 
             if ((Environment.OSVersion.Version != win10v1703) && (Environment.OSVersion.Version != win10v1709) && (Environment.OSVersion.Version != win10v1803)){
                     throw new Exception("Your OS is not supported. Please update your OS to use CSMark!");
