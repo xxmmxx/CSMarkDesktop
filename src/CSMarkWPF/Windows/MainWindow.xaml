@@ -32,7 +32,7 @@
                     <MenuItem Header="Submit a Feature Request" Name="submitFeatureRequestBtn"  Click="submitFeatureRequestBtn_Click"/>
                     <MenuItem Header="Join the CSMark Discord" Name="joinDiscordMenuBtn" Click="joinDiscordMenuBtn_Click"/>
                     <MenuItem Header="Get the Source Code" Name="getSourceCodeMenuBtn" Click="getSourceCodeMenuBtn_Click"/>
-                    <MenuItem Header="Become a CSMark patron" Name="donateCSMarkMenuBtn" Click="donateCSMarkMenuBtn_Click"/>
+                    <MenuItem Header="Become a CSMark Patron" Name="donateCSMarkMenuBtn" Click="donateCSMarkMenuBtn_Click"/>
                 </MenuItem>
             </Menu>
         </DockPanel>

@@ -89,14 +89,17 @@
     <Reference Include="AluminiumCoreLib.Hardware, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\AluminiumCoreLib.Hardware.dll</HintPath>
     </Reference>
-    <Reference Include="AutoUpdater.NET, Version=1.4.7.0, Culture=neutral, PublicKeyToken=942f95247e354701, processorArchitecture=MSIL">
-      <HintPath>packages\Autoupdater.NET.Official.1.4.7\lib\net462\AutoUpdater.NET.dll</HintPath>
+    <Reference Include="AutoUpdater.NET, Version=1.4.11.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>packages\Autoupdater.NET.Official.1.4.11\lib\net40\AutoUpdater.NET.dll</HintPath>
     </Reference>
     <Reference Include="CSMarkLib, Version=2.0.0.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CSMarkLib.2.0.0-preview7\lib\netstandard2.0\CSMarkLib.dll</HintPath>
     </Reference>
     <Reference Include="CSMarkLib.UpdatingServices, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CSMarkLib.UpdatingServices.1.1.0-beta\lib\netstandard2.0\CSMarkLib.UpdatingServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Toolkit.Win32.UI.Controls, Version=4.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Toolkit.Win32.UI.Controls.4.0.1\lib\net462\Microsoft.Toolkit.Win32.UI.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\Microsoft.Win32.Primitives.dll</HintPath>
@@ -126,6 +129,7 @@
     <Reference Include="System.ComponentModel, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.ComponentModel.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.EventBasedAsync, Version=4.0.11.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.ComponentModel.EventBasedAsync.dll</HintPath>
     </Reference>
@@ -142,6 +146,7 @@
     <Reference Include="System.Data.Common, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Data.Common.dll</HintPath>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.Contracts, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Diagnostics.Contracts.dll</HintPath>
     </Reference>
@@ -185,8 +190,9 @@
     <Reference Include="System.Globalization.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Globalization.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="System.IO, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.IO.dll</HintPath>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.IO.Compression, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.IO.Compression.dll</HintPath>
@@ -231,8 +237,9 @@
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Linq.Queryable.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="System.Net.Http, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Net.Http.dll</HintPath>
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.NameResolution, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Net.NameResolution.dll</HintPath>
@@ -285,8 +292,9 @@
     <Reference Include="System.Resources.Writer, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Resources.Writer.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Runtime.dll</HintPath>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.VisualC, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Runtime.CompilerServices.VisualC.dll</HintPath>
@@ -321,20 +329,24 @@
     <Reference Include="System.Security.Claims, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Claims.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Cryptography.Algorithms.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Cryptography.Csp, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Cryptography.Csp.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Cryptography.Encoding.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Cryptography.Primitives.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Principal, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Principal.dll</HintPath>
@@ -375,6 +387,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -430,6 +443,9 @@
     <Compile Include="Windows\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\WebUI\BrowserView.xaml.cs">
+      <DependentUpon>BrowserView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Windows\AboutApp.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -455,6 +471,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\SplashScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WebUI\BrowserView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -486,6 +505,9 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Windows\WebUI\404\scss\style.scss">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -547,6 +569,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Windows\PatronUI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Windows\WebUI\404\css\style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Windows\WebUI\404\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Windows\WebUI\404\license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

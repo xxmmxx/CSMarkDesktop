@@ -26,6 +26,7 @@ using System.IO;
 using CSMarkDesktop.Windows;
 using CSMarkLib.Results;
 using CSMarkDesktop.Windows.LauncherUI;
+using CSMarkDesktop.Windows.WebUI;
 
 namespace CSMarkDesktop{
 
@@ -263,7 +264,8 @@ namespace CSMarkDesktop{
 
         private void OpenURLWin10(string URL){
             try{
-                Process.Start(URL);
+                Window webTest = new BrowserView(URL, 720, 1280);
+                webTest.ShowDialog();
             }
             catch{
                 platform.OpenURLInBrowser(URL);
@@ -271,13 +273,8 @@ namespace CSMarkDesktop{
         }
 
         private void patronLeftButtonDown(object sender, MouseButtonEventArgs e){
-
-            try{
-                platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
-            }
-            catch{         
-                OpenURLWin10(Properties.Settings.Default.patreonURL);
-            }           
+            Window webTest = new BrowserView(Properties.Settings.Default.patreonURL, 800, 600);
+            webTest.ShowDialog();
         }
         private void menuExitBtn_Click(object sender, RoutedEventArgs e){
                 Application.Current.Shutdown();
@@ -296,6 +293,7 @@ namespace CSMarkDesktop{
         private void menuAboutPCBtn_Click(object sender, RoutedEventArgs e){
             Window window = new AboutPC();
             window.ShowDialog();
+
         }
         private void submitBugReportBtn_Click(object sender, RoutedEventArgs e){
             try
@@ -317,15 +315,15 @@ namespace CSMarkDesktop{
             }
         }
         private void donateCSMarkMenuBtn_Click(object sender, RoutedEventArgs e){
-            try
-            {
-                OpenURLWin10(Properties.Settings.Default.patreonURL);
+                try
+                {
+                    OpenURLWin10(Properties.Settings.Default.patreonURL);
+                }
+                catch
+                {
+                    platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
+                }
             }
-            catch
-            {
-                platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
-            }
-        }
         private void joinDiscordMenuBtn_Click(object sender, RoutedEventArgs e){
             try
             {
