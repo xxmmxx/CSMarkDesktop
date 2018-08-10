@@ -35,20 +35,40 @@ namespace CSMarkDesktop.Windows.WebUI
         }
 
         public BrowserView(string Uri, int WindowHeight, int WindowWidth){
-            InitializeComponent();          
             Height = WindowHeight;
             Width = WindowWidth;
 
-            if (IsInternetAvailable() == true) {
+            if (IsInternetAvailable() == true)
+            {
                 wvc.Navigate(new Uri(Uri));
             }
             else
             {
-                var x = Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "Windows" + System.IO.Path.DirectorySeparatorChar +  "WebUI" + System.IO.Path.DirectorySeparatorChar + "404" + System.IO.Path.DirectorySeparatorChar + "index.html";
+                var x = Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "Windows" + System.IO.Path.DirectorySeparatorChar + "WebUI" + System.IO.Path.DirectorySeparatorChar + "404" + System.IO.Path.DirectorySeparatorChar + "index.html";
                 new Platform().OpenURLInBrowser(x);
                 //wvc.Navigate(new Uri(x));
                 Close();
             }
+        }
+
+        public BrowserView(string Uri, int WindowHeight, int WindowWidth, string WindowTitle){
+            InitializeComponent();
+            Height = WindowHeight;
+            Width = WindowWidth;
+
+            if (IsInternetAvailable() == true)
+            {
+                wvc.Navigate(new Uri(Uri));
+            }
+            else
+            {
+                var x = Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "Windows" + System.IO.Path.DirectorySeparatorChar + "WebUI" + System.IO.Path.DirectorySeparatorChar + "404" + System.IO.Path.DirectorySeparatorChar + "index.html";
+                new Platform().OpenURLInBrowser(x);
+                //wvc.Navigate(new Uri(x));
+                Close();
+            }
+
+            Title = WindowTitle;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

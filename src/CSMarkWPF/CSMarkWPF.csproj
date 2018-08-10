@@ -569,6 +569,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Windows\PatronUI\" />
+    <Folder Include="Windows\WebUI\AboutApp\" />
+    <Folder Include="Windows\WebUI\Upgrade\Contributor\" />
+    <Folder Include="Windows\WebUI\Upgrade\Prime\" />
+    <Folder Include="Windows\WebUI\Upgrade\Pro\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Windows\WebUI\404\css\style.css">
