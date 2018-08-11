@@ -40,6 +40,8 @@ namespace CSMarkDesktop{
         private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
         private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
 
+        private SolidColorBrush BackgroundBrush;
+
         private CSMarkLib.UpdatingServices.AutoUpdater ac = new CSMarkLib.UpdatingServices.AutoUpdater();
 
         private Platform platform;
@@ -126,14 +128,16 @@ namespace CSMarkDesktop{
             Brush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));         
 
             if (Properties.Settings.Default.background.Equals("reallydark")) {
-                Background = reallyDark;
+                BackgroundBrush = reallyDark;         
             }
             if (Properties.Settings.Default.background.Equals("dark")) {
-                Background = dark;
+                BackgroundBrush = dark;
             }
             if (Properties.Settings.Default.background.Equals("justblack")) {
-                Background = black;
+                BackgroundBrush = black;
             }
+
+            Background = BackgroundBrush;
 
             if (!Properties.Settings.Default.background.Equals("dark") && !Properties.Settings.Default.background.Equals("justblack") && !Properties.Settings.Default.background.Equals("reallydark"))
             {
@@ -141,7 +145,7 @@ namespace CSMarkDesktop{
                 Properties.Settings.Default.Save();
             }
 
-            gridColour.Background = Background;
+            gridColour.Background = BackgroundBrush;
         }
         private void DetectStore(){
             string currentDirectory = Environment.CurrentDirectory;
@@ -220,7 +224,7 @@ namespace CSMarkDesktop{
                 benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.Content = "Start Benchmark"; }));
                 benchBtn.Dispatcher.Invoke(new Action(() => { eligible.Content = ""; }));
                 benchBtn.Dispatcher.Invoke(new Action(() => { stressBtn.IsEnabled = true; }));
-                benchBtn.Dispatcher.Invoke(new Action(() => { new BenchResults().ShowDialog(); }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { new BenchResults(new SolidColorBrush(Color.FromRgb(255, 255, 255)) , BackgroundBrush, benchController).ShowDialog(); }));
             }
             catch(Exception ex){
                 MessageBox.Show(ex.ToString());
@@ -229,11 +233,11 @@ namespace CSMarkDesktop{
 
         private async void BenchmarkWork(){
             var warmupTask = Task.Factory.StartNew(() => benchController.DoWarmup());
-            warmupTask.Wait((30) * 1000);
+            warmupTask.Wait((60) * 1000);
             var task1 = Task.Factory.StartNew(() => benchController.StartSingleBenchmarkTests());
-            task1.Wait((60 * 5) * 1000);
+            task1.Wait((120 * 5) * 1000);
             var task2 = Task.Factory.StartNew(() => benchController.StartMultiBenchmarkTests()); 
-            task2.Wait((60 * 5) * 1000);
+            task2.Wait((120 * 5) * 1000);
 
             HashMap<BenchmarkType, Benchmark> hash = benchController.ReturnBenchmarkObjects();
             var resultSaver = new ResultSaver();
@@ -263,18 +267,18 @@ namespace CSMarkDesktop{
         }
 
         private void OpenURLWin10(string URL){
-            try{
-                Window webTest = new BrowserView(URL, 720, 1280);
-                webTest.ShowDialog();
-            }
-            catch{
-                platform.OpenURLInBrowser(URL);
-            }
+            // try{
+         /*   var uri = new Uri(URL);
+                Window webTest = new BrowserView(uri, 720, 1280);
+            webTest.ShowDialog();
+*/
+            //    Task webNewWindow = new Task(() => webTest.ShowDialog());
+            //    webNewWindow.Start();     
+                platform.OpenURLInBrowser(URL);      
         }
 
         private void patronLeftButtonDown(object sender, MouseButtonEventArgs e){
-            Window webTest = new BrowserView(Properties.Settings.Default.patreonURL, 800, 600);
-            webTest.ShowDialog();
+            OpenURLWin10(Properties.Settings.Default.patreonURL);
         }
         private void menuExitBtn_Click(object sender, RoutedEventArgs e){
                 Application.Current.Shutdown();
@@ -296,73 +300,25 @@ namespace CSMarkDesktop{
 
         }
         private void submitBugReportBtn_Click(object sender, RoutedEventArgs e){
-            try
-            {
                 OpenURLWin10(Properties.Settings.Default.githubURL + "/issues/new?template=bug_report.md");
-            }
-            catch{
-                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/issues/new?template=bug_report.md");
-            }
         }
         private void submitFeatureRequestBtn_Click(object sender, RoutedEventArgs e){
-            try
-            {
                 OpenURLWin10(Properties.Settings.Default.githubURL + "/issues/new?template=feature_request.md");
-            }
-            catch
-            {
-                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/issues/new?template=feature_request.md");
-            }
         }
         private void donateCSMarkMenuBtn_Click(object sender, RoutedEventArgs e){
-                try
-                {
                     OpenURLWin10(Properties.Settings.Default.patreonURL);
-                }
-                catch
-                {
-                    platform.OpenURLInBrowser(Properties.Settings.Default.patreonURL);
-                }
             }
         private void joinDiscordMenuBtn_Click(object sender, RoutedEventArgs e){
-            try
-            {
                 OpenURLWin10(Properties.Settings.Default.discordURL);
-            }
-            catch
-            {
-                platform.OpenURLInBrowser(Properties.Settings.Default.discordURL);
-            }
         } 
         private void getSourceCodeMenuBtn_Click(object sender, RoutedEventArgs e){
-            try
-            {
                 OpenURLWin10(Properties.Settings.Default.githubURL);
-            }
-            catch
-            {
-                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL);
-            }
         }
         private void viewPrivacyPolicyBtn_Click(object sender, RoutedEventArgs e){
-            try
-            {
                 OpenURLWin10(Properties.Settings.Default.githubURL + "/blob/master/PrivacyPolicy.md");
-            }
-            catch
-            {
-                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/blob/master/PrivacyPolicy.md");
-            }
         } 
         private void viewSourceCodeLicenseBtn_Click(object sender, RoutedEventArgs e){
-            try
-            {
                 OpenURLWin10(Properties.Settings.Default.githubURL + "/blob/master/LICENSE");
-            }
-            catch
-            {
-                platform.OpenURLInBrowser(Properties.Settings.Default.githubURL + "/blob/master/LICENSE");
-            }
         }
         private void checkUpdatesMenuBtn_Click(object sender, RoutedEventArgs e){
             var check = CheckForUpdates();

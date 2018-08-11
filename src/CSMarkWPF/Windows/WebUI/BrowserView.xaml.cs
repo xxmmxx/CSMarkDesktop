@@ -25,7 +25,7 @@ namespace CSMarkDesktop.Windows.WebUI
     /// </summary>
     public partial class BrowserView : Window{
 
-        [DllImport("wininet.dll")]
+     /*   [DllImport("wininet.dll")]
         private extern static bool InternetGetConnectedState(out int description, int reservedValue);
 
         private static bool IsInternetAvailable()
@@ -33,47 +33,34 @@ namespace CSMarkDesktop.Windows.WebUI
             int description;
             return InternetGetConnectedState(out description, 0);
         }
+        */
 
-        public BrowserView(string Uri, int WindowHeight, int WindowWidth){
+        public BrowserView(Uri uri, int WindowHeight, int WindowWidth){
             Height = WindowHeight;
             Width = WindowWidth;
-
-            if (IsInternetAvailable() == true)
-            {
-                wvc.Navigate(new Uri(Uri));
+            try{
+                //   if (IsInternetAvailable() == true && uri.Length > 0)
+                //  {
+              //  wvc = new Microsoft.Toolkit.Win32.UI.Controls.WPF.WebView();
+            //        wvc.Navigate(uri);
+                //}
+               /* else
+                {
+                    var x = Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "Windows" + System.IO.Path.DirectorySeparatorChar + "WebUI" + System.IO.Path.DirectorySeparatorChar + "404" + System.IO.Path.DirectorySeparatorChar + "index.html";
+                    new Platform().OpenURLInBrowser(x);
+                    //wvc.Navigate(new Uri(x));
+                    Close();
+                }
+                */
             }
-            else
-            {
-                var x = Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "Windows" + System.IO.Path.DirectorySeparatorChar + "WebUI" + System.IO.Path.DirectorySeparatorChar + "404" + System.IO.Path.DirectorySeparatorChar + "index.html";
-                new Platform().OpenURLInBrowser(x);
-                //wvc.Navigate(new Uri(x));
-                Close();
+            catch(Exception ex){
+                throw new Exception(ex.ToString());
             }
-        }
-
-        public BrowserView(string Uri, int WindowHeight, int WindowWidth, string WindowTitle){
-            InitializeComponent();
-            Height = WindowHeight;
-            Width = WindowWidth;
-
-            if (IsInternetAvailable() == true)
-            {
-                wvc.Navigate(new Uri(Uri));
-            }
-            else
-            {
-                var x = Environment.CurrentDirectory + System.IO.Path.DirectorySeparatorChar + "Windows" + System.IO.Path.DirectorySeparatorChar + "WebUI" + System.IO.Path.DirectorySeparatorChar + "404" + System.IO.Path.DirectorySeparatorChar + "index.html";
-                new Platform().OpenURLInBrowser(x);
-                //wvc.Navigate(new Uri(x));
-                Close();
-            }
-
-            Title = WindowTitle;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            wvc.Dispose();
+       //     wvc.Dispose();
         }
     }
 }
