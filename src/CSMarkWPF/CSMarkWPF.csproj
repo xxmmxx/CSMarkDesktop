@@ -83,8 +83,8 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AluminiumCoreLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\AluminiumCoreLib.dll</HintPath>
+    <Reference Include="AluminiumCoreLib, Version=2.0.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AluminiumCoreLib.2.0.0-alpha2\lib\netstandard2.0\AluminiumCoreLib.dll</HintPath>
     </Reference>
     <Reference Include="AluminiumCoreLib.Hardware, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\AluminiumCoreLib.Hardware.dll</HintPath>
@@ -97,12 +97,6 @@
     </Reference>
     <Reference Include="CSMarkLib.UpdatingServices, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CSMarkLib.UpdatingServices.1.1.0-beta\lib\netstandard2.0\CSMarkLib.UpdatingServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Toolkit.Win32.UI.Controls, Version=4.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Toolkit.Win32.UI.Controls.4.0.1\lib\net462\Microsoft.Toolkit.Win32.UI.Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\Microsoft.Win32.Primitives.dll</HintPath>
     </Reference>
     <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\netstandard.dll</HintPath>
@@ -237,10 +231,6 @@
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Linq.Queryable.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
-    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Net.NameResolution, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Net.NameResolution.dll</HintPath>
     </Reference>
@@ -329,24 +319,8 @@
     <Reference Include="System.Security.Claims, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Claims.dll</HintPath>
     </Reference>
-    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Security.Cryptography.Csp, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Cryptography.Csp.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
-      <Private>True</Private>
     </Reference>
     <Reference Include="System.Security.Principal, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.Hardware.1.0.0-beta1\lib\System.Security.Principal.dll</HintPath>
@@ -434,8 +408,11 @@
     <Compile Include="Windows\AboutPC.xaml.cs">
       <DependentUpon>AboutPC.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\LauncherUI\BenchResults.xaml.cs">
+    <Compile Include="Windows\ResultsUI\BenchResults.xaml.cs">
       <DependentUpon>BenchResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ResultsUI\ScoreBreakdown.xaml.cs">
+      <DependentUpon>ScoreBreakdown.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
@@ -452,7 +429,10 @@
     <Page Include="Windows\AboutPC.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\LauncherUI\BenchResults.xaml">
+    <Page Include="Windows\ResultsUI\BenchResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ResultsUI\ScoreBreakdown.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\MainWindow.xaml">

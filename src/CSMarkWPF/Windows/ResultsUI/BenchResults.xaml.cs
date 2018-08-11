@@ -3,6 +3,7 @@
   License, v. 2.0. If a copy of the MPL was not distributed with this
   file, You can obtain one at http://mozilla.org/MPL/2.0/.
   */
+using CSMarkLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,28 +26,17 @@ namespace CSMarkDesktop.Windows.LauncherUI{
 
         private SolidColorBrush myGreenBrush = new SolidColorBrush(Color.FromRgb(125, 244, 66));
 
-        private SolidColorBrush black = new SolidColorBrush(Color.FromRgb(0, 0, 0));
-        private SolidColorBrush reallyDark = new SolidColorBrush(Color.FromRgb(35, 39, 42));
-        private SolidColorBrush dark = new SolidColorBrush(Color.FromRgb(44, 47, 51));
+        private BenchmarkController controller;
 
-        public BenchResults(){
+        public BenchResults(SolidColorBrush foreground, SolidColorBrush background, BenchmarkController controller){
             InitializeComponent();
-            Brush foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255));
 
-                if (Properties.Settings.Default.background.Equals("reallydark"))
-                {
-                    Background = reallyDark;
-                }
-                if (Properties.Settings.Default.background.Equals("dark"))
-                {
-                    Background = dark;
-                }
-                if (Properties.Settings.Default.background.Equals("justblack"))
-                {
-                    Background = black;
-                }
+            this.controller = controller;
 
-                //Load the Background colors
+            Background = background;
+            Foreground = foreground;
+
+            //Load the Background colors
             gridColor.Background = Background;
             processor.Content += Properties.Results.Default.Processor;
 
@@ -76,14 +66,7 @@ namespace CSMarkDesktop.Windows.LauncherUI{
             singleOverallInfo.Background = Background;
             multiOverallInfo.Background = Background;
 
-            Brush colorBrush;
-
-            if (Background.Equals(dark) || Background.Equals(reallyDark) || Background.Equals(black)){
-                colorBrush = myGreenBrush;
-            }
-            else{
-                colorBrush = dark;
-            }
+            Brush colorBrush = myGreenBrush;
 
             singleOverallInfo.Foreground = colorBrush;
             multiOverallInfo.Foreground = colorBrush;
@@ -114,6 +97,28 @@ namespace CSMarkDesktop.Windows.LauncherUI{
             processorThreadCount.Content += Properties.Results.Default.CPUThreadCount;
             singleOverallInfo.Content = result.GetOverallSingle().ToString() + " CSMark Points";
             multiOverallInfo.Content = result.GetOverallMulti().ToString() + " CSMark Points";           
+        }
+
+        private void StartVerification()
+        {
+            var verificationTask = new Task(()=> controller.VerifyBenchmarkIntegrity(Properties.Results.Default.BenchmarkResult, true));
+            verificationTask.Start();
+
+            verificationTask.Wait((360 * 5) * 1000);
+
+            try
+            {
+            /*    benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.IsEnabled = true; }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { benchBtn.Content = "Start Benchmark"; }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { eligible.Content = ""; }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { stressBtn.IsEnabled = true; }));
+                benchBtn.Dispatcher.Invoke(new Action(() => { new BenchResults().ShowDialog(); }));
+                */
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
