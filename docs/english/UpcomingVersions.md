@@ -6,6 +6,10 @@ This document contains a list of upcoming releases of CSMark Desktop.
  * Reliability improvements
  * Stability improvements
 
+### 0.33
+ **Highlight Features**
+ * Improved Benchmark scalability across threads.
+
 ### Future 0.3x.x release
  **Highlight Features**
  * Cross-platform Avalonia based GUI program
