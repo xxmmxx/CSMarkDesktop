@@ -58,8 +58,6 @@ namespace CSMarkDesktop{
         private Version win10v1709 = new Version(10, 0, 16299, 0);
         private Version win10v1803 = new Version(10, 0, 17134, 0);
 
-        AluminiumCoreLib.Hardware.Processor cpu = new AluminiumCoreLib.Hardware.Processor();
-
         public enum DistributionPlatform{
             SteamStore,
             WinStore,
@@ -100,13 +98,8 @@ namespace CSMarkDesktop{
             stc = new StressTestController();
             ApplyStressBtnColors();
             platform = new Platform();
-            //Run processor detection in a new task before we need the information.       
-            cpu.GetProcessorInformationAsTask();
             Thread.Sleep(300);
-            Properties.Results.Default.Processor = cpu.CPU;
-            Properties.Results.Default.CPUCoreCount = cpu.CoreCount;
-            Properties.Results.Default.CPUThreadCount = cpu.ThreadCount;
-            Properties.Results.Default.CPUClockSpeed = cpu.ClockspeedInt.ToString() + " MHz";
+            Properties.Results.Default.CPUThreadCount = Environment.ProcessorCount.ToString();
             Properties.Results.Default.Save();
 
             //Show the version number
@@ -266,14 +259,7 @@ namespace CSMarkDesktop{
             ApplyStressBtnColors();
         }
 
-        private void OpenURLWin10(string URL){
-            // try{
-         /*   var uri = new Uri(URL);
-                Window webTest = new BrowserView(uri, 720, 1280);
-            webTest.ShowDialog();
-*/
-            //    Task webNewWindow = new Task(() => webTest.ShowDialog());
-            //    webNewWindow.Start();     
+        private void OpenURLWin10(string URL){  
                 platform.OpenURLInBrowser(URL);      
         }
 
@@ -293,11 +279,6 @@ namespace CSMarkDesktop{
         }
         private void main_Closing(object sender, System.ComponentModel.CancelEventArgs e){
                 Application.Current.Shutdown();
-        }
-        private void menuAboutPCBtn_Click(object sender, RoutedEventArgs e){
-            Window window = new AboutPC();
-            window.ShowDialog();
-
         }
         private void submitBugReportBtn_Click(object sender, RoutedEventArgs e){
                 OpenURLWin10(Properties.Settings.Default.githubURL + "/issues/new?template=bug_report.md");

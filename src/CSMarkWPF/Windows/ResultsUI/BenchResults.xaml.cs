@@ -93,8 +93,6 @@ namespace CSMarkDesktop.Windows.LauncherUI{
             compoundInterestMulti.Content += result.GetCompoundInterestMulti().ToString();
             changeReturnSingle.Content += result.GetChangeReturnSingle().ToString();
             changeReturnMulti.Content += result.GetChangeReturnMulti().ToString();
-            processorCoreCount.Content += Properties.Results.Default.CPUCoreCount;
-            processorThreadCount.Content += Properties.Results.Default.CPUThreadCount;
             singleOverallInfo.Content = result.GetOverallSingle().ToString() + " CSMark Points";
             multiOverallInfo.Content = result.GetOverallMulti().ToString() + " CSMark Points";           
         }

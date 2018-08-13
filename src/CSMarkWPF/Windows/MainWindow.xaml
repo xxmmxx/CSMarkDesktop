@@ -21,7 +21,6 @@
                     <MenuItem Header="Exit" Name="menuExitBtn" Click="menuExitBtn_Click"/>
                 </MenuItem>
                 <MenuItem Header="About" Name="aboutMenu">
-                    <MenuItem Header="About This PC" Name="menuAboutPCBtn" Click="menuAboutPCBtn_Click"/>
                     <MenuItem Header="About CSMark App" Name="menuAboutAppBtn" Click="menuAboutAppBtn_Click"/>
                     <MenuItem Header="View Privacy Policy" Name="viewPrivacyPolicyBtn" Click="viewPrivacyPolicyBtn_Click"/>
                     <MenuItem Header="View License" Name="viewSourceCodeLicenseBtn" Click="viewSourceCodeLicenseBtn_Click"/>
