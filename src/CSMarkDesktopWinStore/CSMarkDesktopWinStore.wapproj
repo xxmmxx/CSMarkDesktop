@@ -39,13 +39,13 @@
     <TargetPlatformMinVersion>10.0.16299.0</TargetPlatformMinVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>CSMarkDesktopWinStore_StoreKey.pfx</PackageCertificateKeyFile>
-    <EntryPointProjectUniqueName>..\CSMarkWPF\CSMarkWPF.csproj</EntryPointProjectUniqueName>
     <PackageCertificateThumbprint>AB65250723AFB1B2C0295CD25F3F9CA514BE6522</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <EntryPointProjectUniqueName>..\CSMarkWinForms\CSMarkDesktop.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AppxBundle>Always</AppxBundle>
@@ -95,7 +95,7 @@
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSMarkWPF\CSMarkWPF.csproj" />
+    <ProjectReference Include="..\CSMarkWinForms\CSMarkDesktop.csproj" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>
