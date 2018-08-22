@@ -5,7 +5,7 @@
   */
 using AluminiumCoreLib.Utilities;
 using CSMarkLib;
-using CSMarkLib.Results;
+using CSMarkLib.BenchmarkManagement;
 using Rollbar;
 using System;
 using System.IO;
@@ -123,49 +123,50 @@ namespace CSMarkCoreBenchmarkApp{
             Console.WriteLine("Detecting CLI Arguments...");
             Console.WriteLine("Starting Benchmarks...");
 
-            ResultSaver rs = new ResultSaver();
             string dir = Environment.CurrentDirectory + Path.DirectorySeparatorChar + "Results";
 
             if (command == BenchCommand.SingleBenchSaveResult){
             //    bench.DoWarmup(true);
                 bench.StartSingleBenchmarkTests();
-                var y = bench.ReturnBenchmarkObjects();
-                Result x = new ResultSaver().SaveResult(false, y);
-                bench.PrintResultsToConsole(false, x);
-                bench.VerifyBenchmarkIntegrity(x, false);
+                Result x = bench.SaveResult(true, false);
+                bench.PrintResultsToConsole(true, false);
+                bench.VerifyResults(x, true, false);
 
                 if (rft.Equals(ResultFileType.NoResult)){
                     //Do nothing
                 }
                 else if (rft.Equals(ResultFileType.Text)){
-                    rs.SaveToTextFile(dir, platform.ReturnVersionString(), x);
+                    bench.SaveToTextFile(platform.ReturnVersionString(), x);
+                   // rs.SaveToTextFile(dir, platform.ReturnVersionString(), x);
                 }
-                else if (rft.Equals(ResultFileType.Json)){
+        /*        else if (rft.Equals(ResultFileType.Json)){
                     rs.SaveToJSONFile(dir, platform.ReturnVersionString(), x);
                 }
                 else if (rft.Equals(ResultFileType.Xml)){
                     rs.SaveToXMLFile(dir, platform.ReturnVersionString(), x);
                 }
+                */
             }
             else if (command == BenchCommand.MultiBenchSaveResult){
                 bench.StartBenchmarkTests();
-                var y = bench.ReturnBenchmarkObjects();
-                Result x = new ResultSaver().SaveResult(true, y);
-                bench.PrintResultsToConsole(true, x);
-                bench.VerifyBenchmarkIntegrity(x, true);
+                Result x = bench.SaveResult(true, true);
+                bench.PrintResultsToConsole(true, true);
+                bench.VerifyResults(x, true, true);
 
                 if (rft.Equals(ResultFileType.NoResult)){
                     //Do nothing
                 }
                 else if (rft.Equals(ResultFileType.Text)){
-                    rs.SaveToTextFile(dir, platform.ReturnVersionString(), x);
+                    bench.SaveToTextFile(platform.ReturnVersionString(), x);
+                   // rs.SaveToTextFile(dir, platform.ReturnVersionString(), x);
                 }
-                else if (rft.Equals(ResultFileType.Json)){
+            /*    else if (rft.Equals(ResultFileType.Json)){
                     rs.SaveToJSONFile(dir, platform.ReturnVersionString(), x);
                 }
                 else if (rft.Equals(ResultFileType.Xml)){
                     rs.SaveToXMLFile(dir, platform.ReturnVersionString(), x);
                 }
+                */
             }
 
             Console.WriteLine("To exit this application, press ENTER.");
