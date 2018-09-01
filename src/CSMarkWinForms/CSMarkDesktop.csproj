@@ -82,11 +82,18 @@
     <Reference Include="CSMarkLib.StressTest, Version=2.0.0.9, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CSMarkLib.StressTest.2.0.0-preview9\lib\netstandard2.0\CSMarkLib.StressTest.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Toolkit.Win32.UI.Controls, Version=4.0.0.0, Culture=neutral, PublicKeyToken=4aff67a105548ee2, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Toolkit.Win32.UI.Controls.4.0.1\lib\net462\Microsoft.Toolkit.Win32.UI.Controls.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -96,6 +103,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\About.cs">
@@ -104,10 +112,22 @@
     <Compile Include="Forms\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ResultsOverview.cs">
+    <Compile Include="Forms\BrowserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ResultsOverview.Designer.cs">
+    <Compile Include="Forms\BrowserForm.Designer.cs">
+      <DependentUpon>BrowserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Results\ResultsBreakdown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Results\ResultsBreakdown.Designer.cs">
+      <DependentUpon>ResultsBreakdown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Results\ResultsOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Results\ResultsOverview.Designer.cs">
       <DependentUpon>ResultsOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
@@ -131,7 +151,13 @@
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ResultsOverview.resx">
+    <EmbeddedResource Include="Forms\BrowserForm.resx">
+      <DependentUpon>BrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Results\ResultsBreakdown.resx">
+      <DependentUpon>ResultsBreakdown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Results\ResultsOverview.resx">
       <DependentUpon>ResultsOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
