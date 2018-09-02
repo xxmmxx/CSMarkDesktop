@@ -58,10 +58,12 @@ __List Of Supported Platforms for CSMarkWPF__
 
 [See OS Support Document for more details](/docs/OS_Support.md)
 
-## Installation Guides
+## Install CSMark
 * [Running CSMark On Windows](/docs/RunningCSMarkOnWindows.md)
 * [Running CSMark On Linux](/docs/RunningCSMarkOnLinux.md)
 * [Running CSMark On Mac](/docs/RunningCSMarkOnMac.md)
+
+<a href='//www.microsoft.com/store/apps/9N6S6JJFWJ6M?ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='English badge' width='250' height='70'/></a>
 
 ## Notes
 * Results from CSMark versions which are of a different major or minor version, in the format of [Major].[Minor].[Build].[Revision] , than another version should not be compared unless explicitly stated otherwise.  
