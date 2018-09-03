@@ -238,6 +238,7 @@
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             this.ResizeEnd += new System.EventHandler(this.Main_ResizeEnd);
+            this.Enter += new System.EventHandler(this.Main_Enter);
             this.Resize += new System.EventHandler(this.Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
             this.ResumeLayout(false);
