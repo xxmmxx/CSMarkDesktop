@@ -41,10 +41,8 @@
             this.contributionStatus = new System.Windows.Forms.Label();
             this.overclockWarning = new System.Windows.Forms.Label();
             this.copyrightNotice = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getPrimeBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // aboutButton
@@ -52,7 +50,7 @@
             this.aboutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.aboutButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutButton.ForeColor = System.Drawing.Color.White;
-            this.aboutButton.Location = new System.Drawing.Point(886, 25);
+            this.aboutButton.Location = new System.Drawing.Point(893, 12);
             this.aboutButton.Name = "aboutButton";
             this.aboutButton.Size = new System.Drawing.Size(45, 40);
             this.aboutButton.TabIndex = 30;
@@ -65,7 +63,7 @@
             this.helpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.helpButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpButton.ForeColor = System.Drawing.Color.White;
-            this.helpButton.Location = new System.Drawing.Point(998, 25);
+            this.helpButton.Location = new System.Drawing.Point(1005, 12);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(45, 40);
             this.helpButton.TabIndex = 28;
@@ -78,7 +76,7 @@
             this.settingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.settingsButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsButton.ForeColor = System.Drawing.Color.White;
-            this.settingsButton.Location = new System.Drawing.Point(1054, 25);
+            this.settingsButton.Location = new System.Drawing.Point(1061, 12);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(45, 40);
             this.settingsButton.TabIndex = 27;
@@ -90,7 +88,7 @@
             this.translateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.translateButton.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.translateButton.ForeColor = System.Drawing.Color.White;
-            this.translateButton.Location = new System.Drawing.Point(942, 25);
+            this.translateButton.Location = new System.Drawing.Point(949, 12);
             this.translateButton.Name = "translateButton";
             this.translateButton.Size = new System.Drawing.Size(45, 40);
             this.translateButton.TabIndex = 24;
@@ -101,7 +99,7 @@
             // logoBox
             // 
             this.logoBox.Image = ((System.Drawing.Image)(resources.GetObject("logoBox.Image")));
-            this.logoBox.Location = new System.Drawing.Point(12, 28);
+            this.logoBox.Location = new System.Drawing.Point(12, 12);
             this.logoBox.Name = "logoBox";
             this.logoBox.Size = new System.Drawing.Size(64, 66);
             this.logoBox.TabIndex = 33;
@@ -115,7 +113,7 @@
             this.version.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.version.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.version.ForeColor = System.Drawing.Color.White;
-            this.version.Location = new System.Drawing.Point(94, 79);
+            this.version.Location = new System.Drawing.Point(94, 63);
             this.version.Name = "version";
             this.version.Size = new System.Drawing.Size(96, 25);
             this.version.TabIndex = 32;
@@ -129,7 +127,7 @@
             this.title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.title.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.White;
-            this.title.Location = new System.Drawing.Point(91, 28);
+            this.title.Location = new System.Drawing.Point(91, 12);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(111, 32);
             this.title.TabIndex = 31;
@@ -171,7 +169,7 @@
             this.contributionStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.contributionStatus.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contributionStatus.ForeColor = System.Drawing.Color.Lime;
-            this.contributionStatus.Location = new System.Drawing.Point(277, 31);
+            this.contributionStatus.Location = new System.Drawing.Point(277, 15);
             this.contributionStatus.Name = "contributionStatus";
             this.contributionStatus.Size = new System.Drawing.Size(57, 33);
             this.contributionStatus.TabIndex = 36;
@@ -200,21 +198,18 @@
             this.copyrightNotice.TabIndex = 38;
             this.copyrightNotice.Text = "Pre-release . Copyright (c) AluminiumTech 2018";
             // 
-            // menuStrip1
+            // getPrimeBtn
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1116, 24);
-            this.menuStrip1.TabIndex = 39;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.getPrimeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.getPrimeBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F);
+            this.getPrimeBtn.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.getPrimeBtn.Location = new System.Drawing.Point(363, 12);
+            this.getPrimeBtn.Name = "getPrimeBtn";
+            this.getPrimeBtn.Size = new System.Drawing.Size(170, 45);
+            this.getPrimeBtn.TabIndex = 41;
+            this.getPrimeBtn.Text = "Get Prime";
+            this.getPrimeBtn.UseVisualStyleBackColor = false;
+            this.getPrimeBtn.Click += new System.EventHandler(this.getPrimeBtn_Click);
             // 
             // Main
             // 
@@ -222,6 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1116, 611);
+            this.Controls.Add(this.getPrimeBtn);
             this.Controls.Add(this.copyrightNotice);
             this.Controls.Add(this.overclockWarning);
             this.Controls.Add(this.contributionStatus);
@@ -234,11 +230,9 @@
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.translateButton);
-            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
@@ -246,8 +240,6 @@
             this.ResizeEnd += new System.EventHandler(this.Main_ResizeEnd);
             this.Resize += new System.EventHandler(this.Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,7 +259,6 @@
         private System.Windows.Forms.Label contributionStatus;
         private System.Windows.Forms.Label overclockWarning;
         private System.Windows.Forms.Label copyrightNotice;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.Button getPrimeBtn;
     }
 }
