@@ -38,7 +38,7 @@
             this.pythagorasMulti = new System.Windows.Forms.Label();
             this.arithmeticMulti = new System.Windows.Forms.Label();
             this.arithmeticSingle = new System.Windows.Forms.Label();
-            this.chnageReturnMulti = new System.Windows.Forms.Label();
+            this.changeReturnMulti = new System.Windows.Forms.Label();
             this.changeReturnSingle = new System.Windows.Forms.Label();
             this.compoundInterestMulti = new System.Windows.Forms.Label();
             this.compoundInterestSingle = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.rbssLiteMulti = new System.Windows.Forms.Label();
             this.rbssLiteSingle = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.saveResultBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pythagorasSingle
@@ -163,16 +164,16 @@
             this.arithmeticSingle.TabIndex = 50;
             this.arithmeticSingle.Text = "Single Threaded Score: ";
             // 
-            // chnageReturnMulti
+            // changeReturnMulti
             // 
-            this.chnageReturnMulti.AutoSize = true;
-            this.chnageReturnMulti.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chnageReturnMulti.ForeColor = System.Drawing.Color.White;
-            this.chnageReturnMulti.Location = new System.Drawing.Point(659, 176);
-            this.chnageReturnMulti.Name = "chnageReturnMulti";
-            this.chnageReturnMulti.Size = new System.Drawing.Size(257, 32);
-            this.chnageReturnMulti.TabIndex = 53;
-            this.chnageReturnMulti.Text = "Multi Threaded Score: ";
+            this.changeReturnMulti.AutoSize = true;
+            this.changeReturnMulti.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeReturnMulti.ForeColor = System.Drawing.Color.White;
+            this.changeReturnMulti.Location = new System.Drawing.Point(659, 176);
+            this.changeReturnMulti.Name = "changeReturnMulti";
+            this.changeReturnMulti.Size = new System.Drawing.Size(257, 32);
+            this.changeReturnMulti.TabIndex = 53;
+            this.changeReturnMulti.Text = "Multi Threaded Score: ";
             // 
             // changeReturnSingle
             // 
@@ -306,12 +307,26 @@
             this.label19.TabIndex = 62;
             this.label19.Text = "RBSS_Lite Test:";
             // 
+            // saveResultBtn
+            // 
+            this.saveResultBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.saveResultBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveResultBtn.ForeColor = System.Drawing.Color.White;
+            this.saveResultBtn.Location = new System.Drawing.Point(459, 448);
+            this.saveResultBtn.Name = "saveResultBtn";
+            this.saveResultBtn.Size = new System.Drawing.Size(252, 45);
+            this.saveResultBtn.TabIndex = 65;
+            this.saveResultBtn.Text = "Save Result as Text File";
+            this.saveResultBtn.UseVisualStyleBackColor = false;
+            this.saveResultBtn.Click += new System.EventHandler(this.saveResultBtn_Click);
+            // 
             // ResultsBreakdown
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1140, 536);
+            this.Controls.Add(this.saveResultBtn);
             this.Controls.Add(this.rbssLiteMulti);
             this.Controls.Add(this.rbssLiteSingle);
             this.Controls.Add(this.label19);
@@ -323,7 +338,7 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.compoundInterestMulti);
             this.Controls.Add(this.compoundInterestSingle);
-            this.Controls.Add(this.chnageReturnMulti);
+            this.Controls.Add(this.changeReturnMulti);
             this.Controls.Add(this.changeReturnSingle);
             this.Controls.Add(this.arithmeticMulti);
             this.Controls.Add(this.arithmeticSingle);
@@ -339,6 +354,7 @@
             this.Name = "ResultsBreakdown";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CSMarkDesktop Benchmark Results Breakdown";
+            this.Load += new System.EventHandler(this.ResultsBreakdown_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,7 +372,7 @@
         private System.Windows.Forms.Label pythagorasMulti;
         private System.Windows.Forms.Label arithmeticMulti;
         private System.Windows.Forms.Label arithmeticSingle;
-        private System.Windows.Forms.Label chnageReturnMulti;
+        private System.Windows.Forms.Label changeReturnMulti;
         private System.Windows.Forms.Label changeReturnSingle;
         private System.Windows.Forms.Label compoundInterestMulti;
         private System.Windows.Forms.Label compoundInterestSingle;
@@ -369,5 +385,6 @@
         private System.Windows.Forms.Label rbssLiteMulti;
         private System.Windows.Forms.Label rbssLiteSingle;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button saveResultBtn;
     }
 }

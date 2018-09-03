@@ -38,6 +38,7 @@
             this.title = new System.Windows.Forms.Label();
             this.multiScoreResult = new System.Windows.Forms.Label();
             this.singleScoreResult = new System.Windows.Forms.Label();
+            this.getResultsBreakdownBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,12 +147,26 @@
             this.singleScoreResult.TabIndex = 41;
             this.singleScoreResult.Text = "Single Threaded Score: ";
             // 
+            // getResultsBreakdownBtn
+            // 
+            this.getResultsBreakdownBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.getResultsBreakdownBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getResultsBreakdownBtn.ForeColor = System.Drawing.Color.White;
+            this.getResultsBreakdownBtn.Location = new System.Drawing.Point(259, 346);
+            this.getResultsBreakdownBtn.Name = "getResultsBreakdownBtn";
+            this.getResultsBreakdownBtn.Size = new System.Drawing.Size(252, 45);
+            this.getResultsBreakdownBtn.TabIndex = 66;
+            this.getResultsBreakdownBtn.Text = "See Results Breakdown";
+            this.getResultsBreakdownBtn.UseVisualStyleBackColor = false;
+            this.getResultsBreakdownBtn.Click += new System.EventHandler(this.getResultsBreakdownBtn_Click);
+            // 
             // ResultsOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(816, 403);
+            this.Controls.Add(this.getResultsBreakdownBtn);
             this.Controls.Add(this.multiScoreResult);
             this.Controls.Add(this.singleScoreResult);
             this.Controls.Add(this.contributionStatus);
@@ -186,5 +201,6 @@
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Label multiScoreResult;
         private System.Windows.Forms.Label singleScoreResult;
+        private System.Windows.Forms.Button getResultsBreakdownBtn;
     }
 }

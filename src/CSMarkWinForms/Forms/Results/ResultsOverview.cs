@@ -22,5 +22,10 @@ namespace CSMarkWinForms.Forms{
             singleScoreResult.Text = x.OverallSingle.ToString();
             multiScoreResult.Text = x.OverallMulti.ToString();
         }
+
+        private void getResultsBreakdownBtn_Click(object sender, EventArgs e){
+            Form resultsBreakdown = new Forms.Results.ResultsBreakdown();
+            resultsBreakdown.ShowDialog();
+        }
     }
 }
