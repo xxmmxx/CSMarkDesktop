@@ -203,7 +203,7 @@
             this.getPrimeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.getPrimeBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F);
             this.getPrimeBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.getPrimeBtn.Location = new System.Drawing.Point(363, 12);
+            this.getPrimeBtn.Location = new System.Drawing.Point(379, 12);
             this.getPrimeBtn.Name = "getPrimeBtn";
             this.getPrimeBtn.Size = new System.Drawing.Size(170, 45);
             this.getPrimeBtn.TabIndex = 41;

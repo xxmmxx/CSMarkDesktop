@@ -60,6 +60,13 @@ namespace CSMarkWinForms{
 
         public Main(){
             InitializeComponent();
+            //Check for WinStore sub  
+            Task t1 = new Task(() => subWrapper.GetSubscriptionProductAsync());
+            t1.Start();
+
+            Task t2 = new Task(() => subWrapper.CheckIfUserHasSubscriptionAsync());
+            t2.Start();
+
             Assembly assembly = Assembly.GetEntryAssembly();
             platform = new Platform();
             btc = new BenchmarkController();
@@ -67,12 +74,8 @@ namespace CSMarkWinForms{
             if (DetermineDistributionPlatform().Equals(DistributionPlatform.GitRepository)){
                 AutoUpdater.Start(stableURL);
             }
-            //Check for WinStore sub         
-            subWrapper.CheckIfUserHasSubscriptionAsync();
-
             level = subWrapper.GetContributorLevel();
-
-            DetermineContributorLevel();           
+            DetermineContributorLevel();
         }
 
         #region Handle Stress Test and Benchmarks
@@ -149,12 +152,6 @@ namespace CSMarkWinForms{
                 //stressTimer.Content = Convert.ToString(DateTime.Now - start);
             }
         }
-        #endregion
-        #region Handle WinStore Subs
-       
-
-   
-        
         #endregion
         #region Utility Misc stuff
 
@@ -362,15 +359,8 @@ namespace CSMarkWinForms{
         #endregion
 
         private void getPrimeBtn_Click(object sender, EventArgs e){
-            try
-            {
-                subWrapper.SetupSubscriptionInfoAsync();
-                subWrapper.PurchaseAsync();
-            }
-            catch(Exception ex)
-            {
-                throw new Exception(ex.ToString());
-            }
+            Form primeform = new Forms.Upgrade.PrimeOverview();
+            primeform.ShowDialog();
         }
 
         private void Main_Enter(object sender, EventArgs e)

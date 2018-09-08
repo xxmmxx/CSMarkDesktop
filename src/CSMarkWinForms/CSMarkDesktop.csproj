@@ -76,8 +76,8 @@
     <Reference Include="AutoUpdater.NET, Version=1.4.11.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>packages\Autoupdater.NET.Official.1.4.11\lib\net40\AutoUpdater.NET.dll</HintPath>
     </Reference>
-    <Reference Include="CSMarkLib.Benchmark, Version=1.4.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\CSMarkLib.Benchmark.1.4.4\lib\netstandard2.0\CSMarkLib.Benchmark.dll</HintPath>
+    <Reference Include="CSMarkLib.Benchmark, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CSMarkLib.Benchmark.1.4.5\lib\netstandard2.0\CSMarkLib.Benchmark.dll</HintPath>
     </Reference>
     <Reference Include="CSMarkLib.StressTest, Version=2.0.0.9, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CSMarkLib.StressTest.2.0.0-preview9\lib\netstandard2.0\CSMarkLib.StressTest.dll</HintPath>
@@ -137,15 +137,21 @@
     <Compile Include="Forms\Results\ResultsOverview.Designer.cs">
       <DependentUpon>ResultsOverview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Upgrade\PrimeOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Upgrade\PrimeOverview.Designer.cs">
+      <DependentUpon>PrimeOverview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Patronage\ContributorLevel.cs" />
-    <Compile Include="Patronage\IAPWrapper.cs" />
-    <Compile Include="Patronage\SubscriptionWrapper.cs" />
+    <Compile Include="UWP\Patronage\ContributorLevel.cs" />
+    <Compile Include="UWP\Patronage\IAPWrapper.cs" />
+    <Compile Include="UWP\Patronage\SubscriptionWrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\Preferences.Designer.cs">
@@ -158,6 +164,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Results.settings</DependentUpon>
     </Compile>
+    <Compile Include="UWP\Services\EngagementServicesWrapper.cs" />
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Results\ResultsOverview.resx">
       <DependentUpon>ResultsOverview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Upgrade\PrimeOverview.resx">
+      <DependentUpon>PrimeOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -217,5 +227,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

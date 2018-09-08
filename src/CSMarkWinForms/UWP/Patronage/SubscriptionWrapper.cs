@@ -7,15 +7,16 @@ using Windows.Services.Store;
 using System.Runtime.InteropServices;
 using System.Windows;
 
-
-
 namespace CSMarkWinForms.Patronage{
    public class SubscriptionWrapper{
 
-        ContributorLevel _level = ContributorLevel.Free;
-
+        StorePrice subscriptionPrice;
+        ContributorLevel _level;
         public ContributorLevel GetContributorLevel(){
             return _level;
+        }
+        public StorePrice GetSubscriptionPrice(){
+            return subscriptionPrice;
         }
 
         //Declare the IInitializeWithWindow interface in your app's code with the ComImport attribute
@@ -43,25 +44,15 @@ namespace CSMarkWinForms.Patronage{
             //to be the owner for any modal dialogs that are shown by StoreContext methods.
             initWindow.Initialize(ptr);
 
-            if (storeContext == null)
-            {
-                storeContext = StoreContext.GetDefault();
-                // If your app is a desktop app that uses the Desktop Bridge, you
-                // may need additional code to configure the StoreContext object.
-                // For more info, see https://aka.ms/storecontext-for-desktop.
-            }
-
             bool userOwnsSubscription =  await CheckIfUserHasSubscriptionAsync();
-            if (userOwnsSubscription)
-            {
+            if (userOwnsSubscription){
                 // Unlock all the subscription add-on features here.
                 return;
             }
 
             // Get the StoreProduct that represents the subscription add-on.
             subscriptionStoreProduct = await GetSubscriptionProductAsync();
-            if (subscriptionStoreProduct == null)
-            {
+            if (subscriptionStoreProduct == null){
                 return;
             }
 
@@ -69,9 +60,10 @@ namespace CSMarkWinForms.Patronage{
             PurchaseAsync();
         }
 
-        public async Task<bool> CheckIfUserHasSubscriptionAsync()
-        {
+        public async Task<bool> CheckIfUserHasSubscriptionAsync(){
             StoreAppLicense appLicense = await storeContext.GetAppLicenseAsync();
+
+          //  System.Threading.Thread.Sleep(5000);
 
             // Check if the customer has the rights to the subscription.
             foreach (var addOnLicense in appLicense.AddOnLicenses)
@@ -92,7 +84,7 @@ namespace CSMarkWinForms.Patronage{
             return false;
         }
 
-        private async Task<StoreProduct> GetSubscriptionProductAsync()
+        public async Task<StoreProduct> GetSubscriptionProductAsync()
         {
             // Load the sellable add-ons for this app and check if the trial is still 
             // available for this customer. If they previously acquired a trial they won't 
@@ -112,6 +104,7 @@ namespace CSMarkWinForms.Patronage{
             foreach (var item in result.Products)
             {
                 StoreProduct product = item.Value;
+                subscriptionPrice = product.Price;
                 if (product.StoreId == primeSubscriptionStoreId)
                 {
                     return product;
@@ -139,6 +132,51 @@ namespace CSMarkWinForms.Patronage{
             }
 
             MessageBox.Show("Purchase Finished with status " + result.Status);
+        }
+
+        public async Task GetSubscriptionsInfo()
+        {
+            if (storeContext == null)
+            {
+                storeContext = StoreContext.GetDefault();
+                // If your app is a desktop app that uses the Desktop Bridge, you
+                // may need additional code to configure the StoreContext object.
+                // For more info, see https://aka.ms/storecontext-for-desktop.
+            }
+
+            // Subscription add-ons are Durable products.
+            string[] productKinds = { "Durable" };
+            List<String> filterList = new List<string>(productKinds);
+
+            StoreProductQueryResult queryResult =
+                await storeContext.GetAssociatedStoreProductsAsync(productKinds);
+
+            if (queryResult.ExtendedError != null)
+            {
+                // The user may be offline or there might be some other server failure.
+                System.Diagnostics.Debug.WriteLine($"ExtendedError: {queryResult.ExtendedError.Message}");
+                return;
+            }
+
+            foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products)
+            {
+                // Access the Store product info for the add-on.
+                StoreProduct product = item.Value;
+                subscriptionPrice = product.Price;
+
+                // For each add-on, the subscription info is available in the SKU objects in the add-on. 
+                foreach (StoreSku sku in product.Skus)
+                {
+                    if (sku.IsSubscription)
+                    {
+                        // Use the sku.SubscriptionInfo property to get info about the subscription. 
+                        // For example, the following code gets the units and duration of the 
+                        // subscription billing period.
+                        StoreDurationUnit billingPeriodUnit = sku.SubscriptionInfo.BillingPeriodUnit;
+                        uint billingPeriod = sku.SubscriptionInfo.BillingPeriod;
+                    }
+                }
+            }
         }
     }
 }

@@ -15,12 +15,10 @@ namespace CSMarkWinForms.Forms.Results
 {
     public partial class ResultsBreakdown : Form
     {
-        BenchmarkController btc;
 
         public ResultsBreakdown()
         {
             InitializeComponent();
-            this.btc = btc;
         }
 
         private void ResultsBreakdown_Load(object sender, EventArgs e)
