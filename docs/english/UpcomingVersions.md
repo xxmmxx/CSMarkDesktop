@@ -5,7 +5,6 @@ This document contains a list of upcoming releases of CSMark Desktop.
  **Highlight Features**
  * Patreon Integration to allow for Patreon Rewards
  * Reliability improvements
- * Re-added Results Individual Breakdown
 
 ### 0.34
  **Highlight Features**

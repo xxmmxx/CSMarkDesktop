@@ -41,7 +41,7 @@
     <PackageCertificateKeyFile>CSMarkDesktopWinStore_StoreKey.pfx</PackageCertificateKeyFile>
     <PackageCertificateThumbprint>AB65250723AFB1B2C0295CD25F3F9CA514BE6522</PackageCertificateThumbprint>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
-    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
