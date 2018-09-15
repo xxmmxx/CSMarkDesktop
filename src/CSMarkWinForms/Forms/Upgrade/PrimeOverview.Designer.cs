@@ -1,6 +1,6 @@
 ﻿namespace CSMarkWinForms.Forms.Upgrade
 {
-    partial class PrimeOverview
+    partial class PremiumOverview
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.getPrimeBtn = new System.Windows.Forms.Button();
+            this.getPremiumBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // getPrimeBtn
+            // getPremiumBtn
             // 
-            this.getPrimeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.getPrimeBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F);
-            this.getPrimeBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.getPrimeBtn.Location = new System.Drawing.Point(282, 274);
-            this.getPrimeBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.getPrimeBtn.Name = "getPrimeBtn";
-            this.getPrimeBtn.Size = new System.Drawing.Size(198, 59);
-            this.getPrimeBtn.TabIndex = 42;
-            this.getPrimeBtn.Text = "Get Prime";
-            this.getPrimeBtn.UseVisualStyleBackColor = false;
-            this.getPrimeBtn.Click += new System.EventHandler(this.getPrimeBtn_Click);
+            this.getPremiumBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.getPremiumBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F);
+            this.getPremiumBtn.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.getPremiumBtn.Location = new System.Drawing.Point(282, 274);
+            this.getPremiumBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.getPremiumBtn.Name = "getPremiumBtn";
+            this.getPremiumBtn.Size = new System.Drawing.Size(198, 59);
+            this.getPremiumBtn.TabIndex = 42;
+            this.getPremiumBtn.Text = "Get Premium";
+            this.getPremiumBtn.UseVisualStyleBackColor = false;
+            this.getPremiumBtn.Click += new System.EventHandler(this.getPrimeBtn_Click);
             // 
             // label1
             // 
@@ -54,11 +54,11 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(24, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(728, 150);
+            this.label1.Size = new System.Drawing.Size(758, 150);
             this.label1.TabIndex = 43;
-            this.label1.Text = "Support CSMark\'s ongoing development with CSMark Prime and get a cool\r\n PRIME bad" +
-    "ge in the app.\r\n\r\nCSMark Prime is completely optional and contains all the funct" +
-    "ionality of the \r\nfree version.";
+            this.label1.Text = "Support CSMark\'s ongoing development with CSMark Premium and get a cool\r\n PREMIUM" +
+    " badge in the app.\r\n\r\nCSMark Premium is completely optional and contains all the" +
+    " functionality of the \r\nfree version.";
             // 
             // priceLabel
             // 
@@ -79,7 +79,7 @@
             this.ClientSize = new System.Drawing.Size(779, 339);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.getPrimeBtn);
+            this.Controls.Add(this.getPremiumBtn);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -94,7 +94,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button getPrimeBtn;
+        private System.Windows.Forms.Button getPremiumBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label priceLabel;
     }

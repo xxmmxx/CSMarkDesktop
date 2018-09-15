@@ -74,7 +74,7 @@ namespace CSMarkWinForms.Patronage{
                     if (license.IsActive)
                     {
                         // The expiration date is available in the license.ExpirationDate property.
-                        _level = ContributorLevel.StorePrime;
+                        _level = ContributorLevel.StorePremium;
                         return true;
                     }
                 }

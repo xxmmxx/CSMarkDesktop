@@ -169,12 +169,12 @@ namespace CSMarkWinForms{
             }
             else{
                 distribution = DistributionPlatform.GitRepository;
-                getPrimeBtn.Enabled = false;
-                getPrimeBtn.Visible = false;
+                getPremiumBtn.Enabled = false;
+                getPremiumBtn.Visible = false;
             }
             //Store Testing: 
-            getPrimeBtn.Enabled = true;
-            getPrimeBtn.Visible = true;
+            getPremiumBtn.Enabled = true;
+            getPremiumBtn.Visible = true;
 
             return distribution;
         }
@@ -185,26 +185,26 @@ namespace CSMarkWinForms{
             if (level.Equals(ContributorLevel.Free)){
                 contributionStatus.Text = "FREE";
                 contributionStatus.ForeColor = Color.Lime;
-                getPrimeBtn.Visible = true;
+                getPremiumBtn.Visible = true;
             }
-            else if (level.Equals(ContributorLevel.PatronPrime)){
-                contributionStatus.Text = "PRIME";
+            else if (level.Equals(ContributorLevel.PatronPremium)){
+                contributionStatus.Text = "Premium";
                 contributionStatus.ForeColor = Color.RoyalBlue;
-                //  getPrimeBtn.Text = "Get PRO";
-                //getPrimeBtn.ForeColor = Color.OrangeRed;
-                getPrimeBtn.Visible = false;
+                //  getPremiumBtn.Text = "Get PRO";
+                //getPremiumBtn.ForeColor = Color.OrangeRed;
+                getPremiumBtn.Visible = false;
             }
             else if (level.Equals(ContributorLevel.PatronPro)){
                 contributionStatus.Text = "PRO";
                 contributionStatus.ForeColor = Color.OrangeRed;
                 ///
-                getPrimeBtn.Visible = false;
+                getPremiumBtn.Visible = false;
             }
             else if (level.Equals(ContributorLevel.PatronSponsor)){
                 contributionStatus.Text = "SPONSOR";
                 contributionStatus.ForeColor = Color.Goldenrod;
                 ///
-                getPrimeBtn.Visible = false;
+                getPremiumBtn.Visible = false;
             }
             return level;
         }
@@ -328,6 +328,9 @@ namespace CSMarkWinForms{
             DetermineContributorLevel();
             DetermineDistributionPlatform();
             settingsButton.Visible = false;
+
+            getPremiumBtn.Visible = false;
+            getPremiumBtn.Enabled = false;
         }
         #region Button click handling
         private void aboutButton_Click(object sender, EventArgs e){
@@ -358,17 +361,17 @@ namespace CSMarkWinForms{
         }
         #endregion
 
-        private void getPrimeBtn_Click(object sender, EventArgs e){
-            Form primeform = new Forms.Upgrade.PrimeOverview();
-            primeform.ShowDialog();
+        private void getPremiumBtn_Click(object sender, EventArgs e){
+            Form Premiumform = new Forms.Upgrade.PremiumOverview();
+            Premiumform.ShowDialog();
         }
 
         private void Main_Enter(object sender, EventArgs e)
         {
-            if (subWrapper.GetContributorLevel() == ContributorLevel.StorePrime)
+            if (subWrapper.GetContributorLevel() == ContributorLevel.StorePremium)
             {
-                getPrimeBtn.Enabled = false;
-                getPrimeBtn.Visible = false;
+                getPremiumBtn.Enabled = false;
+                getPremiumBtn.Visible = false;
                 DetermineContributorLevel();
             }
         }

@@ -12,10 +12,10 @@ using CSMarkWinForms.Patronage;
 using Windows.Services.Store;
 
 namespace CSMarkWinForms.Forms.Upgrade{
-    public partial class PrimeOverview : Form{
+    public partial class PremiumOverview : Form{
         SubscriptionWrapper subWrapper = new SubscriptionWrapper();
 
-        public PrimeOverview(){
+        public PremiumOverview(){
             InitializeComponent();
         }
         private void getPrimeBtn_Click(object sender, EventArgs e){

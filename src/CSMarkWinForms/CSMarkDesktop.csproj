@@ -24,8 +24,8 @@
     <MapFileExtensions>false</MapFileExtensions>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>3</ApplicationRevision>
-    <ApplicationVersion>0.32.0.%2a</ApplicationVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.32.3.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -50,6 +50,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>CSMarkWinForms.Program</StartupObject>
@@ -137,11 +138,11 @@
     <Compile Include="Forms\Results\ResultsOverview.Designer.cs">
       <DependentUpon>ResultsOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Upgrade\PrimeOverview.cs">
+    <Compile Include="Forms\Upgrade\PremiumOverview.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Upgrade\PrimeOverview.Designer.cs">
-      <DependentUpon>PrimeOverview.cs</DependentUpon>
+      <DependentUpon>PremiumOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -178,7 +179,7 @@
       <DependentUpon>ResultsOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Upgrade\PrimeOverview.resx">
-      <DependentUpon>PrimeOverview.cs</DependentUpon>
+      <DependentUpon>PremiumOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

@@ -41,7 +41,7 @@
             this.contributionStatus = new System.Windows.Forms.Label();
             this.overclockWarning = new System.Windows.Forms.Label();
             this.copyrightNotice = new System.Windows.Forms.Label();
-            this.getPrimeBtn = new System.Windows.Forms.Button();
+            this.getPremiumBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,18 +198,18 @@
             this.copyrightNotice.TabIndex = 38;
             this.copyrightNotice.Text = "Pre-release . Copyright (c) AluminiumTech 2018";
             // 
-            // getPrimeBtn
+            // getPremiumBtn
             // 
-            this.getPrimeBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.getPrimeBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F);
-            this.getPrimeBtn.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.getPrimeBtn.Location = new System.Drawing.Point(379, 12);
-            this.getPrimeBtn.Name = "getPrimeBtn";
-            this.getPrimeBtn.Size = new System.Drawing.Size(170, 45);
-            this.getPrimeBtn.TabIndex = 41;
-            this.getPrimeBtn.Text = "Get Prime";
-            this.getPrimeBtn.UseVisualStyleBackColor = false;
-            this.getPrimeBtn.Click += new System.EventHandler(this.getPrimeBtn_Click);
+            this.getPremiumBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.getPremiumBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F);
+            this.getPremiumBtn.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.getPremiumBtn.Location = new System.Drawing.Point(379, 12);
+            this.getPremiumBtn.Name = "getPremiumBtn";
+            this.getPremiumBtn.Size = new System.Drawing.Size(170, 45);
+            this.getPremiumBtn.TabIndex = 41;
+            this.getPremiumBtn.Text = "Get Premium";
+            this.getPremiumBtn.UseVisualStyleBackColor = false;
+            this.getPremiumBtn.Click += new System.EventHandler(this.getPremiumBtn_Click);
             // 
             // Main
             // 
@@ -217,7 +217,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1116, 611);
-            this.Controls.Add(this.getPrimeBtn);
+            this.Controls.Add(this.getPremiumBtn);
             this.Controls.Add(this.copyrightNotice);
             this.Controls.Add(this.overclockWarning);
             this.Controls.Add(this.contributionStatus);
@@ -260,6 +260,6 @@
         private System.Windows.Forms.Label contributionStatus;
         private System.Windows.Forms.Label overclockWarning;
         private System.Windows.Forms.Label copyrightNotice;
-        private System.Windows.Forms.Button getPrimeBtn;
+        private System.Windows.Forms.Button getPremiumBtn;
     }
 }

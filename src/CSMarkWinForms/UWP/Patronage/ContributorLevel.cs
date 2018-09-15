@@ -8,9 +8,9 @@ namespace CSMarkWinForms.Patronage{
     public enum ContributorLevel
     {
         Free,
-        PatronPrime,
-        StorePrime,
+        PatronPremium,
         PatronPro,
+        StorePremium,
         PatronSponsor,
     }
 }
