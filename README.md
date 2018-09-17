@@ -18,16 +18,6 @@ CSMarkDesktop is the new GUI version of CSMark which works on Windows.
 ## Where is the CSMarkDesktop Cross-platform GUI version?
 It is still in the works. CSMarkWPF was introduced to provide a GUI experience to Windows users in a timely fashion whilst the cross-platform GUI version is underway.
 
-### Which version should I download?
-| Processor Type | OS | CSMark Edition You Should Download | CSMark Package You Should Download |
-|---------|----------|-----------|----------------|
-| Any x86-64 CPU | Windows 10 | CSMarkDesktop or CSMarkCore | CSMarkWPF or Win10-x64 |
-| Any 32 Bit ARM CPU E.g. Qualcomm(R) SnapdragonTM 400 | Windows 10 | CSMarkCore | Win10-arm |
-| Any ARM64 CPU E.g. Qualcomm(R) SnapdragonTM 835 Mobile Computing Platform | Windows 10 | CSMarkCore | Win10-arm |
-| Any x86-64 CPU | macOS | CSMarkCore | osx-x64 |
-| Any x86-64 CPU | Linux | CSMarkCore | linux-x64 |
-| Any 32 Bit ARM CPU | Linux | CSMarkCore | linux-arm |
-
 ## Contributing
 For details on Contributing or Building the Source Code check out the [Contribution Guide](/CONTRIBUTING.md) .
 
@@ -41,27 +31,10 @@ The CSMark repository is the other main repo for this project and is used to hel
 ## Requirements for running the Benchmarks
 The .NET Core Runtime is included in CSMark Releases. There is no need to download the Runtime seperately unless explicitly specified.
 
-__List Of Supported Platforms for CSMarkCore__
-* Windows 10 (ARM, ARM64, X64) (10.0.15063 or newer) or Windows Server 2016
-* macOS 10.12 "Sierra" and macOS 10.13 "High Sierra"
-* Ubuntu 14.04 LTS, Ubuntu 16.04 LTS, Ubuntu 18.04 LTS
-* Debian 8.7 or newer (8.7+ and 9.0+)
-* CentOS 7 or newer
-* RedHat Linux Enterprise 7 or newer
-* SUSE Linux Enterprise 12 SP2 +
-* Fedora 27 or newer
-* openSUSE 42.3 or newer
-* LinuxMint 18 or newer
-
-__List Of Supported Platforms for CSMarkWPF__
-* Windows 10 (X86, X64) (10.0.15063 or newer) or Windows Server 2016
+__List Of Supported Platforms for CSMarkDesktop__
+* Windows 10 (ARM (through X86 emulation), X86, X64) (10.0.16299 or newer) or Windows Server 2016
 
 [See OS Support Document for more details](/docs/OS_Support.md)
-
-## Install CSMark
-* [Running CSMark On Windows](/docs/RunningCSMarkOnWindows.md)
-* [Running CSMark On Linux](/docs/RunningCSMarkOnLinux.md)
-* [Running CSMark On Mac](/docs/RunningCSMarkOnMac.md)
 
 <a href='//www.microsoft.com/store/apps/9N6S6JJFWJ6M?ocid=badge'><img src='https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png' alt='English badge' width='250' height='70'/></a>
 

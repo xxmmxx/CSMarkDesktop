@@ -18,13 +18,12 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Screenshots**
-If applicable, add screenshots to help explain your problem.
+If applicable, add screenshots to help explain the issue.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. Windows 10 Pro 64 Bit]
  - OS Version: [e.g. 10.0.17134.112]
- - App Version: [e.g. 0.29.3.108]
- - App Edition: [e.g. CSMarkCore] or [e.g. CSMarkDesktop]
+ - App Version: [e.g. 0.32.4]
  - CPU Name and Model Information: [e.g AMD RyzenTM ThreadRipperTM 1950X]
  - CPU Core Count and Thread Count: [e.g. 16 Cores and 32 Threads]
  - Nominal CPU Base Clock Speed: [e.g. 3.4GHz]
