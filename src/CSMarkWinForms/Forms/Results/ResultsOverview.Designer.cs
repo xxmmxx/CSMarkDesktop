@@ -32,7 +32,6 @@
             this.singleOverall = new System.Windows.Forms.Label();
             this.multiOverall = new System.Windows.Forms.Label();
             this.processorThreadCount = new System.Windows.Forms.Label();
-            this.contributionStatus = new System.Windows.Forms.Label();
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.version = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
@@ -73,20 +72,6 @@
             this.processorThreadCount.Size = new System.Drawing.Size(136, 25);
             this.processorThreadCount.TabIndex = 2;
             this.processorThreadCount.Text = "Thread Count: ";
-            // 
-            // contributionStatus
-            // 
-            this.contributionStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.contributionStatus.AutoSize = true;
-            this.contributionStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.contributionStatus.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contributionStatus.ForeColor = System.Drawing.Color.Lime;
-            this.contributionStatus.Location = new System.Drawing.Point(297, 26);
-            this.contributionStatus.Name = "contributionStatus";
-            this.contributionStatus.Size = new System.Drawing.Size(57, 33);
-            this.contributionStatus.TabIndex = 40;
-            this.contributionStatus.Text = "FREE";
             // 
             // logoBox
             // 
@@ -169,7 +154,6 @@
             this.Controls.Add(this.getResultsBreakdownBtn);
             this.Controls.Add(this.multiScoreResult);
             this.Controls.Add(this.singleScoreResult);
-            this.Controls.Add(this.contributionStatus);
             this.Controls.Add(this.logoBox);
             this.Controls.Add(this.version);
             this.Controls.Add(this.title);
@@ -195,7 +179,6 @@
         private System.Windows.Forms.Label singleOverall;
         private System.Windows.Forms.Label multiOverall;
         private System.Windows.Forms.Label processorThreadCount;
-        private System.Windows.Forms.Label contributionStatus;
         private System.Windows.Forms.PictureBox logoBox;
         private System.Windows.Forms.Label version;
         private System.Windows.Forms.Label title;

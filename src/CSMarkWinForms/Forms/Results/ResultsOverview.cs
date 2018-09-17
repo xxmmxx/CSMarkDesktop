@@ -10,21 +10,25 @@ using System.Windows.Forms;
 
 namespace CSMarkWinForms.Forms{
     public partial class ResultsOverview : Form{
-        public ResultsOverview(string AppVersion, string ContributionLevel){
+        public ResultsOverview(string AppVersion){
             InitializeComponent();
             title.Text = ProductName;
             version.Text = AppVersion;
-            contributionStatus.Text = ContributionLevel;
         }
         private void ResultsOverview_Load(object sender, EventArgs e){
-            processorThreadCount.Text = "Thread Count: " + Environment.ProcessorCount.ToString();
-            CSMarkLib.Result x = Settings.Results.Default.BenchmarkResult;
-            singleScoreResult.Text = x.OverallSingle.ToString();
-            multiScoreResult.Text = x.OverallMulti.ToString();
+            try{
+                processorThreadCount.Text = "Thread Count: " + Environment.ProcessorCount.ToString();
+                CSMarkLib.Result x = Settings.Results.Default.BenchmarkResult;
+                singleScoreResult.Text = x.OverallSingle.ToString();
+                multiScoreResult.Text = x.OverallMulti.ToString();
+            }
+            catch(Exception ex){
+                throw new Exception(ex.ToString());
+            } 
         }
 
         private void getResultsBreakdownBtn_Click(object sender, EventArgs e){
-            Form resultsBreakdown = new Forms.Results.ResultsBreakdown();
+            Form resultsBreakdown = new Results.ResultsBreakdown();
             resultsBreakdown.ShowDialog();
         }
     }

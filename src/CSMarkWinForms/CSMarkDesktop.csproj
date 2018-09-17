@@ -77,8 +77,8 @@
     <Reference Include="AutoUpdater.NET, Version=1.4.11.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>packages\Autoupdater.NET.Official.1.4.11\lib\net40\AutoUpdater.NET.dll</HintPath>
     </Reference>
-    <Reference Include="CSMarkLib.Benchmark, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\CSMarkLib.Benchmark.1.4.5\lib\netstandard2.0\CSMarkLib.Benchmark.dll</HintPath>
+    <Reference Include="CSMarkLib.Benchmark, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CSMarkLib.Benchmark.1.4.6\lib\netstandard2.0\CSMarkLib.Benchmark.dll</HintPath>
     </Reference>
     <Reference Include="CSMarkLib.StressTest, Version=2.0.0.9, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CSMarkLib.StressTest.2.0.0-preview9\lib\netstandard2.0\CSMarkLib.StressTest.dll</HintPath>

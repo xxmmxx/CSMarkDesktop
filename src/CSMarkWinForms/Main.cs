@@ -56,16 +56,16 @@ namespace CSMarkWinForms{
 
         ContributorLevel level = ContributorLevel.Free;
 
-        SubscriptionWrapper subWrapper = new SubscriptionWrapper();
+     //   SubscriptionWrapper subWrapper = new SubscriptionWrapper();
 
         public Main(){
             InitializeComponent();
             //Check for WinStore sub  
-            Task t1 = new Task(() => subWrapper.GetSubscriptionProductAsync());
-            t1.Start();
+        //    Task t1 = new Task(() => subWrapper.GetSubscriptionProductAsync());
+     //       t1.Start();
 
-            Task t2 = new Task(() => subWrapper.CheckIfUserHasSubscriptionAsync());
-            t2.Start();
+       //     Task t2 = new Task(() => subWrapper.CheckIfUserHasSubscriptionAsync());
+       //     t2.Start();
 
             Assembly assembly = Assembly.GetEntryAssembly();
             platform = new Platform();
@@ -74,7 +74,7 @@ namespace CSMarkWinForms{
             if (DetermineDistributionPlatform().Equals(DistributionPlatform.GitRepository)){
                 AutoUpdater.Start(stableURL);
             }
-            level = subWrapper.GetContributorLevel();
+       //     level = subWrapper.GetContributorLevel();
             DetermineContributorLevel();
         }
 
@@ -116,15 +116,19 @@ namespace CSMarkWinForms{
             }
         }
         private void StartBenchmark(){
-            var benchmarkWorkTask = new Task(() => BenchmarkWork());
-            benchmarkWorkTask.Start();
-            benchmarkWorkTask.Wait();
-
             try{
+                var benchmarkWorkTask = new Task(() => BenchmarkWork());
+                benchmarkWorkTask.Start();
+                benchmarkWorkTask.Wait();
+
                 startBenchmarkBtn.Invoke(new Action(() => { startBenchmarkBtn.Enabled = true; }));
                 startBenchmarkBtn.Invoke(new Action(() => { startBenchmarkBtn.Text = "Start Benchmark"; }));
                 startBenchmarkBtn.Invoke(new Action(() => { startStressTestBtn.Enabled = true; }));
-                startBenchmarkBtn.Invoke(new Action(() => { new ResultsOverview(version.Text, contributionStatus.Text).ShowDialog(); }));
+
+                ResultsOverview ro = new ResultsOverview(version.Text);
+
+                Task t1 = new Task(() => ro.ShowDialog());
+                t1.Start();
             }
             catch (Exception ex){
                 MessageBox.Show(ex.ToString());
@@ -362,18 +366,18 @@ namespace CSMarkWinForms{
         #endregion
 
         private void getPremiumBtn_Click(object sender, EventArgs e){
-            Form Premiumform = new Forms.Upgrade.PremiumOverview();
-            Premiumform.ShowDialog();
+        //    Form Premiumform = new Forms.Upgrade.PremiumOverview();
+         //   Premiumform.ShowDialog();
         }
 
         private void Main_Enter(object sender, EventArgs e)
         {
-            if (subWrapper.GetContributorLevel() == ContributorLevel.StorePremium)
-            {
-                getPremiumBtn.Enabled = false;
-                getPremiumBtn.Visible = false;
-                DetermineContributorLevel();
-            }
+         //   if (subWrapper.GetContributorLevel() == ContributorLevel.StorePremium)
+         //   {
+        //        getPremiumBtn.Enabled = false;
+       //         getPremiumBtn.Visible = false;
+       //         DetermineContributorLevel();
+       //     }
         }
     }
 }
