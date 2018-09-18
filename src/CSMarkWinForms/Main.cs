@@ -35,8 +35,6 @@ namespace CSMarkWinForms{
 
         BenchmarkController btc;
         StressTestController stc = new StressTestController();
-
-        //private string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/beta.xml";
         private string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
         //Supported Versions of Windows
         private Version win10v1703 = new Version(10, 0, 15063, 0);
