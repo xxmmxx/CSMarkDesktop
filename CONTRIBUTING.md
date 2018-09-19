@@ -39,31 +39,6 @@ Developing CSMark on Windows is pretty straight forward.
 
 You don't need to download anything else to get setup.  If you'd like to try out CSMark on a system without the DotNetCore SDKs (the SDK is included in the Visual Studio DotNetCore package), you'll want to download the [.NET Core Runtime](https://www.microsoft.com/net/download/core#/runtime).
 
-If you want to use [VS Code](https://visualstudio.com/code) instead, that also works.
-
-### Setting up your environment on macOS
-Developing CSMark on Mac is also pretty straight forward.
-
-* I recommend downloading [VS Code](https://code.visualstudio.com/).
-* You should download [GitHub Desktop](https://desktop.github.com/) to be able to easily clone the repository or [submit changes](#how-to-submit-changes).
-
-You'll also want to download the latest [.NET Core SDK for Mac](https://www.microsoft.com/net/download/macos) (We're using .NET Core 2.0 at the moment so make sure to install the correct SDK for that version.)
-
- If you'd like to try out CSMark on a system without the .NET Core SDK, you'll want to download the [DotNetCore Runtime](https://www.microsoft.com/net/download/core#/runtime).
-
-If you want to use [Visual Studio 2017 for Mac](https://www.visualstudio.com/vs/visual-studio-mac/) instead, that also works.
-
-### Setting up your environment on Linux
-Developing CSMark on Linux has gotten easier recently but you may encounter problems.
-
-If you're running a popular Linux Distro which is supported and the version you're using is supported then this section is for you.
-
-* You'll probably want to install [VS Code](https://code.visualstudio.com).
-* You'll want to download the latest [.NET Core SDK for Linux](https://www.microsoft.com/net/download/linux) (We're using .NET Core 2.0 at the moment so make sure to install the correct SDK for that version.)
-
-In all honesty, you can use any Git client you like. GitHub currently doesn't have a linux version of their new GitHub desktop program but I suspect that we could see a linux build in the future.
-For now though, any Git client will work but you'll have to configure it yourself.
-
 ## How to submit changes
 You can submit changes by:
 1. Forking this repository - It's as simple as pressing that fork button.
@@ -81,23 +56,9 @@ So, you want to build release binaries of CSMark?
 
 You'll need all the SDKs and Tools mentioned above in [Setting up your environment](#setting-up-your-environment).
 
-Creating binaries currently requires using the .NET CLI Build commands. I've listed them below for your convenience.
+Creating binaries currently requires using the Visual Studio's Publish tool.
 
-You can run the commands from any Shell such as CMD on Windows or Terminal on Mac or Linux as long as you have .NET Core SDK installed.
-
-For Windows 10 64 Bit: `` dotnet publish -c Release -r win10-x64  ``
-
-For Windows 10 ARM 64 Bit: `` dotnet publish -c Release -r win10-arm64  ``
-
-For Windows 10 ARM 32 Bit: `` dotnet publish -c Release -r win10-arm  ``
-
-For macOS 10.12 "Sierra" and macOS 10.13 "High Sierra" ": `` dotnet publish -c Release -r osx-x64 ``
-
-For 64 Bit Linux Distros: `` dotnet publish -c Release -r linux-x64  ``
-
-For ARM 32 Bit Linux Distros: `` dotnet publish -c Release -r linux-arm  ``
-
-The license file has been set to be copied every time you create a new binary so you don't need to worry about that. Installation Instructions are also included every time a new build is compiled.
+The license file has been set to be copied every time you create a new binary so you don't need to worry about that.
 
 You may wish to ZIP the files for publishing or distributing them.
 
