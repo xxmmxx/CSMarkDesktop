@@ -52,18 +52,10 @@ namespace CSMarkWinForms{
             GitRepository
         }
 
-        ContributorLevel level = ContributorLevel.Free;
-
-     //   SubscriptionWrapper subWrapper = new SubscriptionWrapper();
+        ContributorLevel level = ContributorLevel.StorePremium;
 
         public Main(){
             InitializeComponent();
-            //Check for WinStore sub  
-        //    Task t1 = new Task(() => subWrapper.GetSubscriptionProductAsync());
-     //       t1.Start();
-
-       //     Task t2 = new Task(() => subWrapper.CheckIfUserHasSubscriptionAsync());
-       //     t2.Start();
 
             Assembly assembly = Assembly.GetEntryAssembly();
             platform = new Platform();
@@ -72,7 +64,6 @@ namespace CSMarkWinForms{
             if (DetermineDistributionPlatform().Equals(DistributionPlatform.GitRepository)){
                 AutoUpdater.Start(stableURL);
             }
-       //     level = subWrapper.GetContributorLevel();
             DetermineContributorLevel();
         }
 
@@ -189,7 +180,8 @@ namespace CSMarkWinForms{
                 contributionStatus.ForeColor = Color.Lime;
                 getPremiumBtn.Visible = true;
             }
-            else if (level.Equals(ContributorLevel.PatronPremium)){
+            else if (level.Equals(ContributorLevel.PatronPremium) || level.Equals(ContributorLevel.StorePremium))
+            {
                 contributionStatus.Text = "Premium";
                 contributionStatus.ForeColor = Color.RoyalBlue;
                 //  getPremiumBtn.Text = "Get PRO";
