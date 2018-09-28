@@ -9,18 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using CSMarkWinForms.Patronage;
+using CSMarkWinForms.UWP.Patronage;
 using Windows.Services.Store;
 
 namespace CSMarkWinForms.Forms.Upgrade{
     public partial class PremiumOverview : Form{
-        SubscriptionWrapper subWrapper = new SubscriptionWrapper();
+        IAPManagement management;
 
         public PremiumOverview(){
             InitializeComponent();
+            management = new IAPManagement();
         }
         private void getPrimeBtn_Click(object sender, EventArgs e){
-            subWrapper.SetupSubscriptionInfoAsync();
-            subWrapper.PurchaseAsync();
+        
         }
 
         private void PrimeOverview_Load(object sender, EventArgs e)

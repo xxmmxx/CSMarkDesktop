@@ -22,17 +22,19 @@ namespace CSMarkWinForms.Patronage{
         //Get a StoreContext object by using the GetDefault method 
         private static StoreContext storeContext = StoreContext.GetDefault();
 
-        public static string Purchase(string storeID){
+        private string resultString = "";
+
+        public string Purchase(string storeID){
             try{
                 PurchaseAsync(storeID);
-                return "Done";
+                return resultString;
             }
             catch (Exception ex){
                 return "Exception:" + ex.ToString() + "exMessage:" + ex.Message;
             }
         }
 
-        static async Task PurchaseAsync(string storeID){
+        async Task PurchaseAsync(string storeID){
             IInitializeWithWindow initWindow = (IInitializeWithWindow)(object)storeContext;
             var ptr = System.Diagnostics.Process.GetCurrentProcess().MainWindowHandle;
 
@@ -42,7 +44,35 @@ namespace CSMarkWinForms.Patronage{
 
             var result = await storeContext.RequestPurchaseAsync(storeID);
 
-            if (result.ExtendedError != null){
+            switch (result.Status)
+            {
+                case StorePurchaseStatus.AlreadyPurchased:
+                    resultString = "You already bought this AddOn.";
+                    break;
+
+                case StorePurchaseStatus.Succeeded:
+                    resultString = "Product was purchased. Transaction Successful.";
+                    break;
+
+                case StorePurchaseStatus.NotPurchased:
+                    resultString = "Product was not purchased, it may have been canceled or your card may have been declined.";
+                    break;
+
+                case StorePurchaseStatus.NetworkError:
+                    resultString = "Product was not purchased due to a network error.";
+                    break;
+
+                case StorePurchaseStatus.ServerError:
+                    resultString = "Product was not purchased due to a server error.";
+                    break;
+
+                default:
+                    resultString = "Product was not purchased due to an unknown error. Your card may have been declined.";
+                    break;
+            }
+
+            if (result.ExtendedError != null)
+            {
                 MessageBox.Show(result.ExtendedError.Message, result.ExtendedError.HResult.ToString());
             }
 

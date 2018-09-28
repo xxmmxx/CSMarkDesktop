@@ -151,8 +151,8 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="UWP\Patronage\ContributorLevel.cs" />
+    <Compile Include="UWP\Patronage\IAPManagement.cs" />
     <Compile Include="UWP\Patronage\IAPWrapper.cs" />
-    <Compile Include="UWP\Patronage\SubscriptionWrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\Preferences.Designer.cs">
