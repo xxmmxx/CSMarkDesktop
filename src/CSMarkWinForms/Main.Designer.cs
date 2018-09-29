@@ -42,6 +42,7 @@
             this.overclockWarning = new System.Windows.Forms.Label();
             this.copyrightNotice = new System.Windows.Forms.Label();
             this.getPremiumBtn = new System.Windows.Forms.Button();
+            this.expiryLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,7 +202,7 @@
             // getPremiumBtn
             // 
             this.getPremiumBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.getPremiumBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F);
+            this.getPremiumBtn.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.getPremiumBtn.ForeColor = System.Drawing.Color.RoyalBlue;
             this.getPremiumBtn.Location = new System.Drawing.Point(379, 12);
             this.getPremiumBtn.Name = "getPremiumBtn";
@@ -211,12 +212,27 @@
             this.getPremiumBtn.UseVisualStyleBackColor = false;
             this.getPremiumBtn.Click += new System.EventHandler(this.getPremiumBtn_Click);
             // 
+            // expiryLabel
+            // 
+            this.expiryLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.expiryLabel.AutoSize = true;
+            this.expiryLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
+            this.expiryLabel.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expiryLabel.ForeColor = System.Drawing.Color.White;
+            this.expiryLabel.Location = new System.Drawing.Point(278, 63);
+            this.expiryLabel.Name = "expiryLabel";
+            this.expiryLabel.Size = new System.Drawing.Size(78, 23);
+            this.expiryLabel.TabIndex = 42;
+            this.expiryLabel.Text = "Expires:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1116, 611);
+            this.Controls.Add(this.expiryLabel);
             this.Controls.Add(this.getPremiumBtn);
             this.Controls.Add(this.copyrightNotice);
             this.Controls.Add(this.overclockWarning);
@@ -261,5 +277,6 @@
         private System.Windows.Forms.Label overclockWarning;
         private System.Windows.Forms.Label copyrightNotice;
         private System.Windows.Forms.Button getPremiumBtn;
+        private System.Windows.Forms.Label expiryLabel;
     }
 }

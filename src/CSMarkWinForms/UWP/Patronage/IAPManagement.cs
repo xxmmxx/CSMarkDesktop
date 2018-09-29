@@ -20,20 +20,91 @@ namespace CSMarkWinForms.UWP.Patronage{
             void Initialize(IntPtr hwnd);
         }
 
-       private string premium3months_id = "9NNRJNZS5SS9";
-       private string premium6months_id = "9NFTTGL0LTL2";
-       private string premium12months_id = "9PL25LNX6403";
+        private string premium3months_id = "9NNRJNZS5SS9";
+        private string premium6months_id = "9NFTTGL0LTL2";
+        private string premium12months_id = "9PL25LNX6403";
 
         private DateTimeOffset expirationdate;
         private bool isActive;
         private string productPurchased = "";
 
         public IAPManagement(){
-
+            IsAPremiumUser();
         }
 
         //Get a StoreContext object by using the GetDefault method 
         private static StoreContext storeContext = StoreContext.GetDefault();
+        private StorePrice premium3monthsprice;
+
+        public StorePrice GetPremium3monthsprice()
+        {
+            return premium3monthsprice;
+        }
+
+        public void SetPremium3monthsprice(StorePrice value)
+        {
+            premium3monthsprice = value;
+        }
+
+        private string premium3monthspriceString;
+
+        public string GetPremium3monthspriceString()
+        {
+            return premium3monthspriceString;
+        }
+
+        public void SetPremium3monthspriceString(string value)
+        {
+            premium3monthspriceString = value;
+        }
+
+        private StorePrice premium6monthsprice;
+
+        public StorePrice GetPremium6monthsprice()
+        {
+            return premium6monthsprice;
+        }
+
+        public void SetPremium6monthsprice(StorePrice value)
+        {
+            premium6monthsprice = value;
+        }
+
+        private string premium6monthspriceString;
+
+        public string GetPremium6monthspriceString()
+        {
+            return premium6monthspriceString;
+        }
+
+        public void SetPremium6monthspriceString(string value)
+        {
+            premium6monthspriceString = value;
+        }
+
+        private StorePrice premium12monthsprice;
+
+        public StorePrice GetPremium12monthsprice()
+        {
+            return premium12monthsprice;
+        }
+
+        public void SetPremium12monthsprice(StorePrice value)
+        {
+            premium12monthsprice = value;
+        }
+
+        private string premium12monthspriceString;
+
+        public string GetPremium12monthspriceString()
+        {
+            return premium12monthspriceString;
+        }
+
+        public void SetPremium12monthspriceString(string value)
+        {
+            premium12monthspriceString = value;
+        }
 
         public DateTimeOffset GetIAPExpirationDate(){
             try{
@@ -78,7 +149,7 @@ namespace CSMarkWinForms.UWP.Patronage{
             // Access the valid licenses for durable add-ons for this app.
             foreach (KeyValuePair<string, StoreLicense> item in appLicense.AddOnLicenses)
             {
-                StoreLicense addOnLicense = item.Value;
+                StoreLicense addOnLicense = item.Value;              
                 // Use members of the addOnLicense object to access license info
                 // for the add-on.
 
@@ -108,6 +179,28 @@ namespace CSMarkWinForms.UWP.Patronage{
                 }
             }
 
+            string[] productKinds = { "Durable" };
+            List<string> filterList = new List<string>(productKinds);
+            StoreProductQueryResult queryResult = await storeContext.GetAssociatedStoreProductsAsync(filterList);
+
+            foreach (KeyValuePair<string, StoreProduct> item in queryResult.Products){
+                // Access the Store product info for the add-on.
+                StoreProduct product = item.Value;
+                // Use members of the product object to access listing info for the add-on...
+
+                if (product.StoreId == premium3months_id){
+                    SetPremium3monthsprice(product.Price);
+                    SetPremium3monthspriceString(product.Price.FormattedBasePrice);                   
+                }
+                else if (product.StoreId == premium6months_id){
+                    SetPremium6monthsprice(product.Price);
+                    SetPremium6monthspriceString(product.Price.FormattedBasePrice);
+                }
+                else if (product.StoreId == premium12months_id){
+                    SetPremium12monthsprice(product.Price);
+                    SetPremium12monthspriceString(product.Price.FormattedBasePrice);
+                }
+            }
             isActive = false;
         }
 

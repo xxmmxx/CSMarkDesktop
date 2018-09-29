@@ -20,12 +20,28 @@ namespace CSMarkWinForms.Forms.Upgrade{
             InitializeComponent();
             management = new IAPManagement();
         }
-        private void getPrimeBtn_Click(object sender, EventArgs e){
-        
+
+        private void PrimeOverview_Load(object sender, EventArgs e){
+            management.IsAPremiumUser();
+       //     var premium12price = management.GetPremium12monthsprice().FormattedBasePrice + " " + management.GetPremium12monthsprice().CurrencyCode;
+          //  var premium6price = management.GetPremium6monthsprice();
+         //   var premium3price = management.GetPremium12monthsprice();
+
+
+            //      getpremium12monthsBtn.Text += 
+        }
+        private void getpremium12monthsBtn_Click(object sender, EventArgs e){
+            management.Purchase12MonthPremium();
+        }
+        private void getpremium6monthsBtn_Click(object sender, EventArgs e){
+            management.Purchase6MonthPremium();
+        }
+        private void getpremium3monthsBtn_Click(object sender, EventArgs e){           
+            management.Purchase3MonthPremium();
         }
 
-        private void PrimeOverview_Load(object sender, EventArgs e)
-        {
+        private void button1_Click(object sender, EventArgs e){
+            Close();
         }
     }
 }

@@ -47,7 +47,7 @@ namespace CSMarkWinForms.Patronage{
             switch (result.Status)
             {
                 case StorePurchaseStatus.AlreadyPurchased:
-                    resultString = "You already bought this AddOn.";
+                    resultString = "You already bought Premium.";
                     break;
 
                 case StorePurchaseStatus.Succeeded:
@@ -55,7 +55,7 @@ namespace CSMarkWinForms.Patronage{
                     break;
 
                 case StorePurchaseStatus.NotPurchased:
-                    resultString = "Product was not purchased, it may have been canceled or your card may have been declined.";
+                    resultString = "Product was not purchased. It may have been canceled or your card may have been declined.";
                     break;
 
                 case StorePurchaseStatus.NetworkError:
@@ -76,7 +76,11 @@ namespace CSMarkWinForms.Patronage{
                 MessageBox.Show(result.ExtendedError.Message, result.ExtendedError.HResult.ToString());
             }
 
-            MessageBox.Show("Purchase Finished with status " + result.Status);
+            MessageBox.Show(resultString);
+
+            if(result.Status == StorePurchaseStatus.AlreadyPurchased || result.Status == StorePurchaseStatus.Succeeded){
+                MessageBox.Show("Join the CSMark Discord (https://discord.gg/AEt46J) and PM a Moderator to get Patron exclusives!", "Discord Information");
+            }
         }
     }
 }

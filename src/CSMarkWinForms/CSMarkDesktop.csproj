@@ -178,7 +178,7 @@
     <EmbeddedResource Include="Forms\Results\ResultsOverview.resx">
       <DependentUpon>ResultsOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Upgrade\PrimeOverview.resx">
+    <EmbeddedResource Include="Forms\Upgrade\PremiumOverview.resx">
       <DependentUpon>PremiumOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">

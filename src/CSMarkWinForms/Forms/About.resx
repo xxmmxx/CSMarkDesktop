@@ -123,7 +123,7 @@
 CSMark's development is supported through monthly donations made by users just like you.
 
 CSMarkDesktop makes use of the following Open Source Software: 
-* AluminiumCoreLib                                    - Licensed under the MPL 2.0 license.
+* AluminiumCoreLib                                   - Licensed under the MIT license.
 * CSMarkLib                                              - Licensed under the MPL 2.0 license.
 * NewtonsoftJSON                                     - Licensed under the MIT license.
 * AutoUpdater.NET                                     - Licensed under the MIT license.</value>

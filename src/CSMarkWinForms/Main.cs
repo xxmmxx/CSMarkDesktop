@@ -21,6 +21,7 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 ///
 using CSMarkWinForms.Patronage;
+using CSMarkWinForms.UWP.Patronage;
 
 namespace CSMarkWinForms{
     public partial class Main : Form{
@@ -37,7 +38,6 @@ namespace CSMarkWinForms{
         StressTestController stc = new StressTestController();
         private string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
         //Supported Versions of Windows
-        private Version win10v1703 = new Version(10, 0, 15063, 0);
         private Version win10v1709 = new Version(10, 0, 16299, 0);
         private Version win10v1803 = new Version(10, 0, 17134, 0);
 
@@ -46,13 +46,15 @@ namespace CSMarkWinForms{
         private Timer t;
         private Platform platform;
 
+        private IAPManagement management;
+
         private enum DistributionPlatform{
             SteamStore,
             WinStore,
             GitRepository
         }
 
-        ContributorLevel level = ContributorLevel.StorePremium;
+        ContributorLevel level = ContributorLevel.Free;
 
         public Main(){
             InitializeComponent();
@@ -61,9 +63,13 @@ namespace CSMarkWinForms{
             platform = new Platform();
             btc = new BenchmarkController();
 
+            getPremiumBtn.Visible = true;
+
             if (DetermineDistributionPlatform().Equals(DistributionPlatform.GitRepository)){
                 AutoUpdater.Start(stableURL);
             }
+            management = new IAPManagement();
+            
             DetermineContributorLevel();
         }
 
@@ -162,36 +168,39 @@ namespace CSMarkWinForms{
             }
             else{
                 distribution = DistributionPlatform.GitRepository;
-                getPremiumBtn.Enabled = false;
-                getPremiumBtn.Visible = false;
+              //  getPremiumBtn.Enabled = false;
+             //   getPremiumBtn.Visible = false;
             }
-            //Store Testing: 
-            getPremiumBtn.Enabled = true;
-            getPremiumBtn.Visible = true;
 
             return distribution;
         }
         /// <summary>
         /// Determine what level of contribution the current user is at.
         /// </summary>
-        private ContributorLevel DetermineContributorLevel(){ 
+        private ContributorLevel DetermineContributorLevel(){
+            DateTimeOffset expiration = new DateTimeOffset();
+
+            if (management.IsActiveIAP()){
+                level = ContributorLevel.StorePremium;
+               expiration = management.GetIAPExpirationDate();
+            }           
+
             if (level.Equals(ContributorLevel.Free)){
                 contributionStatus.Text = "FREE";
                 contributionStatus.ForeColor = Color.Lime;
                 getPremiumBtn.Visible = true;
+                expiryLabel.Text = "Expires: Never";
             }
             else if (level.Equals(ContributorLevel.PatronPremium) || level.Equals(ContributorLevel.StorePremium))
             {
-                contributionStatus.Text = "Premium";
-                contributionStatus.ForeColor = Color.RoyalBlue;
-                //  getPremiumBtn.Text = "Get PRO";
-                //getPremiumBtn.ForeColor = Color.OrangeRed;
+                contributionStatus.Text = "PREMIUM EDITION";
+                contributionStatus.ForeColor = Color.Goldenrod;
                 getPremiumBtn.Visible = false;
+                expiryLabel.Text = "Expires: " + expiration.Date.ToShortDateString();
             }
             else if (level.Equals(ContributorLevel.PatronPro)){
                 contributionStatus.Text = "PRO";
                 contributionStatus.ForeColor = Color.OrangeRed;
-                ///
                 getPremiumBtn.Visible = false;
             }
             else if (level.Equals(ContributorLevel.PatronSponsor)){
@@ -243,47 +252,6 @@ namespace CSMarkWinForms{
             //    MessageBox.Show(Height.ToString());
         }
 
-        private string FormatDateVersion()
-        {
-            string major = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major.ToString();
-            string minor = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString();
-            string build = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
-            string revision = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision.ToString();
-
-            version.Text = version.Text = major.ToString() + "." + minor.ToString() + "." + build.ToString() + "." + revision.ToString();
-
-            string existingString = "";
-            string newString = "0";
-
-            //Fix the date version format for the minor version
-            if (minor.Length.Equals(1))
-            {
-                existingString = minor;
-                newString = newString + existingString;
-                minor = newString;
-            }
-
-            ///Smart auto correcting version syste,.
-             if (build.Equals("0"))
-            {
-                version.Text = major.ToString() + "." + minor.ToString();
-            }
-            else if (revision.Equals("0"))
-            {
-                version.Text = major.ToString() + "." + minor.ToString() + "." + build.ToString();
-            }
-            else if (!revision.Equals("0"))
-            {
-                version.Text = major.ToString() + "." + minor.ToString() + "." + build.ToString() + "." + revision.ToString();
-            }
-
-            if (major.Equals("0")){
-                version.Text = major.ToString() + "." + minor.ToString() + "." + build.ToString();
-            }
-
-            return version.Text;
-        }
-
         private string FormatFriendlyVersion()
         {
             string major = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major.ToString();
@@ -321,10 +289,7 @@ namespace CSMarkWinForms{
             FormatFriendlyVersion();
             DetermineContributorLevel();
             DetermineDistributionPlatform();
-            settingsButton.Visible = false;
-
-            getPremiumBtn.Visible = false;
-            getPremiumBtn.Enabled = false;
+            settingsButton.Visible = false;      
         }
         #region Button click handling
         private void aboutButton_Click(object sender, EventArgs e){
@@ -356,18 +321,12 @@ namespace CSMarkWinForms{
         #endregion
 
         private void getPremiumBtn_Click(object sender, EventArgs e){
-        //    Form Premiumform = new Forms.Upgrade.PremiumOverview();
-         //   Premiumform.ShowDialog();
+            Form Premiumform = new Forms.Upgrade.PremiumOverview();
+            Premiumform.ShowDialog();
         }
-
         private void Main_Enter(object sender, EventArgs e)
         {
-         //   if (subWrapper.GetContributorLevel() == ContributorLevel.StorePremium)
-         //   {
-        //        getPremiumBtn.Enabled = false;
-       //         getPremiumBtn.Visible = false;
-       //         DetermineContributorLevel();
-       //     }
+
         }
     }
 }
