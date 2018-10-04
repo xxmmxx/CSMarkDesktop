@@ -24,7 +24,7 @@ namespace CSMarkWinForms.UWP.Patronage{
         private string premium6months_id = "9NFTTGL0LTL2";
         private string premium12months_id = "9PL25LNX6403";
 
-        private DateTimeOffset expirationdate;
+        private string expirationdate;
         private bool isActive;
         private string productPurchased = "";
 
@@ -106,7 +106,7 @@ namespace CSMarkWinForms.UWP.Patronage{
             premium12monthspriceString = value;
         }
 
-        public DateTimeOffset GetIAPExpirationDate(){
+        public string GetIAPExpirationDate(){
             try{
                 return expirationdate;
             }
@@ -143,8 +143,9 @@ namespace CSMarkWinForms.UWP.Patronage{
                 // may need additional code to configure the StoreContext object.
                 // For more info, see https://aka.ms/storecontext-for-desktop.
             }
-
             StoreAppLicense appLicense = await storeContext.GetAppLicenseAsync();
+            isActive = appLicense.IsActive;
+            expirationdate = appLicense.ExpirationDate.Day.ToString() + "/" + appLicense.ExpirationDate.Month.ToString();
 
             // Access the valid licenses for durable add-ons for this app.
             foreach (KeyValuePair<string, StoreLicense> item in appLicense.AddOnLicenses)
@@ -157,7 +158,6 @@ namespace CSMarkWinForms.UWP.Patronage{
                 if (addOnLicense.SkuStoreId == premium3months_id){
                     if (addOnLicense.IsActive){
                         productPurchased = "premium3months";
-                        expirationdate = addOnLicense.ExpirationDate;
                         isActive = true;
                     }
                 }
@@ -165,7 +165,6 @@ namespace CSMarkWinForms.UWP.Patronage{
                 else if (addOnLicense.SkuStoreId == premium6months_id){
                     if (addOnLicense.IsActive){
                         productPurchased = "premium6months";
-                        expirationdate = addOnLicense.ExpirationDate;
                         isActive = true;
                     }
                 }
@@ -173,7 +172,6 @@ namespace CSMarkWinForms.UWP.Patronage{
                 else if (addOnLicense.SkuStoreId == premium12months_id){
                     if (addOnLicense.IsActive){
                         productPurchased = "premium12months";
-                        expirationdate = addOnLicense.ExpirationDate;
                         isActive = true;
                     }
                 }

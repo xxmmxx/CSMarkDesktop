@@ -10,9 +10,6 @@ using System.Windows;
 using Newtonsoft.Json.Linq;
 
 namespace CSMarkWinForms.UWP.Services{
-    /// <summary>
-    /// 
-    /// </summary>
     public class EngagementServicesWrapper{
         //Declare the IInitializeWithWindow interface in your app's code with the ComImport attribute
         [ComImport]

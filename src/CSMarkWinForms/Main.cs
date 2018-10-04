@@ -69,6 +69,7 @@ namespace CSMarkWinForms{
                 AutoUpdater.Start(stableURL);
             }
             management = new IAPManagement();
+            management.IsAPremiumUser();
             
             DetermineContributorLevel();
         }
@@ -178,11 +179,9 @@ namespace CSMarkWinForms{
         /// Determine what level of contribution the current user is at.
         /// </summary>
         private ContributorLevel DetermineContributorLevel(){
-            DateTimeOffset expiration = new DateTimeOffset();
-
             if (management.IsActiveIAP()){
                 level = ContributorLevel.StorePremium;
-               expiration = management.GetIAPExpirationDate();
+                expiryLabel.Text = management.GetIAPExpirationDate();
             }           
 
             if (level.Equals(ContributorLevel.Free)){
@@ -196,7 +195,7 @@ namespace CSMarkWinForms{
                 contributionStatus.Text = "PREMIUM EDITION";
                 contributionStatus.ForeColor = Color.Goldenrod;
                 getPremiumBtn.Visible = false;
-                expiryLabel.Text = "Expires: " + expiration.Date.ToShortDateString();
+                expiryLabel.Text = "Expires: " + management.GetIAPExpirationDate();
             }
             else if (level.Equals(ContributorLevel.PatronPro)){
                 contributionStatus.Text = "PRO";
