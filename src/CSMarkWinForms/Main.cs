@@ -208,6 +208,10 @@ namespace CSMarkWinForms{
                 ///
                 getPremiumBtn.Visible = false;
             }
+
+            //temporarily disable expiry date
+            expiryLabel.Visible = false;
+
             return level;
         }
 
