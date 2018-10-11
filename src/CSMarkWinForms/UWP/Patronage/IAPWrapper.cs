@@ -79,7 +79,7 @@ namespace CSMarkWinForms.Patronage{
             MessageBox.Show(resultString);
 
             if(result.Status == StorePurchaseStatus.AlreadyPurchased || result.Status == StorePurchaseStatus.Succeeded){
-                MessageBox.Show("Join the CSMark Discord (https://discord.gg/AEt46J) and PM a Moderator to get Patron exclusives!", "Discord Information");
+                MessageBox.Show("Join the CSMark Discord (https://discord.gg/VDUV7Dd) and PM a Moderator to get Patron exclusives!", "Discord Information");
             }
         }
     }
