@@ -1,23 +1,17 @@
 ## CSMarkDesktop Privacy Policy
 
-Version: v1807.1
+Version: v18.10.0
 
-Last Edited: July 25th 2018
+Last Edited: October 14th 2018
 
-Effective Date: July 25th 2018
+Effective Date: October 14th 2018
 
 This privacy policy governs how the Author and Contributors ("developers", "we", "us") of this Software Application collect, use, maintain, and disclose information collected from its users (individually, a "you") of CSMarkDesktop, CSMark Updating Services, the CSMarkLib Library, and any library or framework that CSMark may rely on (collectively "services").
 
 This privacy policy affects all products and services offered by us.
 
 ## Personally Identifiable information
-We may collect personally identifiable information that you provide us with should you choose to: open a Support Ticket, financially support us on Patreon, opt-in to marketing emails or in case we need to notify you of possible security issues. 
-
-We may also collect personally identifiable information to fulfil our obligations to our Patrons such as sending Thank You Emails, providing other rewards, and to verify your eligbility of features or rewards in our services.
-
-This information may include your email address, your name, how much money you have donated to us (if you have done so), and what reward tier you receive.
-
-We do not collect and will never ask you for your date of birth, your billing address, your debit/credit card number, your device's serial number, your device's IMEI number for LTE devices, and any passwords relating to any of our services.
+We do not collect and will never ask you for your date of birth, your device's serial number, your device's IMEI number for LTE devices, and any passwords relating to any of our services.
 
 If we receive any personally identifiable information that we have not asked you for, we will try to delete it from our systems and inform you within a reasonable time frame.
 
@@ -29,13 +23,11 @@ We may collect non-personally identifiable information when users interact with 
 We may collect information such as:
 * Your Operating system and operating system version. E.g. Windows 10 Build 16299
 * System Information such as your Processor Model, Total Memory Capacity, Amount of Available Memory, and Processor Core & Thread Count etc. E.g. AMD Ryzen 7 1700X 8 Core CPU @ 3.4GHz, 16GB Total RAM, 8GB Available RAM,  8 Cores & 16 Threads
-* The number of processes running on your computer at the time of you interacting with our services. E.g. 140
 * Installed Product Version E.g. 1.0.0.0
 * Latest Available Product Version E.g. 1.10.3.0
 * The Type of Device you're using (sometimes known as Device Family) E.g. Desktop
 * Crash Statistics and Error Reporting E.g. Unhandled Out Of Bounds Exception
 * Benchmark Results E.g. Overall Single Threaded Score: 6887.29 CSMark Points
-* UI Theme you have selected E.g. Really Dark Theme
 * Whether you have opted in to receive Beta Updates E.g. True
 * Whethere you have opted out of checking for updates on startup E.g. False
 
@@ -52,9 +44,6 @@ Data may be transferred from our services to other apps, databases or servers us
 
 ## Sharing your information with 3rd parties.
 We do not sell, rent, or trade user information. We may share aggregated non-personally identifiable information with others such as but not limited to business partners, affiliates, and our users.
-
-## Rollbar
-For our error reporting, we may use Rollbar's reporting services to allow us to view errors as they occur in real time. Rollbar uses this information to fulfill requests, and to offer products and services. Rollbar does not collect personally identifiable information when it performs error reporting. You may view the Rollbar Privacy Policy [here](https://rollbar.com/privacy/).
 
 ## Compliance with Children's Online Privacy Protection Act (COPPA)
 We believe that protecting the privacy of children is important and that for that reason we do not knowingly collect or store information from users who are under the age of 13. Our services are not structured or designed to attract anyone under the age of 13.
