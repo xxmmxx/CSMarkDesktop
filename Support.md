@@ -27,4 +27,4 @@ These are:
 
 | Support Category | Release Status | Release Version | Release Date | Mainstream Support Start | Mainstream Support End |
 |---------------|---------------|----------|--------------|-----------------|------------------|
-| Short Term Support | Preview | CSMark 0.32 | August 23rd 2018 | August 23rd 2018 | October 23rd 2018 |
+| Short Term Support | Preview | CSMark for Windows 0.32 | August 23rd 2018 | August 23rd 2018 | November 23rd 2018 |
