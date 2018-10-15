@@ -149,16 +149,6 @@
     <Compile Include="UWP\Patronage\IAPWrapper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings\Preferences.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Preferences.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Settings\Results.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Results.settings</DependentUpon>
-    </Compile>
     <Compile Include="UWP\Services\EngagementServicesWrapper.cs" />
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -186,14 +176,6 @@
     </Compile>
     <None Include="CSMarkWinForms_TemporaryKey.pfx" />
     <None Include="packages.config" />
-    <None Include="Settings\Preferences.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Preferences.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Settings\Results.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Results.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
