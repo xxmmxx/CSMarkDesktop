@@ -1,17 +1,17 @@
 ## CSMarkDesktop Privacy Policy
 
-Version: v18.10.0
+Version: v18.10.1
 
-Last Edited: October 14th 2018
+Last Edited: October 16th 2018
 
-Effective Date: October 14th 2018
+Effective Date: October 16th 2018
 
 This privacy policy governs how the Author and Contributors ("developers", "we", "us") of this Software Application collect, use, maintain, and disclose information collected from its users (individually, a "you") of CSMarkDesktop, CSMark Updating Services, the CSMarkLib Library, and any library or framework that CSMark may rely on (collectively "services").
 
 This privacy policy affects all products and services offered by us.
 
 ## Personally Identifiable information
-We do not collect and will never ask you for your date of birth, your device's serial number, your device's IMEI number for LTE devices, and any passwords relating to any of our services.
+We do not collect and will never ask you for your date of birth, your device's serial number, your device's IMEI number for 3G/4G/LTE devices, and any passwords relating to any of our services.
 
 If we receive any personally identifiable information that we have not asked you for, we will try to delete it from our systems and inform you within a reasonable time frame.
 
@@ -25,9 +25,8 @@ We may collect information such as:
 * System Information such as your Processor Model, Total Memory Capacity, Amount of Available Memory, and Processor Core & Thread Count etc. E.g. AMD Ryzen 7 1700X 8 Core CPU @ 3.4GHz, 16GB Total RAM, 8GB Available RAM,  8 Cores & 16 Threads
 * Installed Product Version E.g. 1.0.0.0
 * Latest Available Product Version E.g. 1.10.3.0
-* The Type of Device you're using (sometimes known as Device Family) E.g. Desktop
 * Crash Statistics and Error Reporting E.g. Unhandled Out Of Bounds Exception
-* Benchmark Results E.g. Overall Single Threaded Score: 6887.29 CSMark Points
+* Benchmark Results E.g. Overall Single Threaded Score: 687.29 CSMark Points
 * Whether you have opted in to receive Beta Updates E.g. True
 * Whethere you have opted out of checking for updates on startup E.g. False
 
