@@ -5,14 +5,8 @@ using CSMarkLib.BenchmarkManagement;
 using CSMarkWinForms.Forms;
 using CSMarkWinForms.Settings;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Windows.Forms;
 
 /// Using Namespaces to enable Subscriptions
@@ -20,8 +14,9 @@ using Windows.Services.Store;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 ///
-using CSMarkWinForms.Patronage;
 using CSMarkWinForms.UWP.Patronage;
+
+using CSMark.Desktop.Common;
 
 namespace CSMarkWinForms{
     public partial class Main : Form{
@@ -36,10 +31,6 @@ namespace CSMarkWinForms{
 
         BenchmarkController btc;
         StressTestController stc = new StressTestController();
-        private string stableURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/wpf/stable.xml";
-        //Supported Versions of Windows
-        private Version win10v1709 = new Version(10, 0, 16299, 0);
-        private Version win10v1803 = new Version(10, 0, 17134, 0);
 
         private bool runningStressTest = false;
         private DateTime start;
@@ -48,13 +39,10 @@ namespace CSMarkWinForms{
 
         private IAPManagement management;
 
-        private enum DistributionPlatform{
-            SteamStore,
-            WinStore,
-            GitRepository
-        }
-
+        private SetupManager setup = new SetupManager(true);
+        private BenchmarkManager benchmark = new BenchmarkManager();
         ContributorLevel level = ContributorLevel.Free;
+        bool UseBetaChannel = false;
 
         public Main(){
             InitializeComponent();
@@ -62,15 +50,17 @@ namespace CSMarkWinForms{
             Assembly assembly = Assembly.GetEntryAssembly();
             platform = new Platform();
             btc = new BenchmarkController();
-
             getPremiumBtn.Visible = true;
 
-            if (DetermineDistributionPlatform().Equals(DistributionPlatform.GitRepository)){
-                AutoUpdater.Start(stableURL);
+            if (!setup.OSCompatibilityCheck()){
+                throw new Exception("Your are running an old version of Windows which CSMark Doesn't support. Please update to Windows 10 Version 1709 or newer.");
+            }           
+
+            if (setup.DetermineDistributionPlatform().Equals(DistributionPlatform.GitRepository)){
+                setup.CheckForUpdate(UseBetaChannel);
             }
             management = new IAPManagement();
-            management.IsAPremiumUser();
-            
+            management.IsAPremiumUser();    
             DetermineContributorLevel();
         }
 
@@ -78,44 +68,28 @@ namespace CSMarkWinForms{
         private void HandleStressTest(){
             if (runningStressTest != true){
                 startBenchmarkBtn.Enabled = false;
-                runningStressTest = true;
-                //Start the Stress Test as a new Task to ensure good UI performance.
-                var startStressTest = new Task(() => stc.StartMultiStressTest());
-                startStressTest.Start();
+                runningStressTest = true;                 
                 //Create the dispatcher timer so we can see how long a stress test runs for.
                 t = new Timer();
                 t.Tick += TimerTickEvent;
                 start = DateTime.Now;
                 //Reset the stressTimer label.
                 //    stressTimer.Content = "";
+                startStressTestBtn.BackColor = Color.Red;
+                startStressTestBtn.Text = "Stop Stress Test";             
             }
             else{
                 runningStressTest = false;
                 startBenchmarkBtn.Enabled = true;
-                stc.StopStressTest();
-                //  var stopStressTest = new Task(() => stc.StopStressTest());
-                //    stopStressTest.Start();
-                t.Stop();
-            }
-
-            ApplyStresTestButtonColors();
-        }
-        private void ApplyStresTestButtonColors(){
-            if (runningStressTest == false)
-            {
                 startStressTestBtn.BackColor = Color.Green;
                 startStressTestBtn.Text = "Start Stress Test";
             }
-            else{
-                startStressTestBtn.BackColor = Color.Red;
-                startStressTestBtn.Text = "Stop Stress Test";
-            }
+
+            benchmark.HandleStressTest(runningStressTest);
         }
         private void StartBenchmark(){
             try{
-                var benchmarkWorkTask = new Task(() => BenchmarkWork());
-                benchmarkWorkTask.Start();
-                benchmarkWorkTask.Wait();
+                benchmark.StartBenchmark();
 
                 startBenchmarkBtn.Invoke(new Action(() => { startBenchmarkBtn.Enabled = true; }));
                 startBenchmarkBtn.Invoke(new Action(() => { startBenchmarkBtn.Text = "Start Benchmark"; }));
@@ -130,23 +104,7 @@ namespace CSMarkWinForms{
                 MessageBox.Show(ex.ToString());
             }
         }
-        private async void BenchmarkWork(){
-       //     var warmupTask = Task.Factory.StartNew(() => btc.DoWarmup());
-         //   warmupTask.Wait((60) * 1000);
-            var task1 = Task.Factory.StartNew(() => btc.StartSingleBenchmarkTests());
-            task1.Wait((120 * 5) * 1000);
-            var task2 = Task.Factory.StartNew(() => btc.StartMultiBenchmarkTests());
-            task2.Wait((120 * 5) * 1000);
 
-            /*    HashMap<BenchmarkType, CSMarkLib.BenchmarkLib.Benchmark> hash = btc.ReturnBenchmarkObjects();
-                var resultSaver = new ResultSaver();
-                var result = resultSaver.SaveResult(true, hash);
-                */
-
-            Results.Default.BenchmarkResult = btc.SaveResult(true, true);
-        //    Results.Default.BenchmarkResult = result;
-            Results.Default.Save();
-        }
         private void TimerTickEvent(object sender, EventArgs e){
             if (runningStressTest){
                 //stressTimer.Content = Convert.ToString(DateTime.Now - start);
@@ -154,27 +112,6 @@ namespace CSMarkWinForms{
         }
         #endregion
         #region Utility Misc stuff
-
-        /// <summary>
-        /// Determine what distribution platform CSMark has come from.
-        /// </summary>
-        private DistributionPlatform DetermineDistributionPlatform(){
-            DistributionPlatform distribution = DistributionPlatform.GitRepository;
-
-            string currentDirectory = Environment.CurrentDirectory;
-
-            if (currentDirectory.Contains("16188AluminiumTech.CSMark_20gejd9zdp9ny")){
-                distribution = DistributionPlatform.WinStore;
-                Text += " Windows Store Version";
-            }
-            else{
-                distribution = DistributionPlatform.GitRepository;
-              //  getPremiumBtn.Enabled = false;
-             //   getPremiumBtn.Visible = false;
-            }
-
-            return distribution;
-        }
         /// <summary>
         /// Determine what level of contribution the current user is at.
         /// </summary>
@@ -190,8 +127,7 @@ namespace CSMarkWinForms{
                 getPremiumBtn.Visible = true;
                 expiryLabel.Text = "Expires: Never";
             }
-            else if (level.Equals(ContributorLevel.PatronPremium) || level.Equals(ContributorLevel.StorePremium))
-            {
+            else if (level.Equals(ContributorLevel.PatronPremium) || level.Equals(ContributorLevel.StorePremium)){
                 contributionStatus.Text = "PREMIUM EDITION";
                 contributionStatus.ForeColor = Color.Goldenrod;
                 getPremiumBtn.Visible = false;
@@ -254,44 +190,15 @@ namespace CSMarkWinForms{
             //      MessageBox.Show(Width.ToString());
             //    MessageBox.Show(Height.ToString());
         }
-
-        private string FormatFriendlyVersion()
-        {
-            string major = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major.ToString();
-            string minor = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString();
-            string build = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
-            string revision = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Revision.ToString();
-
-            ///Smart auto correcting version syste,.
-            if (build.Equals("0"))
-            {
-                version.Text = major.ToString() + "." + minor.ToString();
-            }
-            else if (revision.Equals("0"))
-            {
-                version.Text = major.ToString() + "." + minor.ToString() + "." + build.ToString();
-            }
-            else if (!revision.Equals("0"))
-            {
-                version.Text = major.ToString() + "." + minor.ToString() + "." + build.ToString() + "." + revision.ToString();
-            }
-
-            if (major.Equals("0"))
-            {
-                version.Text = major.ToString() + "." + minor.ToString() + "." + build.ToString();
-            }
-
-            return version.Text;
-        }
+        
         #endregion
         private void Main_Load(object sender, EventArgs e){
             Text = ProductName;
             title.Text = ProductName;
             PositionIcons();
             DoScaling(); 
-            FormatFriendlyVersion();
             DetermineContributorLevel();
-            DetermineDistributionPlatform();
+            setup.DetermineDistributionPlatform();
             settingsButton.Visible = false;      
         }
         #region Button click handling

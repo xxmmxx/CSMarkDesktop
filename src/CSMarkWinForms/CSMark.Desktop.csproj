@@ -144,7 +144,6 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="UWP\Patronage\ContributorLevel.cs" />
     <Compile Include="UWP\Patronage\IAPManagement.cs" />
     <Compile Include="UWP\Patronage\IAPWrapper.cs" />
     <Compile Include="Program.cs" />
@@ -182,7 +181,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSMark NextGen Logo 256x.ico" />
-    <Content Include="patron_button.png" />
     <Content Include="ThirdPartyLicenses\AluminiumCoreLib.Hardware_License.txt" />
     <Content Include="ThirdPartyLicenses\AluminiumCoreLib_License.txt" />
     <Content Include="ThirdPartyLicenses\AutoUpdater.NET_License.txt" />
@@ -201,6 +199,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CSMark.Desktop.Common\CSMark.Desktop.Common.csproj">
+      <Project>{92704E5E-4F00-4D18-A433-F1DF78E820C6}</Project>
+      <Name>CSMark.Desktop.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autoupdater.NET.Official" Version="1.4.11" />
+    <PackageReference Include="CSMarkLib.Benchmark" Version="1.4.6" />
+    <PackageReference Include="CSMarkLib.StressTest" Version="2.0.0-preview9" />
+    <PackageReference Include="CSMarkLib.UpdatingServices" Version="1.1.0-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Settings\Preferences.Designer.cs">
       <DependentUpon>Preferences.settings</DependentUpon>
       <AutoGen>True</AutoGen>

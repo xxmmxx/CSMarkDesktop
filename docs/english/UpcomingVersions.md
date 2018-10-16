@@ -4,6 +4,7 @@ This document contains a list of upcoming releases of CSMark Desktop.
 ## 0.32.9
 * Minor tweaks to enable moving away from WinForms easier in the future.
 * Disable saving results as files in Windows Store version because Microsoft.
+* [?] Possibly add ability to change background to an image.
 
 ## 0.32.10/0.33.0
 * Reliability improvements
@@ -27,5 +28,6 @@ This document contains a list of upcoming releases of CSMark Desktop.
 **Highlight Features**
 * Patreon Integration to allow for Patreon Rewards
 
-### Future 0.3x.x release
+### Future release
 **Highlight Features**
+* Branded CSMark wallpaper.
