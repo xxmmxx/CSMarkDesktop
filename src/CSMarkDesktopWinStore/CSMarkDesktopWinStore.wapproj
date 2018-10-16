@@ -45,6 +45,7 @@
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+    <EntryPointProjectUniqueName>..\CSMarkWinForms\CSMark.Desktop.csproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AppxBundle>Always</AppxBundle>
