@@ -8,8 +8,6 @@ This document contains a list of upcoming releases of CSMark Desktop.
 
 ## 0.32.10
 * Reliability improvements
-* Add the ability to launch FeedbackHub from within Windows Store app.
-* Add the ability to review/rate windows store app from within Windows Store App.
 * Official support for Windows 10 Build 17763 (October 2018 Update)
 
 ## 0.32.11
@@ -19,6 +17,8 @@ This document contains a list of upcoming releases of CSMark Desktop.
 
 ## 0.33.0
 * [Windows Store Users] Xamarin.Forms UWP App which shares code with "CSMark.Desktop.Common" project. Also contains UWP specific features.
+* Added the ability to launch FeedbackHub from within Windows Store app.
+* Added the ability to review/rate windows store app from within Windows Store App.
 
 ## 0.34.0
 **Highlight Features**
