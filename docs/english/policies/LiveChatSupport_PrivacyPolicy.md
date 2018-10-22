@@ -1,19 +1,41 @@
-## CSMarkDesktop Privacy Policy
+## CSMark LiveChat Support Privacy Policy
 
-Version: v18.10.1
+Version: v18.10.2
 
-Last Edited: October 16th 2018
+Last Edited: October 22nd 2018
 
-Effective Date: October 16th 2018
+Effective Date: October 22nd 2018
 
-This privacy policy governs how the Author and Contributors ("developers", "we", "us") of this Software Application collect, use, maintain, and disclose information collected from its users (individually, a "you") of CSMarkDesktop, CSMark Updating Services, the CSMarkLib Library, and any library or framework that CSMark may rely on (collectively "services").
+
+## Definitions
+Author and Contributors, LiveChat Agents, Customer Support Agents - "developers", "authors", "contributors, "we", "us", "agents"
+
+Users, LiveChat Guests, Customers - individually, "you", "guest", "customer"
+
+LiveChat Support Services - "product", "project", "service"
+
+Privacy Policy - "privacy", "policy"
+
+## Introduction
+
+This policy governs how we use, maintain, and disclose information collected from users of the product.
+
+This policy affects all users of the product.
+
 
 ## Personally Identifiable information
-We do not collect and will never ask you for your date of birth, your device's serial number, your device's IMEI number for 3G/4G/LTE devices, and any passwords relating to any of our services.
+
+We may collect personally identifiable information such as your name and your email address.
 
 If we receive any personally identifiable information that we have not asked you for, we will try to delete it from our systems and inform you within a reasonable time frame.
 
 If we receive information that you are under the age of 13 through information volunteered by you, we will act accordingly in compliance with the law and as outlined in our Compliance section below.
+
+
+### Disclosures
+
+We do not collect and will never ask you for your date of birth, your device's serial number, your device's IMEI number for 3G/4G/LTE devices, and any passwords relating to any of our services.
+
 
 ## Non Personally Identifiable Information
 We may collect non-personally identifiable information when users interact with our services.
@@ -28,11 +50,13 @@ We may collect information such as:
 * Whether you have opted in to receive Beta Updates E.g. True
 * Whethere you have opted out of checking for updates on startup E.g. False
 
+
 ## How we use collected information
 We may collect and use information for the following purposes:
 
 * To improve our services - We may use feedback as well as system information and telemetry data to improve our services.
 * To improve customer support and customer service - Information you give us helps us respond to any customer service requests or support needs you may have in a more efficient manner.
+
 
 ## How we protect your data
 We adopt appropriate practices and techniques to prevent unauthorized access or disclosure of your data.
@@ -40,10 +64,12 @@ We adopt appropriate practices and techniques to prevent unauthorized access or 
 Data may be transferred from our services to other apps, databases or servers using SSL as well as HTTP Secure to ensure that information collected is transmitted securely.
 
 ## Sharing your information with 3rd parties.
-We do not sell, rent, or trade user information. We may share aggregated non-personally identifiable information with others such as but not limited to business partners, affiliates, and our users.
+We do not sell, rent, or trade user information. 
+
+We may share aggregated non-personally identifiable information with others such as but not limited to business partners, affiliates, and our users.
 
 ## Compliance with Children's Online Privacy Protection Act (COPPA)
-We believe that protecting the privacy of children is important and that for that reason we do not knowingly collect or store information from users who are under the age of 13. Our services are not structured or designed to attract anyone under the age of 13.
+We do not knowingly collect or store information from users who are under the age of 13. Our services are not structured or designed to attract anyone under the age of 13.
 
 If we discover that a user is under the age of 13 through information they have volunteered or otherwise, we will inform them that they are unable to use our services.
 
