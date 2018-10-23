@@ -1,6 +1,5 @@
 ﻿using CSMarkLib;
 using CSMarkLib.BenchmarkManagement;
-using CSMarkWinForms.Settings;
 using System;
 using System.Threading.Tasks;
 
@@ -9,6 +8,8 @@ namespace CSMark.Desktop.Common{
     /// 
     /// </summary>
     public class BenchmarkManager {
+
+        private Result resultX;
 
         private StressTestController stc = new StressTestController();
         private BenchmarkController btc = new BenchmarkController();
@@ -28,20 +29,22 @@ namespace CSMark.Desktop.Common{
         /// <summary>
         /// 
         /// </summary>
-        public void StartBenchmark(){
+        public Result StartBenchmark(){
             try{
                 var benchmarkWorkTask = new Task(() => BenchmarkWork());
                 benchmarkWorkTask.Start();
                 benchmarkWorkTask.Wait();
+                return resultX;
             }
             catch(Exception ex){
                 Console.WriteLine(ex);
+                return new Result();
             }
         }
         /// <summary>
         /// 
         /// </summary>
-        private async void BenchmarkWork(){
+        private Result BenchmarkWork(){
             //     var warmupTask = Task.Factory.StartNew(() => btc.DoWarmup());
             //   warmupTask.Wait((60) * 1000);
             var task1 = Task.Factory.StartNew(() => btc.StartSingleBenchmarkTests());
@@ -54,7 +57,8 @@ namespace CSMark.Desktop.Common{
                 var result = resultSaver.SaveResult(true, hash);
                 */
 
-            Results.Default.BenchmarkResult = btc.SaveResult(true, true);
+                resultX = btc.SaveResult(true, true);
+                return btc.SaveResult(true, true);
             //    Results.Default.BenchmarkResult = result;
           //  Results.Default.Save();
         }

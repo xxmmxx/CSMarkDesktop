@@ -1,5 +1,4 @@
-﻿using CSMarkWinForms.Settings;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +17,7 @@ namespace CSMarkWinForms.Forms{
         private void ResultsOverview_Load(object sender, EventArgs e){
             try{
                 processorThreadCount.Text = "Thread Count: " + Environment.ProcessorCount.ToString();
-                CSMarkLib.Result x = Settings.Results.Default.BenchmarkResult;
+                CSMarkLib.Result x = CSMarkWinForms.Results.Default.BenchmarkResult;
                 singleScoreResult.Text = x.OverallSingle.ToString();
                 multiScoreResult.Text = x.OverallMulti.ToString();
             }

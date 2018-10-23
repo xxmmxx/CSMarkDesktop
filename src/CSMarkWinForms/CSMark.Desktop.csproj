@@ -144,6 +144,11 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Results.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Results.settings</DependentUpon>
+    </Compile>
     <Compile Include="UWP\Patronage\IAPManagement.cs" />
     <Compile Include="UWP\Patronage\IAPWrapper.cs" />
     <Compile Include="Program.cs" />
@@ -175,6 +180,10 @@
     </Compile>
     <None Include="CSMarkWinForms_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Results.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Results.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

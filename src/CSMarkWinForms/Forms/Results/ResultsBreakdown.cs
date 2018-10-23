@@ -23,7 +23,7 @@ namespace CSMarkWinForms.Forms.Results
 
         private void ResultsBreakdown_Load(object sender, EventArgs e)
         {
-            Result x = Settings.Results.Default.BenchmarkResult;
+            Result x = CSMarkWinForms.Results.Default.BenchmarkResult;
             pythagorasMulti.Text = x.PythagorasMulti.ToString();
             pythagorasSingle.Text = x.PythagorasSingle.ToString();
 
@@ -48,7 +48,7 @@ namespace CSMarkWinForms.Forms.Results
 
         private void saveResultBtn_Click(object sender, EventArgs e){
             var btc = new BenchmarkController();
-            btc.SaveToTextFile("0.32.1.0", Settings.Results.Default.BenchmarkResult);
+            btc.SaveToTextFile("0.32.1.0", CSMarkWinForms.Results.Default.BenchmarkResult);
 
             MessageBox.Show("Your results text file has been saved at: " + Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "results", "File Saved");
         }

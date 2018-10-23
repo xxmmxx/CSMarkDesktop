@@ -3,7 +3,6 @@ using AutoUpdaterDotNET;
 using CSMarkLib;
 using CSMarkLib.BenchmarkManagement;
 using CSMarkWinForms.Forms;
-using CSMarkWinForms.Settings;
 using System;
 using System.Drawing;
 using System.Reflection;
@@ -89,13 +88,15 @@ namespace CSMarkWinForms{
         }
         private void StartBenchmark(){
             try{
-                benchmark.StartBenchmark();
+               Results.Default.BenchmarkResult = benchmark.StartBenchmark();
 
                 startBenchmarkBtn.Invoke(new Action(() => { startBenchmarkBtn.Enabled = true; }));
                 startBenchmarkBtn.Invoke(new Action(() => { startBenchmarkBtn.Text = "Start Benchmark"; }));
                 startBenchmarkBtn.Invoke(new Action(() => { startStressTestBtn.Enabled = true; }));
 
                 ResultsOverview ro = new ResultsOverview(version.Text);
+
+                Results.Default.Save();
 
                 Task t1 = new Task(() => ro.ShowDialog());
                 t1.Start();
@@ -222,8 +223,9 @@ namespace CSMarkWinForms{
             startStressTestBtn.Enabled = false;
             startBenchmarkBtn.Text = "Starting Benchmark...";
             startBenchmarkBtn.Enabled = false;
-            var task = new Task(() => StartBenchmark());
-            task.Start();
+            StartBenchmark();
+            // var task = new Task(() => StartBenchmark());
+           // task.Start();
         }
         private void startStressBtn_Click(object sender, EventArgs e){
             HandleStressTest();

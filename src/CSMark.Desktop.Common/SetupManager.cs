@@ -22,7 +22,7 @@ namespace CSMark.Desktop.Common {
         //Supported Versions of Windows for Non-Windows Store release
         private Version win10v1607 = new Version(10, 0, 14393, 0);
         private Version win10v1703 = new Version(10, 0, 15063, 0);
-        //Supported Versions of Windows for Windows Store release
+        //Supported Versions of Windows for Windows Store release and non Windows Store release
         private Version win10v1709 = new Version(10, 0, 16299, 0);
         private Version win10v1803 = new Version(10, 0, 17134, 0);    
         //Windows version(s) we will soon support
@@ -35,7 +35,7 @@ namespace CSMark.Desktop.Common {
             return (Environment.OSVersion.Version.Equals(win10v1607) ||  Environment.OSVersion.Version.Equals(win10v1703) || Environment.OSVersion.Version.Equals(win10v1709) || Environment.OSVersion.Version.Equals(win10v1803) || Environment.OSVersion.Version.Equals(win10v1809));
         }
         private bool OSCompatibilityCheck_Store(){
-            return (Environment.OSVersion.Version.Equals(win10v1709) || Environment.OSVersion.Version.Equals(win10v1803) || Environment.OSVersion.Version.Equals(win10v1809));
+            return (Environment.OSVersion.Version.Equals(win10v1709) || Environment.OSVersion.Version.Equals(win10v1803));
         }
 
         /// <summary>
