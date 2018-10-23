@@ -2,19 +2,23 @@
 This document contains a list of upcoming releases of CSMark Desktop.
 
 ## 0.32.9
+* Move to Apache 2.0 License
 * Minor tweaks to make moving away from WinForms easier in the future.
 * Disable saving results as files in Windows Store version because Microsoft.
-* [Non-windows Store Users] Possibly add ability to change background to an image.
 
 ## 0.32.10
 * Reliability improvements.
 * Official support for Windows 10 Build 17763 (October 2018 Update).
+* LiveChat customer support services built into CSMarkDesktop.
 
 ## 0.32.11
 * Updated the Premium purchase form.
 * [?] Possibly added Russian Language support.
 * Bug Fixes and reliability improvements.
-* LiveChat customer support services built into CSMarkDesktop.
+* [Non-windows Store Users] Possibly add ability to change background to an image.
+
+## 0.32.12
+* Bug Fixes and reliability improvements.
 
 ## 0.33.0
 * [Windows Store Users] Xamarin.Forms UWP App which shares code with "CSMark.Desktop.Common" project. Also contains UWP specific features.

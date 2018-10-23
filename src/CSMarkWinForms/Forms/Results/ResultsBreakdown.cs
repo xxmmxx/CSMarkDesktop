@@ -11,19 +11,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CSMarkWinForms.Forms.Results
-{
-    public partial class ResultsBreakdown : Form
-    {
+namespace CSMarkWinForms.Forms.Results{
+    public partial class ResultsBreakdown : Form{
 
-        public ResultsBreakdown()
-        {
+        public ResultsBreakdown(){
             InitializeComponent();
+
+            SetupManager setup = new SetupManager(true);
+            if(setup.DetermineDistributionPlatform().Equals(DistributionPlatform.WinStore){
+                saveResultBtn.Enabled = false;
+                saveResultBtn.Visible = false;
+            }
         }
 
-        private void ResultsBreakdown_Load(object sender, EventArgs e)
-        {
-            Result x = CSMarkWinForms.Results.Default.BenchmarkResult;
+
             pythagorasMulti.Text = x.PythagorasMulti.ToString();
             pythagorasSingle.Text = x.PythagorasSingle.ToString();
 
