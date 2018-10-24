@@ -16,7 +16,14 @@ namespace CSMarkWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+
+            if (Properties.Settings.Default.hasAcceptedTermsAndPrivacy){
+                Application.Run(new Main());
+            }
+            else{
+                Application.Run(new Forms.License.TermsAndPrivacyNotice());
+            }
+            
         }
     }
 }
