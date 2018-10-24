@@ -1,11 +1,6 @@
 ## Upcoming Versions
 This document contains a list of upcoming releases of CSMark Desktop.
 
-## 0.32.9
-* Move to Apache 2.0 License
-* Minor tweaks to make moving away from WinForms easier in the future.
-* Disable saving results as files in Windows Store version because Microsoft.
-
 ## 0.32.10
 * Reliability improvements.
 * Official support for Windows 10 Build 17763 (October 2018 Update).

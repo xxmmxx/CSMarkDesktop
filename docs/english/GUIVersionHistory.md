@@ -5,6 +5,7 @@ This document contains the version history of CSMarkGUI
 
 | Version | Desktop Availability | Changelog | CSMarkLib Version | AluminiumCoreLib Version |
 |---------|----------|-----------|----------------|----------------|
+| 0.32.9 | October 24th 2018 | https://github.com/CSMarkBenchmark/CSMarkDesktop/releases/tag/0.32.9 | 2.0.0 Preview 9 and 1.4.6 | 2.0.0 Alpha 3 |
 | 0.32.8 | October 15th 2018 | Update some dependencies. | 2.0.0 Preview 9 and 1.4.6 | 2.0.0 Alpha 3 |
 | 0.32.7 | October 4th 2018 | https://github.com/CSMarkBenchmark/CSMarkDesktop/releases/tag/0.32.7 | 2.0.0 Preview 9 and 1.4.6 | 2.0.0 Alpha 2 |
 | 0.32.6 | September 29th 2018 | https://github.com/CSMarkBenchmark/CSMarkDesktop/releases/tag/0.32.6 | 2.0.0 Preview 9 and 1.4.6 | 2.0.0 Alpha 2 |
@@ -35,3 +36,6 @@ This document contains the version history of CSMarkGUI
 | 0.29.2.2 (Beta Channel) | June 20th 2018 | https://github.com/CSMarkBenchmark/CSMarkDesktop/releases/tag/0.29.2.2 | 2.0.0 Preview 3 | 2.0.0 Alpha 1 |
 | 0.29.1 (Beta Channel) | June 5th 2018 | https://github.com/CSMarkBenchmark/CSMarkDesktop/releases/tag/0.29.1 | 2.0.0 Preview 3 | 2.0.0 Alpha 1 |
 | 0.29.0 (Beta Channel) | May 24th 2018 | https://github.com/CSMarkBenchmark/CSMarkDesktop/releases/tag/0.29.0 | 2.0.0 Preview 2 | Beta 1.4.1 |
+
+
+## For versions prior to 0.29 please see CSMarkCore VersionHistory.
