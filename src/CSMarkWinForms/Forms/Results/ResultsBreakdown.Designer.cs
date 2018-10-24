@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultsBreakdown));
             this.pythagorasSingle = new System.Windows.Forms.Label();
             this.singleOverall = new System.Windows.Forms.Label();
             this.singleScoreTxt = new System.Windows.Forms.Label();
@@ -350,7 +351,8 @@
             this.Controls.Add(this.singleScoreTxt);
             this.Controls.Add(this.pythagorasSingle);
             this.Controls.Add(this.singleOverall);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ResultsBreakdown";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CSMarkDesktop Benchmark Results Breakdown";
