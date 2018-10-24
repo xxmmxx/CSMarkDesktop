@@ -356,7 +356,6 @@
             this.Name = "ResultsBreakdown";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CSMarkDesktop Benchmark Results Breakdown";
-            this.Load += new System.EventHandler(this.ResultsBreakdown_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

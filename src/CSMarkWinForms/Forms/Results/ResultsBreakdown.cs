@@ -1,4 +1,5 @@
-﻿using CSMarkLib;
+﻿using CSMark.Desktop.Common;
+using CSMarkLib;
 using CSMarkLib.BenchmarkManagement;
 using System;
 using System.Collections.Generic;
@@ -18,12 +19,12 @@ namespace CSMarkWinForms.Forms.Results{
             InitializeComponent();
 
             SetupManager setup = new SetupManager(true);
-            if(setup.DetermineDistributionPlatform().Equals(DistributionPlatform.WinStore){
+            if(setup.DetermineDistributionPlatform().Equals(DistributionPlatform.WinStore)){
                 saveResultBtn.Enabled = false;
                 saveResultBtn.Visible = false;
             }
-        }
 
+            Result x = CSMarkWinForms.Results.Default.BenchmarkResult;
 
             pythagorasMulti.Text = x.PythagorasMulti.ToString();
             pythagorasSingle.Text = x.PythagorasSingle.ToString();
@@ -47,9 +48,9 @@ namespace CSMarkWinForms.Forms.Results{
             rbssLiteSingle.Text = x.RbssLiteSingle.ToString();
         }
 
-        private void saveResultBtn_Click(object sender, EventArgs e){
+    private void saveResultBtn_Click(object sender, EventArgs e){
             var btc = new BenchmarkController();
-            btc.SaveToTextFile("0.32.1.0", CSMarkWinForms.Results.Default.BenchmarkResult);
+            btc.SaveToTextFile("0.32.9.0", CSMarkWinForms.Results.Default.BenchmarkResult);
 
             MessageBox.Show("Your results text file has been saved at: " + Directory.GetCurrentDirectory() + Path.DirectorySeparatorChar + "results", "File Saved");
         }

@@ -51,13 +51,17 @@ namespace CSMarkWinForms{
             btc = new BenchmarkController();
             getPremiumBtn.Visible = true;
 
-            if (!setup.OSCompatibilityCheck()){
+           /* if (!setup.OSCompatibilityCheck()){
+                MessageBox.Show(Environment.OSVersion.ToString());
+                MessageBox.Show("Store: " + setup.OSCompatibilityCheck().ToString());
                 throw new Exception("Your are running an old version of Windows which CSMark Doesn't support. Please update to Windows 10 Version 1709 or newer.");
             }           
-
+            */
             if (setup.DetermineDistributionPlatform().Equals(DistributionPlatform.GitRepository)){
                 setup.CheckForUpdate(UseBetaChannel);
             }
+
+            version.Text = ProductVersion;
             management = new IAPManagement();
             management.IsAPremiumUser();    
             DetermineContributorLevel();
