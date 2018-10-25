@@ -20,6 +20,9 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain the issue.
 
+**Affects Versions**
+The versions that this bug affects.
+
 **Desktop (please complete the following information):**
  - OS: [e.g. Windows 10 Pro 64 Bit]
  - OS Version: [e.g. 10.0.17134.112]
