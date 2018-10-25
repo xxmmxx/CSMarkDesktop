@@ -181,23 +181,24 @@
             this.overclockWarning.AutoSize = true;
             this.overclockWarning.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.overclockWarning.ForeColor = System.Drawing.Color.White;
-            this.overclockWarning.Location = new System.Drawing.Point(335, 502);
+            this.overclockWarning.Location = new System.Drawing.Point(345, 504);
             this.overclockWarning.Name = "overclockWarning";
-            this.overclockWarning.Size = new System.Drawing.Size(500, 34);
+            this.overclockWarning.Size = new System.Drawing.Size(451, 51);
             this.overclockWarning.TabIndex = 37;
-            this.overclockWarning.Text = "Warning: Overclocking your CPU may damage it or void your warranty. \r\nDo so at yo" +
-    "ur own risk. For more information, visit your CPU manufacturer\'s website.";
+            this.overclockWarning.Text = "Warning: Overclocking your CPU may damage it and/or void your warranty. \r\n       " +
+    "                          Do so at your own risk. \r\nFor more information, visit " +
+    "your CPU manufacturer\'s website.";
             // 
             // copyrightNotice
             // 
             this.copyrightNotice.AutoSize = true;
             this.copyrightNotice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightNotice.ForeColor = System.Drawing.Color.White;
-            this.copyrightNotice.Location = new System.Drawing.Point(426, 569);
+            this.copyrightNotice.Location = new System.Drawing.Point(458, 569);
             this.copyrightNotice.Name = "copyrightNotice";
-            this.copyrightNotice.Size = new System.Drawing.Size(282, 17);
+            this.copyrightNotice.Size = new System.Drawing.Size(205, 17);
             this.copyrightNotice.TabIndex = 38;
-            this.copyrightNotice.Text = "Pre-release . Copyright (c) AluminiumTech 2018";
+            this.copyrightNotice.Text = "Copyright (c) AluminiumTech 2018";
             // 
             // getPremiumBtn
             // 

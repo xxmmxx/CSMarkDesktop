@@ -1,5 +1,4 @@
 ﻿using AluminiumCoreLib.Utilities;
-using AutoUpdaterDotNET;
 using CSMarkLib;
 using CSMarkLib.BenchmarkManagement;
 using CSMarkWinForms.Forms;
@@ -23,8 +22,7 @@ namespace CSMarkWinForms{
         [ComImport]
         [Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
         [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-        public interface IInitializeWithWindow
-        {
+        public interface IInitializeWithWindow{
             void Initialize(IntPtr hwnd);
         }
 
@@ -49,16 +47,25 @@ namespace CSMarkWinForms{
             Assembly assembly = Assembly.GetEntryAssembly();
             platform = new Platform();
             btc = new BenchmarkController();
-            getPremiumBtn.Visible = true;
 
-           /* if (!setup.OSCompatibilityCheck()){
-                MessageBox.Show(Environment.OSVersion.ToString());
-                MessageBox.Show("Store: " + setup.OSCompatibilityCheck().ToString());
-                throw new Exception("Your are running an old version of Windows which CSMark Doesn't support. Please update to Windows 10 Version 1709 or newer.");
-            }           
-            */
+            Text = ProductName;
+            title.Text = ProductName;
+
+            /* if (!setup.OSCompatibilityCheck()){
+                 MessageBox.Show(Environment.OSVersion.ToString());
+                 MessageBox.Show("Store: " + setup.OSCompatibilityCheck().ToString());
+                 throw new Exception("Your are running an old version of Windows which CSMark Doesn't support. Please update to Windows 10 Version 1709 or newer.");
+             }           
+             */
+
             if (setup.DetermineDistributionPlatform().Equals(DistributionPlatform.GitRepository)){
                 setup.CheckForUpdate(UseBetaChannel);
+                getPremiumBtn.Visible = false;
+
+            }
+            else if(setup.DetermineDistributionPlatform().Equals(DistributionPlatform.WinStore)){
+                Text += " Windows Store Version";
+                getPremiumBtn.Visible = true;
             }
 
             version.Text = ProductVersion;
@@ -156,8 +163,7 @@ namespace CSMarkWinForms{
             return level;
         }
 
-        private void DoScaling()
-        {
+        private void DoScaling(){
             title.Font = new Font("Segoe UI", 18);
             version.Font = new Font("Segoe UI", 18);
 
@@ -198,12 +204,8 @@ namespace CSMarkWinForms{
         
         #endregion
         private void Main_Load(object sender, EventArgs e){
-            Text = ProductName;
-            title.Text = ProductName;
             PositionIcons();
             DoScaling(); 
-            DetermineContributorLevel();
-            setup.DetermineDistributionPlatform();
             settingsButton.Visible = false;      
         }
         #region Button click handling

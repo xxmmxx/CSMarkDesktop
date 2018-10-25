@@ -20,7 +20,6 @@ namespace CSMark.Desktop.Common {
         private string betaURL = "https://raw.githubusercontent.com/CSMarkBenchmark/CSMarkDesktop/master/channels/win/beta.xml";
 
         //Supported Versions of Windows for Non-Windows Store release
-        private Version win10v1607 = new Version(10, 0, 14393, 0);
         private Version win10v1703 = new Version(10, 0, 15063, 0);
         //Supported Versions of Windows for Windows Store release and non Windows Store release
         private Version win10v1709 = new Version(10, 0, 16299, 0);
@@ -32,7 +31,7 @@ namespace CSMark.Desktop.Common {
             if (IsWindowsStoreApp){
                 return OSCompatibilityCheck_Store();
             }
-            return (Environment.OSVersion.Version.Equals(win10v1607) ||  Environment.OSVersion.Version.Equals(win10v1703) || Environment.OSVersion.Version.Equals(win10v1709) || Environment.OSVersion.Version.Equals(win10v1803) || Environment.OSVersion.Version.Equals(win10v1809));
+            return (Environment.OSVersion.Version.Equals(win10v1703) || Environment.OSVersion.Version.Equals(win10v1709) || Environment.OSVersion.Version.Equals(win10v1803) || Environment.OSVersion.Version.Equals(win10v1809));
         }
         private bool OSCompatibilityCheck_Store(){
             return (Environment.OSVersion.Version.Equals(win10v1709) || Environment.OSVersion.Version.Equals(win10v1803));
@@ -59,17 +58,20 @@ namespace CSMark.Desktop.Common {
         /// Determine what distribution platform CSMark has come from.
         /// </summary>
         public DistributionPlatform DetermineDistributionPlatform(){
-            DistributionPlatform distribution = DistributionPlatform.GitRepository;
             string currentDirectory = Environment.CurrentDirectory;
 
             if (currentDirectory.Contains("16188AluminiumTech.CSMark_20gejd9zdp9ny")){
+                IsWindowsStoreApp = true;
                 return DistributionPlatform.WinStore;
             }
-            else{
-                distribution = DistributionPlatform.GitRepository;
+            else if (currentDirectory.Contains("CSMarkDesktop")){
+                IsWindowsStoreApp = false;
+                return DistributionPlatform.GitRepository;
             }
-
-            return distribution;
+            else{
+                IsWindowsStoreApp = true;
+                return DistributionPlatform.WinStore;
+            }
         }
         public ContributorLevel CheckContributionLevel(bool IsActiveIAP){
             if (IsWindowsStoreApp && IsActiveIAP){
