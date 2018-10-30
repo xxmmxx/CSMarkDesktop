@@ -10,12 +10,12 @@ This document contains a list of upcoming releases of CSMark Desktop.
 * Updated the Premium purchase form.
 * [?] Possibly added Russian Language support.
 * Bug Fixes and reliability improvements.
-* [Non-windows Store Users] Possibly add ability to change background to an image.
 
 ## 0.33.0
 * [Windows Store Users] Xamarin.Forms UWP App which shares code with "CSMark.Desktop.Common" project. Also contains UWP specific features.
 * Added the ability to launch FeedbackHub from within Windows Store app.
 * Added the ability to review/rate windows store app from within Windows Store App.
+* [Non-windows Store Users] Possibly add ability to change background to an image.
 
 ## 0.34.0
 **Highlight Features**

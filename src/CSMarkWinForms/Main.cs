@@ -11,20 +11,11 @@ using System.Windows.Forms;
 using Windows.Services.Store;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-///
-using CSMarkWinForms.UWP.Patronage;
 
 using CSMark.Desktop.Common;
 
 namespace CSMarkWinForms{
     public partial class Main : Form{
-
-        [ComImport]
-        [Guid("3E68D4BD-7135-4D10-8018-9FB6D9F33FA1")]
-        [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
-        public interface IInitializeWithWindow{
-            void Initialize(IntPtr hwnd);
-        }
 
         BenchmarkController btc;
         StressTestController stc = new StressTestController();
@@ -33,8 +24,6 @@ namespace CSMarkWinForms{
         private DateTime start;
         private Timer t;
         private Platform platform;
-
-        private IAPManagement management;
 
         private SetupManager setup = new SetupManager(true);
         private BenchmarkManager benchmark = new BenchmarkManager();
@@ -58,19 +47,7 @@ namespace CSMarkWinForms{
              }           
              */
 
-            if (setup.DetermineDistributionPlatform().Equals(DistributionPlatform.GitRepository)){
-                setup.CheckForUpdate(UseBetaChannel);
-                getPremiumBtn.Visible = false;
-
-            }
-            else if(setup.DetermineDistributionPlatform().Equals(DistributionPlatform.WinStore)){
-                Text += " Windows Store Version";
-                getPremiumBtn.Visible = true;
-            }
-
             version.Text = ProductVersion;
-            management = new IAPManagement();
-            management.IsAPremiumUser();    
             DetermineContributorLevel();
         }
 
@@ -128,37 +105,25 @@ namespace CSMarkWinForms{
         /// Determine what level of contribution the current user is at.
         /// </summary>
         private ContributorLevel DetermineContributorLevel(){
-            if (management.IsActiveIAP()){
-                level = ContributorLevel.StorePremium;
-                expiryLabel.Text = management.GetIAPExpirationDate();
-            }           
+            level = ContributorLevel.Free;
 
             if (level.Equals(ContributorLevel.Free)){
                 contributionStatus.Text = "FREE";
                 contributionStatus.ForeColor = Color.Lime;
-                getPremiumBtn.Visible = true;
-                expiryLabel.Text = "Expires: Never";
             }
             else if (level.Equals(ContributorLevel.PatronPremium) || level.Equals(ContributorLevel.StorePremium)){
                 contributionStatus.Text = "PREMIUM EDITION";
                 contributionStatus.ForeColor = Color.Goldenrod;
-                getPremiumBtn.Visible = false;
-                expiryLabel.Text = "Expires: " + management.GetIAPExpirationDate();
             }
             else if (level.Equals(ContributorLevel.PatronPro)){
                 contributionStatus.Text = "PRO";
                 contributionStatus.ForeColor = Color.OrangeRed;
-                getPremiumBtn.Visible = false;
             }
             else if (level.Equals(ContributorLevel.PatronSponsor)){
                 contributionStatus.Text = "SPONSOR";
                 contributionStatus.ForeColor = Color.Goldenrod;
                 ///
-                getPremiumBtn.Visible = false;
             }
-
-            //temporarily disable expiry date
-            expiryLabel.Visible = false;
 
             return level;
         }
@@ -238,10 +203,6 @@ namespace CSMarkWinForms{
         }
         #endregion
 
-        private void getPremiumBtn_Click(object sender, EventArgs e){
-            Form Premiumform = new Forms.Upgrade.PremiumOverview();
-            Premiumform.ShowDialog();
-        }
         private void Main_Enter(object sender, EventArgs e)
         {
 
