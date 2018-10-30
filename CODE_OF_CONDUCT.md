@@ -2,7 +2,7 @@
 
 ## General Rules
 We have a few rules:
-* Ensure a friendly atmosphere to our users, contributors and maintainers
+* Ensure a friendly atmosphere to our users, contributors and maintainers.
 * Encourage the freedom of expression and exchange of information, ideas, and code in a mature and responsible manner.
 * "Don't be a dick" - Wil Wheaton.
 * "Be excellent to each other" - Bill and Ted. 
