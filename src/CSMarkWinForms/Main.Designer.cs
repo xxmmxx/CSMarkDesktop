@@ -179,7 +179,7 @@
             this.overclockWarning.AutoSize = true;
             this.overclockWarning.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.overclockWarning.ForeColor = System.Drawing.Color.White;
-            this.overclockWarning.Location = new System.Drawing.Point(345, 504);
+            this.overclockWarning.Location = new System.Drawing.Point(347, 518);
             this.overclockWarning.Name = "overclockWarning";
             this.overclockWarning.Size = new System.Drawing.Size(451, 51);
             this.overclockWarning.TabIndex = 37;
@@ -192,7 +192,7 @@
             this.copyrightNotice.AutoSize = true;
             this.copyrightNotice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightNotice.ForeColor = System.Drawing.Color.White;
-            this.copyrightNotice.Location = new System.Drawing.Point(458, 569);
+            this.copyrightNotice.Location = new System.Drawing.Point(498, 585);
             this.copyrightNotice.Name = "copyrightNotice";
             this.copyrightNotice.Size = new System.Drawing.Size(205, 17);
             this.copyrightNotice.TabIndex = 38;
@@ -219,6 +219,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(600, 650);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
