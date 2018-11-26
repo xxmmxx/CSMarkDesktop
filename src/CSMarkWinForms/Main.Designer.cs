@@ -177,7 +177,7 @@
             this.copyrightNotice.AutoSize = true;
             this.copyrightNotice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightNotice.ForeColor = System.Drawing.Color.White;
-            this.copyrightNotice.Location = new System.Drawing.Point(498, 585);
+            this.copyrightNotice.Location = new System.Drawing.Point(458, 585);
             this.copyrightNotice.Name = "copyrightNotice";
             this.copyrightNotice.Size = new System.Drawing.Size(205, 17);
             this.copyrightNotice.TabIndex = 38;

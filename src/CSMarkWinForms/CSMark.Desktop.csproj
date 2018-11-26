@@ -74,8 +74,8 @@
     <Reference Include="AluminiumCoreLib, Version=2.0.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\AluminiumCoreLib.2.0.0-alpha4\lib\netstandard2.0\AluminiumCoreLib.dll</HintPath>
     </Reference>
-    <Reference Include="CSMarkLib.Benchmark, Version=1.4.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\CSMarkLib.Benchmark.1.4.8\lib\netstandard2.0\CSMarkLib.Benchmark.dll</HintPath>
+    <Reference Include="CSMarkLib.Benchmark, Version=1.4.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CSMarkLib.Benchmark.1.4.9\lib\netstandard2.0\CSMarkLib.Benchmark.dll</HintPath>
     </Reference>
     <Reference Include="CSMarkLib.StressTest, Version=2.0.0.10, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\CSMarkLib.StressTest.2.0.0-preview10\lib\netstandard2.0\CSMarkLib.StressTest.dll</HintPath>

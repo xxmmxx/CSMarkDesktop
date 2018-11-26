@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultsBreakdown));
-            this.pythagorasSingle = new System.Windows.Forms.Label();
-            this.singleOverall = new System.Windows.Forms.Label();
             this.singleScoreTxt = new System.Windows.Forms.Label();
             this.multiScoreTxt = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pythagorasMulti = new System.Windows.Forms.Label();
             this.arithmeticMulti = new System.Windows.Forms.Label();
             this.arithmeticSingle = new System.Windows.Forms.Label();
             this.changeReturnMulti = new System.Windows.Forms.Label();
@@ -54,28 +51,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.saveResultBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // pythagorasSingle
-            // 
-            this.pythagorasSingle.AutoSize = true;
-            this.pythagorasSingle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pythagorasSingle.ForeColor = System.Drawing.Color.White;
-            this.pythagorasSingle.Location = new System.Drawing.Point(323, 78);
-            this.pythagorasSingle.Name = "pythagorasSingle";
-            this.pythagorasSingle.Size = new System.Drawing.Size(267, 32);
-            this.pythagorasSingle.TabIndex = 43;
-            this.pythagorasSingle.Text = "Single Threaded Score: ";
-            // 
-            // singleOverall
-            // 
-            this.singleOverall.AutoSize = true;
-            this.singleOverall.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.singleOverall.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(244)))), ((int)(((byte)(66)))));
-            this.singleOverall.Location = new System.Drawing.Point(24, 78);
-            this.singleOverall.Name = "singleOverall";
-            this.singleOverall.Size = new System.Drawing.Size(186, 32);
-            this.singleOverall.TabIndex = 42;
-            this.singleOverall.Text = "Pythagoras Test:";
             // 
             // singleScoreTxt
             // 
@@ -104,7 +79,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(244)))), ((int)(((byte)(66)))));
-            this.label2.Location = new System.Drawing.Point(24, 130);
+            this.label2.Location = new System.Drawing.Point(24, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(245, 32);
             this.label2.TabIndex = 46;
@@ -115,7 +90,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(244)))), ((int)(((byte)(66)))));
-            this.label3.Location = new System.Drawing.Point(24, 176);
+            this.label3.Location = new System.Drawing.Point(24, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(250, 32);
             this.label3.TabIndex = 47;
@@ -126,29 +101,18 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(244)))), ((int)(((byte)(66)))));
-            this.label4.Location = new System.Drawing.Point(24, 223);
+            this.label4.Location = new System.Drawing.Point(24, 160);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(269, 32);
             this.label4.TabIndex = 48;
             this.label4.Text = "CompoundInterest Test:";
-            // 
-            // pythagorasMulti
-            // 
-            this.pythagorasMulti.AutoSize = true;
-            this.pythagorasMulti.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pythagorasMulti.ForeColor = System.Drawing.Color.White;
-            this.pythagorasMulti.Location = new System.Drawing.Point(659, 78);
-            this.pythagorasMulti.Name = "pythagorasMulti";
-            this.pythagorasMulti.Size = new System.Drawing.Size(257, 32);
-            this.pythagorasMulti.TabIndex = 49;
-            this.pythagorasMulti.Text = "Multi Threaded Score: ";
             // 
             // arithmeticMulti
             // 
             this.arithmeticMulti.AutoSize = true;
             this.arithmeticMulti.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.arithmeticMulti.ForeColor = System.Drawing.Color.White;
-            this.arithmeticMulti.Location = new System.Drawing.Point(659, 130);
+            this.arithmeticMulti.Location = new System.Drawing.Point(659, 67);
             this.arithmeticMulti.Name = "arithmeticMulti";
             this.arithmeticMulti.Size = new System.Drawing.Size(257, 32);
             this.arithmeticMulti.TabIndex = 51;
@@ -159,7 +123,7 @@
             this.arithmeticSingle.AutoSize = true;
             this.arithmeticSingle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.arithmeticSingle.ForeColor = System.Drawing.Color.White;
-            this.arithmeticSingle.Location = new System.Drawing.Point(323, 130);
+            this.arithmeticSingle.Location = new System.Drawing.Point(323, 67);
             this.arithmeticSingle.Name = "arithmeticSingle";
             this.arithmeticSingle.Size = new System.Drawing.Size(267, 32);
             this.arithmeticSingle.TabIndex = 50;
@@ -170,7 +134,7 @@
             this.changeReturnMulti.AutoSize = true;
             this.changeReturnMulti.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeReturnMulti.ForeColor = System.Drawing.Color.White;
-            this.changeReturnMulti.Location = new System.Drawing.Point(659, 176);
+            this.changeReturnMulti.Location = new System.Drawing.Point(659, 113);
             this.changeReturnMulti.Name = "changeReturnMulti";
             this.changeReturnMulti.Size = new System.Drawing.Size(257, 32);
             this.changeReturnMulti.TabIndex = 53;
@@ -181,7 +145,7 @@
             this.changeReturnSingle.AutoSize = true;
             this.changeReturnSingle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changeReturnSingle.ForeColor = System.Drawing.Color.White;
-            this.changeReturnSingle.Location = new System.Drawing.Point(323, 176);
+            this.changeReturnSingle.Location = new System.Drawing.Point(323, 113);
             this.changeReturnSingle.Name = "changeReturnSingle";
             this.changeReturnSingle.Size = new System.Drawing.Size(267, 32);
             this.changeReturnSingle.TabIndex = 52;
@@ -192,7 +156,7 @@
             this.compoundInterestMulti.AutoSize = true;
             this.compoundInterestMulti.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compoundInterestMulti.ForeColor = System.Drawing.Color.White;
-            this.compoundInterestMulti.Location = new System.Drawing.Point(659, 223);
+            this.compoundInterestMulti.Location = new System.Drawing.Point(659, 160);
             this.compoundInterestMulti.Name = "compoundInterestMulti";
             this.compoundInterestMulti.Size = new System.Drawing.Size(257, 32);
             this.compoundInterestMulti.TabIndex = 55;
@@ -203,7 +167,7 @@
             this.compoundInterestSingle.AutoSize = true;
             this.compoundInterestSingle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compoundInterestSingle.ForeColor = System.Drawing.Color.White;
-            this.compoundInterestSingle.Location = new System.Drawing.Point(323, 223);
+            this.compoundInterestSingle.Location = new System.Drawing.Point(323, 160);
             this.compoundInterestSingle.Name = "compoundInterestSingle";
             this.compoundInterestSingle.Size = new System.Drawing.Size(267, 32);
             this.compoundInterestSingle.TabIndex = 54;
@@ -214,7 +178,7 @@
             this.geometricMulti.AutoSize = true;
             this.geometricMulti.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.geometricMulti.ForeColor = System.Drawing.Color.White;
-            this.geometricMulti.Location = new System.Drawing.Point(659, 272);
+            this.geometricMulti.Location = new System.Drawing.Point(659, 209);
             this.geometricMulti.Name = "geometricMulti";
             this.geometricMulti.Size = new System.Drawing.Size(257, 32);
             this.geometricMulti.TabIndex = 58;
@@ -225,7 +189,7 @@
             this.geometricSingle.AutoSize = true;
             this.geometricSingle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.geometricSingle.ForeColor = System.Drawing.Color.White;
-            this.geometricSingle.Location = new System.Drawing.Point(323, 272);
+            this.geometricSingle.Location = new System.Drawing.Point(323, 209);
             this.geometricSingle.Name = "geometricSingle";
             this.geometricSingle.Size = new System.Drawing.Size(267, 32);
             this.geometricSingle.TabIndex = 57;
@@ -236,7 +200,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(244)))), ((int)(((byte)(66)))));
-            this.label13.Location = new System.Drawing.Point(24, 272);
+            this.label13.Location = new System.Drawing.Point(24, 209);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(245, 32);
             this.label13.TabIndex = 56;
@@ -247,7 +211,7 @@
             this.nearestPrimeMulti.AutoSize = true;
             this.nearestPrimeMulti.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nearestPrimeMulti.ForeColor = System.Drawing.Color.White;
-            this.nearestPrimeMulti.Location = new System.Drawing.Point(659, 321);
+            this.nearestPrimeMulti.Location = new System.Drawing.Point(659, 258);
             this.nearestPrimeMulti.Name = "nearestPrimeMulti";
             this.nearestPrimeMulti.Size = new System.Drawing.Size(257, 32);
             this.nearestPrimeMulti.TabIndex = 61;
@@ -258,7 +222,7 @@
             this.nearestPrimeSingle.AutoSize = true;
             this.nearestPrimeSingle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nearestPrimeSingle.ForeColor = System.Drawing.Color.White;
-            this.nearestPrimeSingle.Location = new System.Drawing.Point(323, 321);
+            this.nearestPrimeSingle.Location = new System.Drawing.Point(323, 258);
             this.nearestPrimeSingle.Name = "nearestPrimeSingle";
             this.nearestPrimeSingle.Size = new System.Drawing.Size(267, 32);
             this.nearestPrimeSingle.TabIndex = 60;
@@ -269,7 +233,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(244)))), ((int)(((byte)(66)))));
-            this.label16.Location = new System.Drawing.Point(24, 321);
+            this.label16.Location = new System.Drawing.Point(24, 258);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(212, 32);
             this.label16.TabIndex = 59;
@@ -280,7 +244,7 @@
             this.rbssLiteMulti.AutoSize = true;
             this.rbssLiteMulti.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbssLiteMulti.ForeColor = System.Drawing.Color.White;
-            this.rbssLiteMulti.Location = new System.Drawing.Point(659, 377);
+            this.rbssLiteMulti.Location = new System.Drawing.Point(659, 304);
             this.rbssLiteMulti.Name = "rbssLiteMulti";
             this.rbssLiteMulti.Size = new System.Drawing.Size(257, 32);
             this.rbssLiteMulti.TabIndex = 64;
@@ -291,7 +255,7 @@
             this.rbssLiteSingle.AutoSize = true;
             this.rbssLiteSingle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbssLiteSingle.ForeColor = System.Drawing.Color.White;
-            this.rbssLiteSingle.Location = new System.Drawing.Point(323, 377);
+            this.rbssLiteSingle.Location = new System.Drawing.Point(323, 304);
             this.rbssLiteSingle.Name = "rbssLiteSingle";
             this.rbssLiteSingle.Size = new System.Drawing.Size(267, 32);
             this.rbssLiteSingle.TabIndex = 63;
@@ -302,7 +266,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(244)))), ((int)(((byte)(66)))));
-            this.label19.Location = new System.Drawing.Point(24, 377);
+            this.label19.Location = new System.Drawing.Point(24, 304);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(171, 32);
             this.label19.TabIndex = 62;
@@ -313,7 +277,7 @@
             this.saveResultBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
             this.saveResultBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveResultBtn.ForeColor = System.Drawing.Color.White;
-            this.saveResultBtn.Location = new System.Drawing.Point(459, 448);
+            this.saveResultBtn.Location = new System.Drawing.Point(357, 364);
             this.saveResultBtn.Name = "saveResultBtn";
             this.saveResultBtn.Size = new System.Drawing.Size(252, 45);
             this.saveResultBtn.TabIndex = 65;
@@ -326,7 +290,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(1140, 536);
+            this.ClientSize = new System.Drawing.Size(982, 421);
             this.Controls.Add(this.saveResultBtn);
             this.Controls.Add(this.rbssLiteMulti);
             this.Controls.Add(this.rbssLiteSingle);
@@ -343,14 +307,11 @@
             this.Controls.Add(this.changeReturnSingle);
             this.Controls.Add(this.arithmeticMulti);
             this.Controls.Add(this.arithmeticSingle);
-            this.Controls.Add(this.pythagorasMulti);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.multiScoreTxt);
             this.Controls.Add(this.singleScoreTxt);
-            this.Controls.Add(this.pythagorasSingle);
-            this.Controls.Add(this.singleOverall);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ResultsBreakdown";
@@ -362,15 +323,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label pythagorasSingle;
-        private System.Windows.Forms.Label singleOverall;
         private System.Windows.Forms.Label singleScoreTxt;
         private System.Windows.Forms.Label multiScoreTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label pythagorasMulti;
         private System.Windows.Forms.Label arithmeticMulti;
         private System.Windows.Forms.Label arithmeticSingle;
         private System.Windows.Forms.Label changeReturnMulti;
