@@ -17,7 +17,7 @@ namespace CSMarkWinForms.Forms{
         private void ResultsOverview_Load(object sender, EventArgs e){
             try{
                 processorThreadCount.Text = "Thread Count: " + Environment.ProcessorCount.ToString();
-                CSMarkLib.Result x = CSMarkWinForms.Results.Default.BenchmarkResult;
+                CSMarkLib.BenchmarkLib.Result x = CSMarkWinForms.Results.Default.BenchmarkResult;
                 singleScoreResult.Text = x.OverallSingle.ToString();
                 multiScoreResult.Text = x.OverallMulti.ToString();
             }

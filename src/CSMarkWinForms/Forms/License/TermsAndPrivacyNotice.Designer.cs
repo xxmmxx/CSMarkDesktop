@@ -40,15 +40,17 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(722, 320);
+            this.label1.Size = new System.Drawing.Size(674, 160);
             this.label1.TabIndex = 0;
-            this.label1.Text = resources.GetString("label1.Text");
+            this.label1.Text = "By using CSMarkDesktop, you agree to the CSMarkDesktop \r\nPrivacy Policy and CSMar" +
+    "kDesktop Terms of Service.\r\n\r\nIf you disagree with these terms please close this" +
+    " window and\r\ndo not use CSMarkDesktop.";
             // 
             // agree
             // 
             this.agree.AutoSize = true;
             this.agree.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agree.Location = new System.Drawing.Point(311, 344);
+            this.agree.Location = new System.Drawing.Point(304, 172);
             this.agree.Name = "agree";
             this.agree.Size = new System.Drawing.Size(107, 36);
             this.agree.TabIndex = 1;
@@ -61,7 +63,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(737, 391);
+            this.ClientSize = new System.Drawing.Size(737, 234);
             this.Controls.Add(this.agree);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

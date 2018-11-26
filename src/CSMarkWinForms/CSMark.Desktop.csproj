@@ -71,20 +71,14 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AluminiumCoreLib, Version=2.0.0.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\AluminiumCoreLib.2.0.0-alpha3\lib\netstandard2.0\AluminiumCoreLib.dll</HintPath>
+    <Reference Include="AluminiumCoreLib, Version=2.0.0.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AluminiumCoreLib.2.0.0-alpha4\lib\netstandard2.0\AluminiumCoreLib.dll</HintPath>
     </Reference>
-    <Reference Include="AutoUpdater.NET, Version=1.4.11.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
-      <HintPath>packages\Autoupdater.NET.Official.1.4.11\lib\net40\AutoUpdater.NET.dll</HintPath>
+    <Reference Include="CSMarkLib.Benchmark, Version=1.4.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CSMarkLib.Benchmark.1.4.8\lib\netstandard2.0\CSMarkLib.Benchmark.dll</HintPath>
     </Reference>
-    <Reference Include="CSMarkLib.Benchmark, Version=1.4.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\CSMarkLib.Benchmark.1.4.6\lib\netstandard2.0\CSMarkLib.Benchmark.dll</HintPath>
-    </Reference>
-    <Reference Include="CSMarkLib.StressTest, Version=2.0.0.9, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\CSMarkLib.StressTest.2.0.0-preview9\lib\netstandard2.0\CSMarkLib.StressTest.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="CSMarkLib.StressTest, Version=2.0.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\CSMarkLib.StressTest.2.0.0-preview10\lib\netstandard2.0\CSMarkLib.StressTest.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -114,9 +108,6 @@
       <HintPath>C:\Program Files (x86)\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
-    <Reference Include="ZipStorer, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\ZipStorer.3.4.0\lib\net452\ZipStorer.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\About.cs">

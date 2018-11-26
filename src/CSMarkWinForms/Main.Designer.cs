@@ -38,7 +38,6 @@
             this.title = new System.Windows.Forms.Label();
             this.startStressTestBtn = new System.Windows.Forms.Button();
             this.startBenchmarkBtn = new System.Windows.Forms.Button();
-            this.contributionStatus = new System.Windows.Forms.Label();
             this.overclockWarning = new System.Windows.Forms.Label();
             this.copyrightNotice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -160,20 +159,6 @@
             this.startBenchmarkBtn.UseVisualStyleBackColor = false;
             this.startBenchmarkBtn.Click += new System.EventHandler(this.startBenchmarkBtn_Click);
             // 
-            // contributionStatus
-            // 
-            this.contributionStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.contributionStatus.AutoSize = true;
-            this.contributionStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(39)))), ((int)(((byte)(42)))));
-            this.contributionStatus.Font = new System.Drawing.Font("Bahnschrift Condensed", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contributionStatus.ForeColor = System.Drawing.Color.Lime;
-            this.contributionStatus.Location = new System.Drawing.Point(277, 15);
-            this.contributionStatus.Name = "contributionStatus";
-            this.contributionStatus.Size = new System.Drawing.Size(57, 33);
-            this.contributionStatus.TabIndex = 36;
-            this.contributionStatus.Text = "FREE";
-            // 
             // overclockWarning
             // 
             this.overclockWarning.AutoSize = true;
@@ -206,7 +191,6 @@
             this.ClientSize = new System.Drawing.Size(1116, 611);
             this.Controls.Add(this.copyrightNotice);
             this.Controls.Add(this.overclockWarning);
-            this.Controls.Add(this.contributionStatus);
             this.Controls.Add(this.startStressTestBtn);
             this.Controls.Add(this.startBenchmarkBtn);
             this.Controls.Add(this.logoBox);
@@ -244,7 +228,6 @@
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.Button startStressTestBtn;
         private System.Windows.Forms.Button startBenchmarkBtn;
-        private System.Windows.Forms.Label contributionStatus;
         private System.Windows.Forms.Label overclockWarning;
         private System.Windows.Forms.Label copyrightNotice;
     }

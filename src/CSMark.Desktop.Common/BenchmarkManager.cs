@@ -1,5 +1,5 @@
 ﻿using CSMarkLib;
-using CSMarkLib.BenchmarkManagement;
+using CSMarkLib.BenchmarkLib;
 using System;
 using System.Threading.Tasks;
 
@@ -14,11 +14,11 @@ namespace CSMark.Desktop.Common{
         private StressTestController stc = new StressTestController();
         private BenchmarkController btc = new BenchmarkController();
 
-        public void HandleStressTest(bool IsRunning) {
-            if (!IsRunning) {
-                //Start the Stress Test as a new Task to ensure good UI performance.
-                var startStressTest = new Task(() => stc.StartMultiStressTest());
-                startStressTest.Start();
+        public void HandleStressTest(bool IsRunning) {           
+            if (IsRunning) {
+                //Start the Stress Test as a new Task to ensure good UI performance.          
+                Task x = new Task(() => stc.StartMultiStressTest());
+                x.Start();        
             }
             else {
                 stc.StopStressTest();

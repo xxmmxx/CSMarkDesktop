@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CSMarkWinForms" GeneratedClassName="Results">
   <Profiles />
   <Settings>
-    <Setting Name="BenchmarkResult" Type="CSMarkLib.Result" Scope="User">
+    <Setting Name="BenchmarkResult" Type="CSMarkLib.BenchmarkLib.Result" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

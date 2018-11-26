@@ -1,6 +1,6 @@
 ﻿using CSMark.Desktop.Common;
 using CSMarkLib;
-using CSMarkLib.BenchmarkManagement;
+using CSMarkLib.BenchmarkLib;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,9 +25,6 @@ namespace CSMarkWinForms.Forms.Results{
             }
 
             Result x = CSMarkWinForms.Results.Default.BenchmarkResult;
-
-            pythagorasMulti.Text = x.PythagorasMulti.ToString();
-            pythagorasSingle.Text = x.PythagorasSingle.ToString();
 
             arithmeticMulti.Text = x.ArithmeticSumNMulti.ToString();
             arithmeticSingle.Text = x.ArithmeticSumNSingle.ToString();

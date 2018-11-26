@@ -1,6 +1,5 @@
 ﻿using AluminiumCoreLib.Utilities;
-using CSMarkLib;
-using CSMarkLib.BenchmarkManagement;
+using CSMarkLib.BenchmarkLib;
 using CSMarkWinForms.Forms;
 using System;
 using System.Drawing;
@@ -8,11 +7,10 @@ using System.Reflection;
 using System.Windows.Forms;
 
 /// Using Namespaces to enable Subscriptions
-using Windows.Services.Store;
-using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 using CSMark.Desktop.Common;
+using CSMarkLib;
 
 namespace CSMarkWinForms{
     public partial class Main : Form{
@@ -28,7 +26,6 @@ namespace CSMarkWinForms{
         private SetupManager setup = new SetupManager(true);
         private BenchmarkManager benchmark = new BenchmarkManager();
         ContributorLevel level = ContributorLevel.Free;
-        bool UseBetaChannel = false;
 
         public Main(){
             InitializeComponent();
@@ -106,7 +103,7 @@ namespace CSMarkWinForms{
         /// </summary>
         private ContributorLevel DetermineContributorLevel(){
             level = ContributorLevel.Free;
-
+            /*
             if (level.Equals(ContributorLevel.Free)){
                 contributionStatus.Text = "FREE";
                 contributionStatus.ForeColor = Color.Lime;
@@ -124,7 +121,7 @@ namespace CSMarkWinForms{
                 contributionStatus.ForeColor = Color.Goldenrod;
                 ///
             }
-
+            */
             return level;
         }
 
